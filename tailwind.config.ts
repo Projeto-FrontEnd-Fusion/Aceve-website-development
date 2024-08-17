@@ -13,6 +13,34 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        purple: {
+          medium: "#230157",
+          haiti: "#15052a",
+          light: "#482E98",
+        },
+        white: {
+          normal: "#FFF",
+          smooth: "#FEFCFB",
+        },
+        yellow: {
+          normal: "#EEAA44",
+        },
+        gray: {
+          normal: "#444444",
+        },
+        beige: {
+          normal: "#FDF7ED ",
+        },
+        preto: {
+          normal: "#000000",
+          bunker: "#14171A",
+        },
+      },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],
