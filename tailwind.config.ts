@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mobileSmall: "480px",
+        mobileLarger: "536px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -28,6 +32,7 @@ const config: Config = {
         },
         gray: {
           normal: "#444444",
+          stroker: "#999999",
         },
         beige: {
           normal: "#FDF7ED ",
