@@ -43,7 +43,7 @@ export default function Mainmenu({
     <>
       <nav
         {...props}
-        className="overflow-hidden lg:flex lg:justify-between lg:w-full lg:pr-20 lg:h-[80px] lg:pl-20  lg:drop-shadow-2xl shadow lg:items-center"
+        className="overflow-hidden lg:flex lg:justify-between lg:w-full lg:pr-20 lg:h-[80px] lg:pl-20 lg:items-center bg-white-normal drop-shadow-lg"
       >
         <header
           className={clsx(
@@ -98,10 +98,10 @@ export default function Mainmenu({
 
         <ul
           className={clsx(
-            " overflow-hidden drop-shadow-r-lg h-screen w-screen flex flex-col items-center py-10 absolute transform transition-transform duration-500 ease-in-out",
+            " overflow-hidden  h-screen w-screen flex flex-col items-center py-10 absolute transform transition-transform duration-500 ease-in-out",
             {
               "translate-x-0 bg-zinc-100": isOpenMenu,
-              "drop-shadow-r-lg translate-x-full lg:translate-x-0 lg:border-none border-l-[32px] border-purple-300 lg:flex-row lg:relative h-screen lg:text-[12px] lg:w-auto lg:h-20 lg:bg-white":
+              " translate-x-full lg:translate-x-0 lg:border-none border-l-[32px] border-purple-300 lg:flex-row lg:relative h-screen lg:text-[12px] lg:w-auto lg:h-20 lg:bg-white":
                 !isOpenMenu,
             }
           )}
