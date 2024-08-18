@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 1280px) {
+  .ordered-list:nth-child(5) {
+    order: 3;
+  }
+}
