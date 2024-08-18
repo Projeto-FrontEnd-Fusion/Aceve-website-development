@@ -15,10 +15,16 @@ export const ButtonPrimarySmall = ({
       <button
         {...props}
         className={clsx(
-          "font-semibold bg-purple-light w-36 rounded-lg px-2 py-2 h-12 text-white-normal flex items-center justify-center hover:bg-purple-medium",
+          "text-[clamp(14px, 2vw, 16px)] w-36 rounded-lg px-2 py-2 h-12  flex items-center justify-center ",
+          
           {
-            "font-semibold border-2 border-purple-medium bg-white-normal text-purple-medium hover:bg-zinc-100":
+            "lg:font-semibold lg:border-2 md:border-purple-medium md:text-purple-medium md:hover:bg-purple-100":
               btnType === "secondary",
+          },
+
+          {
+            "bg-purple-light hover:bg-purple-medium text-white-normal":
+              btnType === "primary",
           }
         )}
       >
