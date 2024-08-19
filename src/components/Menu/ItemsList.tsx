@@ -54,7 +54,14 @@ export const ItemsList = ({
             }
           )}
         >
-          <Link href={items.trim().replace(/\s+/g, "-").toLocaleLowerCase()}>
+          <Link
+            href={items
+              .trim()
+              .replace(/\s+/g, "-")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .toLocaleLowerCase()}
+          >
             {items == menuOptions[3] || items == menuOptions[5] ? (
               <MenuPrimaryButton
                 btnType={items == menuOptions[3] ? "secondary" : "primary"}
