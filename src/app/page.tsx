@@ -3,7 +3,7 @@ import { bannerDetails } from "@/model/bannerdetailsModel";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <BannerHero
         title={bannerDetails.title}
         description={bannerDetails.description}
