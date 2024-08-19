@@ -33,7 +33,7 @@ export const ItemsList = ({
     <ul
       {...props}
       className={clsx(
-        "h-screen w-screen flex flex-col items-center py-10 absolute transform transition-transform duration-500 ease-in-out",
+        "main-menu-mobile h-screen w-screen flex flex-col items-center py-10 absolute transform transition-transform duration-500 ease-in-out z-50",
         "lg:translate-x-0 bg-zinc-100 lg:h-20 lg:flex-row lg:relative lg:bg-white-normal",
         " xl:justify-end xl:text-[14px] lg:gap-4",
         {

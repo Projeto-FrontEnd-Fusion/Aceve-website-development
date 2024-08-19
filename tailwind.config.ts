@@ -20,7 +20,7 @@ const config: Config = {
       colors: {
         purple: {
           medium: "#230157",
-          haiti: "#15052a",
+          haiti: "#130327",
           light: "#482E98",
         },
         white: {
