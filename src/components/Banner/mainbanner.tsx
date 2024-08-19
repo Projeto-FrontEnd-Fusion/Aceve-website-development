@@ -8,8 +8,11 @@ const BannerHero = ({
   ...props
 }: IbannerProps) => {
   return (
-    <section {...props} className="w-screen flex flex-col">
-      <figure>
+    <section
+      {...props}
+      className="w-screen flex flex-col relative hero-banner lg:flex-row -z-30"
+    >
+      <figure className="relative">
         <img
           src={bannerImg}
           alt="Imagem de um banner representando empoderamento e igualdade"
@@ -21,7 +24,9 @@ const BannerHero = ({
           rosto sério, enquanto levanta uma mão com o punho cerrado,
           simbolizando força e resistência.
         </figcaption>
+        <div className="shadeContainer"></div>
       </figure>
+
       <article className="w-screen bg-purple-haiti px-7 flex flex-col gap-4 mt-[-8px] py-10">
         <h2 className="text-white-normal font-montserrat font-bold pr-20 ">
           {title}

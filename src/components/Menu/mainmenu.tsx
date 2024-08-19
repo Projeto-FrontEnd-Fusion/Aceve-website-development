@@ -37,7 +37,7 @@ export default function Mainmenu({
   return (
     <nav
       {...props}
-      className="lg:flex lg:w-full lg:pr-8 lg:h-[80px] lg:pl-8 lg:items-center bg-white-normal drop-shadow-lg lg:relative"
+      className="lg:flex lg:w-full lg:pr-8 lg:h-[80px] lg:pl-8 lg:items-center bg-white-normal drop-shadow-lg lg:relative z-50"
     >
       <header
         className={clsx(
