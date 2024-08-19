@@ -37,8 +37,8 @@ export const ItemsList = ({
         "lg:translate-x-0 bg-zinc-100 lg:h-20 lg:flex-row lg:relative lg:bg-white-normal",
         " xl:justify-end xl:text-[14px] lg:gap-4",
         {
-          "translate-x-0": isOpenMenu === true,
-          "translate-x-full": isOpenMenu === false,
+          "translate-x-0": isOpenMenu === false,
+          "translate-x-full": isOpenMenu === true,
         }
       )}
     >
