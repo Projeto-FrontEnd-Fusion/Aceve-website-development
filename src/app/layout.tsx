@@ -22,7 +22,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="overflow-hidden">
+      <body>
         <Mainmenu />
         {children}
       </body>
