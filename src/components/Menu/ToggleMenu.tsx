@@ -17,7 +17,7 @@ export const ToggleMenu = () => {
       )}
       onClick={setisOpenMenu}
     >
-      {isOpenMenu ? (
+      {!isOpenMenu ? (
         <IoClose size={32} />
       ) : (
         <GiHamburgerMenu className="text-[24px] md:text-[32px]" />
