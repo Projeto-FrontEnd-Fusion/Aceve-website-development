@@ -9,9 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        mobileMini: "412px",
         mobileSmall: "480px",
         mobileLarger: "536px",
+        tablet: "768px",
+        laptop: "1024px",
+        desktop: "1280px",
+        desktopLarge: "1440px",
+        desktopXLarge: "1920px",
       },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
