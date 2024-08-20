@@ -9,7 +9,6 @@ interface ButtonProps extends ComponentProps<"button"> {
   Background: "purple" | "transparent";
   size?: "small" | "medium" | "large";
   fontColor: string;
-
 }
 
 export function Button({
@@ -21,13 +20,17 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={clsx(`rounded flex items-center justify-center`, {
-        "bg-purple-light": Background === "purple",
-        "bg-transparent": Background === "transparent",
-        "px-8 py-4": size == "small",
-        "px-28 py-4": size == "medium",
-        "px-36 py-4": size == "large",
-      })}
+      className={clsx(
+        `rounded grid place-content-center font-semibold font-roboto text-[14px] `,
+        {
+          "bg-purple-light": Background === "purple",
+          "bg-transparent": Background === "transparent",
+          "w-32 h-9 hover:bg-purple-950 transition-colors duration-500 mobileSmall:mr-auto mobileSmall:w-40 mobileSmall:h-14 mobileSmall:text-[18px]":
+            size == "small",
+          "px-28 py-4": size == "medium",
+          "px-36 py-4": size == "large",
+        }
+      )}
     >
       <span
         className={clsx(``, {
