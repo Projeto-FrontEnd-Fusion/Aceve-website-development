@@ -37,12 +37,12 @@ export default function Mainmenu({
   return (
     <nav
       {...props}
-      className="lg:flex lg:w-full lg:pr-8 lg:h-[80px] lg:pl-8 lg:items-center  lg:relative"
+      className="laptop:flex laptop:w-full laptop:pr-8 laptop:h-[80px] laptop:pl-8 laptop:items-center  laptop:relative"
     >
       <header
         className={clsx(
           "flex py-4 items-center h-14",
-          "mobileSmall:h-20 lg:flex-row lg:w-[60%]"
+          "mobileSmall:h-20 laptop:flex-row laptop:w-[60%]"
         )}
       >
         <Logo
