@@ -25,7 +25,7 @@ export function Button({
         {
           "bg-purple-light": Background === "purple",
           "bg-transparent": Background === "transparent",
-          "w-32 h-9 hover:bg-purple-950 transition-colors duration-500 mobileSmall:mr-auto mobileSmall:w-40 mobileSmall:h-14 mobileSmall:text-[18px]":
+          "w-32 h-9 hover:bg-purple-950 transition-colors duration-500 mobileSmall:mr-auto mobileSmall:w-40 mobileSmall:h-14 mobileSmall:text-[18px] desktop:text-[20px]":
             size == "small",
           "px-28 py-4": size == "medium",
           "px-36 py-4": size == "large",
