@@ -13,7 +13,7 @@ export const ToggleMenu = () => {
       className={clsx(
         "flex items-center justify-end flex-1 mr-6 cursor-pointer",
         "md:mr-4",
-        "lg:hidden"
+        "laptop:hidden"
       )}
       onClick={setisOpenMenu}
     >
