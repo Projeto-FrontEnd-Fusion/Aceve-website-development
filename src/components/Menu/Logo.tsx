@@ -32,7 +32,7 @@ export const Logo = ({
         <img
           src={logo}
           alt={`Logo da ONG: ${description}`}
-          className={clsx("w-20 pr-2", "mobileSmall:w-24", "lg:w-36")}
+          className={clsx("w-20 pr-2", "mobileSmall:w-24", "laptop:w-36")}
         />
         <figcaption className="sr-only">
           Esse é o logo da ONG Violeta Eliz
