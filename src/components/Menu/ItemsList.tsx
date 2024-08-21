@@ -34,8 +34,8 @@ export const ItemsList = ({
       {...props}
       className={clsx(
         "main-menu-mobile bg-white-normal h-screen w-screen flex flex-col items-center py-10 absolute transition-all duration-500 ease-in-out",
-        "lg:translate-x-0 lg:h-20 lg:flex-row lg:relative lg:bg-white-normal",
-        " xl:justify-end xl:text-[14px] lg:gap-4",
+        "laptop:translate-x-0 laptop:h-20 laptop:flex-row laptop:relative laptop:bg-white-normal",
+        " xl:justify-end xl:text-[14px] laptop:gap-4",
         {
           "translate-x-0": isOpenMenu === false,
           "translate-x-full sr-only mobileSmall:flex": isOpenMenu === true,
@@ -46,10 +46,10 @@ export const ItemsList = ({
         <li
           key={index}
           className={clsx(
-            "font-roboto lg:text-[14px] lg:text-center p-4 px-4 lg:px-2 lg:py-2",
+            "font-roboto laptop:text-[14px] laptop:text-center p-4 px-4 laptop:px-2 laptop:py-2 font-semibold",
 
             {
-              "ordered-list hover:text-purple-light lg:hover:bg-white rounded-md transition-all ease-out duration-1000 lg:ordered-list":
+              "ordered-list hover:text-purple-light laptop:hover:bg-white rounded-md transition-all ease-out duration-1000 laptop:ordered-list":
                 items !== menuOptions[5],
             }
           )}
@@ -70,7 +70,7 @@ export const ItemsList = ({
             ) : (
               <span
                 className={clsx("flex", {
-                  "lg:hidden": items === "Grupo Símios",
+                  "laptop:hidden": items === "Grupo Símios",
                 })}
               >
                 {items}
@@ -79,7 +79,7 @@ export const ItemsList = ({
 
             <figure
               className={clsx("hidden", {
-                "lg:flex": items === "Grupo Símios",
+                "laptop:flex": items === "Grupo Símios",
               })}
             >
               <img src={logoSimios} alt="logo" />
