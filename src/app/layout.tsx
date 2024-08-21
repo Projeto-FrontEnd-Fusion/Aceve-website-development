@@ -22,7 +22,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="w-screen overflow-x-hidden">
         <Mainmenu />
         {children}
       </body>
