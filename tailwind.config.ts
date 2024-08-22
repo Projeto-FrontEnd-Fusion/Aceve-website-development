@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        mobileMicro: "375px",
         mobileMini: "412px",
         mobileSmall: "480px",
         mobileLarger: "536px",
+        mobileXLarger: "640px",
         tablet: "768px",
         laptop: "1024px",
         desktop: "1280px",
