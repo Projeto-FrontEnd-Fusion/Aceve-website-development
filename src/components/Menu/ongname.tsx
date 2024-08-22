@@ -21,7 +21,8 @@ export const OngDescription = ({
         "mobileSmall:w-[45%] mobileSmall:px-12 mobileSmall:pl-2 mobileSmall:text-[12px] font-semibold",
         "md:text-[14px] md:w-[30%]",
         "mobileLarger:w-[35%]",
-        "laptop:w-[60%] laptop:text-[16px]"
+        "laptop:w-[90%] laptop:text-[16px] desktop:w-[70%]",
+        "desktopLarge:w-[55%]"
       )}
       {...props}
     >
