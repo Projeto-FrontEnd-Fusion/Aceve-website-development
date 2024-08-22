@@ -11,3 +11,84 @@
     margin-right: -24px !important;
   }
 }
+
+/* Definições de cores em RGB e hexadecimal */
+:root {
+  --purple-medium-rgb: rgb(35, 1, 87);
+  --purple-medium-hex: #230157;
+
+  --purple-haiti-rgb: rgb(19, 3, 39);
+  --purple-haiti-hex: #130327;
+
+  --purple-light-rgb: rgb(72, 46, 152);
+  --purple-light-hex: #482e98;
+
+  --white-normal-rgb: rgb(255, 255, 255);
+  --white-normal-hex: #fff;
+
+  --white-smooth-rgb: rgb(254, 252, 251);
+  --white-smooth-hex: #fefcfb;
+
+  --yellow-normal-rgb: rgb(238, 170, 68);
+  --yellow-normal-hex: #eeaa44;
+
+  --gray-normal-rgb: rgb(68, 68, 68);
+  --gray-normal-hex: #444444;
+
+  --gray-stroker-rgb: rgb(153, 153, 153);
+  --gray-stroker-hex: #999999;
+
+  --beige-normal-rgb: rgb(253, 247, 237);
+  --beige-normal-hex: #fdf7ed;
+
+  --preto-normal-rgb: rgb(0, 0, 0);
+  --preto-normal-hex: #000000;
+
+  --preto-bunker-rgb: rgb(20, 23, 26);
+  --preto-bunker-hex: #14171a;
+}
+
+/* Exemplo de uso das cores em classes CSS */
+.bg-purple-medium {
+  background-color: var(--purple-medium-rgb); /* ou var(--purple-medium-hex) */
+}
+
+.bg-purple-haiti {
+  background-color: var(--purple-haiti-rgb); /* ou var(--purple-haiti-hex) */
+}
+
+.bg-purple-light {
+  background-color: var(--purple-light-rgb); /* ou var(--purple-light-hex) */
+}
+
+.text-white-normal {
+  color: var(--white-normal-rgb); /* ou var(--white-normal-hex) */
+}
+
+.text-white-smooth {
+  color: var(--white-smooth-rgb); /* ou var(--white-smooth-hex) */
+}
+
+.text-yellow-normal {
+  color: var(--yellow-normal-rgb); /* ou var(--yellow-normal-hex) */
+}
+
+.text-gray-normal {
+  color: var(--gray-normal-rgb); /* ou var(--gray-normal-hex) */
+}
+
+.text-gray-stroker {
+  color: var(--gray-stroker-rgb); /* ou var(--gray-stroker-hex) */
+}
+
+.bg-beige-normal {
+  background-color: var(--beige-normal-rgb); /* ou var(--beige-normal-hex) */
+}
+
+.bg-preto-normal {
+  background-color: var(--preto-normal-rgb); /* ou var(--preto-normal-hex) */
+}
+
+.bg-preto-bunker {
+  background-color: var(--preto-bunker-rgb); /* ou var(--preto-bunker-hex) */
+}
