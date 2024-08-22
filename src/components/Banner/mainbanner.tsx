@@ -5,7 +5,6 @@ import Link from "next/link";
 import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
-import bannerDesktop from "../../../public/bannerdesktop.png";
 
 const BannerHero = ({
   title,
@@ -20,17 +19,12 @@ const BannerHero = ({
     <section
       {...props}
       className={clsx(
-        "w-screen  flex flex-col relative ",
+        "w-full  flex flex-col relative ",
         "desktop:overflow-y-hidden desktop:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
     >
       <figure className="relative w-full h-auto desktop:w-[70%]">
-        {/* <img
-          src={bannerImg}
-          alt="Imagem de um banner representando empoderamento e igualdade"
-          className="md:hidden"
-        /> */}
         <img
           src={
             "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/ab668db5-de1b-492d-83bb-f2af7cb2498c.jpg"
@@ -68,21 +62,28 @@ const BannerHero = ({
       <article
         className={clsx(
           "w-screen bg-purple-haiti px-7 flex flex-col gap-4 mt-[-8px] py-10 items-center",
-          "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[70%]"
+          "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[80%]"
         )}
       >
         <h2
           className={clsx(
-            "w-full text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7",
-            "mobileSmall:text-[28px] desktop:text-[36px] desktop:leading-[48px] desktop:w-1/2"
+            "text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7 ",
+            " mobileMicro:pr-8",
+            "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
+            "laptop:pr-[60%] laptop:text-[32px]",
+            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
+            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]"
           )}
+          // consertei o texto desproporcional em telas entre 412px e 480px
         >
           {title}
         </h2>
         <p
           className={clsx(
             "w-full text-white-normal font-roboto text-[14px] mb-8 leading-6",
-            "text-[18px] desktop:text-[18px] desktop:mb-10"
+            "mobileMicro:text-[12px]",
+            "mobileXLarger:text-[16px]",
+            "text-[18px] desktop:text-[18px] desktop:mb-10 desktop:w-full desktop:leading-7"
           )}
         >
           {description}
