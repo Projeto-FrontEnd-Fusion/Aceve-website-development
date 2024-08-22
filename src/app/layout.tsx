@@ -22,7 +22,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="w-screen overflow-x-hidden">
+      <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
         <Mainmenu />
         {children}
       </body>
