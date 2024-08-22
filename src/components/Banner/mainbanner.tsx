@@ -26,9 +26,7 @@ const BannerHero = ({
     >
       <figure className="relative w-full h-auto desktop:w-[70%]">
         <img
-          src={
-            "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/ab668db5-de1b-492d-83bb-f2af7cb2498c.jpg"
-          }
+          src={"https://i.imgur.com/NE6EVuK.png"}
           alt="Imagem de um banner representando empoderamento e igualdade"
           className="w-full border-slate-950"
         />
