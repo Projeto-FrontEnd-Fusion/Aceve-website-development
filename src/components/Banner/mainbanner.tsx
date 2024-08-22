@@ -5,7 +5,6 @@ import Link from "next/link";
 import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
-import bannerDesktop from "../../../public/bannerdesktop.png";
 
 const BannerHero = ({
   title,
@@ -26,11 +25,6 @@ const BannerHero = ({
       )}
     >
       <figure className="relative w-full h-auto desktop:w-[70%]">
-        {/* <img
-          src={bannerImg}
-          alt="Imagem de um banner representando empoderamento e igualdade"
-          className="md:hidden"
-        /> */}
         <img
           src={
             "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/ab668db5-de1b-492d-83bb-f2af7cb2498c.jpg"
@@ -73,9 +67,10 @@ const BannerHero = ({
       >
         <h2
           className={clsx(
-            "w-full text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7",
-            "mobileSmall:text-[28px] desktop:text-[36px] desktop:leading-[48px] desktop:w-1/2"
+            "w-1/2 bg-red-400 text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7",
+            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[48px] desktop:w-1/2"
           )}
+          // consertei o texto desproporcional em telas entre 412px e 480px
         >
           {title}
         </h2>
