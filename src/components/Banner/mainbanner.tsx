@@ -67,8 +67,10 @@ const BannerHero = ({
       >
         <h2
           className={clsx(
-            "w-1/2 bg-red-400 text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7",
-            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[48px] desktop:w-1/2"
+            "text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7 ",
+            " mobileMicro:pr-8",
+            "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
+            "mobileMini:text-[28px] zdesktop:text-[36px] desktop:leading-[36px] "
           )}
           // consertei o texto desproporcional em telas entre 412px e 480px
         >
@@ -77,6 +79,8 @@ const BannerHero = ({
         <p
           className={clsx(
             "w-full text-white-normal font-roboto text-[14px] mb-8 leading-6",
+            "mobileMicro:text-[12px]",
+            "mobileXLarger:text-[16px]",
             "text-[18px] desktop:text-[18px] desktop:mb-10"
           )}
         >
