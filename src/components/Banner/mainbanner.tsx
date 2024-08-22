@@ -19,7 +19,7 @@ const BannerHero = ({
     <section
       {...props}
       className={clsx(
-        "w-screen  flex flex-col relative ",
+        "w-full  flex flex-col relative ",
         "desktop:overflow-y-hidden desktop:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
@@ -62,7 +62,7 @@ const BannerHero = ({
       <article
         className={clsx(
           "w-screen bg-purple-haiti px-7 flex flex-col gap-4 mt-[-8px] py-10 items-center",
-          "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[70%]"
+          "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[80%]"
         )}
       >
         <h2
@@ -70,7 +70,9 @@ const BannerHero = ({
             "text-white-normal font-montserrat font-bold mb-4 text-[20px] leading-7 ",
             " mobileMicro:pr-8",
             "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
-            "mobileMini:text-[28px] zdesktop:text-[36px] desktop:leading-[36px] "
+            "laptop:pr-[60%] laptop:text-[32px]",
+            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
+            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]"
           )}
           // consertei o texto desproporcional em telas entre 412px e 480px
         >
@@ -81,7 +83,7 @@ const BannerHero = ({
             "w-full text-white-normal font-roboto text-[14px] mb-8 leading-6",
             "mobileMicro:text-[12px]",
             "mobileXLarger:text-[16px]",
-            "text-[18px] desktop:text-[18px] desktop:mb-10"
+            "text-[18px] desktop:text-[18px] desktop:mb-10 desktop:w-full desktop:leading-7"
           )}
         >
           {description}
