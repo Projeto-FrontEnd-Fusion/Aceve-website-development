@@ -10,13 +10,14 @@ export const HeaderSectionWhoweAre = () => {
         "laptop:flex-col laptop:text-left laptop:mb-8"
       )}
     >
-      <h2 className={clsx("font-semibold text-[18px] font-roboto")}>
+      <h2 className={clsx("font-semibold text-[16px] font-roboto")}>
         {whoweareDetails.title}
       </h2>
       <h3
         className={clsx(
           "hidden text-[32px] font-roboto font-semibold",
-          "laptop:flex text-[32px]"
+          "laptop:flex text-[32px]",
+          "desktop:text-[40px]"
         )}
       >
         {whoweareDetails.subtitle}

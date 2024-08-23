@@ -8,7 +8,7 @@ export const ParagraphSection = () => {
     <>
       <article
         className={clsx(
-          "py-12 px-6 font-roboto text-gray-normal flex flex-col gap-4",
+          "py-12 px-6 font-roboto text-gray-normal flex flex-col gap-4 text-[16px]",
           "tablet:px-16",
           "laptop:px-0 laptop:pr-20 laptop:py-0 laptop:gap-6"
         )}
