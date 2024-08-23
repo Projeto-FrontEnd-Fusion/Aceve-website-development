@@ -13,7 +13,9 @@ export const Whoweare = () => {
       <section
         className={clsx(
           "flex-col gap-2 pb-10",
-          "laptop:w-1/2 ml-auto laptop:relative laptop:pt-16 laptop:items-start"
+          "laptop:w-1/2 ml-auto laptop:relative laptop:pt-16 laptop:items-start",
+          "desktop:pt-18",
+          "desktopXLarge:pt-32"
         )}
       >
         <HeaderSectionWhoweAre />
