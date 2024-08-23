@@ -1,10 +1,11 @@
 "use client";
 import type { IbannerProps } from "@/@types/bannerTypes";
-import { Button } from "../button";
+import { Button } from "../button/GlobalButton";
 import Link from "next/link";
 import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
+import { BiDonateHeart } from "react-icons/bi";
 
 const BannerHero = ({
   title,
@@ -87,7 +88,12 @@ const BannerHero = ({
           {description}
         </p>
 
-        <Button Background="purple" size="small" fontColor="white">
+        <Button
+          backgroundColor="purple"
+          size="small"
+          fontColor="white"
+          icon={<BiDonateHeart />}
+        >
           <Link href={"/doe-agora"}>Doe Agora</Link>
         </Button>
       </article>
