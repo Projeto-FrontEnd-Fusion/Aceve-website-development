@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
 import { BiDonateHeart } from "react-icons/bi";
+import { useEffect, useState } from "react";
 
 const BannerHero = ({
   title,
