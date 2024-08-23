@@ -1,5 +1,6 @@
 export const whoweareDetails = {
   title: "Quem somos",
+  subtitle: "Fortalecer para libertar",
   whoweareImg1:
     "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/225ecaa1-efd0-4dc1-a644-5390f6673a4d.png",
   whoweareImg2:
