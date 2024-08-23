@@ -1,4 +1,5 @@
 import BannerHero from "@/components/Banner/mainbanner";
+import { Whoweare } from "@/components/Whoweare/whoweare";
 import { bannerDetails } from "@/model/bannerdetailsModel";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         description={bannerDetails.description}
         bannerImg={bannerDetails.bannerImg}
       />
+      <Whoweare />
     </main>
   );
 }
