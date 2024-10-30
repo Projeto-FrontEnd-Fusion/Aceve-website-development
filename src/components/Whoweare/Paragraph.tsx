@@ -24,7 +24,7 @@ export const ParagraphSection = () => {
         >
           <Button
             size="small"
-            backgroundColor="purple"
+            Background="purple"
             fontColor="white"
             icon={<FaArrowRight />}
           >
