@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "@react-input/mask": "^1.2.11",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
