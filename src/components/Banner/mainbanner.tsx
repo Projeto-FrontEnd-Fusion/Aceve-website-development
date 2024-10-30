@@ -90,7 +90,7 @@ const BannerHero = ({
         </p>
 
         <Button
-          backgroundColor="purple"
+          Background="purple"
           size="small"
           fontColor="white"
           icon={<BiDonateHeart />}
