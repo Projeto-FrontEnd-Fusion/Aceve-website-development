@@ -92,3 +92,19 @@
 .bg-preto-bunker {
   background-color: var(--preto-bunker-rgb); /* ou var(--preto-bunker-hex) */
 }
+
+
+.bgProgress {
+  background: rgb(72, 46, 152);
+  background: linear-gradient(
+    90deg,
+    rgba(72, 46, 152, 0.9441747572815534) 91%,
+    rgba(229, 229, 229, 1) 94%
+  );
+}
+
+.shadow {
+  -webkit-box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
+  box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
+}
