@@ -6,56 +6,45 @@ import clsx from "clsx";
 interface ButtonProps extends ComponentProps<"button"> {
   children: ReactNode;
   icon?: ReactElement | null | ReactNode;
-  backgroundColor?: "purple" | "transparent";
-  size?: "small" | "medium" | "large";
-  fontColor?: "purple" | "white";
+  Background: "purple" | "transparent";
+  size: "small" | "normal" | "medium" | "large";
+  fontColor: "white" | "purple";
 }
 
 export function Button({
   children,
   icon,
-  backgroundColor = "purple",
-  size = "medium",
-  fontColor = "white",
+  Background,
+  size,
+  fontColor,
   ...rest
 }: ButtonProps) {
-  const backgroundClass = clsx({
-    "bg-purple-light": backgroundColor === "purple",
-    "bg-transparent": backgroundColor === "transparent",
-  });
-
-  const sizeClass = clsx({
-    "w-32 h-9 hover:bg-purple-950 mobileSmall:mr-auto mobileSmall:w-40 mobileSmall:h-14 mobileSmall:text-[18px] desktop:text-[20px]":
-      size === "small",
-    "px-28 py-4": size === "medium",
-    "px-36 py-4": size === "large",
-  });
-
-  const fontColorClass = clsx({
-    "text-purple-light": fontColor === "purple",
-    "text-white-smooth": fontColor === "white",
-  });
-
   return (
     <button
       className={clsx(
-        "outline-indigo-300 overflow-hidden group rounded flex gap-2 items-center justify-center font-semibold font-roboto text-[14px] ml-auto mr-auto hover:rounded-lg transition-transform duration-1000 desktop:ml-0",
-        backgroundClass,
-        sizeClass
+        `rounded grid place-content-center font-semibold font-roboto text-[14px] `,
+        {
+          "bg-purple-light": Background === "purple",
+          "bg-transparent border-2 border-purple-light":
+            Background === "transparent",
+          "py-2 px-12": size == "normal",
+          "w-32 h-9 hover:bg-purple-950 transition-colors duration-500 mobileSmall:mr-auto mobileSmall:w-40 mobileSmall:h-14 mobileSmall:text-[18px]":
+            size == "small",
+          "px-28 py-4": size == "medium",
+          "px-36 py-4": size == "large",
+        }
       )}
       {...rest}
     >
       <span
-        className={clsx(
-          "translate-x-4 group-hover:translate-x-0 transition-transform duration-1000",
-          fontColorClass
-        )}
+        className={clsx(``, {
+          "text-purple-light": fontColor === "purple",
+          "text-white-smooth": fontColor === "white",
+        })}
       >
         {children}
       </span>
-      <span className="text-white-smooth opacity-10 group-hover:opacity-100 group-hover:text-white-normal translate-y-12 group-hover:translate-y-0 transition-transform duration-1000">
-        {icon}
-      </span>
+      {icon}
     </button>
   );
 }
