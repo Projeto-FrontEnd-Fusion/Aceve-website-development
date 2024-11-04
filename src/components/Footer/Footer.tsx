@@ -86,11 +86,20 @@ export const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-full bg-purple-haiti text-white-normal flex justify-center mobileSmall:justify-between py-3 px-10">
+            
+            <div className="w-full bg-purple-haiti text-white-normal 
+            flex justify-center 
+            mobileSmall:justify-between 
+            py-3 px-10
+            mobileSmall:text-[8px]
+            mobileXLarger:text-[10px]
+            tablet:text-sm 
+            text-base
+            ">
                 <div className="mobileSmall:flex hidden">
                     <p>© Associação Cultural e Educacional Violeta Eliz | Todos direitos reservados</p>
                 </div>
-                <div className="flex items-center ">
+                <div className="flex items-center">
                     <p className="flex items-center">
                         Feito com <FaHeart color="red" className="mx-2" /> pelo <strong className="text-yellow-normal mx-2"><u>Grupo Símios</u></strong> <img src={"s"} alt="" />
                     </p>
