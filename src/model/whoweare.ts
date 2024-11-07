@@ -13,3 +13,20 @@ export const whoweareDetails = {
 
   action: "Saiba Mais",
 };
+
+export const whoweareDetailsExpanded = {
+  title1: "Quem somos",
+  p1: "Fundada em 2014, na favela Morro da Mandioca, a Violeta Eliz é uma associação sem fins econômicos, com a finalidade principal de promover ações de caráter educacional, cultural, de assistência social e de cidadania. Entre suas atividades, destacam-se a capacitação profissional gratuita e a integração de jovens e adultos ao mercado de trabalho.",
+
+  title2: "Missão",
+  p2: "Criar oportunidades, quebrar barreiras do isolamento e não pertencimento de  mulheres para que elas possam desenvolver suas  habilidade e ocupem o seu lugar  de fala  mundo, promovendo a igualdade de gênero, raça e cidadania em nossa sociedade e combater todas as formas de violência contra as mulheres.",
+
+  title3: "visão",
+  p3: "Ser referência  no cuidado e desenvolvimento da carreiras femininas e transformar políticas públicas de trabalho e renda para todas as meninas e mulheres do Brasil.",
+
+  imgSrc: "https:picsum.photos/id/290/470/304",
+  imgAlt: "",
+  imgSubTitle: '“Quando uma mulher negra se movimenta, toda a estrutura da sociedade se movimenta com ela” - Angela Davis',
+
+  action: "Ajude-nos",
+};

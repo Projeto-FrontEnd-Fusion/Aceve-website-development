@@ -32,6 +32,9 @@
   --yellow-normal-rgb: rgb(238, 170, 68);
   --yellow-normal-hex: #eeaa44;
 
+  --gray-dark-hex: #222222;
+  --gray-dark-rgb: rgb(34, 34, 34);
+
   --gray-normal-rgb: rgb(68, 68, 68);
   --gray-normal-hex: #444444;
 
@@ -73,6 +76,11 @@
   color: var(--yellow-normal-rgb); /* ou var(--yellow-normal-hex) */
 }
 
+.text-gray-dark {
+
+  color: var(--gray-dark-rgb); /* ou var(--gray-dark-hex) */
+}
+
 .text-gray-normal {
   color: var(--gray-normal-rgb); /* ou var(--gray-normal-hex) */
 }
@@ -92,7 +100,6 @@
 .bg-preto-bunker {
   background-color: var(--preto-bunker-rgb); /* ou var(--preto-bunker-hex) */
 }
-
 
 .bgProgress {
   background: rgb(72, 46, 152);
