@@ -64,6 +64,13 @@
   background-color: var(--purple-light-rgb); /* ou var(--purple-light-hex) */
 }
 
+.bg-yellow-normal {
+  background-color: var(--yellow-normal-rgb); /* ou var(--yellow-normal-hex) */
+}
+.bg-beige-normal {
+  background-color: var(--beige-normal-rgb); /* ou var(--beige-normal-hex) */
+}
+
 .text-white-normal {
   color: var(--white-normal-rgb); /* ou var(--white-normal-hex) */
 }
