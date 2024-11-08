@@ -1,8 +1,8 @@
-import BannerWhoWeAre from "@/components/Whoweare/Banner";
-import GallerySectionWhoWeAre from "@/components/Whoweare/GallerySection";
-import HeroSectionWhoWeAre from "@/components/Whoweare/HeroSection";
-import InfoSectionWhoWeAre from "@/components/Whoweare/InfoSection";
-import WorksSectionWhoWeAre from "@/components/Whoweare/WorksSection";
+import BannerWhoWeAre from "@/components/whoweare-extended/Banner";
+import GallerySectionWhoWeAre from "@/components/whoweare-extended/GallerySection";
+import HeroSectionWhoWeAre from "@/components/whoweare-extended/HeroSection";
+import InfoSectionWhoWeAre from "@/components/whoweare-extended/InfoSection";
+import WorksSectionWhoWeAre from "@/components/whoweare-extended/WorksSection";
 import React from "react";
 
 const QuemSomos = () => {

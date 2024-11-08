@@ -21,7 +21,7 @@ export const whoweareDetailsExpanded = {
   title2: "Missão",
   p2: "Criar oportunidades, quebrar barreiras do isolamento e não pertencimento de  mulheres para que elas possam desenvolver suas  habilidade e ocupem o seu lugar  de fala  mundo, promovendo a igualdade de gênero, raça e cidadania em nossa sociedade e combater todas as formas de violência contra as mulheres.",
 
-  title3: "visão",
+  title3: "Visão",
   p3: "Ser referência  no cuidado e desenvolvimento da carreiras femininas e transformar políticas públicas de trabalho e renda para todas as meninas e mulheres do Brasil.",
 
   imgSrc: "https:picsum.photos/id/290/470/304",
