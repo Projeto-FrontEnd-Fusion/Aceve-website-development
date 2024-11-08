@@ -7,19 +7,20 @@ const HeroSectionWhoWeAre = () => {
   return (
     <section
       className="bg-white-smooth px-5 text-gray-dark flex flex-col gap-10
-     md:px-20 
+     tablet:px-20 
      lg:px-40"
     >
       <h1
         className="text-lg font-bold uppercase text-center 
-      md:text-start mt-10  md:mt-20 md:text-[40px] md:font-montserrat md:normal-case"
+      tablet:text-start mt-10  tablet:mt-20 tablet:text-[40px] tablet:font-montserrat tablet:normal-case"
       >
         {data.title1}
       </h1>
 
       <section
-        className="flex flex-col-reverse gap-4 pb-8 
-      md:flex-row md:justify-between "
+        className="flex flex-col-reverse gap-4 pb-20 
+        tablet:justify-between tablet:items-center tablet:flex-col
+        laptop:flex-row  laptop:items-stretch"
       >
         <ValuesSection />
         <ImageSection />
@@ -31,21 +32,25 @@ const HeroSectionWhoWeAre = () => {
 const ImageSection = () => {
   return (
     <div
-      className=" w-full 
-        md:w-[70%] md:flex md:flex-col md:items-center"
+      className=" w-full
+        tablet:w-[70%] tablet:flex tablet:flex-col tablet:items-center"
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center tablet:pt-10 laptop:pt-0">
         <img
           src={data.imgSrc}
           alt={data.imgAlt}
-          className="shadow-lg rounded-lg xl:max-w-[470px]"
+          className="w-full shadow-lg rounded-lg h-48 
+            tablet:h-[304px]
+            laptop:h-[200px]
+            xl:max-w-[470px] 
+          "
         />
-        <p className="hidden md:block text-center text-sm italic font-roboto mt-2">
+        <p className="hidden tablet:block text-center text-sm italic font-roboto mt-2">
           {data.imgSubTitle}
         </p>
       </div>
 
-      <div className="hidden md:block md:mt-6 ">
+      <div className="hidden tablet:block tablet:mt-6 ">
         <Button Background="purple" size="small" fontColor="white">
           {data.action}
         </Button>
@@ -56,8 +61,8 @@ const ImageSection = () => {
 
 const ValuesSection = () => {
   return (
-    <div className="w-full">
-      <p className="mb-10 md:py-0 ">
+    <div className="w-full flex flex-col justify-between">
+      <p className="mb-10 tablet:py-0 ">
         Fundada em 2014, na favela Morro da Mandioca, a Violeta Eliz é uma
         associação sem fins econômicos, com a finalidade principal de promover{" "}
         <span className="font-bold">
@@ -70,14 +75,18 @@ const ValuesSection = () => {
           integração de jovens e adultos ao mercado de trabalho.
         </span>
       </p>
-      <h2 className="md:text-2xl font-bold uppercase text-gray-dark text-center md:text-start md:normal-case mb-4">
-        {data.title2}
-      </h2>
-      <p className="mb-10">{data.p2}</p>
-      <h2 className="md:text-2xl font-bold uppercase text-gray-dark text-center md:text-start md:normal-case mb-4">
-        {data.title3}
-      </h2>
-      <p>{data.p3}</p>
+      <div>
+        <h2 className="tablet:text-2xl font-bold uppercase text-gray-dark text-center tablet:text-start tablet:normal-case mb-4">
+          {data.title2}
+        </h2>
+        <p className="mb-10">{data.p2}</p>
+      </div>
+      <div>
+        <h2 className="tablet:text-2xl font-bold uppercase text-gray-dark text-center tablet:text-start tablet:normal-case mb-4">
+          {data.title3}
+        </h2>
+        <p>{data.p3}</p>
+      </div>
     </div>
   );
 };

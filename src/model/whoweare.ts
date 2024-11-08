@@ -24,7 +24,7 @@ export const whoweareDetailsExpanded = {
   title3: "Visão",
   p3: "Ser referência  no cuidado e desenvolvimento da carreiras femininas e transformar políticas públicas de trabalho e renda para todas as meninas e mulheres do Brasil.",
 
-  imgSrc: "https:picsum.photos/id/290/470/304",
+  imgSrc: "https://s3-alpha-sig.figma.com/img/0695/95dc/765dbb542abf9cbd37e64e99e6c07a86?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iSKyLFvtxLemUaPP67YLa-wevRpp2F8O3t7PuyV9S7tF0EEkX1lwjO0I5NHUVlVEbjwrt~8TgFSrXbPaGFx9phaU8bZob67h38VzJ84Et40wumKkXYCp2V0m7VTGPkYy3Zc42rbupIEeK7AZkQPslK3Rky7PxB9TrNjk3ePV2~H79SgXT9Pa4kpUrSeQs~uZZOiVVzRDpOolsY73S7xG0i5jvpGScX-UnZk~U1EyJ4oVxQ047gtVNaezVL6LK2DIpPpiGCwtpqBzYdnNFPOR634lMV6uNEQFNd7Nncs7qxHpB1UOPEgOrYArMShbVdNAmP4EbRjIP2YwUtq2Pt9hpQ__",
   imgAlt: "",
   imgSubTitle:
     "“Quando uma mulher negra se movimenta, toda a estrutura da sociedade se movimenta com ela” - Angela Davis",
