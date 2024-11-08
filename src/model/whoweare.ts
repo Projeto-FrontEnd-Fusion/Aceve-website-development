@@ -35,7 +35,7 @@ export const whoweareDetailsExpanded = {
 export const whoweareWorks = [
   {
     workImage: "https://i.postimg.cc/G3fpQ3mM/hearing.png",
-    title: "Escuta a Empatia",
+    title: "Escuta e Empatia",
     description:
       "Estar disponível e presente, acolher, sentir junto e não condenar.",
   },
