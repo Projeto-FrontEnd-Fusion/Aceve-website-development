@@ -4,7 +4,8 @@ import { whoweareWorks as data } from "@/model/whoweare";
 
 const WorksSectionWhoWeAre = () => {
   return (
-    <section className="bg-beige-normal font-roboto text-center pt-8">
+    <section className="bg-beige-normal font-roboto text-center py-8
+    tablet:py-20">
       <ul className="flex flex-col gap-6 px-5 
       tablet:flex-row lg:px-[5%] tablet:justify-center
       desktop:px-[3%]">

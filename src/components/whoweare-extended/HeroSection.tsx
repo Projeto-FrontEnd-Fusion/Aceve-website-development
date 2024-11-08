@@ -5,12 +5,22 @@ import { whoweareDetailsExpanded as data } from "@/model/whoweare";
 
 const HeroSectionWhoWeAre = () => {
   return (
-    <section className="bg-white-smooth px-5 text-gray-dark flex flex-col gap-10 md:px-20 lg:px-40">
-      <h1 className="text-lg font-bold uppercase text-center md:text-start mt-10  md:mt-20 md:text-[40px] md:font-montserrat md:normal-case">
+    <section
+      className="bg-white-smooth px-5 text-gray-dark flex flex-col gap-10
+     md:px-20 
+     lg:px-40"
+    >
+      <h1
+        className="text-lg font-bold uppercase text-center 
+      md:text-start mt-10  md:mt-20 md:text-[40px] md:font-montserrat md:normal-case"
+      >
         {data.title1}
       </h1>
 
-      <section className="flex flex-col-reverse md:flex-row md:justify-between gap-4 pb-8">
+      <section
+        className="flex flex-col-reverse gap-4 pb-8 
+      md:flex-row md:justify-between "
+      >
         <ValuesSection />
         <ImageSection />
       </section>
@@ -20,14 +30,17 @@ const HeroSectionWhoWeAre = () => {
 
 const ImageSection = () => {
   return (
-    <div className=" w-full md:w-[70%] md:flex md:flex-col md:items-center">
+    <div
+      className=" w-full 
+        md:w-[70%] md:flex md:flex-col md:items-center"
+    >
       <div className="flex flex-col items-center">
         <img
           src={data.imgSrc}
           alt={data.imgAlt}
           className="shadow-lg rounded-lg xl:max-w-[470px]"
         />
-        <p className="hidden text-center text-sm md:block italic font-roboto mt-2">
+        <p className="hidden md:block text-center text-sm italic font-roboto mt-2">
           {data.imgSubTitle}
         </p>
       </div>
