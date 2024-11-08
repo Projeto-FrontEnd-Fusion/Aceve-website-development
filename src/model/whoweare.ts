@@ -26,7 +26,34 @@ export const whoweareDetailsExpanded = {
 
   imgSrc: "https:picsum.photos/id/290/470/304",
   imgAlt: "",
-  imgSubTitle: '“Quando uma mulher negra se movimenta, toda a estrutura da sociedade se movimenta com ela” - Angela Davis',
+  imgSubTitle:
+    "“Quando uma mulher negra se movimenta, toda a estrutura da sociedade se movimenta com ela” - Angela Davis",
 
   action: "Ajude-nos",
 };
+
+export const whoweareWorks = [
+  {
+    workImage: "https://i.postimg.cc/G3fpQ3mM/hearing.png",
+    title: "Escuta a Empatia",
+    description:
+      "Estar disponível e presente, acolher, sentir junto e não condenar.",
+  },
+  {
+    workImage: "https://i.postimg.cc/YC6qM1fV/handshake.png",
+    title: "Colaboração e Inclusão",
+    description:
+      "Aprender,  compartilhar conhecimentos, construir pontes, abrir portas e acolher.",
+  },
+  {
+    workImage: "https://i.postimg.cc/T3MYzkmg/volunteer-activism.png",
+    title: "Valorização Humana",
+    description: "Respeito, sororidade, empatia, resiliência e amor.",
+  },
+  {
+    workImage: "https://i.postimg.cc/65Gp1s7B/healthicons-world-care-outline.png",
+    title: "Responsabilidade Social",
+    description:
+      "Comprometimento com a causa, com a sociedade, animais e com meio ambiente.",
+  },
+];

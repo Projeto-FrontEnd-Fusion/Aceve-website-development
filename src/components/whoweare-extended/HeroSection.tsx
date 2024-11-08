@@ -10,7 +10,7 @@ const HeroSectionWhoWeAre = () => {
         {data.title1}
       </h1>
 
-      <section className="flex flex-col-reverse md:flex-row md:justify-between gap-4">
+      <section className="flex flex-col-reverse md:flex-row md:justify-between gap-4 pb-8">
         <ValuesSection />
         <ImageSection />
       </section>
@@ -64,7 +64,7 @@ const ValuesSection = () => {
       <h2 className="md:text-2xl font-bold uppercase text-gray-dark text-center md:text-start md:normal-case mb-4">
         {data.title3}
       </h2>
-      <p className="mb-10">{data.p3}</p>
+      <p>{data.p3}</p>
     </div>
   );
 };
