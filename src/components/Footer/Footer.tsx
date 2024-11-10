@@ -1,7 +1,6 @@
 import { whoweareDetails } from "@/model/whoweare";
 import clsx from "clsx";
 import Link from "next/link";
-import { ComponentProps } from "react";
 import { FaFacebookF, FaHeart, FaInstagram, FaXTwitter, } from "react-icons/fa6";
 
 
@@ -21,21 +20,58 @@ export const menuList = [
     "Política de Privacidade"
 ];
 
-export const contactList = [{
-    address: [
-        "Rua Ricardo Julio Ferraz, 357/367",
-        "São Paulo, SP, 04814-120",
-        "Brasil"
-    ],
-    phone: "(11) 98293-5150",
-    email: "eliz_social@outlook.com"
-}]
+export const contactList = [
+    {
+        id: 1,
+        order: [
+            "Rua Ricardo Julio Ferraz, 357/367",
+            "São Paulo, SP, 04814-120",
+            "Brasil"
+        ],
+    },
+    {
+        id: 2,
+        order: ["(11) 98293-5150"]
+    },
+    {
+
+        id: 3,
+        order: ["eliz_social@outlook.com"]
+    }
+]
+
+const listInfo = [
+    {
+        id: 1,
+        name: "Quem somos",
+        link: "teste"
+    },
+    {
+        id: 2,
+        name: "Ajude-nos",
+        link: "teste"
+    },
+    {
+        id: 3,
+        name: "Brechó",
+        link: "teste"
+    },
+    {
+        id: 4,
+        name: "Política de privacidade",
+        link: "teste"
+    }
+]
 
 interface ItemsListProps {
     menuList?: string[];
     contactList?: string[];
     footerLogo: ILogoFooter;
+    listInfo: string[];
+    contactInfo: string[];
 }
+
+
 
 export const Footer = ({
     footerLogo,
@@ -53,7 +89,7 @@ export const Footer = ({
             mobileSmall:items-start
             ">
                 <figure className="pb-8 mobileSmall:pb-0">
-                    <img src={whoweareDetails.whoweareImg1} alt="" />
+                    <img src={whoweareDetails.whoweareImg1} alt="Logo" aria-label="Logo Violeta Eliz" />
                 </figure>
 
                 <div className="flex flex-col justify-center items-center mobileSmall:items-start mx-1">
@@ -63,26 +99,16 @@ export const Footer = ({
                     flex flex-col items-center 
                     mobileSmall:items-start                    
                     ">
-                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">
-                            <Link href={"/test"}>
-                                Quem somos
-                            </Link>
-                        </li>
-                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">
-                            <Link href={"/test"}>
-                                Ajude-nos
-                            </Link>
-                        </li>
-                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">
-                            <Link href={"/test"}>
-                                Brechó
-                            </Link>
-                        </li>
-                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">
-                            <Link href={"/test"}>
-                                Política de privacidade
-                            </Link>
-                        </li>
+
+                        {listInfo.map((list) => {
+                            return (
+                                <li key={list.id} className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">
+                                    <Link href={`/#${list.link}`} aria-label="Quem somos">
+                                        {list.name}
+                                    </Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
 
@@ -95,38 +121,54 @@ export const Footer = ({
                         className="text-sm leading-6 flex flex-col items-center 
                     mobileSmall:items-start
                     ">
+                        {contactList.map((list) => {
+                            return (
+                                <li key={list.id} className="pb-2 mb-2 border-b-2 
+                                border-purple-light mobileSmall:border-b-0 flex flex-col justify-center items-center mobileSmall:items-start">
 
-                        <li className="pb-2 mb-2 border-b-2 
+                                    {list.order.length < 1 ?
+                                        list.order.map(item => {
+                                            return <p style={{display:"block"}} >{item}</p>
+                                        })
+                                        :
+                                        list.order}
+                                </li>
+                            )
+                        })}
+
+                        {/* <li className="pb-2 mb-2 border-b-2 
                         border-purple-light mobileSmall:border-b-0 flex flex-col justify-center items-center mobileSmall:items-start">
                             <p>Rua Ricardo Julio Ferraz, 357/367</p>
                             <p>São Paulo, SP, 04814-120</p>
                             <p>Brasil</p>
                         </li>
                         <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">(11) 98293-5150</li>
-                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">eliz_social@outlook.com</li>
+                        <li className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light">eliz_social@outlook.com</li> */}
                     </ul>
                 </div>
 
-                <div className="flex flex-col gap-4 items-center mt-6 mobileSmall:mt-0 ">
-                    <h4 className="text-white-normal font-bold">Siga-nos</h4>
+                <nav className="flex flex-col gap-4 items-center mt-6 mobileSmall:mt-0 ">
+
+                    <h4 className="text-white-normal font-bold mobileSmall:text-base text-[12px]">Siga-nos nas redes sociais</h4>
+
                     <ul className="flex gap-8">
                         <li>
-                            <a href="" target="_blank">
+                            <a href="" target="_blank" aria-label="Logo Facebook">
                                 <FaFacebookF size={32} />
                             </a>
                         </li>
                         <li>
-                            <a href="" target="_blank">
+                            <a href="" target="_blank" aria-label="Logo Tweeter / X">
                                 <FaXTwitter size={32} />
                             </a>
                         </li>
                         <li>
-                            <a href="" target="_blank">
+                            <a href="" target="_blank" aria-label="Logo Instagram">
                                 <FaInstagram size={32} />
                             </a>
                         </li>
                     </ul>
-                </div>
+                </nav>
             </div>
 
             <div className="w-full bg-purple-haiti text-white-normal 
