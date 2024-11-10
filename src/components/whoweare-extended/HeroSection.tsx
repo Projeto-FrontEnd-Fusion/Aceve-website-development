@@ -41,7 +41,6 @@ const ImageSection = () => {
           alt={data.imgAlt}
           className="w-full shadow-lg rounded-lg h-48 
             tablet:h-[304px]
-            laptop:h-[200px]
             xl:max-w-[470px] 
           "
         />
