@@ -3,7 +3,7 @@ import BannerWhoWeAre from "@/components/whoweare-extended/Banner";
 import HeroSectionWhoWeAre from "@/components/whoweare-extended/HeroSection";
 import InfoSectionWhoWeAre from "@/components/whoweare-extended/InfoSection";
 import WorksSectionWhoWeAre from "@/components/whoweare-extended/WorksSection";
-import GallerySectionWhoWeAre from "@/components/whoweare-extended/GallerySection";
+import GallerySection from "@/components/whoweare-extended/GallerySection";
 
 const QuemSomos = () => {
   return (
@@ -12,7 +12,7 @@ const QuemSomos = () => {
       <HeroSectionWhoWeAre />
       <WorksSectionWhoWeAre />
       <InfoSectionWhoWeAre />
-      <GallerySectionWhoWeAre />
+      <GallerySection />
     </main>
   );
 };
