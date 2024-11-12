@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Mainmenu from "@/components/Menu/mainmenu";
+import { Footer } from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
         <Mainmenu />
         {children}
+        <Footer/>
       </body>
     </html>
   );
