@@ -1,0 +1,21 @@
+
+.swiper-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.thumbs-slider.swiper-slide-thumb-active {
+  border: 2px solid var(--purple-light-rgb);
+  border-radius: 10px;
+}
+ .swiper-button-prev,
+.swiper-button-next {
+color: var(--purple-light-rgb);
+font-weight: bolder;
+}
+
+.swiper-button-next {
+  right: 0px;
+}
