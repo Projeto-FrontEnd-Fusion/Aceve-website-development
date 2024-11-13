@@ -38,13 +38,13 @@ const Slider = ({ images }: { images: string[] }) => {
       <Swiper
         onSwiper={handleThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={2}
+        slidesPerView={2.2}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         breakpoints={{
           536: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
           },
           768: {
             slidesPerView: 3,
