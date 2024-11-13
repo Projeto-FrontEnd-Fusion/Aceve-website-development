@@ -11,7 +11,7 @@ const QuemSomos = () => {
       <BannerWhoWeAre />
       <HeroSectionWhoWeAre />
       <WorksSectionWhoWeAre />
-      <div className="flex flex-col-reverse laptop:flex-col">
+      <div className="flex flex-col-reverse tablet:flex-col">
         <InfoSectionWhoWeAre />
         <GallerySection />
       </div>

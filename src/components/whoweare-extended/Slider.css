@@ -32,8 +32,10 @@
 
 @media (max-width: 678px) {
   .main-slider .swiper-slide {
-    /* padding: 0 50px; */
     width: 50%;
+  }
+  .swiper:nth-child(2) {
+    margin: 0 20px;
   }
 
   .main-slider .swiper-slide img {

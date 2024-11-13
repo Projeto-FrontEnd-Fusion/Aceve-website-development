@@ -13,7 +13,7 @@ const images = [
 ];
 const GallerySection = () => {
   return (
-    <section className="bg-bege-normal">
+    <section className="bg-beige-normal py-20">
       <h1 className="text-[40px] font-montserrat font-bold text-center">Galeria de fotos</h1>
       <h2 className="text-center text-lg font-roboto mt-2 mb-10 px-4 tablet:mb-16">Capturando Momentos, Transfomando Vidas</h2>
 

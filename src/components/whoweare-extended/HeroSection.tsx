@@ -6,9 +6,9 @@ import { whoweareDetailsExpanded as data } from "@/model/whoweare";
 const HeroSectionWhoWeAre = () => {
   return (
     <section
-      className="bg-white-smooth px-5 text-gray-dark flex flex-col gap-10
-     tablet:px-20 
-     lg:px-40"
+      className="bg-white-smooth px-5 text-gray-dark flex flex-col gap-10 transition-all duration-300
+      tablet:px-20 
+      lg:px-40"
     >
       <h1
         className="text-lg font-bold uppercase text-center 
@@ -32,10 +32,15 @@ const HeroSectionWhoWeAre = () => {
 const ImageSection = () => {
   return (
     <div
-      className=" w-full
+      className="w-full
         tablet:w-[70%] tablet:flex tablet:flex-col tablet:items-center"
     >
-      <div className="flex flex-col items-center tablet:pt-10 laptop:pt-0">
+      <div
+        className="flex flex-col items-center 
+        mobileLarger:px-20
+        tablet:pt-10
+        laptop:pt-0"
+      >
         <img
           src={data.imgSrc}
           alt={data.imgAlt}
