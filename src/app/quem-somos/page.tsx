@@ -11,8 +11,10 @@ const QuemSomos = () => {
       <BannerWhoWeAre />
       <HeroSectionWhoWeAre />
       <WorksSectionWhoWeAre />
-      <InfoSectionWhoWeAre />
-      <GallerySection />
+      <div className="flex flex-col-reverse laptop:flex-col">
+        <InfoSectionWhoWeAre />
+        <GallerySection />
+      </div>
     </main>
   );
 };
