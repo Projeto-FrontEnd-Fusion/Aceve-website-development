@@ -10,7 +10,7 @@ import { Swiper as SwiperType } from "swiper/types";
 import "./Slider.css";
 
 const Slider = ({ images }: { images: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState< SwiperType | null>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   // const [activeImage, setActiveImage] = useState(0);
   // const imagesSliced = images.slice(activeImage, activeImage + 4);
@@ -28,13 +28,13 @@ const Slider = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <section > 
+    <section className="laptop:w-[900px] mx-auto">
       <Swiper
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="max-w-[956px] max-h-[424px] mb-4"
+        className="main-slider mb-4"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="h-full">
@@ -50,19 +50,32 @@ const Slider = ({ images }: { images: string[] }) => {
       <Swiper
         onSwiper={handleThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={2}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
+        breakpoints={{
+          536: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="thumbs-slider">
             <img
               src={image}
               alt=""
-              className={`cursor-pointer rounded-lg opacity-80 hover:opacity-100  `}
-              width={200}
-              height={300}
+              className={`cursor-pointer rounded-lg opacity-80 hover:opacity-100 object-cover`}
+              width={0}
+              height={0}
             />
           </SwiperSlide>
         ))}

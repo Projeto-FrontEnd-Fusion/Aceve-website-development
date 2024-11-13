@@ -70,7 +70,7 @@ export const whoweareInfoDetails = {
   imgDescription1: "Grupo de pessoas juntas sorrindo com skate em mãos",
   imgDescription2: "Grupo de pessoas reunidas",
 
-  p1: "Apoiamos mulheres vulnerabilizadas a alcançar autonomia econômica e desenvolver suas habilidades socioemocionais essenciais para mudar sua vulnerabilidade para que elas consiga ser uma empreendedora fortalecendo os vínculos familiares com amor. Atuamos com empreendedorismos, cultura, esporte e cursos profissionalizante.",
+  p1: "Apoiamos mulheres vulnerabilizadas a alcançar autonomia econômica e desenvolver suas habilidades socioemocionais essenciais para mudar sua vulnerabilidade para que elas consigam ser empreendedoras e fortalecendo os vínculos familiares com amor. Atuamos com empreendedorismos, cultura, esporte e cursos profissionalizante.",
 
   p2: [
     "A desigualdade de gênero deixou marcas profundas em nossa alma. Com essas heranças históricas, temos consequências graves em nossas relações sociais. Elas são usadas como justificativa para a violência e reforçam a falta de políticas públicas eficazes para proteger as mulheres de seus algozes. Nossa maior necessidade é ter um espaço seguro onde as mulheres e meninas nas favelas se sintam protegidas, mesmo estando em território onde a violência atua.",
