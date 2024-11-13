@@ -11,18 +11,6 @@ import "./Slider.css";
 
 const Slider = ({ images }: { images: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-
-  // const [activeImage, setActiveImage] = useState(0);
-  // const imagesSliced = images.slice(activeImage, activeImage + 4);
-  // const handleNexImage = () => {
-  //   setActiveImage(() => (activeImage + 1) % images.length);
-  // };
-  // console.log(imagesSliced);
-
-  // const handlePrevImage = () => {
-  //   setActiveImage(() => (activeImage - 1 + images.length) % images.length);
-  // };
-
   const handleThumbsSwiper = (swiper: SwiperType) => {
     setThumbsSwiper(swiper);
   };
