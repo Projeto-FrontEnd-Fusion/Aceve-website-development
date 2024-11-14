@@ -2,14 +2,47 @@
 
 import { schemaTalkToUs, SchemaTalkToUsProps } from "@/model/schemas/schemaTalkToUs";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { resolve } from "path";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const TalkToUsForm = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm<SchemaTalkToUsProps>({
+    const [formErrorMessage, setFormErrorMessage] = useState<string | null>(null)
+    const [showFormMessages, setShowFormMessages] = useState<boolean>(false)
+
+    const { 
+        register, 
+        handleSubmit, 
+        reset, 
+        formState: {
+            errors, 
+            isSubmitting, 
+            isSubmitSuccessful, 
+            isSubmitted
+        } 
+    } = useForm<SchemaTalkToUsProps>({
         resolver: yupResolver(schemaTalkToUs)
     })
-    const onSubmit = (data: SchemaTalkToUsProps) => console.log(data)
+    const onSubmit = async (data: SchemaTalkToUsProps) => {
+        //TODO enviar dados para a API
 
+        setFormErrorMessage(null)
+        setShowFormMessages(false)
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000))
+            console.log(data)
+
+            reset()
+            setShowFormMessages(true)
+            setTimeout(() => setShowFormMessages(false), 3000)
+        } catch(error) {
+            setFormErrorMessage("Ocorreu um erro ao enviar o formulário")
+            setShowFormMessages(true)
+            setTimeout(() => setShowFormMessages(false), 3000)
+        }
+
+    }
     return ( 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 mt-8"> 
             <fieldset>
@@ -42,13 +75,33 @@ const TalkToUsForm = () => {
                         <span className="text-red-500">*</span>
                     </label>
                 </div>
-                <textarea id="message" {...register("message")} className="border-2 border-[#482E98] w-full rounded-lg mt-2 min-h-40 p-3 placeholder:text-xs" placeholder="Escreva sua mensagem..." />
+                <textarea id="message" {...register("message")} className="border-2 border-[#482E98] w-full rounded-lg mt-2 min-h-40 max-h-96 p-3 placeholder:text-xs" placeholder="Escreva sua mensagem..." />
                 {errors.message && <span className="text-red-500 text-xs">{errors.message?.message}</span>}
             </fieldset>   
 
             <div className="flex">
-                <button type="submit" className="bg-[#482E98] text-white-normal mx-auto min-h-12 rounded-lg px-8">Enviar mensagem</button>
+                <button disabled={isSubmitting} type="submit" className="bg-[#482E98] text-white-normal mx-auto min-h-12 rounded-lg px-8 disabled:opacity-50 disabled:cursor-progress">
+                    {
+                        isSubmitting ? "Enviando" : "Enviar mensagem"
+                    }
+                </button>
             </div>
+            {
+                isSubmitted && showFormMessages && (
+                    <div>
+                        {
+                            isSubmitSuccessful && (
+                                <span className="text-green-500 text-sm font-roboto">Mensagem enviada com sucesso!</span>
+                            )
+                        }
+                        {
+                            formErrorMessage && (
+                                <span className="text-red-500 text-sm font-roboto">{formErrorMessage}</span>
+                            )
+                        }
+                    </div>
+                )
+            }
         </form>
      );
 }
