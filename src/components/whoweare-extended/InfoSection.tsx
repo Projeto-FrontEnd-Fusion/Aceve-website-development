@@ -1,10 +1,8 @@
 import React from "react";
 import { whoweareInfoDetails as data } from "@/model/whoweare";
 const InfoSectionWhoWeAre = () => {
-  const classh3 =
-    "uppercase font-bold text-gray-dark text-center bg-red-300 tablet:text-2xl tablet:text-start tablet:normal-case tablet:pb-4";
   return (
-    <section className="px-5 py-10 text-gray-normal laptop:px-40">
+    <section className="bg-white-smooth px-5 py-10 text-gray-normal laptop:px-40">
       <Article>
         <div className="tablet:order-2 *:tablet:text-end tablet:col-span-4 tablet:gap-4">
           <Heading3>{data.title1}</Heading3>

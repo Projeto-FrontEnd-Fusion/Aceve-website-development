@@ -4,6 +4,7 @@ import HeroSectionWhoWeAre from "@/components/whoweare-extended/HeroSection";
 import InfoSectionWhoWeAre from "@/components/whoweare-extended/InfoSection";
 import WorksSectionWhoWeAre from "@/components/whoweare-extended/WorksSection";
 import GallerySection from "@/components/whoweare-extended/GallerySection";
+import Partners from "@/components/whoweare-extended/Partners";
 
 const QuemSomos = () => {
   return (
@@ -15,6 +16,7 @@ const QuemSomos = () => {
         <InfoSectionWhoWeAre />
         <GallerySection />
       </div>
+      <Partners />
     </main>
   );
 };
