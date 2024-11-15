@@ -1,3 +1,5 @@
+import Partners from "@/components/whoweare-extended/partners-section";
+
 export const whoweareDetails = {
   title: "Quem somos",
   subtitle: "Fortalecer para libertar",
@@ -26,7 +28,7 @@ export const whoweareDetailsExpanded = {
 
   imgSrc:
     "https://s3-alpha-sig.figma.com/img/0695/95dc/765dbb542abf9cbd37e64e99e6c07a86?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iSKyLFvtxLemUaPP67YLa-wevRpp2F8O3t7PuyV9S7tF0EEkX1lwjO0I5NHUVlVEbjwrt~8TgFSrXbPaGFx9phaU8bZob67h38VzJ84Et40wumKkXYCp2V0m7VTGPkYy3Zc42rbupIEeK7AZkQPslK3Rky7PxB9TrNjk3ePV2~H79SgXT9Pa4kpUrSeQs~uZZOiVVzRDpOolsY73S7xG0i5jvpGScX-UnZk~U1EyJ4oVxQ047gtVNaezVL6LK2DIpPpiGCwtpqBzYdnNFPOR634lMV6uNEQFNd7Nncs7qxHpB1UOPEgOrYArMShbVdNAmP4EbRjIP2YwUtq2Pt9hpQ__",
-  imgAlt: "",
+  imgAlt: "Mulher negra com as mãos juntas sorrindo",
   imgSubTitle:
     "“Quando uma mulher negra se movimenta, toda a estrutura da sociedade se movimenta com ela” - Angela Davis",
 
@@ -68,7 +70,7 @@ export const whoweareInfoDetails = {
 
   img2: "https://s3-alpha-sig.figma.com/img/f5bc/3fd4/c2d654900cfc38ef62318f4ca45cabc5?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=F3WgsVGASSJ8ZYN7LRjLJY--t8ROVcwtSPp~-s42GZAgWRRfzEIHvP49dZ2cySfRlFbENi5~G3G0XClHwRc~UsdyIMjDUB6UTUVdDog7DrWCK0kcTtK22aUlx0Hv5C7U3Y95bEZVh~3Xz3uTqiJRPA~iv5d22of27kATtYvZBcGzsl3aH-QoFaWWwNWh5WxXanV~21wcJ-4sdpeX9LeOM3Fw8vkDrhcTUVj5rAwxqacOE7lO7LK2~ZAen4WFddXe-g0~MoiuW0gcauzi878BhKqUFjRvyrtzUW8XDH32Rz7YTBRgY51loS2ykU47-Bwr1AVSOpi1UD9xzvnlNDsrlw__",
   imgDescription1: "Grupo de pessoas juntas sorrindo com skate em mãos",
-  imgDescription2: "Grupo de pessoas reunidas",
+  imgDescription2: "Grupo de pessoas da comunidade reunidas",
 
   p1: "Apoiamos mulheres vulnerabilizadas a alcançar autonomia econômica e desenvolver suas habilidades socioemocionais essenciais para mudar sua vulnerabilidade para que elas consigam ser empreendedoras e fortalecendo os vínculos familiares com amor. Atuamos com empreendedorismos, cultura, esporte e cursos profissionalizante.",
 
@@ -82,5 +84,31 @@ export const whoweareInfoDetails = {
     "O Morro da Mandioca é uma favela localizada próximo à represa Billings, com aproximadamente 420 famílias. Nessa comunidade, há crianças com seus direitos violados, jovens entre 15 e 21 anos que trabalham direta ou indiretamente em pontos de venda de drogas (biqueiras), mães adolescentes e famílias que residem dentro da represa, em barracos insalubres, convivendo com ratos e esgotos. A favela está situada no extremo da zona sul de São Paulo e carece de saneamento básico. ",
 
     "De acordo com o IBGE, 5% dos domicílios do Morro da Mandioca e áreas adjacentes são considerados indigentes, seus moradores sobrevivem com ¼ de salário mínimo por pessoa e 20% estão em situação de vulnerabilidade social e pessoal, cuja renda per capita é de meio salário mínimo.",
+  ],
+};
+
+export const whowearePartnersDetails = {
+  title: "Parceiros",
+  description:
+    "Conheça os parceiros que caminham conosco: juntos, ampliamos horizontes e fortalecemos nossa missão",
+  partnersList: [
+    {
+      name: "C&A",
+      imgUrl:
+        "https://s3-alpha-sig.figma.com/img/4369/7993/0fa4f82f366507dad2b73fc978c2e96b?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MhqBumZNuARetneyX2rjuk34wy6NM1YpUP05RQvlJaJp~bzm48LMgdLIjQKGyziY7-anq7sNbNvqwmAOaoEGjrkDeEXcSR7fUAHaVDx4wvsTUO0EHgPcdLI5entRyUkgy4uizbi7wSTm~Tol2OhtU5N208LfPDH4bpHmVOgNMnL-CmbZt4ZwOJbreanGZBHaryBl2O53j1EbGeKpsKih7NsS8qa0xyYmCpmyCnlNsH7sXhkJGZbBTc-IMAfgzn2J-HppgQu~w6mER5y9G0pA6UcOMmje4BXZwKnYMgDv6fmmU9IRK4UKD8uDRxhqNP1MMijn8eMN-BdI2zhh4q3FIQ__",
+      alt: "Logo Instituto C&A",
+    },
+    {
+      name: "Remimo Ecolojas",
+      imgUrl:
+        "https://s3-alpha-sig.figma.com/img/f65a/262b/e2ab0397f04742fa01329fe4b30ca03c?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=N7AApkFh3igAp1kmQsCNy5nALsxcAkq5Bgw~TC2h~TUDNO-cx-wjTZKUI6y9dFUgE64-nGkWfxBwaKj8p1D0Vvuaw~GFM7VImbxlv6wGfyhmyRdGgP48eqyAA-KTKdHkQvVjWwdO3fQWAYEGnMg3rObH9rb~~3-f7lOMu930ve~DRCgrWmC7NMPXmc6rGm7MfXgKQTxe8jEvRaYIqa7VbBW9Jv5kr3VZfci8nlBuAeN3s3xieXqSGRtf8OiP7yUkSZ61uTHvYEUFRI4GjSdaQNuybBvuIuzuf-ra~Me52X1UWoa7ZNrHdrMaOFtqcSB7amH8Z2fkcp7xDDr6PaWuCQ__",
+      alt: "Logo Remimo Ecolojas",
+    },
+    {
+      name: "Brecholate Violeta Eliz",
+      imgUrl:
+        "https://s3-alpha-sig.figma.com/img/6faa/9c93/07862162b78b9297a0ce8b6508bdf491?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GQEb3DKoL9pIc-mL3SjfoXuZDWzJZv0XtdLsk8261OqN1tD9ZwPImm-vKvbiAWcm6F0GcHnG4AdQopU-fvscmSYzG-SC1G2BjLGhUUJ0DabBvQDcwHh~ZFWzHZTUEAu1zu9KnUwbZDmZmUaDvxXSzRu4RtxcPE5pFx3UGUAZcRYFXXieZ4uprPY5l7xZVkalESx7evDRyTDG6ka6JWkEiciHlyk-DkhvJAfvjr6L5A7ubneD~jbB9vdp7IrTAcSOIaplH6612syqilCMsA2uIwPLpm4lVyHf7CaibYvSlpjMdiYkZuJHvHoB3MwIqY4xr1IDWfjjQQgTir48hheMmg__",
+      alt: "Logo Brecholate Violeta Eliz",
+    },
   ],
 };

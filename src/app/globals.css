@@ -122,3 +122,10 @@
   -moz-box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
   box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
 }
+
+.hero-h-2 {
+  @apply tablet:text-2xl font-bold uppercase text-gray-dark text-center tablet:text-start tablet:normal-case mb-4;
+}
+.info-h-3 {
+  @apply uppercase font-bold text-gray-dark text-center tablet:text-2xl tablet:text-start tablet:normal-case pb-4;
+}
