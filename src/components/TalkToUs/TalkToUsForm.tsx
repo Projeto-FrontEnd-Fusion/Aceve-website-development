@@ -44,7 +44,7 @@ const TalkToUsForm = () => {
 
     }
     return ( 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 mt-8"> 
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-[551px] space-y-4 lg:space-y-10 mt-8 lg:mt-0"> 
             <fieldset>
                 <div>
                     <label htmlFor="name" className="font-roboto text-sm font-semibold">
@@ -53,7 +53,7 @@ const TalkToUsForm = () => {
                     </label>
                     
                 </div>
-                <input id="name" {...register("name")} className="border-2 border-[#482E98] w-full rounded-lg min-h-[38px] mt-2 pl-3 placeholder:text-xs" placeholder="Digite seu nome" />
+                <input id="name" {...register("name")} className="border-2 border-[#482E98] w-full rounded-lg min-h-[38px] lg:h-12 mt-2 pl-3 placeholder:text-xs placeholder:lg:text-base   " placeholder="Digite seu nome" />
                 {errors.name && <span className="text-red-500 text-xs">{errors.name?.message}</span>}
             </fieldset>   
 
@@ -64,7 +64,7 @@ const TalkToUsForm = () => {
                         <span className="text-red-500">*</span>
                     </label>                      
                 </div>
-                <input id="email" {...register("email")} className="border-2 border-[#482E98] w-full rounded-lg min-h-[38px] mt-2 pl-3 placeholder:text-xs" placeholder="Digite seu email" />
+                <input id="email" {...register("email")} className="border-2 border-[#482E98] w-full rounded-lg min-h-[38px] lg:h-12 mt-2 pl-3 placeholder:text-xs placeholder:lg:text-base " placeholder="Digite seu email" />
                 {errors.email && <span className="text-red-500 text-xs">{errors.email?.message}</span>}
             </fieldset>  
 
@@ -75,7 +75,7 @@ const TalkToUsForm = () => {
                         <span className="text-red-500">*</span>
                     </label>
                 </div>
-                <textarea id="message" {...register("message")} className="border-2 border-[#482E98] w-full rounded-lg mt-2 min-h-40 max-h-96 p-3 placeholder:text-xs" placeholder="Escreva sua mensagem..." />
+                <textarea id="message" {...register("message")} className="border-2 border-[#482E98] w-full rounded-lg mt-2 min-h-40 max-h-96 p-3 placeholder:text-xs placeholder:lg:text-base  " placeholder="Escreva sua mensagem..." />
                 {errors.message && <span className="text-red-500 text-xs">{errors.message?.message}</span>}
             </fieldset>   
 
