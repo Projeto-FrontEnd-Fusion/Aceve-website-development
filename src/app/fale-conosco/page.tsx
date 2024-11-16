@@ -6,6 +6,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import AtadosIcon from "@/public/atados-icon.svg"
 import AuroraSocialIcon from "@/public/aurora-social-icon.svg"
+import { contacts } from "../_constants/contacts";
+import ContactItem from "@/components/TalkToUs/ContactItem";
 
 const TalkToUS = () => {
     return ( 
@@ -22,33 +24,16 @@ const TalkToUS = () => {
             <section className="flex flex-col items-center px-5 py-8 gap-4">
                 <h1 className="uppercase font-roboto font-bold text-lg">entre em contato</h1>
                 <div className="space-y-8">
-                    <div className="flex gap-4 items-center">
-                        <div className="h-[72px] min-w-[72px] bg-[#EEAA44] rounded-full flex justify-center items-center">
-                            <MdLocalPhone size={24} />
-                        </div>
-                        <div className="text-base flex flex-col justify-center gap-4">
-                            <p className="font-bold">Número de Telefone</p>
-                            <p>(11) 98293-5150</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-4 items-center">
-                        <div className="h-[72px] min-w-[72px] bg-[#EEAA44] rounded-full flex justify-center items-center">
-                            <MdEmail size={24} />
-                        </div>
-                        <div className="text-base flex flex-col justify-center gap-4">
-                            <p className="font-bold">E-mail</p>
-                            <p>eliz_social@outlook.com</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-4 items-center">
-                        <div className="h-[72px] min-w-[72px] bg-[#EEAA44] rounded-full flex justify-center items-center">
-                            <MdLocationOn size={24} />
-                        </div>
-                        <div className="text-base flex flex-col justify-center gap-4">
-                            <p className="font-bold">Endereço</p>
-                            <p className="text-wrap">Rua Ricardo Julio Ferraz, 357/367 - São Paulo</p>
-                        </div>
-                    </div>
+                    {
+                        contacts.map(contact => (
+                            <ContactItem
+                                key={contact.contactType}
+                                contactType={contact.contactType}
+                                contactValue={contact.contactValue}
+                                iconUrl={contact.iconUrl}
+                            />
+                        ))
+                    }
                 </div>
             </section>
 
