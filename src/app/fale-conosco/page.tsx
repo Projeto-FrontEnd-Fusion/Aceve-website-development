@@ -9,13 +9,22 @@ import SocialMediaItem from "@/components/TalkToUs/SocialMediaItem";
 const TalkToUS = () => {
     return ( 
         <main>
-            <section className="flex flex-col items-center px-5 py-8 gap-4 bg-beige-normal">
-                <h1 className="uppercase font-roboto font-bold text-lg">fale conosco</h1>
-                <p className="font-roboto text-base text-[#444444]">Compartilhe sua ideia, inspire a ação</p>
-                <div className="relative h-[193px] w-[262px]">
-                    <Image alt="Imagem de pessoas sendo amparadas" src={bannerTalkToUs} fill className="object-cover rounded-lg" />
+            <section className="bg-beige-normal">
+                <div  className="flex flex-col items-center px-5 lg:px-[81px] py-8 lg:py-20 lg:w-[1280px] lg:mx-auto">
+                    <h1 className="uppercase font-roboto font-bold text-lg lg:text-[40px] mb-4">fale conosco</h1>
+                    <p className="font-roboto text-base text-[#444444] lg:text-lg mb-6 lg:mb-16">Compartilhe sua ideia, inspire a ação</p>
+                    <div className="flex flex-col items-center justify-between lg:gap-8 lg:flex-row w-full mt-4lg:mt-16">
+                        <div className="relative h-[193px] w-[262px] lg:min-w-[470px] lg:h-[547px]">
+                            <Image
+                                fill
+                                src={bannerTalkToUs}
+                                alt="Imagem de pessoas sendo amparadas"
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                        <TalkToUsForm />
+                    </div>
                 </div>
-                <TalkToUsForm />
             </section>
 
             <section className="flex flex-col items-center px-5 py-8 gap-4">
