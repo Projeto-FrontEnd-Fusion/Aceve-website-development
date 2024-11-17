@@ -27,9 +27,9 @@ const TalkToUS = () => {
                 </div>
             </section>
 
-            <section className="flex flex-col items-center px-5 py-8 gap-4">
-                <h1 className="uppercase font-roboto font-bold text-lg">entre em contato</h1>
-                <div className="space-y-8">
+            <section className="flex flex-col items-center px-5 py-8 lg:py-20 gap-4 lg:gap-16 w-[350px] lg:w-[1280px] mx-auto">
+                <h1 className="uppercase font-roboto font-bold text-lg lg:font-montserrat lg:text-[40px]">entre em contato</h1>
+                <div className="flex flex-col lg:justify-center w-full lg:flex-row gap-8 lg:gap-[97px]">
                     {
                         contacts.map(contact => (
                             <ContactItem

@@ -5,7 +5,7 @@ import locationIcon from '@/public/location_on.svg'
 export const contacts = [
     {
         contactType: "Telefone",
-        contactValue: "(11) 99999-9999",
+        contactValue: "(11) 98293-5150",
         iconUrl: phoneIcon,
     },
     {
