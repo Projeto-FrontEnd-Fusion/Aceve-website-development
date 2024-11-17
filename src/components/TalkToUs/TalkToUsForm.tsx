@@ -44,7 +44,7 @@ const TalkToUsForm = () => {
 
     }
     return ( 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-[551px] space-y-4 lg:space-y-10 mt-8 lg:mt-0"> 
+        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-full max-w-[551px] space-y-4 lg:space-y-10 mt-8 lg:mt-0"> 
             <fieldset>
                 <div>
                     <label htmlFor="name" className="font-roboto text-sm font-semibold">

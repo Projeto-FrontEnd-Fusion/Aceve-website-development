@@ -10,11 +10,21 @@ const TalkToUS = () => {
     return ( 
         <main>
             <section className="bg-beige-normal">
-                <div className="flex flex-col items-center px-5 lg:px-[81px] py-8 lg:py-20 w-[350px] lg:w-[1280px] mx-auto">
-                    <h1 className="uppercase font-roboto font-bold text-lg lg:text-[40px] lg:font-montserrat mb-4">fale conosco</h1>
-                    <p className="font-roboto text-base text-[#444444] lg:text-lg mb-6 lg:mb-16">Compartilhe sua ideia, inspire a ação</p>
+                <div className="flex flex-col items-center px-5 lg:px-[81px] py-8 lg:py-20 min-w-[350px] w-full max-w-[1280px] mx-auto">
+                    <div className="flex flex-col items-center">
+                        <h1 className="uppercase font-roboto font-bold text-lg lg:text-[40px] lg:font-montserrat mb-4">fale conosco</h1>
+                        <p className="font-roboto text-base text-[#444444] lg:text-lg mb-6 lg:mb-16">Compartilhe sua ideia, inspire a ação</p>
+                        <div className="relative h-[193px] min-w-[262px] w-full max-w-[470px] lg:h-[547px] mx-auto lg:hidden">
+                            <Image
+                                fill
+                                src={bannerTalkToUs}
+                                alt="Imagem de pessoas sendo amparadas"
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                    </div>
                     <div className="flex flex-row flex-wrap items-center justify-center lg:justify-between lg:gap-8 w-full mt-4lg:mt-16">
-                        <div className="relative h-[193px] w-[262px] lg:min-w-[470px] lg:h-[547px]">
+                        <div className="relative h-[193px] w-[262px] lg:w-[470px] lg:h-[547px] mx-auto hidden lg:block">
                             <Image
                                 fill
                                 src={bannerTalkToUs}
@@ -27,9 +37,9 @@ const TalkToUS = () => {
                 </div>
             </section>
 
-            <section className="flex flex-col items-center px-5 py-8 lg:py-20 gap-4 lg:gap-16 w-[350px] lg:w-[1280px] mx-auto">
+            <section className="flex flex-col items-center px-5 py-8 lg:py-20 gap-4 lg:gap-16 min-w-[350px] w-full max-w-[1280px] mx-auto">
                 <h1 className="uppercase font-roboto font-bold text-lg lg:font-montserrat lg:text-[40px]">entre em contato</h1>
-                <div className="flex flex-col lg:justify-center w-full lg:flex-row gap-8 lg:gap-[97px]">
+                <div className="flex flex-row flex-wrap justify-center w-full gap-8 lg:gap-[97px]">
                     {
                         contacts.map(contact => (
                             <ContactItem
@@ -44,7 +54,7 @@ const TalkToUS = () => {
             </section>
 
             <section className="bg-beige-normal">
-                <div className="flex flex-col items-center px-5 lg:px-[81px] py-8 lg:py-20 w-[350px] lg:w-[1280px] mx-auto">
+                <div className="flex flex-col items-center px-5 lg:px-[81px] py-8 lg:py-20 min-w-[350px] w-full max-w-[1280px] mx-auto">
                     <h1 className="uppercase font-roboto font-bold text-lg lg:text-[40px] lg:font-montserrat">acompanhe <span className="text-[#855CA3]">violeta eliz</span></h1>
 
                     <div className="flex flex-row flex-wrap justify-center gap-10 lg:gap-[97px] mt-8 lg:mt-16 transition-all duration-500">
