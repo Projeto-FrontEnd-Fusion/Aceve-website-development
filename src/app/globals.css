@@ -32,6 +32,9 @@
   --yellow-normal-rgb: rgb(238, 170, 68);
   --yellow-normal-hex: #eeaa44;
 
+  --gray-dark-hex: #222222;
+  --gray-dark-rgb: rgb(34, 34, 34);
+
   --gray-normal-rgb: rgb(68, 68, 68);
   --gray-normal-hex: #444444;
 
@@ -61,6 +64,13 @@
   background-color: var(--purple-light-rgb); /* ou var(--purple-light-hex) */
 }
 
+.bg-yellow-normal {
+  background-color: var(--yellow-normal-rgb); /* ou var(--yellow-normal-hex) */
+}
+.bg-beige-normal {
+  background-color: var(--beige-normal-rgb); /* ou var(--beige-normal-hex) */
+}
+
 .text-white-normal {
   color: var(--white-normal-rgb); /* ou var(--white-normal-hex) */
 }
@@ -71,6 +81,11 @@
 
 .text-yellow-normal {
   color: var(--yellow-normal-rgb); /* ou var(--yellow-normal-hex) */
+}
+
+.text-gray-dark {
+
+  color: var(--gray-dark-rgb); /* ou var(--gray-dark-hex) */
 }
 
 .text-gray-normal {
@@ -93,7 +108,6 @@
   background-color: var(--preto-bunker-rgb); /* ou var(--preto-bunker-hex) */
 }
 
-
 .bgProgress {
   background: rgb(72, 46, 152);
   background: linear-gradient(
@@ -107,4 +121,11 @@
   -webkit-box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
   -moz-box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
   box-shadow: 2px 2px 4px 0px rgba(217, 217, 217, 1);
+}
+
+.hero-h-2 {
+  @apply tablet:text-2xl font-bold uppercase text-gray-dark text-center tablet:text-start tablet:normal-case mb-4;
+}
+.info-h-3 {
+  @apply uppercase font-bold text-gray-dark text-center tablet:text-2xl tablet:text-start tablet:normal-case pb-4;
 }
