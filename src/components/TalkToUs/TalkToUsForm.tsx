@@ -2,11 +2,14 @@
 
 import { schemaTalkToUs, SchemaTalkToUsProps } from "@/model/schemas/schemaTalkToUs";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { resolve } from "path";
+import { resolve } from "path"; // remover importações não usadas
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const TalkToUsForm = () => {
+
+    //sugestão de melhoria : Modularize a lógica de envio em um hook para melhorar a manutenibilidade, testabilidade e clareza do código, tornando o componente TalkToUsForm mais simples e focado apenas na renderização.
+
     const [formErrorMessage, setFormErrorMessage] = useState<string | null>(null)
     const [showFormMessages, setShowFormMessages] = useState<boolean>(false)
 
