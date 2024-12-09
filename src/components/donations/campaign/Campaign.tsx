@@ -20,7 +20,7 @@ const ContainerSectionTittle = clsx(
 export function Campaings(Data: Data) {
   return (
     <section className={ContainerSection}>
-      <h2 className={ContainerSectionTittle}>CAMPANHAS</h2>
+      <h2 className={ContainerSectionTittle}>Campanhas</h2>
 
       {Data.ListCampaings}
 
@@ -29,7 +29,7 @@ export function Campaings(Data: Data) {
         Background="transparent"
         fontColor="purple"
         size="normal"
-        className="text-sm font-medium border-2 border-purple-light rounded-md px-6 py-2 md:px-16"
+        className="text-sm font-medium"
       />
     </section>
   );
