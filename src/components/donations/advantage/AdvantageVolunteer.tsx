@@ -45,7 +45,7 @@ export function AdvantagesVolunteer() {
       </h2>
       {contentAdvantages.map((data) => (
         <>
-          <div className="flex items-center gap-4 p-5 shadow-xl bg-white-normal rounded-lg">
+          <div className="flex items-center gap-4 p-5 shadow-xl bg-white-normal rounded-lg md:max-w-[720px]">
             <div className="p-2 rounded-full bg-yellow-normal">{data.icon}</div>
             <p className="text-xs leading-[150%] text-gray-normal">
               <span className="text-xs font-roboto font-bold leading-[120%]">
