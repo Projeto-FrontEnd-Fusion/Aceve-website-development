@@ -15,10 +15,9 @@ Este projeto tem como objetivo fornecer uma presença online para a associação
 - [**João Gabriel**](https://www.linkedin.com/in/icaro-filipe-d2/)  
    Desenvolvedor Back-End  
 - [**Gabriel Ferreira**](https://www.linkedin.com/in/gabriel-ferreira-b71119242/)  
-   Desenvolvedor Frontend 
-- [**Walassi Silva**](https://www.linkedin.com/in/walassi-silva)  
-   [LinkedIn](https://www.linkedin.com/in/walassi-silva) | [GitHub](https://github.com/WalassiSilva)
-
+   Ui/ux 
+- [**Walassi Silva**](https://www.linkedin.com/in/walassi-silva)   [LinkedIn](https://www.linkedin.com/in/walassi-silva) | [GitHub](https://github.com/WalassiSilva)
+  Desenvolvedor Frontend 
 ## Sobre a Associação
 
 **Fundada:** 2014  
