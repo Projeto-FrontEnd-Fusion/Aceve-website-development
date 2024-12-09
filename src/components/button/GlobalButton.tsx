@@ -34,7 +34,6 @@ export function Button({
           "px-36 py-4": size == "large",
         }
       )}
-      // o hover do botão não está funcionando
       {...rest}
     >
       <span
