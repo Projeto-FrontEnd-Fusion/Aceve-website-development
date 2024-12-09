@@ -11,13 +11,15 @@ export function Subscribe() {
         Cada ação conta, cada voluntário faz a diferença!
       </p>
 
-      <div>
+      <div className="w-full flex flex-col items-center md:flex-row md:justify-center md:gap-8 md:min-h-full">
 
-        <img
-          className={clsx("w-full h-40 max-w-96")}
-          src={"https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"}
-          alt={""}
-        />
+        <div className={clsx("w-full max-w-[470px] min-h-60 md:max-h-[800px] ")}>
+          <img
+            className="w-full max-h-60 md:max-h-[780px] md:min-h-[750px]"
+            src={"https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"}
+            alt={""}
+          />
+        </div>
 
         <FormSubscribe />
       </div>
