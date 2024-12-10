@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
         <Mainmenu />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
