@@ -1,13 +1,13 @@
 import { IoMdHappy } from "react-icons/io";
 import { MdHub } from "react-icons/md";
-import { LuPalmtree } from "react-icons/lu";
+import { LuTreePalm } from "react-icons/lu";
 import { BsGlobeAmericas } from "react-icons/bs";
 import { MdOutlineCampaign } from "react-icons/md";
 
 export function AdvantagesVolunteer() {
   const contentAdvantages = [
     {
-      icon: <LuPalmtree size={24} />,
+      icon: <LuTreePalm size={24} />,
       tittle: "Desenvolvimento Pessoal",
       description:
         "Ganhe novas habilidades e experiências valiosas que podem enriquecer sua vida pessoal e profissional, além de aumentar seu conhecimento sobre questões sociais.",
