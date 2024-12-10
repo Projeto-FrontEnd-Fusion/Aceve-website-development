@@ -52,8 +52,10 @@ function doeAgora() {
       <VolunteerVacancies />
       <Subscribe />
 
+      
+
       <AdvantagesVolunteer />
-    </main>
+    </main> 
   );
 }
 
