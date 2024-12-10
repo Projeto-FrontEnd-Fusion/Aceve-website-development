@@ -4,7 +4,7 @@ import { Button } from "@/components/button/GlobalButton";
 type ImageSectionProps = {
   data: {
     imgSrc: string;
-    imgAlt: string;
+    imgAlt?: string;
     imgSubTitle: string;
     action: string;
     altImg: string
