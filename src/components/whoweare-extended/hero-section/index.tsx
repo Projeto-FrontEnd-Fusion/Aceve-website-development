@@ -25,11 +25,10 @@ const HeroSectionWhoWeAre = () => {
         laptop:flex-row  laptop:items-stretch"
       >
         <ValuesSection data={data} />
-        <ImageSection data={data} />
+        <ImageSection data={data as any} />
       </section>
     </section>
   );
 };
-
 
 export default HeroSectionWhoWeAre;
