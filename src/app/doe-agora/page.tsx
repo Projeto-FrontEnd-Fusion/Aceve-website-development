@@ -29,48 +29,33 @@ const List = clsx("flex flex-col gap-5 w-full");
 function doeAgora() {
   return (
     <main className="w-full flex flex-col bg-beige-normal">
-      <picture className="flex w-full ">
+      <div className="flex w-full box-border ">
         <img
-          className={clsx("w-[100px]")}
+          className={clsx("w-1/3 max-h-[130px] md:max-h-[280px]")}
           src={images.imageOne}
           alt={images.description}
         />
         <img
-          className={clsx("w-[100px]")}
+          className={clsx("w-1/3 max-h-[130px] md:max-h-[280px]")}
           src={images.imageTwo}
           alt={images.description}
         />
         <img
-          className={clsx("w-[100px]")}
+          className={clsx("w-1/3 max-h-[130px] md:max-h-[280px]")}
           src={images.imageThree}
           alt={images.description}
         />
-      </picture>
+      </div>
+
       <Collections />
-
-      <Campaings
-        ListCampaings={
-          <ul className={List}>
-            <ListCampaign
-              CampaignDescription="Breve descrição sobre o evento"
-              CampaignTittle="Titulo"
-              ImageSrc="https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"
-            />
-
-            <ListCampaign
-              CampaignDescription="Breve descrição sobre o evento"
-              CampaignTittle="Titulo"
-              ImageSrc="https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"
-            />
-          </ul>
-        }
-      />
 
       <VolunteerVacancies />
       <Subscribe />
 
+      
+
       <AdvantagesVolunteer />
-    </main>
+    </main> 
   );
 }
 

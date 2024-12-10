@@ -1,13 +1,13 @@
 import { IoMdHappy } from "react-icons/io";
 import { MdHub } from "react-icons/md";
-import { LuPalmtree } from "react-icons/lu";
+import { LuTreePalm } from "react-icons/lu";
 import { BsGlobeAmericas } from "react-icons/bs";
 import { MdOutlineCampaign } from "react-icons/md";
 
 export function AdvantagesVolunteer() {
   const contentAdvantages = [
     {
-      icon: <LuPalmtree size={24} />,
+      icon: <LuTreePalm size={24} />,
       tittle: "Desenvolvimento Pessoal",
       description:
         "Ganhe novas habilidades e experiências valiosas que podem enriquecer sua vida pessoal e profissional, além de aumentar seu conhecimento sobre questões sociais.",
@@ -45,7 +45,7 @@ export function AdvantagesVolunteer() {
       </h2>
       {contentAdvantages.map((data) => (
         <>
-          <div className="flex items-center gap-4 p-5 shadow-xl bg-white-normal rounded-lg">
+          <div className="flex items-center gap-4 p-5 shadow-xl bg-white-normal rounded-lg md:max-w-[720px]">
             <div className="p-2 rounded-full bg-yellow-normal">{data.icon}</div>
             <p className="text-xs leading-[150%] text-gray-normal">
               <span className="text-xs font-roboto font-bold leading-[120%]">
