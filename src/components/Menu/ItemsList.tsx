@@ -4,18 +4,18 @@ import { useStore } from "zustand";
 import { MenuPrimaryButton } from "./Button";
 import type { ComponentProps } from "react";
 import Link from "next/link";
-import { link } from "fs";
 
 interface logoSimiosProps {
   logoSimios?: string;
 }
+
 export const menuOptions = [
-  { name: "Inicio", link: "/" },
-  { name: "Quem Somos", link: "/quem-somos" },
-  { name: "Contato", link: "/fale-conosco" },
-  { name: "Brécho", link: "/brecho" },
-  { name: "Grupo Símios", link: "/simios" },
-  { name: "Doe Agora", link: "/doe-agora" },
+  "Inicio",
+  "Quem Somos",
+  "Contato",
+  "Brechó",
+  "Grupo Símios",
+  "Doe agora",
 ];
 
 interface ItemsListProps extends ComponentProps<"ul"> {
@@ -42,7 +42,7 @@ export const ItemsList = ({
         }
       )}
     >
-      {menuOptions.map(({ name, link }, index) => (
+      {menuOptions.map((items: string, index: number) => (
         <li
           key={index}
           className={clsx(
@@ -50,29 +50,36 @@ export const ItemsList = ({
 
             {
               "ordered-list hover:text-purple-light laptop:hover:bg-white rounded-md transition-all ease-out duration-1000 laptop:ordered-list":
-                name !== "Doe Agora",
+                items !== menuOptions[5],
             }
           )}
         >
-          <Link href={link}>
-            {link == "Brechó" || link == "Doe Agora" ? (
+          <Link
+            href={items
+              .trim()
+              .replace(/\s+/g, "-")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .toLocaleLowerCase()}
+          >
+            {items == menuOptions[3] || items == menuOptions[5] ? (
               <MenuPrimaryButton
-                btnType={link == "Brechó" ? "secondary" : "primary"}
-                title={name}
+                btnType={items == menuOptions[3] ? "secondary" : "primary"}
+                title={items}
               />
             ) : (
               <span
                 className={clsx("flex", {
-                  "laptop:hidden": name === "Grupo Símios",
+                  "laptop:hidden": items === "Grupo Símios",
                 })}
               >
-                {name}
+                {items}
               </span>
             )}
 
             <figure
               className={clsx("hidden", {
-                "laptop:flex": name === "Grupo Símios",
+                "laptop:flex": items === "Grupo Símios",
               })}
             >
               <img src={logoSimios} alt="logo" />
