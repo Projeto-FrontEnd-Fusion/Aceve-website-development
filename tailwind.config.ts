@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+
+      aspectRatio: {
+        '11/20': '11 / 20',
+      },
       screens: {
         mobileMicro: "375px",
         mobileMini: "412px",
