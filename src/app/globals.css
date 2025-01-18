@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 1024px) {
-  .ordered-list:nth-child(5) {
-    order: 3;
-  }
-
-  .ordered-list:nth-child(4) {
-    margin-right: -24px !important;
-  }
-}
 
 /* Definições de cores em RGB e hexadecimal */
 :root {
