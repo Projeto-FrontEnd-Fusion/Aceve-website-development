@@ -1,27 +1,39 @@
-import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
-import clsx from "clsx";
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
-import { useStore } from "zustand";
+import { ComponentProps } from "react"
+import { BiMenu } from "react-icons/bi"
+import { MdClose } from "react-icons/md"
 
-export const ToggleMenu = () => {
-  const { isOpenMenu, setisOpenMenu } = useStore(toggleMenuStore);
+interface ToggleMenuProps extends ComponentProps<'button'>{
+    isMenuOpen : boolean;
+    setisMenuOpen : (isMenuOpen : boolean) => void
+   
+}
 
-  return (
-    <nav
-      className={clsx(
-        "flex items-center justify-end flex-1 mr-6 cursor-pointer",
-        "md:mr-4",
-        "laptop:hidden"
-      )}
-      onClick={setisOpenMenu}
-    >
-      {!isOpenMenu ? (
-        <IoClose size={32} />
-      ) : (
-        <GiHamburgerMenu className="text-[24px] md:text-[32px]" />
-      )}
-    </nav>
-  );
-};
+export const ToggleMenu = ({isMenuOpen, setisMenuOpen, ...props} : ToggleMenuProps) =>{
+
+      const handlerKeyDow = (event : React.KeyboardEvent<HTMLInputElement>) =>{
+        if(event.key == 'Escape'){
+            console.log(event.ctrlKey)
+            setisMenuOpen(false)
+        }
+    
+      }
+    return(
+        <button {...props} type="button" aria-haspopup={true} onKeyDown={()=>handlerKeyDow} onClick={() => setisMenuOpen(!isMenuOpen)}>
+        {isMenuOpen ? (
+          <MdClose
+            title="Fechar Menu"
+            aria-label="abre o menu lateral mobile"
+            className={`text-[2rem] text-gray-normal hover:text-purple-light 
+            cursor-pointer desktop:hidden`}
+          />
+        ) : (
+          <BiMenu
+            title="Abrir Menu"
+            aria-label="fecha o menu lateral mobile"
+            className={`text-[2rem] text-gray-normal hover:text-purple-light 
+            cursor-pointer desktop:hidden`}
+          />
+        )}
+      </button>
+    )
+}
