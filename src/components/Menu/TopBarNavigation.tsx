@@ -1,7 +1,5 @@
 "use client";
-import { mainMenuItems } from "@/config/menuItems";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { ToggleMenu , Navigation , HeaderLogo} from "./index";
 
 export const TopBarNavigation = () => {
