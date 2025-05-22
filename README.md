@@ -4,20 +4,6 @@ Bem-vindo ao repositório do site institucional da **Associação Cultural e Edu
 
 Este projeto tem como objetivo fornecer uma presença online para a associação, destacando suas iniciativas e oferecendo um canal de comunicação com o público. A Associação Violeta Eliz atua na favela Morro da Mandioca, promovendo a inclusão social e capacitação profissional de jovens e adultos em situação de vulnerabilidade.
 
-## Equipe  
-
-- [**Claudio Silva**](https://www.linkedin.com/in/claudiosilva-dev/)  
-   Desenvolvedor Front-End  
-- [**Davi Santanna**](https://www.linkedin.com/in/davisantanna/)  
-   Desenvolvedor Front-End  
-- [**Ícaro Felipe**](https://www.linkedin.com/in/icaro-filipe-d2/)  
-   Analista e Desenvolvedor Front-End  
-- [**João Gabriel**](https://www.linkedin.com/in/icaro-filipe-d2/)  
-   Desenvolvedor Back-End  
-- [**Gabriel Ferreira**](https://www.linkedin.com/in/gabriel-ferreira-b71119242/)  
-   Ui/ux 
-- [**Walassi Silva**](https://www.linkedin.com/in/walassi-silva)   [LinkedIn](https://www.linkedin.com/in/walassi-silva) | [GitHub](https://github.com/WalassiSilva)
-  Desenvolvedor Frontend 
 ## Sobre a Associação
 
 **Fundada:** 2014  
@@ -90,7 +76,3 @@ E-mail: contato@violetaeliz.org
 Telefone: (11) 98293-5150
 
 ---
-
-## Licença
-
-Este projeto é de código fechado e não está disponível para contribuições fora do grupo simios.
