@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import { Collections } from "@/components/donations/collections/Collection";
 import { Subscribe } from "@/components/donations/subscribe/Subscribe";
-import { AdvantagesVolunteer } from "@/components/donations/advantage/AdvantageVolunteer";
+// import { AdvantagesVolunteer } from "@/components/donations/advantage/AdvantageVolunteer";
 
 interface ImagesTypes {
   imageOne: string;
@@ -45,7 +45,7 @@ function doeAgora() {
 
       <Subscribe />
 
-      <AdvantagesVolunteer />
+      {/* <AdvantagesVolunteer /> */}
     </main> 
   );
 }
