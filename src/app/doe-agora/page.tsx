@@ -1,9 +1,6 @@
 "use client";
 import clsx from "clsx";
 import { Collections } from "@/components/donations/collections/Collection";
-import { Campaings } from "@/components/donations/campaign/Campaign";
-import { ListCampaign } from "@/components/donations/campaign/listCampaign/List";
-import { VolunteerVacancies } from "@/components/donations/vacancies/Vacancies";
 import { Subscribe } from "@/components/donations/subscribe/Subscribe";
 import { AdvantagesVolunteer } from "@/components/donations/advantage/AdvantageVolunteer";
 
@@ -23,8 +20,6 @@ const images: ImagesTypes = {
     "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/d0d9d2b3-127c-44a4-ae8d-274648e4c89e.png",
   description: "Fotos da Associação Cultural e Educacional Violeta Eliz",
 };
-
-const List = clsx("flex flex-col gap-5 w-full");
 
 function doeAgora() {
   return (
@@ -48,28 +43,7 @@ function doeAgora() {
       </picture>
       <Collections />
 
-      <Campaings
-        ListCampaings={
-          <ul className={List}>
-            <ListCampaign
-              CampaignDescription="Breve descrição sobre o evento"
-              CampaignTittle="Titulo"
-              ImageSrc="https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"
-            />
-
-            <ListCampaign
-              CampaignDescription="Breve descrição sobre o evento"
-              CampaignTittle="Titulo"
-              ImageSrc="https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/10e101f2-edcc-45c8-a865-cc91ccee1719.png"
-            />
-          </ul>
-        }
-      />
-
-      <VolunteerVacancies />
       <Subscribe />
-
-      
 
       <AdvantagesVolunteer />
     </main> 
