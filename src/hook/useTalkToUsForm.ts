@@ -15,14 +15,32 @@ export const useTalkToUsForm = () => {
     })
 
     const onSubmit = async (data: SchemaTalkToUsProps) => {
-        //TODO enviar dados para a API
 
         setFormErrorMessage(null)
         setShowFormMessages(false)
 
+    // o formsubmit permite que ao invés de utilizar diretamente o email,
+    // se utilize uma string que a ferramenta disponibiliza mas para isso
+    // é necessário que a ADM faça a confirmação dda geração dessa key
+    // pelo email dela
+    const OWNER_EMAIL_KEY = process.env.NEXT_PUBLIC_OWNER_EMAIL_KEY
+
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000))
-            console.log(data)
+            const configEmailData = new FormData()
+            configEmailData.append("Nome", data.name)
+            configEmailData.append("Mensagem", data.message)
+            configEmailData.append("_captcha", "false")
+            configEmailData.append("_subject", "Mensagem - Formulário Fale Conosco")
+            configEmailData.append("_template", "box")
+
+            await fetch(`https://formsubmit.co/${OWNER_EMAIL_KEY}`, {
+            method: "POST",
+            headers: { 
+                'Accept': 'application/json'
+            },
+            body: configEmailData
+            })
+            .catch(error => { throw new Error(error)});
 
             formMethods.reset()
             setShowFormMessages(true)
