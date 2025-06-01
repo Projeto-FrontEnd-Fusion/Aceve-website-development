@@ -31,6 +31,7 @@ export const useTalkToUsForm = () => {
         try {
             const configEmailData = new FormData()
             configEmailData.append("Nome", data.name)
+            configEmailData.append("Email", data.email)
             configEmailData.append("Mensagem", data.message)
             configEmailData.append("_captcha", "false")
             configEmailData.append("_subject", "Mensagem - Formulário Fale Conosco")
