@@ -2,6 +2,8 @@ import { schemaTalkToUs, SchemaTalkToUsProps } from "@/model/schemas/schemaTalkT
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useRouter } from 'next/navigation';
+
 
 export const useTalkToUsForm = () => {
     
@@ -9,6 +11,7 @@ export const useTalkToUsForm = () => {
 
     const [formErrorMessage, setFormErrorMessage] = useState<string | null>(null)
     const [showFormMessages, setShowFormMessages] = useState<boolean>(false)
+    const router = useRouter()
 
     const formMethods = useForm<SchemaTalkToUsProps>({
         resolver: yupResolver(schemaTalkToUs)
@@ -40,6 +43,7 @@ export const useTalkToUsForm = () => {
             },
             body: configEmailData
             })
+            .then(() => router.push('/mensagem-enviada'))
             .catch(error => { throw new Error(error)});
 
             formMethods.reset()
