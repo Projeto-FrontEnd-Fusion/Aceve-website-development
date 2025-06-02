@@ -1,15 +1,12 @@
 import { whoweareDetails } from "@/model/whoweare";
 import Link from "next/link";
-import { FaFacebookF, FaHeart, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 interface ILogoFooter {
   logoSimios: string;
 }
 
-const FooterDetails: ILogoFooter = {
-  logoSimios:
-    "https://files.edgestore.dev/nh2rz4kiwkl7w411/publicImages/_public/post/8487ce9f-664c-4a4d-a8de-287508c9996d.png",
-};
+
 
 export const menuList = [
   "Quem somos",
@@ -133,8 +130,8 @@ export const Footer = () => {
                 >
                   {list.order.length < 1
                     ? list.order.map((item) => {
-                        return <p style={{ display: "block" }}>{item}</p>;
-                      })
+                      return <p style={{ display: "block" }}>{item}</p>;
+                    })
                     : list.order}
                 </li>
               );
@@ -151,28 +148,17 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <nav className="flex flex-col gap-4 items-center mt-6 mobileSmall:mt-0 ">
-          <h4 className="text-white-normal font-bold mobileSmall:text-base text-[12px]">
-            Siga-nos nas redes sociais
-          </h4>
-
-          <ul className="flex gap-8">
-            <li>
-              <a href="" target="_blank" aria-label="Logo Facebook">
-                <FaFacebookF size={32} />
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank" aria-label="Logo Tweeter / X">
-                <FaXTwitter size={32} />
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank" aria-label="Logo Instagram">
-                <FaInstagram size={32} />
-              </a>
-            </li>
-          </ul>
+        <nav className="flex items-center gap-2 mt-6 mobileSmall:mt-0">
+          <span className="font-bold text-sm">Siga-nos no Instagram</span>
+          <a
+            href="https://www.instagram.com/violetaeliz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram da ONG Violeta Eliz"
+            className="text-white-normal hover:text-yellow-normal transition-colors"
+          >
+            <FaInstagram size={30} />
+          </a>
         </nav>
       </div>
 
@@ -201,21 +187,13 @@ export const Footer = () => {
                 mobileXLarger:text-[10px]
                 tablet:text-sm "
         >
-          <p className="flex items-center">
-            Feito com <FaHeart color="red" className="mx-2" /> pelo{" "}
-            <span className="text-yellow-normal underline font-bold mx-2">
-              Grupo Símios
-            </span>
-          </p>
-          <figure>
-            <img
-              src={FooterDetails.logoSimios}
-              alt="logo"
-              className="w-8 mobileSmall:w-5"
-            />
-          </figure>
+
+
         </div>
       </div>
     </footer>
+
+
   );
-};
+}
+
