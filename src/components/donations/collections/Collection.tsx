@@ -1,6 +1,4 @@
-import { Button } from "@/components/button/GlobalButton";
 import clsx from "clsx";
-import Link from "next/link";
 import { FaBarcode, FaPaypal, FaPix } from "react-icons/fa6";
 
 const sectionCollection = clsx("flex flex-col items-center py-8 gap-10");
@@ -80,35 +78,6 @@ export function Collections() {
             <span className={methodsOfPaymentsListOptionsName}>Pix</span>
           </li>
         </ul>
-      </div>
-
-      {/* Esses dados virão da API */}
-      <div className={receiveDonation}>
-        <h2 className={receiveDonationTitle}>
-          Atendimento às mulheres vítimas de violência doméstica
-        </h2>
-
-        <span className={receiveDonationDate}>
-          De 00/00/0000 Até 00/00/0000
-        </span>
-
-        <div className="w-full  py-20 bg-gray-500 rounded-lg" />
-
-        <div className={receiveDonationBarProgress}>
-          <span className={receiveDonationPercentProgress}>91%</span>
-        </div>
-
-        <div className={knowProjectAndDonate}>
-          <Link className={linkKnowProject} href="/">
-            Conheça o projeto
-          </Link>
-          <Button
-            children="Doar"
-            Background="purple"
-            fontColor="white"
-            size="small"
-          />
-        </div>
       </div>
     </section>
   );
