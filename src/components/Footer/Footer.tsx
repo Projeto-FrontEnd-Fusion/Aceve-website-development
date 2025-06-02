@@ -1,5 +1,4 @@
 import { whoweareDetails } from "@/model/whoweare";
-import Link from "next/link";
 import { FaInstagram } from "react-icons/fa6";
 
 interface ILogoFooter {
@@ -86,31 +85,6 @@ export const Footer = () => {
           />
         </figure>
 
-        <div className="flex flex-col justify-center items-center mobileSmall:items-start mx-1">
-          <h4 className="mb-4 font-bold text-base leading-5 text-white-normal">
-            Menu
-          </h4>
-
-          <ul
-            className="text-sm leading-6 
-                    flex flex-col items-center 
-                    mobileSmall:items-start                    
-                    "
-          >
-            {listInfo.map((list) => {
-              return (
-                <li
-                  key={list.id}
-                  className="pb-2 mb-2 border-b-2 mobileSmall:border-b-0 border-purple-light"
-                >
-                  <Link href={`/#${list.link}`} aria-label="Quem somos">
-                    {list.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
 
         <div className="flex flex-col justify-center items-center mobileSmall:items-start mt-6 mobileSmall:mt-0">
           <h4 className="mb-4 font-bold text-base leading-5 text-white-normal">
@@ -148,18 +122,20 @@ export const Footer = () => {
           </ul>
         </div>
 
+
         <nav className="flex items-center gap-2 mt-6 mobileSmall:mt-0">
-          <span className="font-bold text-sm">Siga-nos no Instagram</span>
           <a
             href="https://www.instagram.com/violetaeliz/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram da ONG Violeta Eliz"
-            className="text-white-normal hover:text-yellow-normal transition-colors"
+            aria-label="Siga-nos no Instagram da ONG Violeta Eliz"
+            className="flex items-center gap-2 text-white-normal hover:text-purple-300 transition-colors font-bold text-sm"
           >
+            <span>Siga-nos no Instagram</span>
             <FaInstagram size={30} />
           </a>
         </nav>
+
       </div>
 
       <div
