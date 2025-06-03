@@ -66,7 +66,7 @@ const TalkToUsForm = () => {
                 isSubmitted && showFormMessages && (
                     <div>
                         {
-                            isSubmitSuccessful && (
+                            isSubmitSuccessful && !formErrorMessage && (
                                 <span className="text-green-500 text-sm font-roboto">Mensagem enviada com sucesso!</span>
                             )
                         }
