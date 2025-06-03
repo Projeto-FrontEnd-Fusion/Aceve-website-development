@@ -22,13 +22,13 @@ export const useTalkToUsForm = () => {
 
     // o formsubmit permite que ao invés de utilizar diretamente o email,
     // se utilize uma string que a ferramenta disponibiliza mas para isso
-    // é necessário que a ADM faça a confirmação dda geração dessa key
+    // é necessário que a ADM faça a confirmação da geração dessa key
     // pelo email dela
     
     try {
             const OWNER_EMAIL_KEY = process.env.NEXT_PUBLIC_OWNER_EMAIL_KEY
             if(!OWNER_EMAIL_KEY){
-                throw new Error("Erro ao tentar enviar a mensagem (Problema com o email destinatário)")
+                throw new Error("email inválido | undefined")
             }
             const configEmailData = new FormData()
             configEmailData.append("Nome", data.name)
@@ -38,7 +38,7 @@ export const useTalkToUsForm = () => {
             configEmailData.append("_subject", "Mensagem - Formulário Fale Conosco")
             configEmailData.append("_template", "box")
 
-            const req = await fetch(`https://formsubmit.co/${OWNER_EMAIL_KEY}`, {
+            const response = await fetch(`https://formsubmit.cob/${OWNER_EMAIL_KEY}`, {
             method: "POST",
             headers: { 
                 'Accept': 'application/json'
@@ -46,8 +46,7 @@ export const useTalkToUsForm = () => {
             body: configEmailData
             })
 
-            const response = await req.text()
-            if(!response.includes('<p>The form was submitted successfully')){
+            if(!response.ok){
                 throw new Error("Erro ao enviar a mensagem")
             }
 
