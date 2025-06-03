@@ -2,7 +2,6 @@ import { schemaTalkToUs, SchemaTalkToUsProps } from "@/model/schemas/schemaTalkT
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { useRouter } from 'next/navigation';
 
 
 export const useTalkToUsForm = () => {
@@ -11,7 +10,6 @@ export const useTalkToUsForm = () => {
 
     const [formErrorMessage, setFormErrorMessage] = useState<string | null>(null)
     const [showFormMessages, setShowFormMessages] = useState<boolean>(false)
-    const router = useRouter()
 
     const formMethods = useForm<SchemaTalkToUsProps>({
         resolver: yupResolver(schemaTalkToUs)
@@ -26,9 +24,12 @@ export const useTalkToUsForm = () => {
     // se utilize uma string que a ferramenta disponibiliza mas para isso
     // é necessário que a ADM faça a confirmação dda geração dessa key
     // pelo email dela
-    const OWNER_EMAIL_KEY = process.env.NEXT_PUBLIC_OWNER_EMAIL_KEY
-
-        try {
+    
+    try {
+            const OWNER_EMAIL_KEY = process.env.NEXT_PUBLIC_OWNER_EMAIL_KEY
+            if(!OWNER_EMAIL_KEY){
+                throw new Error("Erro ao tentar enviar a mensagem (Problema com o email destinatário)")
+            }
             const configEmailData = new FormData()
             configEmailData.append("Nome", data.name)
             configEmailData.append("Email", data.email)
@@ -37,15 +38,18 @@ export const useTalkToUsForm = () => {
             configEmailData.append("_subject", "Mensagem - Formulário Fale Conosco")
             configEmailData.append("_template", "box")
 
-            await fetch(`https://formsubmit.co/${OWNER_EMAIL_KEY}`, {
+            const req = await fetch(`https://formsubmit.co/${OWNER_EMAIL_KEY}`, {
             method: "POST",
             headers: { 
                 'Accept': 'application/json'
             },
             body: configEmailData
             })
-            .then(() => router.push('/mensagem-enviada'))
-            .catch(error => { throw new Error(error)});
+
+            const response = await req.text()
+            if(!response.includes('<p>The form was submitted successfully')){
+                throw new Error("Erro ao enviar a mensagem")
+            }
 
             formMethods.reset()
             setShowFormMessages(true)
@@ -53,7 +57,7 @@ export const useTalkToUsForm = () => {
         } catch(error) {
             setFormErrorMessage("Ocorreu um erro ao enviar o formulário")
             setShowFormMessages(true)
-            setTimeout(() => setShowFormMessages(false), 3000)
+            setTimeout(() => setShowFormMessages(false), 5000)
         }
 
     }
