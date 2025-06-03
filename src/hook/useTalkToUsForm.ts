@@ -38,7 +38,7 @@ export const useTalkToUsForm = () => {
             configEmailData.append("_subject", "Mensagem - Formulário Fale Conosco")
             configEmailData.append("_template", "box")
 
-            const response = await fetch(`https://formsubmit.cob/${OWNER_EMAIL_KEY}`, {
+            const response = await fetch(`https://formsubmit.co/${OWNER_EMAIL_KEY}`, {
             method: "POST",
             headers: { 
                 'Accept': 'application/json'
