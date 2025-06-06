@@ -29,33 +29,33 @@ const methodsOfPaymentsListOptionsName = clsx("text-[#22222] font-roboto");
 
 const buttonOpenPixModal = clsx("flex flex-col cursor-pointer")
 
-const receiveDonation = clsx(
-  "bg-white-smooth flex flex-col w-[90%] px-2 py-3  rounded-lg relative gap-8 max-w-96 items-center"
-);
+// const receiveDonation = clsx(
+//   "bg-white-smooth flex flex-col w-[90%] px-2 py-3  rounded-lg relative gap-8 max-w-96 items-center"
+// );
 
-const receiveDonationTitle = clsx(
-  "font-bold text-[#222222] flex text-center font-roboto leading-[120%] text-lg mb-16"
-);
+// const receiveDonationTitle = clsx(
+//   "font-bold text-[#222222] flex text-center font-roboto leading-[120%] text-lg mb-16"
+// );
 
-const receiveDonationDate = clsx(
-  "bg-purple-light w-[108%]  items-center  justify-center text-center absolute self-center rounded p-2 text-beige-normal top-20"
-);
+// const receiveDonationDate = clsx(
+//   "bg-purple-light w-[108%]  items-center  justify-center text-center absolute self-center rounded p-2 text-beige-normal top-20"
+// );
 
-const receiveDonationBarProgress = clsx(
-  "bgProgress ml-[5%] w-[80%] self-start py-1 rounded-lg relative"
-);
+// const receiveDonationBarProgress = clsx(
+//   "bgProgress ml-[5%] w-[80%] self-start py-1 rounded-lg relative"
+// );
 
-const receiveDonationPercentProgress = clsx(
-  "text-purple-light font-montserrat font-bold absolute right-[-40px] top-[-8px]"
-);
+// const receiveDonationPercentProgress = clsx(
+//   "text-purple-light font-montserrat font-bold absolute right-[-40px] top-[-8px]"
+// );
 
-const knowProjectAndDonate = clsx(
-  "flex  w-full flex-col gap-8 items-center justify-center"
-);
+// const knowProjectAndDonate = clsx(
+//   "flex  w-full flex-col gap-8 items-center justify-center"
+// );
 
-const linkKnowProject = clsx(
-  "self-start  font-bold ml-2 text-purple-DaisyBush underline"
-);
+// const linkKnowProject = clsx(
+//   "self-start  font-bold ml-2 text-purple-DaisyBush underline"
+// );
 
 
 export function Collections() {
