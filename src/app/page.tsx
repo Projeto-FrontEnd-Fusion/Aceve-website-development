@@ -1,11 +1,8 @@
-import { Activity } from "@/components/Areasofactivity/Activity";
 import BannerHero from "@/components/Banner/mainbanner";
 import { FooterBanner } from "@/components/FooterBanner/Banner";
 import { ImpactHistory } from "@/components/History/ImpactHistory";
 import { UsPartners } from "@/components/Partners/UsPartners";
-import { SupportUs } from "@/components/SupportUs/supportUs";
 import Partners from "@/components/whoweare-extended/partners-section";
-import { Whoweare } from "@/components/Whoweare/whoweare";
 import { bannerDetails } from "@/model/bannerdetailsModel";
 
 export default function Home() {
@@ -16,11 +13,8 @@ export default function Home() {
         description={bannerDetails.description}
         bannerImg={bannerDetails.bannerImg}
       />
-      <Whoweare />
-      <Activity />
-      <ImpactHistory />
-      <FooterBanner />
-      <SupportUs />
+     {/*  <ImpactHistory /> */}
+{/*       <FooterBanner /> */}
       <UsPartners />
     </main>
   );
