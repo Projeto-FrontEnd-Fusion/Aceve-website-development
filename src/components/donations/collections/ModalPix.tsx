@@ -27,6 +27,7 @@ export const ModalPix = ({ closeModal } : modalPixProps) =>{
         <button 
         type="button"
         onClick={closeModal}
+        aria-label="Fechar modal"
         className='absolute top-2 right-2 flex flex-row items-center justify-center'>
         <IoClose size={'2em'}/>
       </button>
