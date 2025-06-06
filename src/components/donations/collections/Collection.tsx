@@ -72,7 +72,7 @@ export function Collections() {
         </p>
       </div>
       <div className={methodsOfPayments}>
-        <h4 className={methodsOfPaymentsSubTittle}>Métodos disponiveis:</h4>
+        <h3 className={methodsOfPaymentsSubTittle}>Métodos disponiveis:</h3>
         <ul className={methodsOfPaymentsList}>
           <li className={methodsOfPaymentsListOptions}>
             <FaPaypal size={40} />
