@@ -23,7 +23,7 @@ const images: ImagesTypes = {
 
 function doeAgora() {
   return (
-    <main className="w-full flex flex-col bg-beige-normal">
+    <main className="w-full flex flex-col bg-beige-normal relative">
       <picture className="flex w-full ">
         <img
           className={clsx("w-[100px]")}
