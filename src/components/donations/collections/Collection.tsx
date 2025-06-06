@@ -1,5 +1,7 @@
 import clsx from "clsx";
+import { useState } from "react";
 import { FaBarcode, FaPaypal, FaPix } from "react-icons/fa6";
+import { ModalPix } from "./ModalPix";
 
 const sectionCollection = clsx("flex flex-col items-center py-8 gap-10");
 
@@ -24,6 +26,8 @@ const methodsOfPaymentsList = clsx("flex gap-10");
 const methodsOfPaymentsListOptions = clsx("flex items-center flex-col");
 
 const methodsOfPaymentsListOptionsName = clsx("text-[#22222] font-roboto");
+
+const buttonOpenPixModal = clsx("flex flex-col cursor-pointer")
 
 const receiveDonation = clsx(
   "bg-white-smooth flex flex-col w-[90%] px-2 py-3  rounded-lg relative gap-8 max-w-96 items-center"
@@ -53,9 +57,14 @@ const linkKnowProject = clsx(
   "self-start  font-bold ml-2 text-purple-DaisyBush underline"
 );
 
+
 export function Collections() {
+  const [modal, setModal] = useState(false)
   return (
     <section className={sectionCollection}>
+      {modal && 
+        (<ModalPix closeModal={()=> setModal(false)}/>)
+      }
       <div className={donationAndCollection}>
         <h2 className={donationAndCollectionTittle}>Doações e arrecadações</h2>
         <p className={donationAndCollectionParagraph}>
@@ -74,8 +83,14 @@ export function Collections() {
             <span className={methodsOfPaymentsListOptionsName}>Boleto</span>
           </li>
           <li className={methodsOfPaymentsListOptions}>
-            <FaPix size={40} />
-            <span className={methodsOfPaymentsListOptionsName}>Pix</span>
+            <button
+            type='button'
+            className={buttonOpenPixModal}
+            onClick={()=>setModal(true)}
+            aria-label="Abrir modal com QR Code e chave Pix para doações">
+              <FaPix size={40} />
+              <span className={methodsOfPaymentsListOptionsName}>Pix</span>
+            </button>
           </li>
         </ul>
       </div>
