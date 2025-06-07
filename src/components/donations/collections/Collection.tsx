@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { FaBarcode, FaPaypal, FaPix } from "react-icons/fa6";
+import { FaPaypal, FaPix } from "react-icons/fa6";
 import { ModalPix } from "./ModalPix";
 
 const sectionCollection = clsx("flex flex-col items-center py-8 gap-10");
@@ -62,8 +62,8 @@ export function Collections() {
   const [modal, setModal] = useState(false)
   return (
     <section className={sectionCollection}>
-      {modal && 
-        (<ModalPix closeModal={()=> setModal(false)}/>)
+      {modal &&
+        (<ModalPix closeModal={() => setModal(false)} />)
       }
       <div className={donationAndCollection}>
         <h2 className={donationAndCollectionTittle}>Doações e arrecadações</h2>
@@ -75,19 +75,23 @@ export function Collections() {
         <h3 className={methodsOfPaymentsSubTittle}>Métodos disponiveis:</h3>
         <ul className={methodsOfPaymentsList}>
           <li className={methodsOfPaymentsListOptions}>
-            <FaPaypal size={40} />
-            <span className={methodsOfPaymentsListOptionsName}>Paypal</span>
-          </li>
-          <li className={methodsOfPaymentsListOptions}>
-            <FaBarcode size={40} />
-            <span className={methodsOfPaymentsListOptionsName}>Boleto</span>
+            <a
+              href="https://www.paypal.com/fundraiser/charity/3960801"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center"
+              aria-label="Doar via Paypal"
+            >
+              <FaPaypal size={40} />
+              <span className={methodsOfPaymentsListOptionsName}>Paypal</span>
+            </a>
           </li>
           <li className={methodsOfPaymentsListOptions}>
             <button
-            type='button'
-            className={buttonOpenPixModal}
-            onClick={()=>setModal(true)}
-            aria-label="Abrir modal com QR Code e chave Pix para doações">
+              type='button'
+              className={buttonOpenPixModal}
+              onClick={() => setModal(true)}
+              aria-label="Abrir modal com QR Code e chave Pix para doações">
               <FaPix size={40} />
               <span className={methodsOfPaymentsListOptionsName}>Pix</span>
             </button>
