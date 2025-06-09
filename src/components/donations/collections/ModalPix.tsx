@@ -28,15 +28,16 @@ export const ModalPix = ({ closeModal } : modalPixProps) =>{
         type="button"
         onClick={closeModal}
         aria-label="Fechar modal"
+        title="Fechar modal"
         className='absolute top-2 right-2 flex flex-row items-center justify-center'>
-        <IoClose size={'2em'}/>
+        <IoClose size={'2em'} className="hover:fill-red-500 transition-colors duration-300"/>
       </button>
       <h4 className='text-[2em]'>Pix</h4>
       <Image
       src={pixQrCode}
       width={600}
       height={600}
-      className='w-[90%] h-[auto] md:w-[400px] md:h-[400px]'
+      className='w-[90%] h-[auto] md:w-[300px] md:h-[300px]'
       alt="QR Code do pix para doações"/>
       <div className='chave-pix grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_auto_1.5em] md:grid-rows-2 gap-x-2 justify-center mt-2 mb-1'>
         <span className='flex flex-col items-center w-full'>
@@ -45,7 +46,8 @@ export const ModalPix = ({ closeModal } : modalPixProps) =>{
         </span>
         <button
         type='button'
-        className='cursor-pointer w-fit py-1 px-5 border-2 bg-purple-light text-white-smooth rounded-lg outline-purple-haiti justify-self-center'
+        className='cursor-pointer w-fit py-1 px-5 border-2 bg-purple-light text-white-smooth rounded-lg outline-purple-haiti justify-self-center
+        hover:bg-purple-950 transition-colors duration-500'
         onClick={()=>handleCopyText()}>
           Copiar
         </button>
