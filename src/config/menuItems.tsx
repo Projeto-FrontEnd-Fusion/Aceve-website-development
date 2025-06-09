@@ -15,7 +15,7 @@ import { mainMenuItemsProps } from "@/@types/menuProps";
     },
     {
       itemName: "Nosso Brechó",
-      itemLink: "/nosso-brecho"
+      itemLink: "https://wa.me/c/5511982935150"
     },
 
     {
