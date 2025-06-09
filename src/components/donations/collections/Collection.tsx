@@ -23,9 +23,11 @@ const methodsOfPaymentsSubTittle = clsx("font-roboto font-bold text-[#222222]");
 
 const methodsOfPaymentsList = clsx("flex gap-10");
 
-const methodsOfPaymentsListOptions = clsx("flex items-center flex-col");
+const methodsOfPaymentsListOptions = clsx("flex items-center justify-center flex-col group hover:fill-purple-light transition-colors duration-300");
 
 const methodsOfPaymentsListOptionsName = clsx("text-[#22222] font-roboto");
+
+const methodsOfPaymentsListOptionsIcon = clsx("transition-colors duration-300 group-hover:fill-purple-light")
 
 const buttonOpenPixModal = clsx("flex flex-col cursor-pointer")
 
@@ -82,7 +84,7 @@ export function Collections() {
               className="flex flex-col items-center"
               aria-label="Doar via Paypal"
             >
-              <FaPaypal size={40} />
+              <FaPaypal size={40} className={methodsOfPaymentsListOptionsIcon}/>
               <span className={methodsOfPaymentsListOptionsName}>Paypal</span>
             </a>
           </li>
@@ -92,7 +94,7 @@ export function Collections() {
               className={buttonOpenPixModal}
               onClick={() => setModal(true)}
               aria-label="Abrir modal com QR Code e chave Pix para doações">
-              <FaPix size={40} />
+              <FaPix size={40} className={methodsOfPaymentsListOptionsIcon}/>
               <span className={methodsOfPaymentsListOptionsName}>Pix</span>
             </button>
           </li>
