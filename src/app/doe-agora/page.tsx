@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import { Collections } from "@/components/donations/collections/Collection";
 import { Subscribe } from "@/components/donations/subscribe/Subscribe";
+import { useState } from "react";
 //import { AdvantagesVolunteer } from "@/components/donations/advantage/AdvantageVolunteer";
 
 interface ImagesTypes {
@@ -22,6 +23,7 @@ const images: ImagesTypes = {
 };
 
 function doeAgora() {
+  const [ariaHidden, setAriaHidden] = useState(false)
   return (
     <main className="w-full flex flex-col bg-beige-normal relative">
       <picture className="flex w-full ">
@@ -41,9 +43,11 @@ function doeAgora() {
           alt={images.description}
         />
       </picture>
-      <Collections />
+      <Collections 
+      ariaHidden={ariaHidden}
+      setAriaHidden={setAriaHidden}/>
 
-      <Subscribe />
+      <Subscribe aria-hidden={ariaHidden}/>
 
       {/* <AdvantagesVolunteer /> */}
     </main> 

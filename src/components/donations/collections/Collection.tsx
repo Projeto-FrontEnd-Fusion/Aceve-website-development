@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaPaypal, FaPix } from "react-icons/fa6";
 import { ModalPix } from "./ModalPix";
 
@@ -59,21 +59,42 @@ const buttonOpenPixModal = clsx("flex flex-col cursor-pointer")
 //   "self-start  font-bold ml-2 text-purple-DaisyBush underline"
 // );
 
-
-export function Collections() {
+interface CollectionsProps{
+  ariaHidden: boolean;
+  setAriaHidden: (isHidden: boolean) => void;
+}
+export function Collections({
+  ariaHidden,
+  setAriaHidden} : CollectionsProps) {
   const [modal, setModal] = useState(false)
+  const buttonPixRef = useRef<null | HTMLButtonElement>(null)
+
+  function handleOpenModal(){
+    setModal(true)
+  }
+
+  function handleCloseModal(){
+    setAriaHidden(false)
+    buttonPixRef.current?.focus()
+    setModal(false)
+  }
+
   return (
     <section className={sectionCollection}>
       {modal &&
-        (<ModalPix closeModal={() => setModal(false)} />)
+        (<ModalPix 
+          closeModal={handleCloseModal} 
+          setAriaHidden={setAriaHidden}/>)
       }
-      <div className={donationAndCollection}>
+      <div aria-hidden={ariaHidden} 
+      className={donationAndCollection}>
         <h2 className={donationAndCollectionTittle}>Doações e arrecadações</h2>
         <p className={donationAndCollectionParagraph}>
           Doe esperança, plante o futuro: juntos podemos mais!
         </p>
       </div>
-      <div className={methodsOfPayments}>
+      <div aria-hidden={ariaHidden}
+      className={methodsOfPayments}>
         <h3 className={methodsOfPaymentsSubTittle}>Métodos disponiveis:</h3>
         <ul className={methodsOfPaymentsList}>
           <li className={methodsOfPaymentsListOptions}>
@@ -92,8 +113,9 @@ export function Collections() {
             <button
               type='button'
               className={buttonOpenPixModal}
-              onClick={() => setModal(true)}
-              aria-label="Abrir modal com QR Code e chave Pix para doações">
+              onClick={handleOpenModal}
+              aria-label="Doar via pix"
+              ref={buttonPixRef}>
               <FaPix size={40} className={methodsOfPaymentsListOptionsIcon} />
               <span className={methodsOfPaymentsListOptionsName}>Pix</span>
             </button>
