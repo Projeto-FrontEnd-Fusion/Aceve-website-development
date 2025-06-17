@@ -45,21 +45,31 @@ const BannerHero = ({
           "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[80%]"
         )}
       >
-        <h2
-          className={clsx(
-            "text-black font-montserrat font-bold mb-4 text-[20px] leading-7 ",
-            " mobileMicro:pr-8",
-            "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
-            "laptop:pr-[60%] laptop:text-[32px]",
-            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
-            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]"
-          )}
-        >
-          {title}
-        </h2>
+       <h2
+  className={clsx(
+    "text-black font-montserrat font-bold mb-4 text-[20px] leading-tight",
+    "mobileMicro:pr-8",
+    "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
+    "laptop:pr-[60%] laptop:text-[32px]",
+    "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
+    "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
+    "whitespace-nowrap"
+  )}
+>
+  <span className="text-[#54287B] font-bold">
+    Pelo poder de cada{" "}
+    <span className="text-[#A468E4] font-bold">mulher</span>
+  </span>
+  <br />
+  <span className="text-[#54287B] font-bold">
+    Por um futuro mais{" "}
+    <span className="text-[#A468E4] font-bold">justo</span>
+  </span>
+</h2>
+
         <p
           className={clsx(
-            "w-full text-black font-roboto text-[14px] mb-8 leading-6",
+            "w-full text-gray-600 font-roboto text-[14px] mb-8 leading-6",
             "mobileMicro:text-[12px]",
             "mobileXLarger:text-[16px]",
             "text-[18px] desktop:text-[18px] desktop:mb-10 desktop:w-full desktop:leading-7"
@@ -72,9 +82,9 @@ const BannerHero = ({
           Background="purple"
           size="small"
           fontColor="white"
-          icon={<BiDonateHeart />}
+          className="bg-[#823DC7] hover:bg-[#663198] rounded-md transition-colors px-6 py-2"
         >
-          <Link href={"/doe-agora"}>Doe Agora</Link>
+          <Link href={"/doe-agora"}>AJUDE AGORA</Link>
         </Button>
       </article>
     </section>
