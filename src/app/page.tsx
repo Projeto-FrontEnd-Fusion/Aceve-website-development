@@ -3,6 +3,7 @@ import { FooterBanner } from "@/components/FooterBanner/Banner";
 import { ImpactHistory } from "@/components/History/ImpactHistory";
 import { UsPartners } from "@/components/Partners/UsPartners";
 import Partners from "@/components/whoweare-extended/partners-section";
+import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
 import { bannerDetails } from "@/model/bannerdetailsModel";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       />
      {/*  <ImpactHistory /> */}
 {/*       <FooterBanner /> */}
+      <WhoWeAre/>
       <UsPartners />
     </main>
   );
