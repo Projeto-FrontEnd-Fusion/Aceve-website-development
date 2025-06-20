@@ -18,8 +18,8 @@ export default function Home() {
       {/*  <ImpactHistory /> */}
       {/*       <FooterBanner /> */}
       <WhoWeAre />
-      <UsPartners />
       <Media />
+      <UsPartners />
     </main>
   );
 }
