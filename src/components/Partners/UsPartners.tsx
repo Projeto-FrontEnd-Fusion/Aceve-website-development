@@ -20,7 +20,7 @@ export const UsPartners = () => {
     },
   ];
   return (
-    <section className="py-12 flex flex-col gap-8">
+    <section className="py-12 flex flex-col gap-8 bg-[#FAF6FE]">
       <HeaderSection title="PARCEIROS" />
       <div className="flex justify-center gap-8 items-center max-mobileLarger:flex-col md:gap-20">
         {patnesImg.map(({ name, icon }) => (
