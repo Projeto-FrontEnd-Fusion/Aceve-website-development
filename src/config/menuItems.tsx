@@ -2,24 +2,28 @@ import { mainMenuItemsProps } from "@/@types/menuProps";
 
  export const mainMenuItems: mainMenuItemsProps[] = [
     {
-      itemName: "Página Inicial",
+      itemName: "Início",
       itemLink: "/"
     },
     {
-      itemName: "Quem Somos",
-      itemLink: "/quem-somos"
+      itemName: "Sobre nós",
+      itemLink: "/"
     },
     {
-      itemName: "Contato",
-      itemLink: "/contato"
+      itemName: "O que fazemos",
+      itemLink: "/"
     },
     {
-      itemName: "Nosso Brechó",
+      itemName: "Faça parte",
+      itemLink: "/"
+    },
+    {
+      itemName: "Loja",
       itemLink: "https://wa.me/c/5511982935150"
     },
 
     {
-      itemName: "Doe agora",
+      itemName: "Quero Doar",
       itemLink: "/doe-agora"
     },
   ];
