@@ -79,7 +79,7 @@ export const Footer = () => {
         </figure>
 
         <div className="flex flex-col justify-center gap-3">
-          <ul className="text-sm leading-6 flex flex-col items-start xl:gap-4  gap-2 lg:flex-row  xl:items-center ">
+          <ul className="text-sm leading-6 flex flex-col items-start xl:gap-4  gap-2 xl:flex-row  xl:items-center ">
             {contactList.map(({ id, order, href }) => (
               <>
                 <li className="hover:underline" key={id}>
