@@ -18,11 +18,11 @@ const BannerHero = () => {
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-[90%] self-center h-auto md:w-[70%]">
+      <figure className="relative w-[90%] self-center h-auto md:h-[500px] lg:-auto md:w-[50%] lg:w-[70%]">
         <Image
         alt="Imagem de um banner representando empoderamento e igualdade"
         src={BannerImg}
-        className="object-contain object-center"/>
+        className="object-cover object-center md:h-full"/>
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
