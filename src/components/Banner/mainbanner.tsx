@@ -5,7 +5,8 @@ import Link from "next/link";
 import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
-import { BiDonateHeart } from "react-icons/bi";
+import Image from "next/image";
+import BannerImg from '@/public/BannerImg.jpg'
 
 const BannerHero = ({
   title,
@@ -25,12 +26,12 @@ const BannerHero = ({
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-full h-auto desktop:w-[70%]">
-        <img
-          src={"https://i.imgur.com/NE6EVuK.png"}
-          alt="Imagem de um banner representando empoderamento e igualdade"
-          className="w-full border-slate-950"
-        />
+      <figure className="relative w-full h-[485px] desktop:w-[70%]">
+        <Image
+        alt="Imagem de um banner representando empoderamento e igualdade"
+        src={BannerImg}
+        priority={false}
+        className="object-contain object-center"/>
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
@@ -42,10 +43,10 @@ const BannerHero = ({
       <article
         className={clsx(
           "w-screen px-7 flex flex-col gap-4 mt-[-8px] py-10 items-center",
-          "desktop:justify-center desktop:items-start desktop:pl-24 desktop:w-[80%]"
+          "desktop:justify-center desktop:items-start desktop:pl-[2.5rem] desktop:w-[80%]"
         )}
       >
-       <h2
+      <h2
   className={clsx(
     "text-black font-montserrat font-bold mb-4 text-[20px] leading-tight",
     "mobileMicro:pr-8",
