@@ -14,11 +14,11 @@ const BannerHero = () => {
     <section
       className={clsx(
         "w-full  flex flex-col relative ",
-        "desktop:overflow-y-hidden desktop:flex-row-reverse",
+        "md:overflow-y-hidden md:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-full h-auto desktop:w-[70%]">
+      <figure className="relative w-[90%] self-center h-auto md:w-[70%]">
         <Image
         alt="Imagem de um banner representando empoderamento e igualdade"
         src={BannerImg}
@@ -34,15 +34,14 @@ const BannerHero = () => {
       <article
         className={clsx(
           "w-screen px-7 flex flex-col gap-1 mt-[-8px] py-10 items-center",
-          "desktop:justify-center desktop:items-start desktop:pl-[2.5rem] desktop:w-[80%]"
+          "md:justify-center md:items-start md:pl-[2.5rem] md:w-[80%]"
         )}
       >
       <h2
   className={clsx(
-    "text-black font-montserrat font-bold mb-4 text-[20px] leading-tight",
-    "mobileMicro:pr-8",
-    "mobileXLarger:w-full mobileXLarger:pr-[50%] mobileXLarger:leading-8",
-    "laptop:pr-[60%] laptop:text-[32px]",
+    "text-black font-montserrat font-bold mb-4 text-[20px] w-full leading-tight",
+    "mobileXLarger:leading-8",
+    "laptop:text-[32px]",
     "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
     "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
     "whitespace-nowrap"
@@ -62,9 +61,8 @@ const BannerHero = () => {
         <p
           className={clsx(
             "w-full text-gray-600 font-roboto text-[14px] mb-8 leading-6",
-            "mobileMicro:text-[12px]",
             "mobileXLarger:text-[16px]",
-            "text-[18px] desktop:text-[18px] desktop:mb-10 desktop:w-full desktop:leading-7"
+            "text-[18px] md:text-[18px] desktop:mb-10 md:w-full md:leading-7"
           )}
         >
           Capacitamos mulheres em situação de vulnerabilidade para que conquistem autonomia, rompam ciclos de violência e transformem suas vidas.
@@ -74,7 +72,9 @@ const BannerHero = () => {
           Background="purple"
           size="small"
           fontColor="white"
-          className="bg-[#823DC7] hover:bg-[#663198] font-semibold rounded-md transition-colors px-6 py-3"
+          className="bg-[#823DC7] hover:bg-[#663198] font-semibold rounded-md transition-colors 
+          w-full md:w-fit py-3 md:px-6  
+          flex-grow md:flex-grow-0"
         >
           <Link href={"/doe-agora"}>AJUDE AGORA</Link>
         </Button>
