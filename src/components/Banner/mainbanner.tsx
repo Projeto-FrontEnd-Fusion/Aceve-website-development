@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
 import Image from "next/image";
-import BannerImg from '@/public/BannerImg.jpg'
+import BannerImg from '@/public/BannerImg.png'
 
 const BannerHero = () => {
   const { isOpenMenu } = useStore(toggleMenuStore);
@@ -18,11 +18,10 @@ const BannerHero = () => {
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-full h-[485px] desktop:w-[70%]">
+      <figure className="relative w-full h-auto desktop:w-[70%]">
         <Image
         alt="Imagem de um banner representando empoderamento e igualdade"
         src={BannerImg}
-        priority={false}
         className="object-contain object-center"/>
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
