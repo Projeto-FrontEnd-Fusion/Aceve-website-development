@@ -20,9 +20,9 @@ const BannerHero = () => {
     >
       <figure className="relative w-[90%] self-center h-auto md:h-[500px] lg:-auto md:w-[50%] lg:w-[70%]">
         <Image
-        alt="Imagem de um banner representando empoderamento e igualdade"
-        src={BannerImg}
-        className="object-cover object-center md:h-full"/>
+          alt="Imagem de um banner representando empoderamento e igualdade"
+          src={BannerImg}
+          className="object-cover object-center md:h-full" />
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
@@ -37,26 +37,26 @@ const BannerHero = () => {
           "md:justify-center md:items-start md:pl-[2.5rem] md:w-[80%]"
         )}
       >
-      <h2
-  className={clsx(
-    "text-black font-montserrat font-bold mb-4 text-[20px] w-full leading-tight",
-    "mobileXLarger:leading-8",
-    "laptop:text-[32px]",
-    "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
-    "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
-    "whitespace-nowrap"
-  )}
->
-  <span className="text-[#54287B] font-bold">
-    Pelo poder de cada{" "}
-    <span className="text-[#A468E4] font-bold">mulher</span>
-  </span>
-  <br />
-  <span className="text-[#54287B] font-bold">
-    Por um futuro mais{" "}
-    <span className="text-[#A468E4] font-bold">justo</span>
-  </span>
-</h2>
+        <h2
+          className={clsx(
+            "text-black font-montserrat font-bold mb-4 text-[20px] w-full leading-tight",
+            "mobileXLarger:leading-8",
+            "laptop:text-[32px]",
+            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
+            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
+            "whitespace-nowrap"
+          )}
+        >
+          <span className="text-[#54287B] font-bold">
+            Pelo poder de cada{" "}
+            <span className="text-[#A468E4] font-bold">mulher</span>
+          </span>
+          <br />
+          <span className="text-[#54287B] font-bold">
+            Por um futuro mais{" "}
+            <span className="text-[#A468E4] font-bold">justo</span>
+          </span>
+        </h2>
 
         <p
           className={clsx(
