@@ -4,6 +4,8 @@ interface HeaderSectionProps {
 }
 export const HeaderSection = ({ title, sub }: HeaderSectionProps) => {
   return (
+    
+    
     <header className="text-center font-montserrat">
       <h2
         className="text-[1.2rem] font-bold text-preto-bunker 
@@ -12,6 +14,7 @@ export const HeaderSection = ({ title, sub }: HeaderSectionProps) => {
       >
         {title}
       </h2>
+    
       <h3
         className="text-[.8rem] font-normal 
     desktop:text-[.9rem] px-6
@@ -19,6 +22,10 @@ export const HeaderSection = ({ title, sub }: HeaderSectionProps) => {
       >
         {sub}
       </h3>
+      
     </header>
+    
+  
+    
   );
 };
