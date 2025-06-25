@@ -1,7 +1,7 @@
 import BannerHero from "@/components/Banner/mainbanner";
 import { FooterBanner } from "@/components/FooterBanner/Banner";
 import { ImpactHistory } from "@/components/History/ImpactHistory";
-import { UsPartners } from "@/components/Partners/UsPartners";
+import { OurPartners } from "@/components/Partners/OurPartners";
 import Partners from "@/components/whoweare-extended/partners-section";
 import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
 import { bannerDetails } from "@/model/bannerdetailsModel";
@@ -14,10 +14,10 @@ export default function Home() {
         description={bannerDetails.description}
         bannerImg={bannerDetails.bannerImg}
       />
-     {/*  <ImpactHistory /> */}
-{/*       <FooterBanner /> */}
-      <WhoWeAre/>
-      <UsPartners />
+      {/*  <ImpactHistory /> */}
+      {/*       <FooterBanner /> */}
+      <WhoWeAre />
+      <OurPartners />
     </main>
   );
 }
