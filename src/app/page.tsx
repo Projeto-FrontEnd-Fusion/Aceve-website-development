@@ -9,13 +9,6 @@ import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      <BannerHero
-        title={bannerDetails.title}
-        description={bannerDetails.description}
-        bannerImg={bannerDetails.bannerImg}
-      />
-      {/*  <ImpactHistory /> */}
-      {/*       <FooterBanner /> */}
       <BannerHero/>
       {/*  <ImpactHistory /> */}
       {/*  <FooterBanner /> */}
