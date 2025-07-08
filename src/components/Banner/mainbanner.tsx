@@ -37,14 +37,10 @@ const BannerHero = () => {
           "md:justify-center md:items-start md:pl-[2.5rem] md:w-[80%]"
         )}
       >
-        <h2
+        <h1
           className={clsx(
-            "text-black font-montserrat font-bold mb-4 text-[20px] w-full leading-tight",
-            "mobileXLarger:leading-8",
-            "laptop:text-[32px]",
-            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
-            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
-            "whitespace-nowrap"
+            "text-black font-montserrat font-bold mb-4 text-[18px] tablet:text-[40px] mobileLarger:text-[35px] mobileMicro:text-[30px] w-full leading-tight",
+            "whitespace-normal mobileLarger:whitespace-nowrap"
           )}
         >
           <span className="text-[#54287B] font-bold">
@@ -56,7 +52,7 @@ const BannerHero = () => {
             Por um futuro mais{" "}
             <span className="text-[#A468E4] font-bold">justo</span>
           </span>
-        </h2>
+        </h1>
 
         <p
           className={clsx(
