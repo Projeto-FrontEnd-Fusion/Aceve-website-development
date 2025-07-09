@@ -37,31 +37,6 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       >
         Início
       </Link>
-    {/*
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        Sobre nós
-      </Link> 
-
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        O que fazemos
-      </Link>
-
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        Faça parte
-      </Link>
-*/}
       <Link
         onClick={() => setisMenuOpen(false)}
         href="https://wa.me/c/5511982935150"

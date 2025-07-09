@@ -18,28 +18,6 @@ export const TopBarNavigation = () => {
         >
           Início
         </Link>
-{/*
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          Sobre nós
-        </Link>
-
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          O que fazemos
-        </Link>
-
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          Faça parte
-        </Link>
-        */} 
         <Link
           href="https://wa.me/c/5511982935150"
           className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
