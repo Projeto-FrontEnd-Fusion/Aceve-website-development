@@ -50,7 +50,7 @@ export const TopBarNavigation = () => {
 
       
       <div className="hidden desktop:block">
-        <Link href="/doe-agora">
+        <Link href="/quero-doar">
           <button className="h-12 px-6 bg-[#823dc7] text-white-normal rounded-lg hover:bg-[#6631c9] transition">
             QUERO DOAR
           </button>
