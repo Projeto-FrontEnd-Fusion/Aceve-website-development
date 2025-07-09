@@ -6,13 +6,6 @@ interface ILogoFooter {
   logoSimios: string;
 }
 
-export const menuList = [
-  "Quem somos",
-  "Ajude-nos",
-  "Brechó",
-  "Política de Privacidade",
-];
-
 const contactList = [
   {
     id: 1,
@@ -34,37 +27,6 @@ const contactList = [
     href: "mailto:eliz_social@outlook.com",
   },
 ];
-
-const listInfo = [
-  {
-    id: 1,
-    name: "Quem somos",
-    link: "teste",
-  },
-  {
-    id: 2,
-    name: "Ajude-nos",
-    link: "teste",
-  },
-  {
-    id: 3,
-    name: "Brechó",
-    link: "teste",
-  },
-  {
-    id: 4,
-    name: "Política de privacidade",
-    link: "teste",
-  },
-];
-
-interface ItemsListProps {
-  menuList?: string[];
-  contactList?: string[];
-  footerLogo: ILogoFooter;
-  listInfo: string[];
-  contactInfo: string[];
-}
 
 export const Footer = () => {
   return (
