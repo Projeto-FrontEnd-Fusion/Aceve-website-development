@@ -14,15 +14,20 @@ const BannerHero = () => {
     <section
       className={clsx(
         "w-full  flex flex-col relative ",
-        "md:overflow-y-hidden md:flex-row-reverse",
+        "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-[90%] self-center h-auto md:h-[500px] lg:-auto md:w-[50%] lg:w-[70%]">
+      <figure className="relative w-[90%] self-center h-auto mobileXLarger:flex-shrink-0 mobileXLarger:flex-grow-0
+      mobileXLarger:w-[292px] mobileXLarger:h-[524px] 
+      tablet:w-[356px] tablet:h-[488px] 
+      laptop:w-[464px] laptop:h-[628px] 
+      desktop:w-[572px] desktop:h-[601px] 
+      desktopLarge:w-[700px] desktopLarge:h-[683px]">
         <Image
           alt="Imagem de um banner representando empoderamento e igualdade"
           src={BannerImg}
-          className="object-cover object-center md:h-full" />
+          className="object-cover object-center mobileXLarger:h-full mobileXLarger:w-full" />
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
@@ -33,14 +38,15 @@ const BannerHero = () => {
 
       <article
         className={clsx(
-          "w-screen px-7 flex flex-col gap-1 mt-[-8px] py-10 items-center",
-          "md:justify-center md:items-start md:pl-[2.5rem] md:w-[80%]"
+          "w-screen  flex flex-col gap-1 mt-[-8px] items-center",
+          "py-10 px-10 desktop:px-16 desktopLarge:px-20",
+          "mobileXLarger:justify-center mobileXLarger:items-start mobileXLarger:w-auto"
         )}
       >
         <h1
           className={clsx(
-            "text-black font-montserrat font-bold mb-4 text-[18px] tablet:text-[40px] mobileLarger:text-[35px] mobileMicro:text-[30px] w-full leading-tight",
-            "whitespace-normal mobileLarger:whitespace-nowrap"
+            "text-black font-montserrat font-bold mb-4 text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[30px] w-full",
+            "whitespace-normal"
           )}
         >
           <span className="text-[#54287B] font-bold">
@@ -56,7 +62,7 @@ const BannerHero = () => {
 
         <p
           className={clsx(
-            "w-full text-gray-600 font-roboto text-[14px] mb-8 leading-6",
+            "w-full text-gray-600 font-roboto text-[14px] mb-8 mobileXLarger:mb-[16px] leading-6",
             "mobileXLarger:text-[16px]",
             "text-[18px] md:text-[18px] desktop:mb-10 md:w-full md:leading-7"
           )}
@@ -69,8 +75,8 @@ const BannerHero = () => {
           size="small"
           fontColor="white"
           className="bg-[#823DC7] hover:bg-[#663198] font-semibold rounded-md transition-colors 
-          w-full md:w-fit py-3 md:px-6  
-          flex-grow md:flex-grow-0"
+          w-full mobileXLarger:w-fit py-3 mobileXLarger:px-6  
+          flex-grow mobileXLarger:flex-grow-0"
         >
           <Link href={"/doe-agora"}>AJUDE AGORA</Link>
         </Button>
