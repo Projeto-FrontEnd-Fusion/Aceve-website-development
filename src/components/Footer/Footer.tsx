@@ -95,7 +95,7 @@ export const Footer = () => {
                     </a>
                   ))}
                 </li>
-                <span className="hidden xl:block w-[1px] bg-[#A468E4] self-stretch rounded-lg" />
+                <span className="hidden xl:block w-[1px] bg-[#A468E4] self-stretch rounded-lg last:hidden" />
               </>
             ))}
           </ul>
