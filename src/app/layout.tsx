@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer/Footer";
-import { TopBarNavigation } from "../components/Menu/TopBarNavigation";
+import { Header } from "../components/Menu/TopBarNavigation";
 
 export const metadata: Metadata = {
   title: "ONG Violeta Eliz",
@@ -24,7 +24,7 @@ export default function RootLayout({
         />
       </head>
       <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
-        <TopBarNavigation />
+        <Header />
         {children}
         <Footer />
       </body>
