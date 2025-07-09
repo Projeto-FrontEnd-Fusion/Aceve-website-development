@@ -6,6 +6,9 @@ interface NavigationProps extends ComponentProps<'nav'> {
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
 
+const LinkClass = "font-semibold text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
+
+
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
   useEffect(() => {
     const closeMenuOnScroll = () => setisMenuOpen(false);
@@ -22,7 +25,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       className={`z-50 border-t-2 border-y-purple-light/30 overflow-hidden w-screen h-screen pt-8 bg-white-normal 
       items-center justify-start top-14 
       fixed flex flex-col transform transition-all duration-500  
-      mobileXLarger:top-20
+      mobileXLarger:top-20 gap-2
       desktop:hidden ${
         isMenuOpen
           ? "left-1/2 -translate-x-1/2"
@@ -33,7 +36,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       <Link
         onClick={() => setisMenuOpen(false)}
         href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
+        className={LinkClass}
       >
         Início
       </Link>
@@ -67,7 +70,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         href="https://wa.me/c/5511982935150"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
+        className={LinkClass}
       >
         Loja
       </Link>
@@ -78,7 +81,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         href="/doe-agora"
         className="w-full h-16 flex justify-center items-center"
       >
-        <button className="h-12 w-36 bg-[#823dc7] text-white-normal font-semibold rounded-lg hover:bg-[#6631c9] transition">
+        <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
           QUERO DOAR
         </button>
       </Link>
