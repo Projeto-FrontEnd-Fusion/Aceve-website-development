@@ -1,6 +1,6 @@
 import { whoweareDetails } from "@/model/whoweare";
 import { FaInstagram } from "react-icons/fa6";
-import Logo from "@/public/Logo.png";
+import Logo from "@/public/logo-name.png";
 import Image from "next/image";
 interface ILogoFooter {
   logoSimios: string;
