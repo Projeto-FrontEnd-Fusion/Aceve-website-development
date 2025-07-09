@@ -18,28 +18,6 @@ export const TopBarNavigation = () => {
         >
           Início
         </Link>
-{/*
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          Sobre nós
-        </Link>
-
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          O que fazemos
-        </Link>
-
-        <Link
-          href="/"
-          className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
-        >
-          Faça parte
-        </Link>
-        */} 
         <Link
           href="https://wa.me/c/5511982935150"
           className="font-semibold text-gray-normal hover:text-[#823dc7] transition"
@@ -50,7 +28,7 @@ export const TopBarNavigation = () => {
 
       
       <div className="hidden desktop:block">
-        <Link href="/doe-agora">
+        <Link href="/quero-doar">
           <button className="h-12 px-6 bg-[#823dc7] text-white-normal rounded-lg hover:bg-[#6631c9] transition">
             QUERO DOAR
           </button>
