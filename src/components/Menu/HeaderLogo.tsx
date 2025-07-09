@@ -1,5 +1,5 @@
 import { ComponentProps } from "react"
-import logo from '@/public/logo.png'
+import Logo from '@/public/logo-header.png'
 import Image from "next/image";
 
 export const HeaderLogo = ({...props} : ComponentProps<'header'>) =>{
@@ -7,7 +7,7 @@ export const HeaderLogo = ({...props} : ComponentProps<'header'>) =>{
         <header {...props} className="flex items-center">
         <div className={`w-20 mx-2 desktop:w-32`}>
           <Image
-            src={logo}
+            src={Logo}
             alt="logomarca Associação Cultural e Educacional Violeta Eliz"
             className="w-12 md:w-20"
             aria-label="logomarca"
