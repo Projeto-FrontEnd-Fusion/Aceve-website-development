@@ -75,7 +75,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       
       <Link
         onClick={() => setisMenuOpen(false)}
-        href="/doe-agora"
+        href="/quero-doar"
         className="w-full h-16 flex justify-center items-center"
       >
         <button className="h-12 w-36 bg-[#823dc7] text-white-normal font-semibold rounded-lg hover:bg-[#6631c9] transition">
