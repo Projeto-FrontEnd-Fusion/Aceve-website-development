@@ -9,7 +9,7 @@ export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   return (
-    <header className="flex py-9 px-2 m-auto items-center justify-between relative mobileXLarger:py-10 mobileXLarger:px-8 desktop:justify-between desktop:px-8 border-b-2 berder-b-primary">
+    <header className="flex py-4 px-2 m-auto items-center justify-between relative mobileXLarger:py-10 mobileXLarger:px-8 desktop:justify-between desktop:px-8 border-b-2 berder-b-primary">
       <HeaderLogo />
 
       
@@ -53,7 +53,7 @@ export const Header = () => {
       
       <div className="hidden desktop:block">
         <Link href="/doe-agora">
-          <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-[18px] rounded-lg hover:bg-[#6631c9] transition">
+          <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#6631c9] transition">
             QUERO DOAR
           </button>
         </Link>
