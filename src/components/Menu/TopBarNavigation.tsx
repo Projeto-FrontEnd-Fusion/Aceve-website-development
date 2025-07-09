@@ -53,7 +53,7 @@ export const Header = () => {
       
       <div className="hidden desktop:block">
         <Link href="/doe-agora">
-          <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#6631c9] transition">
+          <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
             QUERO DOAR
           </button>
         </Link>
