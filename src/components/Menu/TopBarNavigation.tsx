@@ -9,7 +9,7 @@ export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   return (
-    <header className="flex py-4 px-[72px] m-auto items-center justify-between relative desktop:justify-between border-b-2 berder-b-primary">
+    <header className="flex py-4 px-4 mobileXLarger:px-8 laptop:px-[72px] m-auto items-center justify-between relative desktop:justify-between border-b-2 berder-b-primary">
       <HeaderLogo />
 
       
