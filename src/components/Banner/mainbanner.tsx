@@ -76,7 +76,7 @@ const BannerHero = () => {
           w-full md:w-fit py-3 md:px-6  
           flex-grow md:flex-grow-0"
         >
-          <Link href={"/doe-agora"}>AJUDE AGORA</Link>
+          <Link href={"/quero-doar"}>AJUDE AGORA</Link>
         </Button>
       </article>
     </section>
