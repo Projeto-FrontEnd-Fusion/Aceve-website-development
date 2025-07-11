@@ -22,7 +22,6 @@ export function Button({
   return (
     <button
       className={clsx(
-        `rounded grid place-content-center font-semibold font-roboto text-[14px] `,
         {
           "bg-purple-light": Background === "purple",
           "bg-transparent border-2 border-purple-light":
