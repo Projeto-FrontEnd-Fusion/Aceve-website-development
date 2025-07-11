@@ -13,16 +13,22 @@ const BannerHero = () => {
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative ",
-        "md:overflow-y-hidden md:flex-row-reverse",
+        "w-full  flex flex-col relative px-4",
+        "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-[90%] self-center h-auto md:h-[500px] lg:-auto md:w-[50%] lg:w-[70%]">
+      <figure className="relative w-full self-center h-auto mobileXLarger:flex-shrink-0 mobileXLarger:flex-grow-0
+      mobileXLarger:w-[292px] mobileXLarger:h-[524px] 
+      mobileXLarger:px-0
+      tablet:w-[356px] tablet:h-[488px] 
+      laptop:w-[464px] laptop:h-[628px] 
+      desktop:w-[572px] desktop:h-[601px] 
+      desktopLarge:w-[700px] desktopLarge:h-[683px]">
         <Image
           alt="Imagem de um banner representando empoderamento e igualdade"
           src={BannerImg}
-          className="object-cover object-center md:h-full" />
+          className="object-cover object-center mobileXLarger:h-full mobileXLarger:w-full" />
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
@@ -33,18 +39,15 @@ const BannerHero = () => {
 
       <article
         className={clsx(
-          "w-screen px-7 flex flex-col gap-1 mt-[-8px] py-10 items-center",
-          "md:justify-center md:items-start md:pl-[2.5rem] md:w-[80%]"
+          "flex flex-col gap-4 mt-[-8px]",
+          "py-10 desktop:px-16 desktopLarge:px-20",
+          "mobileXLarger:justify-center mobileXLarger:items-start mobileXLarger:w-auto"
         )}
       >
-        <h2
+        <h1
           className={clsx(
-            "text-black font-montserrat font-bold mb-4 text-[20px] w-full leading-tight",
-            "mobileXLarger:leading-8",
-            "laptop:text-[32px]",
-            "mobileMini:text-[28px] desktop:text-[36px] desktop:leading-[36px]",
-            "desktopLarge:text-[56px] desktopLarge:pr-[40%] desktopLarge:leading-[56px]",
-            "whitespace-nowrap"
+            "text-black font-montserrat leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
+            "whitespace-normal"
           )}
         >
           <span className="text-[#54287B] font-bold">
@@ -56,25 +59,22 @@ const BannerHero = () => {
             Por um futuro mais{" "}
             <span className="text-[#A468E4] font-bold">justo</span>
           </span>
-        </h2>
+        </h1>
 
         <p
-          className={clsx(
-            "w-full text-gray-600 font-roboto text-[14px] mb-8 leading-6",
-            "mobileXLarger:text-[16px]",
-            "text-[18px] md:text-[18px] desktop:mb-10 md:w-full md:leading-7"
-          )}
+          className="w-full text-gray-600 font-roboto text-[14px]
+          leading-5 
+          md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >
           Capacitamos mulheres em situação de vulnerabilidade para que conquistem autonomia, rompam ciclos de violência e transformem suas vidas.
         </p>
 
         <Button
           Background="purple"
-          size="small"
           fontColor="white"
-          className="bg-[#823DC7] hover:bg-[#663198] font-semibold rounded-md transition-colors 
-          w-full md:w-fit py-3 md:px-6  
-          flex-grow md:flex-grow-0"
+          className="bg-[#823DC7] hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
+          w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
+          flex-grow mobileXLarger:flex-grow-0"
         >
           <Link href={"/quero-doar"}>AJUDE AGORA</Link>
         </Button>
