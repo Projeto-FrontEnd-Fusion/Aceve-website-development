@@ -1,18 +1,19 @@
-import { ComponentProps } from "react"
-import Logo from '@/public/logo-header.png'
+import { ComponentProps } from "react";
+import Logo from "@/public/logo-header.png";
 import Image from "next/image";
+import Link from "next/link";
 
-export const HeaderLogo = ({...props} : ComponentProps<'header'>) =>{
-    return(
-        <header {...props} className="flex items-center">
-        <div className={`w-20 mx-2 desktop:w-32`}>
-          <Image
-            src={Logo}
-            alt="logomarca Associação Cultural e Educacional Violeta Eliz"
-            className="w-12 md:w-20"
-            aria-label="logomarca"
-          />
-        </div>
-      </header>
-    )
-}
+export const HeaderLogo = ({ ...props }: ComponentProps<"header">) => {
+  return (
+    <header {...props} className="flex items-center">
+      <div className="mx-2">
+        <Image
+          src={Logo}
+          alt="logomarca Associação Cultural e Educacional Violeta Eliz"
+          className="h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 w-auto object-contain"
+          priority
+        />
+      </div>
+    </header>
+  );
+};

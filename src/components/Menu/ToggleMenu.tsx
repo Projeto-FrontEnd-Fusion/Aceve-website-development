@@ -18,19 +18,19 @@ export const ToggleMenu = ({isMenuOpen, setisMenuOpen, ...props} : ToggleMenuPro
     
       }
     return(
-        <button {...props} type="button" aria-haspopup={true} onKeyDown={()=>handlerKeyDow} onClick={() => setisMenuOpen(!isMenuOpen)}>
+        <button {...props} className="mobileXLarger:hidden" type="button" aria-haspopup={true} onKeyDown={()=>handlerKeyDow} onClick={() => setisMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? (
           <MdClose
             title="Fechar Menu"
             aria-label="abre o menu lateral mobile"
-            className={`text-[2rem] text-gray-normal hover:text-purple-light 
+            className={`text-[2.5rem] text-gray-400 hover:text-purple-light 
             cursor-pointer desktop:hidden`}
           />
         ) : (
           <BiMenu
             title="Abrir Menu"
             aria-label="fecha o menu lateral mobile"
-            className={`text-[2rem] text-gray-normal hover:text-purple-light 
+            className={`text-[2.5rem] text-gray-400 hover:text-purple-light 
             cursor-pointer desktop:hidden`}
           />
         )}
