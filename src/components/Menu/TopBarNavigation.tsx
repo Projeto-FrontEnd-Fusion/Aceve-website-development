@@ -3,17 +3,17 @@ import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
 import Link from "next/link";
 
-const LinkClass = "font-semibold text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
+const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   return (
-    <header className="flex py-4 px-2 m-auto items-center justify-between relative mobileXLarger:py-10 mobileXLarger:px-8 desktop:justify-between desktop:px-8 border-b-2 berder-b-primary">
+    <header className="flex py-4 px-[72px] m-auto items-center justify-between relative desktop:justify-between border-b-2 berder-b-primary">
       <HeaderLogo />
 
       
-      <nav className="hidden desktop:flex gap-6 items-center justify-center flex-1">
+      <nav className="hidden desktop:flex items-center justify-center">
         <Link
           href="/"
           className={LinkClass}
