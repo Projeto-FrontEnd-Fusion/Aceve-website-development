@@ -18,7 +18,7 @@ export const ToggleMenu = ({isMenuOpen, setisMenuOpen, ...props} : ToggleMenuPro
     
       }
     return(
-        <button {...props} type="button" aria-haspopup={true} onKeyDown={()=>handlerKeyDow} onClick={() => setisMenuOpen(!isMenuOpen)}>
+        <button {...props} className="desktop:hidden" type="button" aria-haspopup={true} onKeyDown={()=>handlerKeyDow} onClick={() => setisMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? (
           <MdClose
             title="Fechar Menu"
