@@ -20,27 +20,6 @@ export const Header = () => {
         >
           Início
         </Link>
- 
-        <Link
-          href="/"
-        className={LinkClass}
-        >
-          Sobre nós
-        </Link>
-
-        <Link
-          href="/"
-          className={LinkClass}
-        >
-          O que fazemos
-        </Link>
-
-        <Link
-          href="/"
-          className={LinkClass}
-                  >
-          Faça parte
-        </Link>
 
         <Link
           href="https://wa.me/c/5511982935150"
@@ -52,7 +31,7 @@ export const Header = () => {
 
       
       <div className="hidden desktop:block">
-        <Link href="/doe-agora">
+        <Link href="/quero-doar">
           <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
             QUERO DOAR
           </button>

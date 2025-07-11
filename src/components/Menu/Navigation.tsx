@@ -40,31 +40,6 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       >
         Início
       </Link>
-    {/*
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        Sobre nós
-      </Link> 
-
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        O que fazemos
-      </Link>
-
-      <Link
-        onClick={() => setisMenuOpen(false)}
-        href="/"
-        className="w-full h-16 flex justify-center items-center font-semibold text-gray-normal hover:text-[#823dc7]"
-      >
-        Faça parte
-      </Link>
-*/}
       <Link
         onClick={() => setisMenuOpen(false)}
         href="https://wa.me/c/5511982935150"
@@ -78,7 +53,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       
       <Link
         onClick={() => setisMenuOpen(false)}
-        href="/doe-agora"
+        href="/quero-doar"
         className="w-full h-16 flex justify-center items-center"
       >
         <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
