@@ -57,7 +57,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         href="/quero-doar"
         className="w-full h-16 flex justify-center items-center"
       >
-        <button className="px-5 py-4 bg-[#823dc7] text-white-normal text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
+        <button className="px-5 py-4 bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198] transition">
           QUERO DOAR
         </button>
       </Link>
