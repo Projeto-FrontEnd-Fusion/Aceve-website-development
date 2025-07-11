@@ -6,7 +6,7 @@ interface NavigationProps extends ComponentProps<'nav'> {
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
 
-const LinkClass = "font-semibold text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
+const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
 
 
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
@@ -25,7 +25,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       className={`z-50 border-t-2 border-y-purple-light/30 overflow-hidden w-screen h-screen pt-8 bg-white-normal 
       items-center justify-start top-14 
       fixed flex flex-col transform transition-all duration-500  
-      mobileXLarger:top-20 gap-2
+      mobileXLarger:top-16 gap-2
       desktop:hidden ${
         isMenuOpen
           ? "left-1/2 -translate-x-1/2"
@@ -40,6 +40,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       >
         Início
       </Link>
+
       <Link
         onClick={() => setisMenuOpen(false)}
         href="https://wa.me/c/5511982935150"
@@ -56,7 +57,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         href="/quero-doar"
         className="w-full h-16 flex justify-center items-center"
       >
-        <button className="px-5 py-4 bg-[#823dc7] text-white-normal font-semibold text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
+        <button className="px-5 py-4 bg-[#823dc7] text-white-normal text-lg active:bg-[#663198] rounded-lg hover:bg-[#663198] transition">
           QUERO DOAR
         </button>
       </Link>
