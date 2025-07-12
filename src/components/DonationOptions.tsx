@@ -1,12 +1,12 @@
 'use client'
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 
 export const DonationOptions = () => {
   const [donationValue, setDonationValue] = useState<null | number>(null)
   const [inputOtherValue, setInputOtherValue] = useState<string>("")
 
   const buttonOptions = [20, 50 ,100, 150]
-  
+
   function handleOptionSelect(e:ChangeEvent<HTMLInputElement>, option: number){
     const {checked} = e.currentTarget
     setInputOtherValue("")
@@ -24,8 +24,12 @@ export const DonationOptions = () => {
     const child = el.querySelector('input') as HTMLInputElement | null
     if(child){
       const currentValue = child.checked
+      if(currentValue){
+        setDonationValue(null)
+      }else{
+        setDonationValue(Number(child.value))
+      }
       child.checked = !currentValue
-      setDonationValue(Number(child.value))
       setInputOtherValue("")
     }
   }
