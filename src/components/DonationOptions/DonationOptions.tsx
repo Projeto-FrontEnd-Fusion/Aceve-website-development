@@ -9,16 +9,16 @@ export const DonationOptions = () => {
 
   const buttonOptions = [20, 50 ,100, 150]
 
-  const handleSelect = (value: number) => {
-    const isSame = donationValue === value
-    setDonationValue(isSame ? null : value)
+  const handleSelect = (option: number) => {
+    const isSame = donationValue === option
+    setDonationValue(isSame ? null : option)
     setInputOtherValue("")
   }
 
-  const handleKeyInteraction = (e: React.KeyboardEvent, value: number) => {
+  const handleKeyInteraction = (e: React.KeyboardEvent, option: number) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      handleSelect(value)
+      handleSelect(option)
     }
   }
 
@@ -53,14 +53,15 @@ export const DonationOptions = () => {
         tabIndex={0}
         aria-label={`Doar ${option} reais`}
         role="checkbox"
-        onClick={() => handleSelect(option)}
+        aria-checked={isChecked}
         onKeyDown={(e) => handleKeyInteraction(e, option)}>
           <input 
           tabIndex={-1}
           className="sr-only"
           type="checkbox"
           value={option}
-          checked={option === donationValue}
+          checked={isChecked}
+          onChange={() => handleSelect(option)}
           id={`option-donationValue-${option}`}/>
           <span className={`w-fit font-semibold flex items-center justify-center
           ${donationValue === option ? 'text-[#FAF6FE]' : 'text-[#54287B]'}`}>
@@ -73,6 +74,10 @@ export const DonationOptions = () => {
       placeholder="Outro valor"
       value={inputOtherValue}
       step={'0.01'}
+      onKeyDown={
+        (e)=>{
+          if((e.key === 'Enter' || e.key === ' ') && inputOtherValue === ""){ 
+            setDonationValue(null)}}}
       onClick={() => setDonationValue(null)}
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
