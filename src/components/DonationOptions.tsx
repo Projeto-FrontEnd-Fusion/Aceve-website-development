@@ -106,5 +106,12 @@ export const DonationOptions = () => {
           'border-[#A468E4] bg-[#FFF]'}`}
       readOnly={buttonOptions.includes(donationValue as number)}/>
     </span>
+    <button
+    className="bg-[#823DC7] w-[240px] px-[20px] py-[16px] rounded-[8px] text-[#FFF] 
+    disabled:bg-black"
+    type='button'
+    disabled={donationValue === null}>
+      Continuar
+    </button>
   </section>)
 }
