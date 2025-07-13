@@ -2,50 +2,29 @@
 import { ChangeEvent, useEffect, useState } from "react"
 
 export const DonationOptions = () => {
+  // substituir pela variavel global
   const [donationValue, setDonationValue] = useState<null | number>(null)
+
   const [inputOtherValue, setInputOtherValue] = useState<string>("")
 
   const buttonOptions = [20, 50 ,100, 150]
 
-  function handleOptionSelect(e:ChangeEvent<HTMLInputElement>, option: number){
-    const {checked} = e.currentTarget
+  const handleSelect = (value: number) => {
+    const isSame = donationValue === value
+    setDonationValue(isSame ? null : value)
     setInputOtherValue("")
-    if(!checked){
-      setDonationValue(null)
-      return
-    } else if (donationValue === option){
-      e.preventDefault()
-      return
-    }
-    setDonationValue(option)
   }
 
-  function handleLabelSelect(el: HTMLElement){
-    const child = el.querySelector('input') as HTMLInputElement | null
-    if(child){
-      const currentValue = child.checked
-      if(currentValue){
-        setDonationValue(null)
-      }else{
-        setDonationValue(Number(child.value))
-      }
-      child.checked = !currentValue
-      setInputOtherValue("")
-    }
-  }
-  function handleLabelClick(e: React.MouseEvent<HTMLLabelElement>){
-    handleLabelSelect(e.currentTarget)
-  }
-  function handleLabelEnter(e: React.KeyboardEvent<HTMLLabelElement>){
-    if(e.key === 'Enter' || e.key === ' '){
+  const handleKeyInteraction = (e: React.KeyboardEvent, value: number) => {
+    if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      handleLabelSelect(e.currentTarget)
+      handleSelect(value)
     }
   }
 
-  function handleInputOtherValue(newDonationValue: string){
-    setInputOtherValue(newDonationValue)
-    setDonationValue(Number(newDonationValue))
+  const handleInputChange = (value: string) => {
+    setInputOtherValue(value)
+    setDonationValue(Number(value))
   }
 
   return (
@@ -57,7 +36,9 @@ export const DonationOptions = () => {
       Escolha o valor da sua doação
     </h2>
     <span className='flex flex-col tablet:flex-row gap-4'>
-      {buttonOptions.map((option)=>
+      {buttonOptions.map((option)=>{
+        const isChecked = donationValue === option
+        return(
         <label 
         className={`cursor-pointer relative flex justify-center items-center 
         w-full tablet:w-fit 
@@ -72,21 +53,20 @@ export const DonationOptions = () => {
         tabIndex={0}
         aria-label={`Doar ${option} reais`}
         role="checkbox"
-        onClick={(e)=> handleLabelClick(e)}
-        onKeyDown={(e)=> handleLabelEnter(e)}>
+        onClick={() => handleSelect(option)}
+        onKeyDown={(e) => handleKeyInteraction(e, option)}>
           <input 
           tabIndex={-1}
           className="sr-only"
           type="checkbox"
           value={option}
           checked={option === donationValue}
-          id={`option-donationValue-${option}`}
-          onChange={(e) => handleOptionSelect(e, option)}/>
+          id={`option-donationValue-${option}`}/>
           <span className={`w-fit font-semibold flex items-center justify-center
           ${donationValue === option ? 'text-[#FAF6FE]' : 'text-[#54287B]'}`}>
             {`R$ ${option}`}
           </span>
-        </label>
+        </label>)}
       )}
       <input 
       type="number"
@@ -94,9 +74,9 @@ export const DonationOptions = () => {
       value={inputOtherValue}
       step={'0.01'}
       onClick={() => setDonationValue(null)}
-      onChange={(e) => handleInputOtherValue(e.target.value)}
-      className={`flex items-center justify-center w-[110px] rounded-[8px] border-2 py-[16px] px-[8px] 
-      text-semibold text-[#5F5764] text-center
+      onChange={(e) => handleInputChange(e.target.value)}
+      className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
+      font-semibold text-[#5F5764] text-center
       focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
       ${buttonOptions.includes(donationValue as number) ? 
         'border-[#A5A1A8] bg-[#CCC]' 
@@ -107,8 +87,9 @@ export const DonationOptions = () => {
       readOnly={buttonOptions.includes(donationValue as number)}/>
     </span>
     <button
-    className="bg-[#823DC7] w-[240px] px-[20px] py-[16px] rounded-[8px] text-[#FFF] 
-    disabled:bg-black"
+    className="bg-[#823DC7] w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
+    text-[#FFF] text-[20px] font-semibold 
+    disabled:bg-[#CCC] disabled:text-[#A5A1A8]" 
     type='button'
     disabled={donationValue === null}>
       Continuar
