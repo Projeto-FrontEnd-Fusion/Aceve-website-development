@@ -1,4 +1,4 @@
-import { DonationOptions } from "@/components/DonationOptions";
+import { DonationOptions } from "@/components/DonationOptions/DonationOptions";
 
 function QueroDoar() {
   return (
