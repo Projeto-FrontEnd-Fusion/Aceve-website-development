@@ -48,12 +48,19 @@ export const DonationOptions = () => {
     setDonationValue(Number(newDonationValue))
   }
 
-  return (<>
-    <div className='flex flex-col mobileXLarger:flex-row gap-4'>
+  return (
+  <section className='flex flex-col items-center justify-center w-full gap-[40px]  
+  bg-[#FAF6FE] tablet:bg-[#fff] tablet:rounded-[16px] 
+  tablet:py-[16px] tablet:px-[32px] desktop:py-[24px] 
+  tablet:w-[80%] desktop:w-[60%]'>
+    <h2 className="text-[24px] text-[#663198] font-semibold">
+      Escolha o valor da sua doação
+    </h2>
+    <span className='flex flex-col tablet:flex-row gap-4'>
       {buttonOptions.map((option)=>
         <label 
         className={`cursor-pointer relative flex justify-center items-center 
-        w-full mobileXLarger:w-fit 
+        w-full tablet:w-fit 
         rounded-[8px] py-[16px] px-[20px] border-2 
         active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
         ${donationValue === option ?
@@ -75,7 +82,7 @@ export const DonationOptions = () => {
           checked={option === donationValue}
           id={`option-donationValue-${option}`}
           onChange={(e) => handleOptionSelect(e, option)}/>
-          <span className={`w-fit font-semibold
+          <span className={`w-fit font-semibold flex items-center justify-center
           ${donationValue === option ? 'text-[#FAF6FE]' : 'text-[#54287B]'}`}>
             {`R$ ${option}`}
           </span>
@@ -88,7 +95,8 @@ export const DonationOptions = () => {
       step={'0.01'}
       onClick={() => setDonationValue(null)}
       onChange={(e) => handleInputOtherValue(e.target.value)}
-      className={`flex items-center justify-center rounded-[8px] border-2 text-semibold text-[#5F5764] 
+      className={`flex items-center justify-center w-[110px] rounded-[8px] border-2 py-[16px] px-[8px] 
+      text-semibold text-[#5F5764] text-center
       focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
       ${buttonOptions.includes(donationValue as number) ? 
         'border-[#A5A1A8] bg-[#CCC]' 
@@ -97,6 +105,6 @@ export const DonationOptions = () => {
           :
           'border-[#A468E4] bg-[#FFF]'}`}
       readOnly={buttonOptions.includes(donationValue as number)}/>
-    </div>
-  </>)
+    </span>
+  </section>)
 }
