@@ -1,13 +1,14 @@
 'use client'
-import { ChangeEvent, useEffect, useState } from "react"
+import { useState } from "react"
+import { useRouter } from 'next/navigation'
 
 export const DonationOptions = () => {
   // substituir pela variavel global
   const [donationValue, setDonationValue] = useState<null | number>(null)
 
   const [inputOtherValue, setInputOtherValue] = useState<string>("")
-
   const buttonOptions = [20, 50 ,100, 150]
+  const router = useRouter()
 
   const handleSelect = (option: number) => {
     const isSame = donationValue === option
@@ -96,7 +97,8 @@ export const DonationOptions = () => {
     text-[#FFF] text-[20px] font-semibold 
     disabled:bg-[#CCC] disabled:text-[#A5A1A8]" 
     type='button'
-    disabled={donationValue === null}>
+    disabled={donationValue === null}
+    onClick={()=> {router.push('/quero-doar/metodos')}}>
       Continuar
     </button>
   </section>)
