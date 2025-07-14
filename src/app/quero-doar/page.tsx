@@ -49,7 +49,7 @@ function QueroDoar() {
         <ul className="flex flex-col gap-4 md:flex-row md:flex-wrap md:max-w-2xl md:justify-center md:gap-10">
           {impactList.map(({ about, icon, subTittle }, index) => (
             <li key={index + 1} className="flex flex-col gap-1">
-              <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center min-[430px]:text-sm md:text-base">
+              <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center min-[430px]:text-sm md:text-base md:text-[#A5A1A8]">
                 {icon}
                 {subTittle}
               </h3>
