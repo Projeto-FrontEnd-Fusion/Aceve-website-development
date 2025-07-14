@@ -5,7 +5,7 @@ import { useDonationStore } from "@/zustand-store/donationvalue.store"
 
 interface IDonationState {
   donationValue: number | null
-  setDonationValue: Dispatch<React.SetStateAction<number | null>>
+  setDonationValue: (value: number | null) => void
   setInputOtherValue: Dispatch<React.SetStateAction<string>>
 }
 
