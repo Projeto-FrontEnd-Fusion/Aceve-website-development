@@ -136,13 +136,7 @@ export const DonationOptions = () => {
   const router = useRouter()
 
   return (
-    <section className='flex flex-col items-center justify-center w-full gap-[40px]  
-  bg-[#FAF6FE] tablet:bg-[#fff] tablet:rounded-[16px] 
-  tablet:py-[16px] tablet:px-[32px] desktop:py-[24px] 
-  tablet:w-[80%] desktop:w-[60%]'>
-      <h2 className="text-[24px] text-[#663198] font-semibold">
-        Escolha o valor da sua doação
-      </h2>
+    <>
       <span className='flex flex-col tablet:flex-row gap-4'>
         {buttonOptions.map((option) => {
           return (
@@ -173,5 +167,6 @@ export const DonationOptions = () => {
         onClick={() => { router.push('/quero-doar/metodos') }}>
         Continuar
       </button>
-    </section>)
+    </>
+  )
 }
