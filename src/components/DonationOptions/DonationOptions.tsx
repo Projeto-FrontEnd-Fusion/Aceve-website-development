@@ -1,6 +1,7 @@
 'use client'
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
+import { useDonationStore } from "@/zustand-store/donationvalue.store"
 
 interface IDonationState {
   donationValue: number | null
@@ -126,8 +127,9 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
 }
 
 export const DonationOptions = () => {
-  // substituir pela variavel global
-  const [donationValue, setDonationValue] = useState<null | number>(null)
+
+  const donationValue = useDonationStore((state) => state.donationValue)
+  const setDonationValue = useDonationStore((state) => state.setDonationValue)
 
   const [inputOtherValue, setInputOtherValue] = useState<string>("")
   const buttonOptions = [20, 50, 100, 150]
