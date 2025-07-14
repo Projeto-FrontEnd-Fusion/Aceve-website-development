@@ -46,11 +46,6 @@ export const DonationOptions = () => {
 
   }
 
-  function resetInput(){
-    setDonationValue(null)
-    setInputOtherValue('R$')
-  }
-
   return (
   <section className='flex flex-col items-center justify-center w-full gap-[40px]  
   bg-[#FAF6FE] tablet:bg-[#fff] tablet:rounded-[16px] 
@@ -101,8 +96,8 @@ export const DonationOptions = () => {
       onKeyDown={
         (e)=>{
           if((e.key === 'Enter' || e.key === ' ') && inputOtherValue === ""){ 
-            resetInput()}}}
-      onClick={resetInput}
+            setDonationValue(null);setInputOtherValue('R$')}}}
+      onClick={()=>{ setDonationValue(null);setInputOtherValue('R$')} }
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
       font-semibold text-[#5F5764] text-center
@@ -118,7 +113,8 @@ export const DonationOptions = () => {
     <button
     className="bg-[#823DC7] w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
     text-[#FFF] text-[20px] font-semibold 
-    disabled:bg-[#CCC] disabled:text-[#A5A1A8]" 
+    disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
+    hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]" 
     type='button'
     disabled={donationValue === null}
     onClick={()=> {router.push('/quero-doar/metodos')}}>
