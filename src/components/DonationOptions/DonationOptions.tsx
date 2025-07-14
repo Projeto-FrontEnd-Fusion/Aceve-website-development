@@ -2,6 +2,7 @@
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { useDonationStore } from "@/zustand-store/donationvalue.store"
+import { parseCurrencyInput } from "@/utils/formatCurrencyInput";
 
 interface IDonationState {
   donationValue: number | null
@@ -14,117 +15,120 @@ interface IFixedValueProps extends IDonationState {
 }
 
 const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValue }: IFixedValueProps) => {
-  const isChecked = donationValue === option
-  const isSelectedBackground = donationValue === option ?
-    'border-[#823DC7] bg-[#823DC7]'
-    :
-    'border-[#D6BDF5] bg-[#ffff] hover:bg-[#F2EBFC]'
-  const isSelectedText = donationValue === option ? 'text-[#FAF6FE]' : 'text-[#54287B]'
+  const isChecked = donationValue === option;
 
-  function handleSelect(option: number) {
-    const isSame = donationValue === option
-    setDonationValue(isSame ? null : option)
-    setInputOtherValue("")
-  }
+  const handleToggleSelection = (value: number) => {
+    const isSame = donationValue === value;
+    setDonationValue(isSame ? null : value);
+    setInputOtherValue("");
+  };
 
-  function handleKeyInteraction(e: React.KeyboardEvent, option: number) {
+  const handleKeyboardToggle = (e: React.KeyboardEvent, value: number) => {
     if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      handleSelect(option)
+      e.preventDefault();
+      handleToggleSelection(value);
     }
-  }
+  };
+
+  const selectedStyles = {
+    background: isChecked
+      ? 'border-[#823DC7] bg-[#823DC7]'
+      : 'border-[#D6BDF5] bg-[#ffff] hover:bg-[#F2EBFC]',
+    text: isChecked ? 'text-[#FAF6FE]' : 'text-[#54287B]',
+  };
+
   return (
     <label
-      className={`cursor-pointer relative flex justify-center items-center 
+      className={`
+        cursor-pointer relative flex justify-center items-center 
         w-full tablet:w-fit 
         rounded-[8px] py-[16px] px-[20px] border-2 
         active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
-        ${isSelectedBackground}
-        `}
+        ${selectedStyles.background}
+      `}
       key={option}
       htmlFor={`option-donationValue-${option}`}
       tabIndex={0}
       aria-label={`Doar ${option} reais`}
       role="checkbox"
       aria-checked={isChecked}
-      onKeyDown={(e) => handleKeyInteraction(e, option)}>
+      onKeyDown={(e) => handleKeyboardToggle(e, option)}
+    >
       <input
         tabIndex={-1}
         className="sr-only"
         type="checkbox"
         value={option}
         checked={isChecked}
-        onChange={() => handleSelect(option)}
-        id={`option-donationValue-${option}`} />
-      <span className={`
+        onChange={() => handleToggleSelection(option)}
+        id={`option-donationValue-${option}`}
+      />
+      <span
+        className={`
           w-fit font-semibold flex items-center justify-center
-          ${isSelectedText}
-        `}>
+          ${selectedStyles.text}
+        `}
+      >
         {`R$ ${option}`}
       </span>
     </label>
-  )
-}
-
+  );
+};
 
 interface ICustomValueProps extends IDonationState {
   buttonOptions: number[]
   inputOtherValue: string
 }
 
-const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonationValue, setInputOtherValue, }: ICustomValueProps) => {
-  const isActiveStyles = buttonOptions.includes(donationValue as number) ?
-    'border-[#A5A1A8] bg-[#CCC]'
-    : donationValue === null ?
-      'border-[#D6BDF5] bg-[#FFF]'
-      :
-      'border-[#A468E4] bg-[#FFF]'
 
-  function handleInputChange(option: string) {
+const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonationValue, setInputOtherValue }: ICustomValueProps) => {
 
-    if (!option.startsWith("R$")) option = "R$" + option
+  const handleInputChange = (rawInput: string) => {
+    const numericValue = parseCurrencyInput(rawInput);
 
-    const numericPart = option.replace("R$", "").replace(",", ".").replace(/[^\d.]/g, "")
-    const numericValue = Number(numericPart)
-
-    // verificar antes de atualizar
-    const isMaxLength = () => {
-      const check = numericPart.split(".")[1]
-      return check ? check.length === 3 : false
+    if (numericValue !== null) {
+      setInputOtherValue(`R$${numericValue}`);
+      setDonationValue(numericValue);
     }
+  };
 
-    isMaxLength()
+  const handleReset = () => {
+    setDonationValue(null);
+    setInputOtherValue('R$');
+  };
 
-    if (!isNaN(numericValue) && !isMaxLength()) {
-      const formattedInputValue = "R$" + numericPart
-      setInputOtherValue(formattedInputValue)
-      setDonationValue(Number(numericValue))
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if ((e.key === 'Enter' || e.key === ' ') && inputOtherValue === "") {
+      handleReset();
     }
+  };
 
-  }
+  const isReadOnly = buttonOptions.includes(donationValue as number);
+  const isActiveStyles =
+    isReadOnly
+      ? 'border-[#A5A1A8] bg-[#CCC]'
+      : donationValue === null
+        ? 'border-[#D6BDF5] bg-[#FFF]'
+        : 'border-[#A468E4] bg-[#FFF]';
 
   return (
     <input
       type="text"
       placeholder="Outro valor"
       value={inputOtherValue}
-      step={'0.01'}
-      onKeyDown={
-        (e) => {
-          if ((e.key === 'Enter' || e.key === ' ') && inputOtherValue === "") {
-            setDonationValue(null); setInputOtherValue('R$')
-          }
-        }}
-      onClick={() => { setDonationValue(null); setInputOtherValue('R$') }}
+      step="0.01"
+      onKeyDown={handleKeyDown}
+      onClick={handleReset}
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
         font-semibold text-[#5F5764] text-center
         focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
         ${isActiveStyles}
       `}
-      readOnly={buttonOptions.includes(donationValue as number)} />
-  )
-}
+      readOnly={isReadOnly}
+    />
+  );
+};
 
 export const DonationOptions = () => {
 
@@ -132,6 +136,7 @@ export const DonationOptions = () => {
   const setDonationValue = useDonationStore((state) => state.setDonationValue)
 
   const [inputOtherValue, setInputOtherValue] = useState<string>("")
+
   const buttonOptions = [20, 50, 100, 150]
   const router = useRouter()
 
