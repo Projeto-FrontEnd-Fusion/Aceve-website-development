@@ -72,7 +72,6 @@ interface ICustomValueProps extends IDonationState {
 }
 
 const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonationValue, setInputOtherValue, }: ICustomValueProps) => {
-
   const isActiveStyles = buttonOptions.includes(donationValue as number) ?
     'border-[#A5A1A8] bg-[#CCC]'
     : donationValue === null ?
