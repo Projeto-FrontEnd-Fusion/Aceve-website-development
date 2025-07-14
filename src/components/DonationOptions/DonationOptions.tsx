@@ -10,22 +10,45 @@ export const DonationOptions = () => {
   const buttonOptions = [20, 50 ,100, 150]
   const router = useRouter()
 
-  const handleSelect = (option: number) => {
+  function handleSelect(option: number){
     const isSame = donationValue === option
     setDonationValue(isSame ? null : option)
     setInputOtherValue("")
   }
 
-  const handleKeyInteraction = (e: React.KeyboardEvent, option: number) => {
+  function handleKeyInteraction(e: React.KeyboardEvent, option: number){
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       handleSelect(option)
     }
   }
 
-  const handleInputChange = (value: string) => {
-    setInputOtherValue(value)
-    setDonationValue(Number(value))
+  function handleInputChange(option: string){
+
+    if (!option.startsWith("R$")) option = "R$" + option
+
+    const numericPart = option.replace("R$", "").replace(",",".").replace(/[^\d.]/g, "")
+    const numericValue = Number(numericPart)
+
+    // verificar antes de atualizar
+    const isMaxLength = () => {
+      const check = numericPart.split(".")[1]
+      return check ? check.length === 3 : false
+    }
+
+    isMaxLength()
+
+    if(!isNaN(numericValue) && !isMaxLength()){
+      const formattedInputValue = "R$" + numericPart
+      setInputOtherValue(formattedInputValue)
+      setDonationValue(Number(numericValue))
+    }
+
+  }
+
+  function resetInput(){
+    setDonationValue(null)
+    setInputOtherValue('R$')
   }
 
   return (
@@ -71,15 +94,15 @@ export const DonationOptions = () => {
         </label>)}
       )}
       <input 
-      type="number"
+      type="text"
       placeholder="Outro valor"
       value={inputOtherValue}
       step={'0.01'}
       onKeyDown={
         (e)=>{
           if((e.key === 'Enter' || e.key === ' ') && inputOtherValue === ""){ 
-            setDonationValue(null)}}}
-      onClick={() => setDonationValue(null)}
+            resetInput()}}}
+      onClick={resetInput}
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
       font-semibold text-[#5F5764] text-center
