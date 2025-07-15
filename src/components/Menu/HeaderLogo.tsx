@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
-import Logo from "@/public/logo-header.png";
+import Logo from "@/assets/logo-header.png";
 import Image from "next/image";
-import Link from "next/link";
 
 export const HeaderLogo = ({ ...props }: ComponentProps<"header">) => {
   return (
