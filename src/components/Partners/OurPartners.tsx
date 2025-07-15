@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 
-import LogoCeA from "@/public/InstitutoCeA.png";
-import LogoRemimo from "@/public/RemimoEcojoias.png";
-import LogoBrecholeta from "@/public/BrecholetaVioletaEliz.png";
+import LogoCeA from "@/assets/InstitutoCeA.png";
+import LogoRemimo from "@/assets/RemimoEcojoias.png";
+import LogoBrecholeta from "@/assets/BrecholetaVioletaEliz.png";
 
 type Partner = {
   name: string;
