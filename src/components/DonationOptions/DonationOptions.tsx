@@ -2,7 +2,7 @@
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { useDonationStore } from "@/zustand-store/donationvalue.store"
-import { parseCurrencyInput } from "@/utils/formatCurrencyInput";
+import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 
 interface IDonationState {
   donationValue: number | null
@@ -84,12 +84,10 @@ interface ICustomValueProps extends IDonationState {
 const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonationValue, setInputOtherValue }: ICustomValueProps) => {
 
   const handleInputChange = (rawInput: string) => {
-    const numericValue = parseCurrencyInput(rawInput);
+    const { formatted, parsed } = parseAndFormatCurrency(rawInput);
 
-    if (numericValue !== null) {
-      setInputOtherValue(`R$${numericValue}`);
-      setDonationValue(numericValue);
-    }
+    setInputOtherValue(formatted);
+    setDonationValue(parsed);
   };
 
   const handleReset = () => {
@@ -125,7 +123,6 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
         focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
         ${isActiveStyles}
       `}
-      readOnly={isReadOnly}
     />
   );
 };
