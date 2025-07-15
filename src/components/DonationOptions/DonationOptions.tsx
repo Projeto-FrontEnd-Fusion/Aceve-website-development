@@ -41,7 +41,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
     <label
       className={`
         cursor-pointer relative flex justify-center items-center 
-        w-full tablet:w-fit 
+        w-full
         rounded-[8px] py-[16px] px-[20px] border-2 
         active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
         ${selectedStyles.background}
@@ -120,7 +120,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       onKeyDown={handleKeyDown}
       onClick={handleReset}
       onChange={(e) => handleInputChange(e.target.value)}
-      className={`flex items-center justify-center w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
+      className={`flex items-center justify-center w-full: tablet:w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
         font-semibold text-[#5F5764] text-center
         focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
         ${isActiveStyles}
@@ -142,7 +142,7 @@ export const DonationOptions = () => {
 
   return (
     <>
-      <span className='flex flex-col tablet:flex-row gap-4'>
+      <span className='flex flex-col w-full tablet:flex-row gap-4'>
         {buttonOptions.map((option) => {
           return (
             <FixedValue
@@ -163,7 +163,7 @@ export const DonationOptions = () => {
           setInputOtherValue={setInputOtherValue} />
       </span>
       <button
-        className="bg-[#823DC7] w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
+        className="bg-[#823DC7] w-full tablet:w-[280px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
     text-[#FFF] text-[20px] font-semibold 
     disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
     hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
