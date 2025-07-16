@@ -41,8 +41,8 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
     <label
       className={`
         cursor-pointer relative flex justify-center items-center 
-        w-full tablet:w-fit 
-        rounded-[8px] py-[16px] px-[20px] border-2 
+        w-full
+        rounded-[8px] py-4 px-2 border-2 
         active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
         ${selectedStyles.background}
       `}
@@ -65,7 +65,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
       />
       <span
         className={`
-          w-fit font-semibold flex items-center justify-center
+          font-semibold flex items-center justify-center
           ${selectedStyles.text}
         `}
       >
@@ -119,7 +119,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       onClick={handleReset}
       inputMode="numeric"
       onChange={(e) => handleInputChange(e.target.value)}
-      className={`flex w-full items-center justify-center tablet:w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
+      className={`flex w-full items-center text-base justify-center rounded-[8px] border-2 py-4 px-2 
         font-semibold text-[#5F5764] text-center
         focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
         ${isActiveStyles}
@@ -140,7 +140,7 @@ export const DonationOptions = () => {
 
   return (
     <>
-      <span className='flex flex-col w-full tablet:flex-row gap-4 tablet:justify-center'>
+      <span className='flex flex-col w-full tablet:flex-row gap-4 tablet:justify-around'>
         {buttonOptions.map((option) => {
           return (
             <FixedValue
@@ -162,9 +162,9 @@ export const DonationOptions = () => {
       </span>
       <button
         className="bg-[#823DC7] w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
-    text-[#FFF] text-[20px] font-semibold 
-    disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
-    hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
+          text-[#FFF] text-[20px] font-semibold 
+          disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
+          hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
         type='button'
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
