@@ -3,20 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 export async function POST(request: NextRequest){
-  const {value} = await request.json()
-  const { createOrder, captureOrder } = paypalHooks()
+  const {orderId} = await request.json()
+  const { captureOrder } = paypalHooks()
 
-  if(!value) return NextResponse.json({message: 'Valor ausente'}, {status: 500})
 
   try {
-    const order = await createOrder(value)
-
-
-    return NextResponse.json(order)
+    const capture = await captureOrder(orderId)
+    return NextResponse.json(capture)
   } catch (error: any) {
     console.error('Error in create-order route:', error.response?.data || error.message)
     return NextResponse.json(
-      { error: 'Failed to create order' },
+      { error: 'Failed to capture order' },
       { status: 500 }
     )
   }

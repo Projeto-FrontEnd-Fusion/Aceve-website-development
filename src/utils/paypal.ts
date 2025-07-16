@@ -17,7 +17,6 @@ const PAYPAL_API = process.env.PAYPAL_API || 'https://api.sandbox.paypal.com'
 
 const APPURL = process.env.NEXT_PUBLIC_APPURL
 
-
 export const paypalHooks = () => {
   async function getAccessToken(): Promise<string> {
     const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`).toString('base64');
@@ -63,7 +62,8 @@ export const paypalHooks = () => {
           ],
           application_context: {
             return_url: `${APPURL}/quero-doar`,
-            cancel_url: `${APPURL}/quero-doar`
+            cancel_url: `${APPURL}/quero-doar`,
+            shipping_preference: "NO_SHIPPING"
           }
         }
       });
@@ -79,6 +79,7 @@ export const paypalHooks = () => {
     const createOrder: PayPalButtonsComponentProps["createOrder"] = async () => {
     try{
       const req = await axios.post(`${APPURL}/api/paypal/create-order`, { value })
+
   
       if( req?.data.id ){
         return req.data.id
@@ -91,7 +92,7 @@ export const paypalHooks = () => {
         throw new Error(errorMessage)
       }
     } catch (error){
-      console.log(error)
+      
       throw error
     }
   }
@@ -100,27 +101,33 @@ export const paypalHooks = () => {
 
   }
 
-  function clienteCaptureOrder(){
-    const captureOrder: PayPalButtonsComponentProps['onApprove'] = async (data, actions) => {
-      try {
-        const res = await axios.post(`${APPURL}/api/paypal/capture-order`, {
-          orderId: data.orderID,
-        })
-
-        console.log('Doação realizada com sucesso!', res.data)
-      } catch (error) {
-        console.error('Erro ao capturar order da doação:', error)
-      }
+  async function captureOrder(orderId: string): Promise<any> {
+    const accessToken = await getAccessToken();
+    
+    try {
+      const response = await axios({
+        method: 'post',
+        url: `${PAYPAL_API}/v2/checkout/orders/${orderId}/capture`,
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      return response.data;
+    } catch (error) {
+      console.error('Error capturing order:', error);
+      throw error;
     }
-
-    return captureOrder
+  
   }
 
   const options:ReactPayPalScriptOptions = {
-    clientId: PAYPAL_CLIENT_ID!
+    clientId: PAYPAL_CLIENT_ID!,
+    currency: 'BRL'
   }
 
   return {
-    options, createOrder, clienteCaptureOrder, clientCreateOrder
+    options, createOrder, captureOrder, clientCreateOrder
   }
 }
