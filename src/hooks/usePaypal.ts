@@ -34,7 +34,7 @@ export const usePaypal = () => {
     const details = req.data.details
 
     alert(`Transaction completed by ${details.payer.name.given_name}`);
-    }
+  }
   
   const options: ReactPayPalScriptOptions = {
     clientId: PAYPAL_CLIENT_ID!,
