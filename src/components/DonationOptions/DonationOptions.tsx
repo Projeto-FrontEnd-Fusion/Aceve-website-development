@@ -117,6 +117,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       step="0.01"
       onKeyDown={handleKeyDown}
       onClick={handleReset}
+      inputMode="numeric"
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex w-full items-center justify-center tablet:w-[120px] rounded-[8px] border-2 py-[16px] px-[8px] 
         font-semibold text-[#5F5764] text-center
