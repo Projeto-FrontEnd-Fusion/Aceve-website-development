@@ -166,7 +166,7 @@ export const DonationOptions = () => {
     disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
     hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
         type='button'
-        disabled={donationValue === null}
+        disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
         Continuar
       </button>
