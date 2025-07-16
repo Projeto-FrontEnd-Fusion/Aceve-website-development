@@ -20,7 +20,7 @@ const APPURL = process.env.NEXT_PUBLIC_APPURL
 export const paypalHooks = () => {
   async function getAccessToken(): Promise<string> {
     const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`).toString('base64');
-    
+
     try {
       const response = await axios({
         method: 'post',
@@ -31,7 +31,7 @@ export const paypalHooks = () => {
         },
         data: 'grant_type=client_credentials'
       });
-      
+
       return response.data.access_token;
     } catch (error) {
       console.error('Failed to get access token:', error);
@@ -41,7 +41,7 @@ export const paypalHooks = () => {
 
   async function createOrder(amount: string): Promise<PayPalOrder> {
     const accessToken = await getAccessToken();
-    
+
     try {
       const response = await axios({
         method: 'post',
@@ -67,7 +67,7 @@ export const paypalHooks = () => {
           }
         }
       });
-      
+
       return response.data;
     } catch (error) {
       console.error('Error creating order:', error);
@@ -75,27 +75,27 @@ export const paypalHooks = () => {
     }
   }
 
-  function clientCreateOrder(value: number){
+  function clientCreateOrder(value: number) {
     const createOrder: PayPalButtonsComponentProps["createOrder"] = async () => {
-    try{
-      const req = await axios.post(`${APPURL}/api/paypal/create-order`, { value })
+      try {
+        const req = await axios.post(`${APPURL}/api/paypal/create-order`, { value })
 
-  
-      if( req?.data.id ){
-        return req.data.id
-      } else {
-        const errorDetail = req.data.orderData?.details[0]
-        const errorMessage = errorDetail
+
+        if (req?.data.id) {
+          return req.data.id
+        } else {
+          const errorDetail = req.data.orderData?.details[0]
+          const errorMessage = errorDetail
             ? `${errorDetail.issue} ${errorDetail.description} (${req.data.orderData.debug_id})`
             : "Unexpected error occurred, please try again.";
-  
-        throw new Error(errorMessage)
+
+          throw new Error(errorMessage)
+        }
+      } catch (error) {
+
+        throw error
       }
-    } catch (error){
-      
-      throw error
     }
-  }
 
     return createOrder
 
@@ -103,7 +103,7 @@ export const paypalHooks = () => {
 
   async function captureOrder(orderId: string): Promise<any> {
     const accessToken = await getAccessToken();
-    
+
     try {
       const response = await axios({
         method: 'post',
@@ -113,18 +113,19 @@ export const paypalHooks = () => {
           'Content-Type': 'application/json'
         }
       });
-      
+
       return response.data;
     } catch (error) {
       console.error('Error capturing order:', error);
       throw error;
     }
-  
+
   }
 
-  const options:ReactPayPalScriptOptions = {
+  const options: ReactPayPalScriptOptions = {
     clientId: PAYPAL_CLIENT_ID!,
-    currency: 'BRL'
+    currency: 'BRL',
+    disableFunding: 'card'
   }
 
   return {
