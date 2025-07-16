@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest){
   const {value} = await request.json()
-  const { createOrder, captureOrder } = paypalHooks()
+  const { createOrder } = paypalHooks()
 
   if(!value) return NextResponse.json({message: 'Valor ausente'}, {status: 500})
 

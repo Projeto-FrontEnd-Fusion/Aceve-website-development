@@ -13,7 +13,7 @@ export const PaypalButton = () => {
 
   const onApprove: PayPalButtonsComponentProps["onApprove"] = async (data) => {
         // Capture the funds from the transaction.
-        const response = await fetch(`${APPURL}/capture-order`, {
+        const response = await fetch(`${APPURL}/api/paypal/capture-order`, {
             method: "POST",
             body: JSON.stringify({
                 orderId: data.orderID,
