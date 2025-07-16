@@ -31,9 +31,9 @@ export const usePaypal = () => {
 
   const captureOrder: PayPalButtonsComponentProps["onApprove"] = async (data) => {
     const req = await axios.post(`${APPURL}/api/paypal/capture-order`,{orderId: data.orderID,})
-    const details = req.data.details
+    const details = req.data
 
-    alert(`Transaction completed by ${details.payer.name.given_name}`);
+    console.log(`Doação realizada com sucesso, obrigada pela contribuição ${details.payer.name.given_name}!`)
   }
   
   const options: ReactPayPalScriptOptions = {
