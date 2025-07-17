@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
 import Image from "next/image";
-import BannerImg from '@/public/BannerImg.png'
+import BannerImg from "@/public/BannerImg.png";
 
 const BannerHero = () => {
   const { isOpenMenu } = useStore(toggleMenuStore);
@@ -18,17 +18,20 @@ const BannerHero = () => {
         { "-z-10": isOpenMenu === false }
       )}
     >
-      <figure className="relative w-full self-center h-auto mobileXLarger:flex-shrink-0 mobileXLarger:flex-grow-0
+      <figure
+        className="relative w-full self-center h-auto mobileXLarger:flex-shrink-0 mobileXLarger:flex-grow-0
       mobileXLarger:w-[292px] mobileXLarger:h-[524px] 
       mobileXLarger:px-0
       tablet:w-[356px] tablet:h-[488px] 
       laptop:w-[464px] laptop:h-[628px] 
       desktop:w-[572px] desktop:h-[601px] 
-      desktopLarge:w-[700px] desktopLarge:h-[683px]">
+      desktopLarge:w-[700px] desktopLarge:h-[683px]"
+      >
         <Image
           alt="Imagem de um banner representando empoderamento e igualdade"
           src={BannerImg}
-          className="object-cover object-center mobileXLarger:h-full mobileXLarger:w-full" />
+          className="object-cover object-center mobileXLarger:h-full mobileXLarger:w-full"
+        />
         <figcaption className="sr-only">
           A imagem retrata uma mulher negra em meio a uma comunidade carente de
           uma cidade brasileira. Ela exibe uma expressão determinada, com o
@@ -66,7 +69,9 @@ const BannerHero = () => {
           leading-5 
           md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >
-          Capacitamos mulheres em situação de vulnerabilidade para que conquistem autonomia, rompam ciclos de violência e transformem suas vidas.
+          Capacitamos mulheres em situação de vulnerabilidade para que
+          conquistem autonomia, rompam ciclos de violência e transformem suas
+          vidas.
         </p>
 
         <Button
