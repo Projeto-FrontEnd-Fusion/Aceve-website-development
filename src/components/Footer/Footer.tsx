@@ -1,5 +1,5 @@
 import { FaInstagram } from "react-icons/fa6";
-import Logo from "@/public/logo-footer.png";
+import Logo from "@/assets/logo-footer.png";
 import Image from "next/image";
 interface ILogoFooter {
   logoSimios: string;

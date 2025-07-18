@@ -1,5 +1,5 @@
-import WhoWeAreImage1 from "@/public/who-we-are-1.png"
-import WhoWeAreImage2 from "@/public/who-we-are-2.png"
+import WhoWeAreImage1 from "@/assets/who-we-are-1.png"
+import WhoWeAreImage2 from "@/assets/who-we-are-2.png"
 import Image from "next/image"
 
 export const WhoWeAre = () => {
