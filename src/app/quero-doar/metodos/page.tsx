@@ -14,15 +14,15 @@ function Metodos() {
       >
        <BackButton/>
 
-        <div className="flex flex-col items-center justify-center w-full gap-[24px] bg-[#FFF] 
-        tablet:rounded-[16px] tablet:py-[16px] tablet:px-[32px] desktop:py-[24px] 
+        <div className="flex flex-col items-center justify-center w-full mx-2 max-w-[95%] gap-6 bg-[#FFF] 
+        tablet:rounded-[16px] tablet:py-[16px] tablet:px-8 desktop:py-6 
         tablet:w-[85%] shadow-[1px_1px_4px_rgba(52,52,52,0.2)]">
 
-          <h2 className="text-[24px] text-[#663198] font-semibold text-center mb-4">
+          <h2 className="text-[24px] text-[#663198] font-semibold text-center my-4">
             Escolha sua forma de pagamento
           </h2>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 w-full max-w-[780px]">
-            <div className="w-[346px]">
+          <div className="flex mobileLarger:flex-no-wrap flex-col-reverse items-center mobileXLarger:flex-row tablet:flex-row desktop:flex-row justify-center gap-x-6 gap-y-4 w-full max-w-[780px] ">
+            <div className="min-w-[250px] mobileMini:w-[346px]">
               <Link
                 href="/quero-doar/metodos/paypal"
                 className="flex items-center justify-center gap-3 bg-white w-full h-[56px] rounded-[8px] border-2 
@@ -40,7 +40,7 @@ function Metodos() {
                 </span>
               </Link>
             </div>
-            <div className="w-[346px]">
+            <div className="min-w-[250px] mobileMini:w-[346px]">
               <Link
                 href="/quero-doar/metodos/pix"
                 className="flex items-center justify-center gap-3 bg-white w-full h-[56px] rounded-[8px] border-2 
@@ -59,8 +59,8 @@ function Metodos() {
               </Link>
             </div>
           </div>
-          <div className="w-full max-w-[780px] px-4">
-            <p className="text-sm text-gray-600 mt-2 text-left w-[346px]">
+          <div className="w-full max-w-[780px] px-4 flex flex-wrap pb-3">
+            <p className="text-sm text-gray-600 mt-2 text-left w-[346px] ">
               Você será redirecionado para completar a doação
             </p>
           </div>
