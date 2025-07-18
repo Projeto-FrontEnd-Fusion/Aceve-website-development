@@ -1,4 +1,4 @@
-import PixDonationPage from "./PixPayment";
+import PixDonationPage from "./PixDonationPage";
 
 export default function Page() {
   return <PixDonationPage />;
