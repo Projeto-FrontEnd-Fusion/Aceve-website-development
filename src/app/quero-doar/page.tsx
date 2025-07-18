@@ -44,13 +44,14 @@ function QueroDoar() {
       px-4 mobileXLarger:px-8 laptop:px-[72px]"
     >
       <div className="flex flex-col tablet:w-full tablet:gap-8 items-center">
-
-        <div className='flex flex-col w-full items-center tablet:items-start'>
+        <div className="flex flex-col w-full items-center tablet:items-start">
           <h1 className="text-[40px] text-[#663198] text-xl font-bold tablet:text-[40px]">
             Doações e Arrecadações
           </h1>
           <p className="text-lxl text-[#5F5764] mt-2  pb-8 tablet:pt-5">
-            Sua doação financia ações sociais que acolhem, cuidam e empoderam mulheres, crianças e jovens em situação de vulnerabilidade nas favelas da Zona Sul de São Paulo.
+            Sua doação financia ações sociais que acolhem, cuidam e empoderam
+            mulheres, crianças e jovens em situação de vulnerabilidade nas
+            favelas da Zona Sul de São Paulo.
           </p>
         </div>
 
@@ -70,7 +71,10 @@ function QueroDoar() {
         tablet:grid tablet:grid-rows-2 tablet:grid-cols-2"
           >
             {impactList.map(({ about, icon, subTittle }, index) => (
-              <li key={index + 1} className="w-fit flex flex-col gap-1 tablet:mx-auto">
+              <li
+                key={index + 1}
+                className="w-fit flex flex-col gap-1 tablet:mx-auto"
+              >
                 <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-[#A5A1A8]">
                   {icon}
                   {subTittle}

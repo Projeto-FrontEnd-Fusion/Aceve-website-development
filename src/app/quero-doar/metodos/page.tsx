@@ -1,7 +1,5 @@
-function Metodos(){
-  return (<>
-    Métodos
-  </>)
+function Metodos() {
+  return <>Métodos</>;
 }
 
-export default Metodos
+export default Metodos;
