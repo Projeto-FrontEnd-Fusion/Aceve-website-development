@@ -7,9 +7,9 @@ export const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className="flex items-center gap-2 text-[#A5A1A8] text-lg font-semibold rounded-[8px] hover:bg-[#C1C2C7] active:bg-[#D3D4D9] px-5 py-4 transition mb-0"
+      className="flex w-fit items-center p-2 gap-4 font-semibold text-[0.75rem] tablet:text-[1.25rem] text-[#A5A1A8] rounded-[8px] hover:bg-[#F5F3F6] active:bg-[#CCC] tablet:px-5 tablet:py-4 transition mb-0"
     >
-      <span className="text-lg">&lt;</span>
+      <span className="text-[0.75rem] tablet:text-[1.25rem]">&lt;</span>
       Voltar
     </button>
   );
