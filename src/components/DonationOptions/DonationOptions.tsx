@@ -2,7 +2,7 @@
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { useDonationStore } from "@/zustand-store/donationvalue.store"
-import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
+import { parseAndFormatCurrency, formatInitialValue } from "@/utils/parseAndFormatCurrency";
 
 interface IDonationState {
   donationValue: number | null
@@ -132,10 +132,15 @@ export const DonationOptions = () => {
 
   const donationValue = useDonationStore((state) => state.donationValue)
   const setDonationValue = useDonationStore((state) => state.setDonationValue)
-
-  const [inputOtherValue, setInputOtherValue] = useState<string>("")
-
   const buttonOptions = [20, 50, 100, 150]
+
+  // preserve custom input upon returning to the page
+  const initialOtherValue = donationValue !== null && !buttonOptions.includes(donationValue)
+    ? formatInitialValue(donationValue)
+    : ""
+
+  const [inputOtherValue, setInputOtherValue] = useState<string>(initialOtherValue)
+
   const router = useRouter()
 
   return (
