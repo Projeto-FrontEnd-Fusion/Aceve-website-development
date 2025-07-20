@@ -18,3 +18,12 @@ export function parseAndFormatCurrency(rawInput: string): {
 
   return { formatted, parsed };
 }
+
+export function formatInitialValue(value: number): string {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  });
+}
+

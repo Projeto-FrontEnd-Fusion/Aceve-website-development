@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
 import { useStore } from "zustand";
 import Image from "next/image";
-import BannerImg from "@/public/BannerImg.png";
+import BannerImg from '@/assets/BannerImg.png'
 
 const BannerHero = () => {
   const { isOpenMenu } = useStore(toggleMenuStore);
@@ -80,6 +80,7 @@ const BannerHero = () => {
           className="bg-[#823DC7] hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
           w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
           flex-grow mobileXLarger:flex-grow-0"
+          size="normal"
         >
           <Link href={"/quero-doar"}>AJUDE AGORA</Link>
         </Button>
