@@ -1,4 +1,4 @@
-import { useAccessToken } from "@/hooks/useAccessToken";
+import { getAccessToken } from "@/services/getAccessToken";
 import axios, { isAxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest){
   }
 
   async function createOrder(amount: string): Promise<PayPalOrder> {
-    const accessToken = await useAccessToken();
+    const accessToken = await getAccessToken();
 
     try {
       const response = await axios({

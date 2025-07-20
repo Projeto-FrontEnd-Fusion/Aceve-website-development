@@ -5,7 +5,7 @@ const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET
 const PAYPAL_API = process.env.PAYPAL_API || 'https://api.sandbox.paypal.com'
 
 // gera o token paypal que o backend precisa enviar no headers das requisições para as endpoints do paypal
-export const useAccessToken = async ():Promise<string> => {
+export const getAccessToken = async ():Promise<string> => {
   const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`).toString('base64');
 
     try {
