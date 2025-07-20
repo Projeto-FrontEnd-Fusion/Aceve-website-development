@@ -10,20 +10,20 @@ export const PaypalButton = () => {
   const { options, createOrder, captureOrder } = usePaypal()
   const router = useRouter()
 
-  useEffect(()=>{
-    if(donationValue === null){
+  useEffect(() => {
+    if (donationValue === null) {
       router.push('/quero-doar')
     }
-  },[])
+  }, [])
 
   return (
     <PayPalScriptProvider options={options} >
-      {donationValue && 
+      {donationValue &&
         <PayPalButtons
           style={{
             shape: "rect",
             layout: "vertical",
-            color: "white",
+            color: "silver",
             label: "paypal",
           }}
           createOrder={createOrder(donationValue)}
