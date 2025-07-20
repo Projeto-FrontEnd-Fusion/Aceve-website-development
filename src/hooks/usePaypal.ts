@@ -6,7 +6,7 @@ const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENTID
 const APPURL = process.env.NEXT_PUBLIC_APPURL
 
 export const usePaypal = () => {
-  const createOrder  = (value: number) => {
+  const createOrder = (value: number) => {
     return async () => {
       try {
         const req = await axios.post(`${APPURL}/api/paypal/create-order`, { value })
@@ -30,16 +30,31 @@ export const usePaypal = () => {
   }
 
   const captureOrder: PayPalButtonsComponentProps["onApprove"] = async (data) => {
-    const req = await axios.post(`${APPURL}/api/paypal/capture-order`,{orderId: data.orderID,})
+    const req = await axios.post(`${APPURL}/api/paypal/capture-order`, { orderId: data.orderID, })
     const details = req.data
 
     console.log(`Doação realizada com sucesso, obrigada pela contribuição ${details.payer.name.given_name}!`)
   }
-  
+
   const options: ReactPayPalScriptOptions = {
     clientId: PAYPAL_CLIENT_ID!,
     currency: 'BRL',
-    disableFunding: 'card'
+    disableFunding: [
+      "card",
+      "credit",
+      "paylater",
+      "bancontact",
+      "blik",
+      "eps",
+      "giropay",
+      "ideal",
+      "mercadopago",
+      "mybank",
+      "p24",
+      "sepa",
+      "sofort",
+      "venmo"
+    ]
   }
 
   return {
