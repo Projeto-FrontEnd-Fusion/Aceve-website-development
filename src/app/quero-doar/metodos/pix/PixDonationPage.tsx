@@ -1,8 +1,6 @@
 "use client";
 import { FaCheckCircle } from "react-icons/fa";
 
-import { useSearchParams } from "next/navigation";
-
 import { useEffect, useState } from "react";
 import { useDonationStore } from "@/zustand-store/donationvalue.store";
 import { generatePixCode } from "./generatePixCode";
@@ -12,11 +10,6 @@ export default function PixDonationPage() {
   const donationValueFromStore = useDonationStore(
     (state) => state.donationValue
   );
-  const searchParams = useSearchParams();
-  const searchValue = searchParams.get("valor");
-
-  const donationValue =
-    donationValueFromStore || (searchValue ? Number(searchValue) : null);
 
   const [qrCodeBase64, setQrCodeBase64] = useState<string | null>(null);
   const [brCode, setBrCode] = useState<string | null>(null);
@@ -26,13 +19,12 @@ export default function PixDonationPage() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("valor da doação", donationValue);
-    if (!donationValue) return;
+    if (!donationValueFromStore) return;
 
     const generate = async () => {
       setLoading(true);
       const { qrCodeBase64, brCode, error } = await generatePixCode(
-        donationValue
+        donationValueFromStore
       );
 
       if (!error) {
@@ -44,7 +36,7 @@ export default function PixDonationPage() {
     };
 
     generate();
-  }, [donationValue]);
+  }, [donationValueFromStore]);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start px-4 py-8 sm:py-12  bg-white sm:bg-[#FAF6FE]">
@@ -108,11 +100,10 @@ export default function PixDonationPage() {
               setTimeout(() => setCopied(false), 2000);
             }}
             className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
-    ${
-      copied
-        ? "bg-[#823DC7] text-white border-[#823DC7] hover:bg-[#54287B]"
-        : "text-[#823DC7] border-[#823DC7] hover:bg-[#823DC7] hover:text-white"
-    }`}
+    ${copied
+                ? "bg-[#823DC7] text-white border-[#823DC7] hover:bg-[#54287B]"
+                : "text-[#823DC7] border-[#823DC7] hover:bg-[#823DC7] hover:text-white"
+              }`}
           >
             {copied ? (
               <>
