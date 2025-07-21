@@ -7,7 +7,7 @@ import { generatePixCode } from "./generatePixCode";
 import { useRouter } from "next/navigation";
 
 export default function PixDonationPage() {
-  const donationValueFromStore = useDonationStore(
+  const donationValue = useDonationStore(
     (state) => state.donationValue
   );
 
@@ -19,24 +19,25 @@ export default function PixDonationPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!donationValueFromStore) return;
+    if (!donationValue) {
+      router.push('/quero-doar')
+    } else {
+      (async () => {
+        setLoading(true);
+        const { qrCodeBase64, brCode, error } = await generatePixCode(
+          donationValue
+        );
 
-    const generate = async () => {
-      setLoading(true);
-      const { qrCodeBase64, brCode, error } = await generatePixCode(
-        donationValueFromStore
-      );
+        if (!error) {
+          setQrCodeBase64(qrCodeBase64);
+          setBrCode(brCode);
+        }
 
-      if (!error) {
-        setQrCodeBase64(qrCodeBase64);
-        setBrCode(brCode);
-      }
+        setLoading(false);
+      })();
+    }
 
-      setLoading(false);
-    };
-
-    generate();
-  }, [donationValueFromStore]);
+  }, [donationValue]);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start px-4 py-8 sm:py-12  bg-white sm:bg-[#FAF6FE]">
