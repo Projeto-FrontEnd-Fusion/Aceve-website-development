@@ -1,8 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { BackButton } from "@/components/BackButton/backButton";
+import { PaypalButton } from "@/components/PaypalButton/PaypalButton";
 
 function BotaoPagamento({
   href,
@@ -47,11 +47,7 @@ export default function Metodos() {
 
         <div className="w-full flex flex-col-reverse items-center justify-around tablet:flex-row gap-4 tablet:items-start">
           <div className="flex flex-col justify-start text-sm text-gray-600 text-left w-full">
-            <BotaoPagamento
-              href="/quero-doar/metodos/paypal"
-              icon="/paypal-icon.svg"
-              text="Pagamento via PayPal"
-            />
+            <PaypalButton />
             <p className="ml-2 text-[10px]">
               Você será redirecionado para o PayPal para finalizar a doação
             </p>
