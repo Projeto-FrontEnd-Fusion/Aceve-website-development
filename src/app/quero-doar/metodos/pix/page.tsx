@@ -107,14 +107,14 @@ function CopySection({
         onClick={onCopy}
         className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
           ${copied
-            ? "bg-[#823DC7] text-white border-[#823DC7] hover:bg-[#54287B]"
-            : "text-[#823DC7] border-[#823DC7] hover:bg-[#823DC7] hover:text-white"
+            ? "bg-[#823DC7] text-[#FFFFFF] border-[#823DC7] hover:bg-[#54287B]"
+            : "text-[#823DC7] border-[#823DC7] hover:bg-[#823DC7] hover:text-[#FFFFFF]"
           }`}
       >
         {copied ? (
           <>
-            <span className="text-white">Copiado</span>
-            <FaCheckCircle size={16} className="text-white" />
+            <span className="text-[#FFFFFF]">Copiado</span>
+            <FaCheckCircle size={16} className="text-[#FFFFFF]" />
           </>
         ) : (
           "Copiar link"
