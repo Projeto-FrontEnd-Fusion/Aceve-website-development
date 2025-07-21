@@ -20,7 +20,7 @@ export default function Page() {
       </div>
 
       <section className="w-full max-w-[520px] bg-white sm:bg-white rounded-none sm:rounded-2xl shadow-none sm:shadow-md p-6 sm:p-8 flex flex-col gap-6 sm:gap-8">
-        <Header />
+        <Heading />
         <Instructions />
         <QRCodeDisplay loading={loading} qrCodeBase64={qrCodeBase64} />
         <CopySection
@@ -35,7 +35,7 @@ export default function Page() {
 
 
 
-function Header() {
+function Heading() {
   return (
     <h1 className="text-xl sm:text-2xl font-semibold text-[#663198] tracking-[-0.01em] text-center font-inter">
       Pagamento via PIX
