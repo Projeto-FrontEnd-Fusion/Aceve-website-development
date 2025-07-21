@@ -1,10 +1,12 @@
 "use client";
+import { FaCheckCircle } from "react-icons/fa";
 
 import { useSearchParams } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import { useDonationStore } from "@/zustand-store/donationvalue.store";
 import { generatePixCode } from "./generatePixCode";
+import { useRouter } from "next/navigation";
 
 export default function PixDonationPage() {
   const donationValueFromStore = useDonationStore(
@@ -21,8 +23,10 @@ export default function PixDonationPage() {
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
 
+  const router = useRouter();
+
   useEffect(() => {
-    console.log("valor da doação, donationValue");
+    console.log("valor da doação", donationValue);
     if (!donationValue) return;
 
     const generate = async () => {
@@ -45,7 +49,10 @@ export default function PixDonationPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-start px-4 py-8 sm:py-12  bg-white sm:bg-[#FAF6FE]">
       <div className="w-full mb-4 pl-2 sm:pl-12 md:pl-20 lg:pl-20 self-start">
-        <button className="flex items-center gap-2 px-4 py-3 font-bold text-lg text-[#A5A1A8] hover:opacity-90 transition-opacity">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center gap-2 px-4 py-3 font-bold text-lg text-[#A5A1A8] hover:opacity-90 transition-opacity"
+        >
           &lt; Voltar
         </button>
       </div>
@@ -100,9 +107,21 @@ export default function PixDonationPage() {
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
-            className="w-full sm:w-[157px] px-5 py-3 border-2 border-[#823DC7] rounded-lg text-[#823DC7] font-semibold text-sm hover transition-colors whitespace-nowrap"
+            className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
+    ${
+      copied
+        ? "bg-[#823DC7] text-white border-[#823DC7] hover:bg-[#54287B]"
+        : "text-[#823DC7] border-[#823DC7] hover:bg-[#823DC7] hover:text-white"
+    }`}
           >
-            {copied ? "Copiado" : "Copiar link"}
+            {copied ? (
+              <>
+                <span className="text-white">Copiado</span>
+                <FaCheckCircle size={16} className="text-white" />
+              </>
+            ) : (
+              "Copiar link"
+            )}
           </button>
         </div>
       </section>
