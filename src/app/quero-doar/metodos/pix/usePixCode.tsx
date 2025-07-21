@@ -42,15 +42,12 @@ export function usePixCode() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleBack = () => router.back();
-
   return {
     qrCodeBase64,
     brCode,
     loading,
     copied,
     handleCopy,
-    handleBack,
   };
 }
 

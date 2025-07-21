@@ -11,7 +11,6 @@ export default function Page() {
     loading,
     copied,
     handleCopy,
-    handleBack,
   } = usePixCode();
 
   return (
