@@ -15,9 +15,9 @@ export const generatePixCode = async (amount: number) => {
 
   try {
     const pixResult = await createStaticPix({
-      merchantName: 'Elizangela M. dos Santos',
+      merchantName: 'ONG Violeta Eliz',
       merchantCity: 'Sao Paulo',
-      pixKey: '+5511964771181',
+      pixKey: '23398031000148',
       infoAdicional: '',
       transactionAmount: amount,
     });
