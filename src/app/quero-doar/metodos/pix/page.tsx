@@ -14,12 +14,12 @@ export default function Page() {
   } = usePixCode();
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-start px-4 py-8 sm:py-12 bg-white sm:bg-[#FAF6FE]">
+    <main className="bg-[#FFFFFF] p-4 tablet:bg-[#FAF6FE] min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
       <div className="self-start">
         <BackButton />
       </div>
 
-      <section className="w-full max-w-[520px] bg-white sm:bg-white rounded-none sm:rounded-2xl shadow-none sm:shadow-md p-6 sm:p-8 flex flex-col gap-6 sm:gap-8">
+      <section className="w-full desktop:w-[70%] laptop:w-[80%] tablet:bg-[#FFFFFF] rounded-none sm:rounded-2xl shadow-none sm:shadow-md p-6 sm:p-8 flex flex-col gap-6 sm:gap-10">
         <Heading />
         <Instructions />
         <QRCodeDisplay loading={loading} qrCodeBase64={qrCodeBase64} />
@@ -74,7 +74,6 @@ function QRCodeDisplay({
         <img
           src={qrCodeBase64}
           alt="QR Code para pagamento PIX"
-          className="w-40 h-40 object-contain"
         />
       ) : (
         <div className="text-red-500 text-center">
