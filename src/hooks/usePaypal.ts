@@ -39,22 +39,7 @@ export const usePaypal = () => {
   const options: ReactPayPalScriptOptions = {
     clientId: PAYPAL_CLIENT_ID!,
     currency: 'BRL',
-    disableFunding: [
-      "card",
-      "credit",
-      "paylater",
-      "bancontact",
-      "blik",
-      "eps",
-      "giropay",
-      "ideal",
-      "mercadopago",
-      "mybank",
-      "p24",
-      "sepa",
-      "sofort",
-      "venmo"
-    ]
+    disableFunding: "card",
   }
 
   return {
