@@ -13,7 +13,7 @@ const BannerHero = () => {
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative px-4",
+        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[72px]",
         "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
@@ -42,8 +42,8 @@ const BannerHero = () => {
 
       <article
         className={clsx(
-          "flex flex-col gap-4 mt-[-8px]",
-          "py-10 desktop:px-16 desktopLarge:px-20",
+          "flex flex-col gap-4",
+          "mobileXLargerpy-10 tablet:mr-6 desktop:mr-16",
           "mobileXLarger:justify-center mobileXLarger:items-start mobileXLarger:w-auto"
         )}
       >
