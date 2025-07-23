@@ -1,8 +1,10 @@
-'use client';
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 import { BackButton } from "@/components/BackButton/backButton";
-import { PaypalButton } from "@/components/PaypalButton/PaypalButton"
+import { PaypalButton } from "@/components/PaypalButton/PaypalButton";
+import { useDonationGuard } from "@/hooks/useDonationGuard";
 
 function BotaoPagamento({
   href,
@@ -23,17 +25,15 @@ function BotaoPagamento({
       hover:bg-[#F2EBFC] transition duration-300 w-full ${className}`}
     >
       <Image src={icon} alt={`Ícone ${text}`} width={30} height={30} />
-      <span className="text-[#54287B] text-[12px] font-medium">
-        {text}
-      </span>
+      <span className="text-[#54287B] text-[12px] font-medium">{text}</span>
     </Link>
   );
 }
-export default function Metodos() {
+export default function Page() {
+  useDonationGuard();
   return (
     <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-[#FAF6FE]">
       <h1 className="sr-only">Métodos de Pagamento</h1>
-
 
       <BackButton />
       <section
@@ -51,7 +51,9 @@ export default function Metodos() {
         <div className="w-full flex flex-col-reverse items-center justify-around tablet:flex-row gap-4 tablet:items-start">
           <div className="flex flex-col justify-start text-sm text-gray-600 text-left w-full">
             <PaypalButton />
-            <p className="ml-2 text-[10px]">Você será redirecionado para o PayPal para finalizar a doação</p>
+            <p className="ml-2 text-[10px]">
+              Você será redirecionado para o PayPal para finalizar a doação
+            </p>
           </div>
           <BotaoPagamento
             href="/quero-doar/metodos/pix"
