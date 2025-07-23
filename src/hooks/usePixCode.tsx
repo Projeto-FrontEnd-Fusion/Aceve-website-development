@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useDonationStore } from "@/zustand-store/donationvalue.store";
-import { generatePixCode } from "./generatePixCode";
+import { generatePixCode } from "@/utils/generatePixCode";
 
 export function usePixCode() {
   const donationValue = useDonationStore((state) => state.donationValue);

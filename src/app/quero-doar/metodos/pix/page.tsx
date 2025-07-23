@@ -1,7 +1,6 @@
 'use client'
-
 import { FaCheckCircle } from "react-icons/fa";
-import { usePixCode } from "./usePixCode";
+import { usePixCode } from "@/hooks/usePixCode";
 import { BackButton } from "@/components/BackButton/backButton";
 import { useDonationGuard } from "@/hooks/useDonationGuard";
 
@@ -22,7 +21,7 @@ export default function Page() {
         <BackButton />
       </div>
 
-      <section className="w-full desktop:w-[70%] laptop:w-[80%] tablet:bg-[#FFFFFF] rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">
+      <section className="w-full max-w-[731px] desktop:w-[70%] laptop:w-[80%] tablet:bg-[#FFFFFF] rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">
         <Heading />
         <Instructions />
         <QRCodeDisplay loading={loading} qrCodeBase64={qrCodeBase64} />
