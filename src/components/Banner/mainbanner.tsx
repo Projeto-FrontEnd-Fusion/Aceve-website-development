@@ -74,16 +74,11 @@ const BannerHero = () => {
           vidas.
         </p>
 
-        <Button
-          Background="purple"
-          fontColor="white"
-          className="bg-[#823DC7] hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
+        <Link
+          className="bg-[#823DC7] text-[#FFFFFF] flex justify-center hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
           w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
           flex-grow mobileXLarger:flex-grow-0"
-          size="normal"
-        >
-          <Link href={"/quero-doar"}>AJUDE AGORA</Link>
-        </Button>
+          href={"/quero-doar"}>AJUDE AGORA</Link>
       </article>
     </section>
   );
