@@ -1,8 +1,10 @@
-"use client";
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 import { BackButton } from "@/components/BackButton/backButton";
 import { PaypalButton } from "@/components/PaypalButton/PaypalButton";
+import { useDonationGuard } from "@/hooks/useDonationGuard";
 
 function BotaoPagamento({
   href,
@@ -27,7 +29,8 @@ function BotaoPagamento({
     </Link>
   );
 }
-export default function Metodos() {
+export default function Page() {
+  useDonationGuard();
   return (
     <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-[#FAF6FE]">
       <h1 className="sr-only">Métodos de Pagamento</h1>

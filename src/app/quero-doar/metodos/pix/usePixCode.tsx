@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useDonationStore } from "@/zustand-store/donationvalue.store";
-import { useRouter } from "next/navigation";
 import { generatePixCode } from "./generatePixCode";
 
 export function usePixCode() {
@@ -12,11 +11,9 @@ export function usePixCode() {
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
 
-  const router = useRouter();
 
   useEffect(() => {
     if (!donationValue) {
-      router.push("/quero-doar");
       return;
     }
 
