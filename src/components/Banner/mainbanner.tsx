@@ -49,7 +49,7 @@ const BannerHero = () => {
       >
         <h1
           className={clsx(
-            "text-black font-montserrat leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
+            "text-black leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
             "whitespace-normal"
           )}
         >
@@ -65,7 +65,7 @@ const BannerHero = () => {
         </h1>
 
         <p
-          className="w-full text-gray-600 font-roboto text-[14px]
+          className="w-full text-gray-600 text-[14px]
           leading-5 
           md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >

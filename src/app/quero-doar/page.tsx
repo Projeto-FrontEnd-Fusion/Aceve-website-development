@@ -61,7 +61,7 @@ function QueroDoar() {
         md:rounded-2xl md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]
         md:bg-white-normal"
         >
-          <h2 className="text-[#663198] font-montserrat font-semibold text-sm min-[430px]:text-base sm:text-xl md:text-2xl">
+          <h2 className="text-[#663198] font-semibold text-sm min-[430px]:text-base sm:text-xl md:text-2xl">
             Como sua doação faz diferença
           </h2>
 
@@ -94,7 +94,7 @@ function QueroDoar() {
         md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]"
         >
           <h2
-            className="text-[24px] text-[#663198] font-montserrat font-semibold
+            className="text-[24px] text-[#663198] font-semibold
           text-sm min-[430px]:text-base sm:text-xl md:text-2xl"
           >
             Escolha o valor da sua doação

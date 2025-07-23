@@ -26,7 +26,7 @@ const contactList = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#54287B] font-roboto py-8">
+    <footer className="bg-[#54287B] py-8">
       <div
         className="flex flex-col sm:flex-row gap-10 items-center justify-evenly 
             text-white-normal
