@@ -26,7 +26,7 @@ const contactList = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#54287B] font-roboto py-8">
+    <footer className="bg-[#54287B] py-8">
       <div
         className="flex flex-col sm:flex-row gap-10 items-center justify-evenly 
             text-white-normal
@@ -61,7 +61,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Siga-nos no Instagram da ONG Violeta Eliz"
-          className="flex items-center flex-col gap-2 text-white-normal hover:text-purple-300 transition-colors font-bold text-sm"
+          className="flex items-center hover:underline flex-col gap-2 text-sm"
         >
           <span>Siga-nos no Instagram</span>
           <FaInstagram size={30} />

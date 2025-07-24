@@ -120,3 +120,7 @@
 .info-h-3 {
   @apply uppercase font-bold text-gray-dark text-center tablet:text-2xl tablet:text-start tablet:normal-case pb-4;
 }
+
+* {
+  font-family: "Inter" !important;
+}

@@ -47,7 +47,7 @@ function Heading() {
 
 function Instructions() {
   return (
-    <ol className="text-[#5F5764] text-[16px] leading-[24px] font-inter space-y-2">
+    <ol className="text-[#5F5764] text-[16px] leading-[24px] space-y-2">
       <li>
         1. Abra o app do seu banco ou instituição financeira e entre no
         ambiente <strong>PIX</strong>;

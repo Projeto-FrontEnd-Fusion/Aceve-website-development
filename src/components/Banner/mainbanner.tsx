@@ -13,7 +13,7 @@ const BannerHero = () => {
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative px-4",
+        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[72px]",
         "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
@@ -42,14 +42,14 @@ const BannerHero = () => {
 
       <article
         className={clsx(
-          "flex flex-col gap-4 mt-[-8px]",
-          "py-10 desktop:px-16 desktopLarge:px-20",
+          "flex flex-col gap-4",
+          "mobileXLargerpy-10 tablet:mr-6 desktop:mr-16",
           "mobileXLarger:justify-center mobileXLarger:items-start mobileXLarger:w-auto"
         )}
       >
         <h1
           className={clsx(
-            "text-black font-montserrat leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
+            "text-black leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
             "whitespace-normal"
           )}
         >
@@ -65,7 +65,7 @@ const BannerHero = () => {
         </h1>
 
         <p
-          className="w-full text-gray-600 font-roboto text-[14px]
+          className="w-full text-gray-600 text-[14px]
           leading-5 
           md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >
@@ -74,16 +74,11 @@ const BannerHero = () => {
           vidas.
         </p>
 
-        <Button
-          Background="purple"
-          fontColor="white"
-          className="bg-[#823DC7] hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
+        <Link
+          className="bg-[#823DC7] text-[#FFFFFF] flex justify-center hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
           w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
-          flex-grow mobileXLarger:flex-grow-0"
-          size="normal"
-        >
-          <Link href={"/quero-doar"}>AJUDE AGORA</Link>
-        </Button>
+          flex-grow mobileXLarger:flex-grow-0 focus:outline-[#D6BDF5]"
+          href={"/quero-doar"}>AJUDE AGORA</Link>
       </article>
     </section>
   );
