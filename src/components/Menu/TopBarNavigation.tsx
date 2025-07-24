@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
 import Link from "next/link";
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
+const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-[#CBCBCB]";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
@@ -28,7 +28,9 @@ export const Header = () => {
         <div className="hidden mobileXLarger:block">
           <Link
             href="/quero-doar"
-            className="px-5 py-4 bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198] transition"
+            className="px-5 py-4 bg-[#823dc7] text-white-normal
+            text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198]
+            transition focus:outline-[#D6BDF5]"
           >
             QUERO DOAR
           </Link>

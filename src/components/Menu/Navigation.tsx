@@ -6,7 +6,7 @@ interface NavigationProps extends ComponentProps<'nav'> {
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300";
+const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-[#CBCBCB]";
 
 
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
@@ -54,7 +54,9 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       <Link
         onClick={() => setisMenuOpen(false)}
         href="/quero-doar"
-        className="h-16 flex justify-center items-center px-5 py-4 bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198] transition ease-in-out"
+        className="h-16 flex justify-center items-center px-5 py-4
+        bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B]
+        rounded-lg hover:bg-[#663198] transition ease-in-out focus:outline-[#D6BDF5]"
       >
         QUERO DOAR
       </Link>
