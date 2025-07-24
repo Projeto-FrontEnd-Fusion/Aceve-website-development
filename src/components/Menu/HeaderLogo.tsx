@@ -7,7 +7,7 @@ export const HeaderLogo = ({ ...props }: ComponentProps<"header">) => {
     <Image
       src={Logo}
       alt="logomarca Associação Cultural e Educacional Violeta Eliz"
-      className="h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 w-auto object-contain"
+      className="h-11 mobileXLarger:h-8 laptop:h-14 w-auto object-contain"
       priority
     />
   );
