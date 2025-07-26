@@ -104,7 +104,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
   const isReadOnly = buttonOptions.includes(donationValue as number);
   const isActiveStyles =
     isReadOnly
-      ? 'border-[#A5A1A8] bg-[#CCC]'
+      ? 'border-[#A5A1A8] bg-grey-300'
       : donationValue === null
         ? 'border-primary-400 bg-[#FFF]'
         : 'border-primary-500 bg-[#FFF]';
@@ -168,7 +168,7 @@ export const DonationOptions = () => {
       <button
         className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
           text-[#FFF] text-[20px] font-semibold 
-          disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
+          disabled:bg-grey-300 disabled:text-[#A5A1A8] 
           hover:bg-primary-700 focus:outline-primary-400 active:bg-primary-800"
         type='button'
         disabled={donationValue === null || donationValue === 0}
