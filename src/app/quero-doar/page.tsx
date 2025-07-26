@@ -75,7 +75,7 @@ function QueroDoar() {
                 key={index + 1}
                 className="w-fit flex flex-col gap-1 tablet:mx-auto"
               >
-                <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-[#A5A1A8]">
+                <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-grey-500">
                   {icon}
                   {subTittle}
                 </h3>
