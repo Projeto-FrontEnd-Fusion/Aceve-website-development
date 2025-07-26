@@ -28,7 +28,7 @@ export const Header = () => {
         <div className="hidden mobileXLarger:block">
           <Link
             href="/quero-doar"
-            className="px-5 py-4 bg-[#823dc7] text-white-normal
+            className="px-5 py-4 bg-primary-600 text-white-normal
             text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198]
             transition focus:outline-primary-400"
           >

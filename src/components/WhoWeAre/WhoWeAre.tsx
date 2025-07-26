@@ -33,7 +33,7 @@ export const WhoWeAre = () => {
         ${textClass}`}>
           Quem somos
         </h2>
-        <h3 className={`text-[#823DC7] text-3xl font-semibold
+        <h3 className={`text-primary-600 text-3xl font-semibold
         ${textClass}`}>
           Da favela para o mundo: poder feminino em ação
         </h3>

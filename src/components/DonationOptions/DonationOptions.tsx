@@ -32,7 +32,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
 
   const selectedStyles = {
     background: isChecked
-      ? 'border-[#823DC7] bg-[#823DC7]'
+      ? 'border-primary-600 bg-primary-600'
       : 'border-primary-400 bg-[#ffff] hover:bg-primary-200',
     text: isChecked ? 'text-primary-100' : 'text-[#54287B]',
   };
@@ -121,7 +121,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex w-full items-center text-base justify-center rounded-[8px] border-2 py-4 px-2 
         font-semibold text-[#5F5764] text-center
-        focus:outline-[#823DC7] hover:bg-primary-200 
+        focus:outline-primary-600 hover:bg-primary-200 
         ${isActiveStyles}
       `}
     />
@@ -166,7 +166,7 @@ export const DonationOptions = () => {
           setInputOtherValue={setInputOtherValue} />
       </span>
       <button
-        className="bg-[#823DC7] w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
+        className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
           text-[#FFF] text-[20px] font-semibold 
           disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
           hover:bg-[#663198] focus:outline-primary-400 active:bg-[#54287B]"
