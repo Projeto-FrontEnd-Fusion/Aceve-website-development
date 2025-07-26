@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
 import Link from "next/link";
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-[#CBCBCB]";
+const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
