@@ -1,4 +1,4 @@
-import BannerHero from "@/components/Banner/mainbanner";
+import BannerHero from "@/components/BannerHero/BannerHero";
 import { OurPartners } from "@/components/Partners/OurPartners";
 import { Media } from "@/components/Media/Media";
 import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
@@ -6,7 +6,7 @@ import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      <BannerHero/>
+      <BannerHero />
       <WhoWeAre />
       <Media />
       <OurPartners />
