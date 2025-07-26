@@ -34,7 +34,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
     background: isChecked
       ? 'border-[#823DC7] bg-[#823DC7]'
       : 'border-[#D6BDF5] bg-[#ffff] hover:bg-[#F2EBFC]',
-    text: isChecked ? 'text-[#FAF6FE]' : 'text-[#54287B]',
+    text: isChecked ? 'text-primary-100' : 'text-[#54287B]',
   };
 
   return (

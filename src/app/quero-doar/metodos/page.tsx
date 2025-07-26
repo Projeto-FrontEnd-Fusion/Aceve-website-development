@@ -32,7 +32,7 @@ function BotaoPagamento({
 export default function Page() {
   useDonationGuard();
   return (
-    <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-[#FAF6FE]">
+    <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-primary-100">
       <h1 className="sr-only">Métodos de Pagamento</h1>
 
       <BackButton />

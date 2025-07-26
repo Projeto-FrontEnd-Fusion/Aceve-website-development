@@ -17,7 +17,7 @@ export const OurPartners = () => {
   ];
 
   return (
-    <section className="py-12 flex flex-col gap-8 bg-[#FAF6FE]">
+    <section className="py-12 flex flex-col gap-8 bg-primary-100">
       <h2 className="max-mobileLarger:text-lg text-3xl font-bold text-[#54287B] uppercase self-center">
         parceiros
       </h2>

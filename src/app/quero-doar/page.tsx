@@ -40,7 +40,7 @@ const impactList: IimpactData[] = [
 function QueroDoar() {
   return (
     <main
-      className="flex flex-col min-h-screen bg-[#FAF6FE] items-center py-8
+      className="flex flex-col min-h-screen bg-primary-100 items-center py-8
       px-4 mobileXLarger:px-8 laptop:px-[72px]"
     >
       <div className="flex flex-col tablet:w-full tablet:gap-8 items-center">
@@ -88,7 +88,7 @@ function QueroDoar() {
         </section>
         <section
           className="flex flex-col items-center justify-center w-full gap-5 tablet:gap-10 
-        bg-[#FAF6FE] tablet:bg-[#fff] tablet:rounded-[16px] 
+        bg-primary-100 tablet:bg-[#fff] tablet:rounded-[16px] 
         tablet:py-[16px] tablet:px-[32px] desktop:py-[24px] 
         tablet:w-full desktop:w-[65%]
         md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]"

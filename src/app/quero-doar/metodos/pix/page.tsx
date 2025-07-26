@@ -16,7 +16,7 @@ export default function Page() {
   } = usePixCode();
 
   return (
-    <main className="bg-[#FFFFFF] p-4 tablet:bg-[#FAF6FE] min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
+    <main className="bg-[#FFFFFF] p-4 tablet:bg-primary-100 min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
       <div className="self-start">
         <BackButton />
       </div>
