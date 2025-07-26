@@ -120,7 +120,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       inputMode="numeric"
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex w-full items-center text-base justify-center rounded-[8px] border-2 py-4 px-2 
-        font-semibold text-[#5F5764] text-center
+        font-semibold text-grey-600 text-center
         focus:outline-primary-600 hover:bg-primary-200 
         ${isActiveStyles}
       `}

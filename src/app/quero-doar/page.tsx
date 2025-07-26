@@ -48,7 +48,7 @@ function QueroDoar() {
           <h1 className="text-[40px] text-primary-700 text-xl font-bold tablet:text-[40px]">
             Doações e Arrecadações
           </h1>
-          <p className="text-lxl text-[#5F5764] mt-2  pb-8 tablet:pt-5">
+          <p className="text-lxl text-grey-600 mt-2  pb-8 tablet:pt-5">
             Sua doação financia ações sociais que acolhem, cuidam e empoderam
             mulheres, crianças e jovens em situação de vulnerabilidade nas
             favelas da Zona Sul de São Paulo.
@@ -75,7 +75,7 @@ function QueroDoar() {
                 key={index + 1}
                 className="w-fit flex flex-col gap-1 tablet:mx-auto"
               >
-                <h3 className="flex font-semibold gap-2 text-[#5F5764] text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-grey-500">
+                <h3 className="flex font-semibold gap-2 text-grey-600 text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-grey-500">
                   {icon}
                   {subTittle}
                 </h3>
