@@ -1,4 +1,4 @@
-import { DonationOptions } from "@/components/DonationOptions/DonationOptions";
+import { DonationOptions } from "@/features/donations/components/DonationOptions/DonationOptions";
 import { ReactNode } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { MdComputer, MdOutlineDiversity1 } from "react-icons/md";

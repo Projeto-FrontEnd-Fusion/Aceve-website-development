@@ -1,8 +1,8 @@
 'use client'
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
-import { useDonationStore } from "@/zustand-store/donationvalue.store"
-import { parseAndFormatCurrency, formatInitialValue } from "@/utils/parseAndFormatCurrency";
+import { useDonationStore } from "@/features/donations/stores/donationvalue.store"
+import { parseAndFormatCurrency, formatInitialValue } from "@/features/donations/utils/parseAndFormatCurrency";
 
 interface IDonationState {
   donationValue: number | null

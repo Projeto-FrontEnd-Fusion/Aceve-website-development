@@ -1,7 +1,7 @@
 'use client'
 
-import { usePaypal } from '@/hooks/usePaypal'
-import { useDonationStore } from '@/zustand-store/donationvalue.store'
+import { usePaypal } from '@/features/donations/hooks/usePaypal'
+import { useDonationStore } from '@/features/donations/stores/donationvalue.store'
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 export const PaypalButton = () => {

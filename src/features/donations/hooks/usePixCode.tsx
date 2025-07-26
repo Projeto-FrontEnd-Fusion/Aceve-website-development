@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useDonationStore } from "@/zustand-store/donationvalue.store";
-import { generatePixCode } from "@/utils/generatePixCode";
+import { useDonationStore } from "@/features/donations/stores/donationvalue.store";
+import { generatePixCode } from "@/features/donations/utils/generatePixCode";
 
 export function usePixCode() {
   const donationValue = useDonationStore((state) => state.donationValue);

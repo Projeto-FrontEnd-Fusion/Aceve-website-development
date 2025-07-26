@@ -1,21 +1,21 @@
-import { getAccessToken } from "@/services/getAccessToken";
+import { getAccessToken } from "@/features/donations/services/getAccessToken";
 import axios, { isAxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 const PAYPAL_API = process.env.PAYPAL_API || 'https://api.sandbox.paypal.com'
 
-export async function POST(request: NextRequest){
-  const {orderId} = await request.json()
+export async function POST(request: NextRequest) {
+  const { orderId } = await request.json()
 
   try {
     const capture = await captureOrder(orderId)
     return NextResponse.json(capture)
   } catch (error) {
     const message = isAxiosError(error)
-        ? error.response?.data || error.message
-        : error instanceof Error
-          ? error.message
-          : 'Unknown error';
+      ? error.response?.data || error.message
+      : error instanceof Error
+        ? error.message
+        : 'Unknown error';
     console.error('Erro ao tentar criar order:', message)
     return NextResponse.json(
       { error: 'Erro ao tentar criar order' },
@@ -42,5 +42,5 @@ export async function POST(request: NextRequest){
     }
 
   }
-  
+
 }

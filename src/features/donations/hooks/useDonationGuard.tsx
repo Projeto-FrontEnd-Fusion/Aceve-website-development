@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useDonationStore } from "@/zustand-store/donationvalue.store";
+import { useDonationStore } from "@/features/donations/stores/donationvalue.store";
 
 export function useDonationGuard(redirectTo: string = "/quero-doar") {
   const donationValue = useDonationStore((state) => state.donationValue);

@@ -1,6 +1,5 @@
 import { createStaticPix } from 'pix-utils';
 import type { PixStaticObject } from 'pix-utils';
-import { off } from 'process';
 
 export const generatePixCode = async (amount: number) => {
 

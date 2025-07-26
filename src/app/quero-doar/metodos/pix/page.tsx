@@ -1,8 +1,9 @@
 'use client'
-import { FaCheckCircle } from "react-icons/fa";
-import { usePixCode } from "@/hooks/usePixCode";
-import { BackButton } from "@/components/BackButton/backButton";
-import { useDonationGuard } from "@/hooks/useDonationGuard";
+import { usePixCode } from "@/features/donations/hooks/usePixCode";
+import { BackButton } from "@/features/donations/components/BackButton/BackButton";
+import { useDonationGuard } from "@/features/donations/hooks/useDonationGuard";
+import { PixQRCode } from "@/features/donations/components/PixQRCode/PixQRCode";
+import { PixBRCode } from "@/features/donations/components/PixBRCode/PixBRCode";
 
 export default function Page() {
   useDonationGuard();
@@ -24,8 +25,8 @@ export default function Page() {
       <section className="w-full max-w-[731px] desktop:w-[70%] laptop:w-[80%] tablet:bg-grey-100 rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">
         <Heading />
         <Instructions />
-        <QRCodeDisplay loading={loading} qrCodeBase64={qrCodeBase64} />
-        <CopySection
+        <PixQRCode loading={loading} qrCodeBase64={qrCodeBase64} />
+        <PixBRCode
           brCode={brCode}
           copied={copied}
           onCopy={handleCopy}
@@ -61,66 +62,3 @@ function Instructions() {
   );
 }
 
-function QRCodeDisplay({
-  loading,
-  qrCodeBase64,
-}: {
-  loading: boolean;
-  qrCodeBase64: string | null;
-}) {
-  return (
-    <div className="flex justify-center">
-      {loading ? (
-        <div className="w-40 h-40 object-contain bg-zinc-300 rounded" />
-      ) : qrCodeBase64 ? (
-        <img
-          src={qrCodeBase64}
-          alt="QR Code para pagamento PIX"
-        />
-      ) : (
-        <div className="text-red-500 text-center">
-          Erro ao gerar QR Code.
-        </div>
-      )}
-    </div>
-  );
-}
-
-function CopySection({
-  brCode,
-  copied,
-  onCopy,
-}: {
-  brCode: string | null;
-  copied: boolean;
-  onCopy: () => void;
-}) {
-  return (
-    <div className="flex flex-col sm:flex-row gap-2 mt-2 w-full">
-      <input
-        type="text"
-        readOnly
-        value={brCode || ""}
-        className="w-full sm:w-[calc(100%-165px)] px-4 py-3 rounded-lg border-2 border-primary-500 bg-white text-zinc-700 text-sm outline-none"
-      />
-
-      <button
-        onClick={onCopy}
-        className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
-          ${copied
-            ? "bg-primary-600 text-grey-100 border-primary-600 hover:bg-primary-800"
-            : "text-primary-600 border-primary-600 hover:bg-primary-600 hover:text-grey-100"
-          }`}
-      >
-        {copied ? (
-          <>
-            <span className="text-grey-100">Copiado</span>
-            <FaCheckCircle size={16} className="text-grey-100" />
-          </>
-        ) : (
-          "Copiar link"
-        )}
-      </button>
-    </div>
-  );
-}
