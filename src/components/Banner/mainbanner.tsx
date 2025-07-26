@@ -55,12 +55,12 @@ const BannerHero = () => {
         >
           <span className="text-[#54287B] font-bold">
             Pelo poder de cada{" "}
-            <span className="text-[#A468E4] font-bold">mulher</span>
+            <span className="text-primary-500 font-bold">mulher</span>
           </span>
           <br />
           <span className="text-[#54287B] font-bold">
             Por um futuro mais{" "}
-            <span className="text-[#A468E4] font-bold">justo</span>
+            <span className="text-primary-500 font-bold">justo</span>
           </span>
         </h1>
 

@@ -107,7 +107,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       ? 'border-[#A5A1A8] bg-[#CCC]'
       : donationValue === null
         ? 'border-primary-400 bg-[#FFF]'
-        : 'border-[#A468E4] bg-[#FFF]';
+        : 'border-primary-500 bg-[#FFF]';
 
   return (
     <input

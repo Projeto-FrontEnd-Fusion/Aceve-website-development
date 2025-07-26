@@ -101,7 +101,7 @@ function CopySection({
         type="text"
         readOnly
         value={brCode || ""}
-        className="w-full sm:w-[calc(100%-165px)] px-4 py-3 rounded-lg border-2 border-[#A468E4] bg-white text-zinc-700 text-sm outline-none"
+        className="w-full sm:w-[calc(100%-165px)] px-4 py-3 rounded-lg border-2 border-primary-500 bg-white text-zinc-700 text-sm outline-none"
       />
 
       <button
