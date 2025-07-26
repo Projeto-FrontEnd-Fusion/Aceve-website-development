@@ -1,21 +1,15 @@
-"use client";
-import { Button } from "../button/GlobalButton";
 import Link from "next/link";
 import clsx from "clsx";
-import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
-import { useStore } from "zustand";
 import Image from "next/image";
 import BannerImg from "@/assets/BannerImg.png";
 
 const BannerHero = () => {
-  const { isOpenMenu } = useStore(toggleMenuStore);
 
   return (
     <section
       className={clsx(
         "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[4.5rem]",
         "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
-        { "-z-10": isOpenMenu === false }
       )}
     >
       <figure
