@@ -167,7 +167,7 @@ export const DonationOptions = () => {
       </span>
       <button
         className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
-          text-[#FFF] text-[20px] font-semibold 
+          text-[#FFF] text-[1.25rem] font-semibold 
           disabled:bg-grey-300 disabled:text-grey-500 
           hover:bg-primary-700 focus:outline-primary-400 active:bg-primary-800"
         type='button'

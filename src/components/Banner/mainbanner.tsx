@@ -13,7 +13,7 @@ const BannerHero = () => {
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[72px]",
+        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[4.5rem]",
         "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
         { "-z-10": isOpenMenu === false }
       )}
@@ -49,7 +49,7 @@ const BannerHero = () => {
       >
         <h1
           className={clsx(
-            "text-black leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
+            "text-black leading-7 mobileXLarger:leading-[2.875rem] font-bold text-[1.125rem] tablet:text-[2.5rem] mobileXLarger:text-[2.1875rem] mobileMicro:text-[1.5rem] w-full",
             "whitespace-normal"
           )}
         >
@@ -65,9 +65,9 @@ const BannerHero = () => {
         </h1>
 
         <p
-          className="w-full text-gray-600 text-[14px]
+          className="w-full text-gray-600 text-[0.875rem]
           leading-5 
-          md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
+          md:text-[1.125rem] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >
           Capacitamos mulheres em situação de vulnerabilidade para que
           conquistem autonomia, rompam ciclos de violência e transformem suas

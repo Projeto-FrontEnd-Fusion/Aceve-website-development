@@ -6,7 +6,7 @@ interface NavigationProps extends ComponentProps<'nav'> {
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
+const LinkClass = "text-[1.25rem] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
 
 
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {

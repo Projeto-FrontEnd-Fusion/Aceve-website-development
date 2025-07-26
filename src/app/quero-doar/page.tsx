@@ -41,11 +41,11 @@ function QueroDoar() {
   return (
     <main
       className="flex flex-col min-h-screen bg-primary-100 items-center py-8
-      px-4 mobileXLarger:px-8 laptop:px-[72px]"
+      px-4 mobileXLarger:px-8 laptop:px-[4.5rem]"
     >
       <div className="flex flex-col tablet:w-full tablet:gap-8 items-center">
         <div className="flex flex-col w-full items-center tablet:items-start">
-          <h1 className="text-[40px] text-primary-700 text-xl font-bold tablet:text-[40px]">
+          <h1 className="text-[2.5rem] text-primary-700 text-xl font-bold tablet:text-[2.5rem]">
             Doações e Arrecadações
           </h1>
           <p className="text-lxl text-grey-600 mt-2  pb-8 tablet:pt-5">
@@ -75,7 +75,7 @@ function QueroDoar() {
                 key={index + 1}
                 className="w-fit flex flex-col gap-1 tablet:mx-auto"
               >
-                <h3 className="flex font-semibold gap-2 text-grey-600 text-xs leading-5 items-center  min-[430px]:text-sm md:text-[14px] md:text-grey-500">
+                <h3 className="flex font-semibold gap-2 text-grey-600 text-xs leading-5 items-center  min-[430px]:text-sm md:text-[0.875rem] md:text-grey-500">
                   {icon}
                   {subTittle}
                 </h3>
@@ -89,12 +89,12 @@ function QueroDoar() {
         <section
           className="flex flex-col items-center justify-center w-full gap-5 tablet:gap-10 
         bg-primary-100 tablet:bg-[#fff] tablet:rounded-[16px] 
-        tablet:py-[16px] tablet:px-[32px] desktop:py-[24px] 
+        tablet:py-4 tablet:px-8 desktop:py-6
         tablet:w-full desktop:w-[65%]
         md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]"
         >
           <h2
-            className="text-[24px] text-primary-700 font-semibold
+            className="text-[1.5rem] text-primary-700 font-semibold
           text-sm min-[430px]:text-base sm:text-xl md:text-2xl"
           >
             Escolha o valor da sua doação

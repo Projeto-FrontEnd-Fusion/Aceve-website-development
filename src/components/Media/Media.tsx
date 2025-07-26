@@ -2,9 +2,9 @@ export function Media() {
   return (
     <section className="flex flex-col 
     px-4 
-    tablet:px-8 laptop:px-[72px]
+    tablet:px-8 laptop:px-[4.5rem]
     min-[400px]:px-8 desktop:mx-auto py-10">
-      <h2 className="uppercase text-sm leading-[30px] text-[#6F6975] tracking-tighter font-semibold min-[400px]:text-2xl">
+      <h2 className="uppercase text-sm leading-[1.875rem] text-[#6F6975] tracking-tighter font-semibold min-[400px]:text-2xl">
         mídia
       </h2>
       <h3 className="text-lg leading-6 text-primary-800 tracking-tighter font-semibold mb-4 min-[400px]:text-3xl ">

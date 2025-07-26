@@ -3,13 +3,13 @@ import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
 import Link from "next/link";
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
+const LinkClass = "text-[1.25rem] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[72px] m-auto border-b-2 border-b-primary relative">
+    <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
       <div className="flex-shrink-0">
         <HeaderLogo />
       </div>
