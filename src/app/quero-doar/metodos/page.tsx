@@ -22,7 +22,7 @@ function BotaoPagamento({
       href={href}
       className={`flex items-center gap-3 justify-center bg-[#FFF] h-[56px] rounded-[8px] border-2 
       border-[#D6BDF5] px-6 font-semibold
-      hover:bg-[#F2EBFC] transition duration-300 w-full focus:outline-[#54287B] active:bg-[#D6BDF5]${className}`}
+      hover:bg-primary-200 transition duration-300 w-full focus:outline-[#54287B] active:bg-[#D6BDF5]${className}`}
     >
       <Image src={icon} alt={`Ícone ${text}`} width={30} height={30} />
       <span className="text-[#54287B] text-[12px] font-medium">{text}</span>
