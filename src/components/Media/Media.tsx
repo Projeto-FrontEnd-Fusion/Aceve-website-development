@@ -7,7 +7,7 @@ export function Media() {
       <h2 className="uppercase text-sm leading-[30px] text-[#6F6975] tracking-tighter font-semibold min-[400px]:text-2xl">
         mídia
       </h2>
-      <h3 className="text-lg leading-6 text-[#54287B] tracking-tighter font-semibold mb-4 min-[400px]:text-3xl ">
+      <h3 className="text-lg leading-6 text-primary-800 tracking-tighter font-semibold mb-4 min-[400px]:text-3xl ">
         Nossa causa em destaque
       </h3>
       <div className="flex flex-col gap-8 md:flex-row">

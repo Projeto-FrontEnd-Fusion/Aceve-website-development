@@ -53,12 +53,12 @@ const BannerHero = () => {
             "whitespace-normal"
           )}
         >
-          <span className="text-[#54287B] font-bold">
+          <span className="text-primary-800 font-bold">
             Pelo poder de cada{" "}
             <span className="text-primary-500 font-bold">mulher</span>
           </span>
           <br />
-          <span className="text-[#54287B] font-bold">
+          <span className="text-primary-800 font-bold">
             Por um futuro mais{" "}
             <span className="text-primary-500 font-bold">justo</span>
           </span>

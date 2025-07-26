@@ -18,7 +18,7 @@ export const OurPartners = () => {
 
   return (
     <section className="py-12 flex flex-col gap-8 bg-primary-100">
-      <h2 className="max-mobileLarger:text-lg text-3xl font-bold text-[#54287B] uppercase self-center">
+      <h2 className="max-mobileLarger:text-lg text-3xl font-bold text-primary-800 uppercase self-center">
         parceiros
       </h2>
       <div className="flex justify-center gap-8 items-center max-mobileLarger:flex-col md:gap-20">

@@ -108,7 +108,7 @@ function CopySection({
         onClick={onCopy}
         className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
           ${copied
-            ? "bg-primary-600 text-[#FFFFFF] border-primary-600 hover:bg-[#54287B]"
+            ? "bg-primary-600 text-[#FFFFFF] border-primary-600 hover:bg-primary-800"
             : "text-primary-600 border-primary-600 hover:bg-primary-600 hover:text-[#FFFFFF]"
           }`}
       >

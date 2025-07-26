@@ -34,7 +34,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
     background: isChecked
       ? 'border-primary-600 bg-primary-600'
       : 'border-primary-400 bg-[#ffff] hover:bg-primary-200',
-    text: isChecked ? 'text-primary-100' : 'text-[#54287B]',
+    text: isChecked ? 'text-primary-100' : 'text-primary-800',
   };
 
   return (
@@ -43,7 +43,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
         cursor-pointer relative flex justify-center items-center 
         w-full
         rounded-[8px] py-4 px-2 border-2 
-        active:bg-primary-400 focus:outline-[#54287B] focus:outline focus:outline-2
+        active:bg-primary-400 focus:outline-primary-800 focus:outline focus:outline-2
         ${selectedStyles.background}
       `}
       key={option}
@@ -169,7 +169,7 @@ export const DonationOptions = () => {
         className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
           text-[#FFF] text-[20px] font-semibold 
           disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
-          hover:bg-primary-700 focus:outline-primary-400 active:bg-[#54287B]"
+          hover:bg-primary-700 focus:outline-primary-400 active:bg-primary-800"
         type='button'
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
