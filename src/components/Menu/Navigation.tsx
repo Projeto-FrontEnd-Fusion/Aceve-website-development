@@ -56,7 +56,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         href="/quero-doar"
         className="h-16 flex justify-center items-center px-5 py-4
         bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B]
-        rounded-lg hover:bg-[#663198] transition ease-in-out focus:outline-[#D6BDF5]"
+        rounded-lg hover:bg-[#663198] transition ease-in-out focus:outline-primary-400"
       >
         QUERO DOAR
       </Link>

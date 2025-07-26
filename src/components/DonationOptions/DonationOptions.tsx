@@ -33,7 +33,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
   const selectedStyles = {
     background: isChecked
       ? 'border-[#823DC7] bg-[#823DC7]'
-      : 'border-[#D6BDF5] bg-[#ffff] hover:bg-primary-200',
+      : 'border-primary-400 bg-[#ffff] hover:bg-primary-200',
     text: isChecked ? 'text-primary-100' : 'text-[#54287B]',
   };
 
@@ -43,7 +43,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
         cursor-pointer relative flex justify-center items-center 
         w-full
         rounded-[8px] py-4 px-2 border-2 
-        active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
+        active:bg-primary-400 focus:outline-[#54287B] focus:outline focus:outline-2
         ${selectedStyles.background}
       `}
       key={option}
@@ -106,7 +106,7 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
     isReadOnly
       ? 'border-[#A5A1A8] bg-[#CCC]'
       : donationValue === null
-        ? 'border-[#D6BDF5] bg-[#FFF]'
+        ? 'border-primary-400 bg-[#FFF]'
         : 'border-[#A468E4] bg-[#FFF]';
 
   return (
@@ -169,7 +169,7 @@ export const DonationOptions = () => {
         className="bg-[#823DC7] w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
           text-[#FFF] text-[20px] font-semibold 
           disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
-          hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
+          hover:bg-[#663198] focus:outline-primary-400 active:bg-[#54287B]"
         type='button'
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>

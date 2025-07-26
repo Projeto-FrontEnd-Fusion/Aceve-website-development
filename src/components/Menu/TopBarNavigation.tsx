@@ -30,7 +30,7 @@ export const Header = () => {
             href="/quero-doar"
             className="px-5 py-4 bg-[#823dc7] text-white-normal
             text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198]
-            transition focus:outline-[#D6BDF5]"
+            transition focus:outline-primary-400"
           >
             QUERO DOAR
           </Link>
