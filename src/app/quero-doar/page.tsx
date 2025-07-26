@@ -45,7 +45,7 @@ function QueroDoar() {
     >
       <div className="flex flex-col tablet:w-full tablet:gap-8 items-center">
         <div className="flex flex-col w-full items-center tablet:items-start">
-          <h1 className="text-[40px] text-[#663198] text-xl font-bold tablet:text-[40px]">
+          <h1 className="text-[40px] text-primary-700 text-xl font-bold tablet:text-[40px]">
             Doações e Arrecadações
           </h1>
           <p className="text-lxl text-[#5F5764] mt-2  pb-8 tablet:pt-5">
@@ -61,7 +61,7 @@ function QueroDoar() {
         md:rounded-2xl md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]
         md:bg-white-normal"
         >
-          <h2 className="text-[#663198] font-semibold text-sm min-[430px]:text-base sm:text-xl md:text-2xl">
+          <h2 className="text-primary-700 font-semibold text-sm min-[430px]:text-base sm:text-xl md:text-2xl">
             Como sua doação faz diferença
           </h2>
 
@@ -94,7 +94,7 @@ function QueroDoar() {
         md:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]"
         >
           <h2
-            className="text-[24px] text-[#663198] font-semibold
+            className="text-[24px] text-primary-700 font-semibold
           text-sm min-[430px]:text-base sm:text-xl md:text-2xl"
           >
             Escolha o valor da sua doação

@@ -44,7 +44,7 @@ export default function Page() {
         desktop:w-[70%]
         bg-[#FFF] rounded-[16px] tablet:shadow-[1px_1px_4px_rgba(52,52,52,0.2)]"
       >
-        <h2 className="text-[14px] tablet:text-[24px] text-[#663198] font-semibold text-center">
+        <h2 className="text-[14px] tablet:text-[24px] text-primary-700 font-semibold text-center">
           Escolha sua forma de pagamento
         </h2>
 

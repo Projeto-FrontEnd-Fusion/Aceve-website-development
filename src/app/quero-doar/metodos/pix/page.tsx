@@ -39,7 +39,7 @@ export default function Page() {
 
 function Heading() {
   return (
-    <h1 className="text-xl sm:text-2xl font-semibold text-[#663198] tracking-[-0.01em] text-center font-inter">
+    <h1 className="text-xl sm:text-2xl font-semibold text-primary-700 tracking-[-0.01em] text-center font-inter">
       Pagamento via PIX
     </h1>
   );

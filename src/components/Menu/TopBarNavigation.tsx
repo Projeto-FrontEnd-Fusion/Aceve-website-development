@@ -29,7 +29,7 @@ export const Header = () => {
           <Link
             href="/quero-doar"
             className="px-5 py-4 bg-primary-600 text-white-normal
-            text-lg active:bg-[#54277B] rounded-lg hover:bg-[#663198]
+            text-lg active:bg-[#54277B] rounded-lg hover:bg-primary-700
             transition focus:outline-primary-400"
           >
             QUERO DOAR

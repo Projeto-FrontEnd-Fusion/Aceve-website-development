@@ -169,7 +169,7 @@ export const DonationOptions = () => {
         className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
           text-[#FFF] text-[20px] font-semibold 
           disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
-          hover:bg-[#663198] focus:outline-primary-400 active:bg-[#54287B]"
+          hover:bg-primary-700 focus:outline-primary-400 active:bg-[#54287B]"
         type='button'
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
