@@ -75,7 +75,7 @@ const BannerHero = () => {
         </p>
 
         <Link
-          className="bg-primary-600 text-[#FFFFFF] flex justify-center hover:bg-primary-700 active:bg-[#54277B] font-semibold rounded-md transition-colors 
+          className="bg-primary-600 text-grey-100 flex justify-center hover:bg-primary-700 active:bg-[#54277B] font-semibold rounded-md transition-colors 
           w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
           flex-grow mobileXLarger:flex-grow-0 focus:outline-primary-400"
           href={"/quero-doar"}>AJUDE AGORA</Link>

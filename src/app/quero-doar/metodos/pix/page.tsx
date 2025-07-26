@@ -16,12 +16,12 @@ export default function Page() {
   } = usePixCode();
 
   return (
-    <main className="bg-[#FFFFFF] p-4 tablet:bg-primary-100 min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
+    <main className="bg-grey-100 p-4 tablet:bg-primary-100 min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
       <div className="self-start">
         <BackButton />
       </div>
 
-      <section className="w-full max-w-[731px] desktop:w-[70%] laptop:w-[80%] tablet:bg-[#FFFFFF] rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">
+      <section className="w-full max-w-[731px] desktop:w-[70%] laptop:w-[80%] tablet:bg-grey-100 rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">
         <Heading />
         <Instructions />
         <QRCodeDisplay loading={loading} qrCodeBase64={qrCodeBase64} />
@@ -108,14 +108,14 @@ function CopySection({
         onClick={onCopy}
         className={`w-full sm:w-[157px] px-5 py-3 border-2 rounded-lg font-semibold text-sm transition-colors whitespace-nowrap flex items-center justify-center gap-2
           ${copied
-            ? "bg-primary-600 text-[#FFFFFF] border-primary-600 hover:bg-primary-800"
-            : "text-primary-600 border-primary-600 hover:bg-primary-600 hover:text-[#FFFFFF]"
+            ? "bg-primary-600 text-grey-100 border-primary-600 hover:bg-primary-800"
+            : "text-primary-600 border-primary-600 hover:bg-primary-600 hover:text-grey-100"
           }`}
       >
         {copied ? (
           <>
-            <span className="text-[#FFFFFF]">Copiado</span>
-            <FaCheckCircle size={16} className="text-[#FFFFFF]" />
+            <span className="text-grey-100">Copiado</span>
+            <FaCheckCircle size={16} className="text-grey-100" />
           </>
         ) : (
           "Copiar link"
