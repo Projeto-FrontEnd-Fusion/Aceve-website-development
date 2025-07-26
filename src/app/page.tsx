@@ -1,7 +1,7 @@
-import BannerHero from "@/components/BannerHero/BannerHero";
-import { OurPartners } from "@/components/Partners/OurPartners";
-import { Media } from "@/components/Media/Media";
-import { WhoWeAre } from "@/components/WhoWeAre/WhoWeAre";
+import BannerHero from "@/features/home/components/BannerHero/BannerHero";
+import { OurPartners } from "@/features/home/components/Partners/OurPartners";
+import { Media } from "@/features/home/components/Media/Media";
+import { WhoWeAre } from "@/features/home/components/WhoWeAre/WhoWeAre";
 
 export default function Home() {
   return (
