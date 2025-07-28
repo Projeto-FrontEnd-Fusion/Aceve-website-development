@@ -4,6 +4,7 @@ import { BackButton } from "@/features/donations/components/BackButton/BackButto
 import { PaypalButton } from "@/features/donations/components/PaypalButton/PaypalButton"
 import { PaymentButton } from "@/features/donations/components/PaymentButton/PaymentButton";
 import { useDonationGuard } from "@/features/donations/hooks/useDonationGuard";
+import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 
 export default function Page() {
   useDonationGuard();
@@ -31,11 +32,15 @@ export default function Page() {
               Você será redirecionado para o PayPal para finalizar a doação
             </p>
           </div>
-          <PaymentButton
+
+          <GlobalLink
+            variant="outlined-primary-400"
             href="/quero-doar/metodos/pix"
-            icon="/pix-icon.svg"
-            text="Pagamento via PIX"
-          />
+            className="px-6 w-full h-[56px] gap-3 "
+          >
+            <img src="/pix-icon.svg" width={30} height={30} />
+            <span className="text-primary-800 text-[0.75rem]">Pagamento via PIX</span>
+          </GlobalLink>
         </div>
       </section>
     </main>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
 import BannerImg from "@/assets/BannerImg.png";
+import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 
 const BannerHero = () => {
 
@@ -68,11 +69,14 @@ const BannerHero = () => {
           vidas.
         </p>
 
-        <Link
-          className="bg-primary-600 text-grey-100 flex justify-center hover:bg-primary-700 active:bg-[#54277B] font-semibold rounded-md transition-colors 
-          w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
-          flex-grow mobileXLarger:flex-grow-0 focus:outline-primary-400"
-          href={"/quero-doar"}>AJUDE AGORA</Link>
+        <GlobalLink
+          variant="primary"
+          className="
+          w-full font-semibold mobileXLarger:w-fit py-4 mobileXLarger:px-5
+          flex-grow mobileXLarger:flex-grow-0"
+          href={"/quero-doar"}>
+          AJUDE AGORA
+        </GlobalLink>
       </article>
     </section>
   );

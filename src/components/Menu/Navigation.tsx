@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ComponentProps, useEffect } from "react";
+import { GlobalLink } from "../GlobalLink/GlobalLink";
 
 interface NavigationProps extends ComponentProps<'nav'> {
   isMenuOpen: boolean;
@@ -32,34 +33,28 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         }`}
     >
 
-      <Link
-        onClick={() => setisMenuOpen(false)}
+      <GlobalLink
+        variant="text"
         href="/"
-        className={LinkClass}
-      >
+        className="text-[1.25rem] py-3 px-4">
         Início
-      </Link>
+      </GlobalLink>
 
-      <Link
-        onClick={() => setisMenuOpen(false)}
+      <GlobalLink
+        variant="text"
         href="https://wa.me/c/5511982935150"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={LinkClass}
-      >
+        className="text-[1.25rem] py-3 px-4">
         Loja
-      </Link>
+      </GlobalLink>
 
-
-      <Link
+      <GlobalLink
+        variant="primary"
         onClick={() => setisMenuOpen(false)}
         href="/quero-doar"
-        className="h-16 flex justify-center items-center px-5 py-4
-        bg-primary-600 text-white-normal text-lg active:bg-[#54277B]
-        rounded-lg hover:bg-primary-700 transition ease-in-out focus:outline-primary-400"
+        className="px-5 py-4 "
       >
         QUERO DOAR
-      </Link>
-    </nav>
+      </GlobalLink>
+    </nav >
   );
 };
