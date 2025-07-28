@@ -9,7 +9,7 @@ export default function Page() {
   useDonationGuard();
   const router = useRouter()
   return (
-    <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-primary-100">
+    <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] py-4 px-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-primary-100">
       <h1 className="sr-only">Métodos de Pagamento</h1>
 
       <GlobalButton
@@ -22,7 +22,7 @@ export default function Page() {
       </GlobalButton>
       <section
         className="flex flex-col items-center w-full mt-0 gap-4 mobileXLarger:gap-6
-        px-4 mobileXLarger:px-8 py-6
+        px-0 tablet:px-8 py-6
         self-center
         laptop:w-[80%]
         desktop:w-[70%]
@@ -35,7 +35,7 @@ export default function Page() {
         <div className="w-full flex flex-col-reverse items-center justify-around tablet:flex-row gap-4 tablet:items-start">
           <div className="flex flex-col justify-start text-sm text-gray-600 text-left w-full">
             <PaypalButton />
-            <p className="ml-2 text-[0.625rem]">
+            <p className="ml-2 text-[0.625rem] leading-4 tablet:leading-5">
               Você será redirecionado para o PayPal para finalizar a doação
             </p>
           </div>
