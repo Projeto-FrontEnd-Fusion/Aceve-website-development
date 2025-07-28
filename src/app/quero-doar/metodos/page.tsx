@@ -1,18 +1,25 @@
 'use client'
-
-import { BackButton } from "@/features/donations/components/BackButton/BackButton";
+import { useRouter } from "next/navigation";
 import { PaypalButton } from "@/features/donations/components/PaypalButton/PaypalButton"
-import { PaymentButton } from "@/features/donations/components/PaymentButton/PaymentButton";
 import { useDonationGuard } from "@/features/donations/hooks/useDonationGuard";
 import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
+import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 
 export default function Page() {
   useDonationGuard();
+  const router = useRouter()
   return (
     <main className="flex flex-col gap-2 tablet:gap-0 min-h-screen bg-[#FFF] p-4 tablet:py-4 tablet:px-[4.5rem] tablet:bg-primary-100">
       <h1 className="sr-only">Métodos de Pagamento</h1>
 
-      <BackButton />
+      <GlobalButton
+        variant="text-grey-300"
+        onClick={() => router.back()}
+        className="w-fit p-2 gap-4 font-semibold text-[0.75rem] tablet:text-[1.25rem] tablet:px-5 tablet:py-4"
+      >
+        <span className="text-[0.75rem] tablet:text-[1.25rem]">&lt;</span>
+        Voltar
+      </GlobalButton>
       <section
         className="flex flex-col items-center w-full mt-0 gap-4 mobileXLarger:gap-6
         px-4 mobileXLarger:px-8 py-6

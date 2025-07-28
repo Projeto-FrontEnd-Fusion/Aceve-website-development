@@ -1,12 +1,14 @@
 'use client'
+import { useRouter } from "next/navigation";
 import { usePixCode } from "@/features/donations/hooks/usePixCode";
-import { BackButton } from "@/features/donations/components/BackButton/BackButton";
 import { useDonationGuard } from "@/features/donations/hooks/useDonationGuard";
+import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { PixQRCode } from "@/features/donations/components/PixQRCode/PixQRCode";
 import { PixBRCode } from "@/features/donations/components/PixBRCode/PixBRCode";
 
 export default function Page() {
   useDonationGuard();
+  const router = useRouter()
 
   const {
     qrCodeBase64,
@@ -19,7 +21,14 @@ export default function Page() {
   return (
     <main className="bg-grey-100 p-4 tablet:bg-primary-100 min-h-screen flex flex-col items-center justify-start tablet:px-8 desktop:px-[4.5rem] sm:py-12 bg-white">
       <div className="self-start">
-        <BackButton />
+        <GlobalButton
+          variant="text-grey-300"
+          onClick={() => router.back()}
+          className="w-fit p-2 gap-4 font-semibold text-[0.75rem] tablet:text-[1.25rem] tablet:px-5 tablet:py-4"
+        >
+          <span className="text-[0.75rem] tablet:text-[1.25rem]">&lt;</span>
+          Voltar
+        </GlobalButton>
       </div>
 
       <section className="w-full max-w-[731px] desktop:w-[70%] laptop:w-[80%] tablet:bg-grey-100 rounded-none sm:rounded-2xl shadow-none sm:shadow-md sm:p-8 flex flex-col gap-6 sm:gap-10">

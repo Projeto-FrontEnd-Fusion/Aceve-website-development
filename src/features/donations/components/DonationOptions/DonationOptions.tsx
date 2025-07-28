@@ -3,6 +3,7 @@ import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { useDonationStore } from "@/features/donations/stores/donationvalue.store"
 import { parseAndFormatCurrency, formatInitialValue } from "@/features/donations/utils/parseAndFormatCurrency";
+import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 
 interface IDonationState {
   donationValue: number | null
@@ -165,16 +166,15 @@ export const DonationOptions = () => {
           setDonationValue={setDonationValue}
           setInputOtherValue={setInputOtherValue} />
       </span>
-      <button
-        className="bg-primary-600 w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
-          text-[#FFF] text-[1.25rem] font-semibold 
-          disabled:bg-grey-300 disabled:text-grey-500 
-          hover:bg-primary-700 focus:outline-primary-400 active:bg-primary-800"
-        type='button'
+      <GlobalButton
+        variant="primary"
+        className="w-full tablet:w-[240px] px-[20px] py-[16px]
+          text-[1.25rem] font-semibold 
+          disabled:bg-grey-300 disabled:text-grey-500"
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
         Continuar
-      </button>
+      </GlobalButton>
     </>
   )
 }
