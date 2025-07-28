@@ -79,7 +79,7 @@ function QueroDoar() {
                   {icon}
                   {subTittle}
                 </h3>
-                <p className="w-full text-grey-800 text-xs leading-5 min-[430px]:text-sm">
+                <p className="w-full text-grey-800 text-xs leading-5 min-[430px]:text-sm max-w-md">
                   {about}
                 </p>
               </li>
