@@ -47,6 +47,10 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         Loja
       </GlobalLink>
 
+      <GlobalLink variant="text" href="/sobre-nos" className="text-[1.25rem] py-3 px-4">
+        Sobre Nós
+      </GlobalLink>
+
       <GlobalLink
         variant="primary"
         onClick={() => setisMenuOpen(false)}
