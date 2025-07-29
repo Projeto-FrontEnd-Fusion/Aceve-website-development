@@ -1,8 +1,9 @@
 'use client'
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
-import { useDonationStore } from "@/zustand-store/donationvalue.store"
-import { parseAndFormatCurrency, formatInitialValue } from "@/utils/parseAndFormatCurrency";
+import { useDonationStore } from "@/features/donations/stores/donationvalue.store"
+import { parseAndFormatCurrency, formatInitialValue } from "@/features/donations/utils/parseAndFormatCurrency";
+import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 
 interface IDonationState {
   donationValue: number | null
@@ -32,9 +33,9 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
 
   const selectedStyles = {
     background: isChecked
-      ? 'border-[#823DC7] bg-[#823DC7]'
-      : 'border-[#D6BDF5] bg-[#ffff] hover:bg-[#F2EBFC]',
-    text: isChecked ? 'text-[#FAF6FE]' : 'text-[#54287B]',
+      ? 'border-primary-600 bg-primary-600'
+      : 'border-primary-400 bg-[#ffff] hover:bg-primary-200',
+    text: isChecked ? 'text-primary-100' : 'text-primary-800',
   };
 
   return (
@@ -43,7 +44,7 @@ const FixedValue = ({ donationValue, option, setDonationValue, setInputOtherValu
         cursor-pointer relative flex justify-center items-center 
         w-full
         rounded-[8px] py-4 px-2 border-2 
-        active:bg-[#D6BDF5] focus:outline-[#54287B] focus:outline focus:outline-2
+        active:bg-primary-400 focus:outline-primary-800 focus:outline focus:outline-2
         ${selectedStyles.background}
       `}
       key={option}
@@ -104,10 +105,10 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
   const isReadOnly = buttonOptions.includes(donationValue as number);
   const isActiveStyles =
     isReadOnly
-      ? 'border-[#A5A1A8] bg-[#CCC]'
+      ? 'border-grey-500 bg-grey-300'
       : donationValue === null
-        ? 'border-[#D6BDF5] bg-[#FFF]'
-        : 'border-[#A468E4] bg-[#FFF]';
+        ? 'border-primary-400 bg-[#FFF]'
+        : 'border-primary-500 bg-[#FFF]';
 
   return (
     <input
@@ -120,8 +121,8 @@ const CustomValue = ({ buttonOptions, donationValue, inputOtherValue, setDonatio
       inputMode="numeric"
       onChange={(e) => handleInputChange(e.target.value)}
       className={`flex w-full items-center text-base justify-center rounded-[8px] border-2 py-4 px-2 
-        font-semibold text-[#5F5764] text-center
-        focus:outline-[#823DC7] hover:bg-[#F2EBFC] 
+        font-semibold text-grey-600 text-center
+        focus:outline-primary-600 hover:bg-primary-200 
         ${isActiveStyles}
       `}
     />
@@ -165,16 +166,15 @@ export const DonationOptions = () => {
           setDonationValue={setDonationValue}
           setInputOtherValue={setInputOtherValue} />
       </span>
-      <button
-        className="bg-[#823DC7] w-full tablet:w-[240px] px-[20px] py-[16px] rounded-[8px] cursor-pointer 
-          text-[#FFF] text-[20px] font-semibold 
-          disabled:bg-[#CCC] disabled:text-[#A5A1A8] 
-          hover:bg-[#663198] focus:outline-[#D6BDF5] active:bg-[#54287B]"
-        type='button'
+      <GlobalButton
+        variant="primary"
+        className="w-full tablet:w-[240px] px-[20px] py-[16px]
+          text-[1.25rem] font-semibold 
+          disabled:bg-grey-300 disabled:text-grey-500"
         disabled={donationValue === null || donationValue === 0}
         onClick={() => { router.push('/quero-doar/metodos') }}>
         Continuar
-      </button>
+      </GlobalButton>
     </>
   )
 }

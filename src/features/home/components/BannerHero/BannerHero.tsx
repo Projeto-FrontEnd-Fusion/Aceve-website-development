@@ -1,21 +1,16 @@
-"use client";
-import { Button } from "../button/GlobalButton";
 import Link from "next/link";
 import clsx from "clsx";
-import { toggleMenuStore } from "@/zustand-store/togglemenu.store";
-import { useStore } from "zustand";
 import Image from "next/image";
 import BannerImg from "@/assets/BannerImg.png";
+import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 
 const BannerHero = () => {
-  const { isOpenMenu } = useStore(toggleMenuStore);
 
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[72px]",
+        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[4.5rem]",
         "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
-        { "-z-10": isOpenMenu === false }
       )}
     >
       <figure
@@ -49,36 +44,39 @@ const BannerHero = () => {
       >
         <h1
           className={clsx(
-            "text-black leading-7 mobileXLarger:leading-[46px] font-bold text-[18px] tablet:text-[40px] mobileXLarger:text-[35px] mobileMicro:text-[24px] w-full",
+            "text-black leading-7 mobileXLarger:leading-[2.875rem] font-bold text-[1.125rem] tablet:text-[2.5rem] mobileXLarger:text-[2.1875rem] mobileMicro:text-[1.5rem] w-full",
             "whitespace-normal"
           )}
         >
-          <span className="text-[#54287B] font-bold">
+          <span className="text-primary-800 font-bold">
             Pelo poder de cada{" "}
-            <span className="text-[#A468E4] font-bold">mulher</span>
+            <span className="text-primary-500 font-bold">mulher</span>
           </span>
           <br />
-          <span className="text-[#54287B] font-bold">
+          <span className="text-primary-800 font-bold">
             Por um futuro mais{" "}
-            <span className="text-[#A468E4] font-bold">justo</span>
+            <span className="text-primary-500 font-bold">justo</span>
           </span>
         </h1>
 
         <p
-          className="w-full text-gray-600 text-[14px]
+          className="w-full text-gray-600 text-[0.875rem]
           leading-5 
-          md:text-[18px] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
+          md:text-[1.125rem] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
         >
           Capacitamos mulheres em situação de vulnerabilidade para que
           conquistem autonomia, rompam ciclos de violência e transformem suas
           vidas.
         </p>
 
-        <Link
-          className="bg-[#823DC7] text-[#FFFFFF] flex justify-center hover:bg-[#663198] active:bg-[#54277B] font-semibold rounded-md transition-colors 
-          w-full mobileXLarger:w-fit py-4 mobileXLarger:px-5
-          flex-grow mobileXLarger:flex-grow-0 focus:outline-[#D6BDF5]"
-          href={"/quero-doar"}>AJUDE AGORA</Link>
+        <GlobalLink
+          variant="primary"
+          className="
+          w-full font-semibold mobileXLarger:w-fit py-4 mobileXLarger:px-5
+          flex-grow mobileXLarger:flex-grow-0"
+          href={"/quero-doar"}>
+          AJUDE AGORA
+        </GlobalLink>
       </article>
     </section>
   );

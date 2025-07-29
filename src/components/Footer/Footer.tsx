@@ -26,7 +26,7 @@ const contactList = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#54287B] py-8">
+    <footer className="bg-primary-800 py-8">
       <div
         className="flex flex-col sm:flex-row gap-10 items-center justify-evenly 
             text-white-normal
@@ -50,7 +50,7 @@ export const Footer = () => {
                     {item.content}
                   </a>
                 </li>
-                <span className="hidden xl:block w-[1px] bg-[#A468E4] self-stretch rounded-lg last:hidden" />
+                <span className="hidden xl:block w-[1px] bg-primary-500 self-stretch rounded-lg last:hidden" />
               </>
             ))}
           </ul>

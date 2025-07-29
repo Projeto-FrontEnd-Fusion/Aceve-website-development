@@ -5,6 +5,8 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/types/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -31,28 +33,36 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        primary: {
+          "100": "#FAF6FE",
+          "200": "#F2EBFC",
+          "300": "#E8DAFA",
+          "400": "#D6BDF5",
+          "500": "#A468E4",
+          "600": "#823DC7",
+          "700": "#663198",
+          "800": "#54287B",
+        },
+        grey: {
+          "100": "#FFFFFF",
+          "200": "#F5F3F6",
+          "300": "#CCCCCC",
+          "400": "#CBCBCB",
+          "500": "#A5A1A8",
+          "600": "#5F5764",
+          "700": "#2A272C",
+          "800": "#1E1E1F",
+        },
+
+        // Estilos antigos utilizados em certos componentes.
+        // Não remover antes de refatorar
+        // Não usar em components novos
         purple: {
-          medium: "#230157",
-          haiti: "#130327",
           light: "#482E98",
         },
         white: {
           normal: "#FFF",
           smooth: "#FEFCFB",
-        },
-        yellow: {
-          normal: "#EEAA44",
-        },
-        gray: {
-          normal: "#444444",
-          stroker: "#999999",
-        },
-        beige: {
-          normal: "#FDF7ED ",
-        },
-        preto: {
-          normal: "#000000",
-          bunker: "#14171A",
         },
       },
       fontFamily: {

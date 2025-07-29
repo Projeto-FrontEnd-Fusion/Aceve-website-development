@@ -7,7 +7,7 @@ export const WhoWeAre = () => {
   return (
     <section className="flex flex-col md:flex-row 
     w-full gap-y-4 p-6 md:p-0
-    bg-[#FAF6FE]">
+    bg-primary-100">
       <div className="flex md:relative
       w-full md:w-[55%]
       md:h-[690px] lg:h-[690px] xl:h-[720px] 2xl:h-[760px]">
@@ -33,7 +33,7 @@ export const WhoWeAre = () => {
         ${textClass}`}>
           Quem somos
         </h2>
-        <h3 className={`text-[#823DC7] text-3xl font-semibold
+        <h3 className={`text-primary-600 text-3xl font-semibold
         ${textClass}`}>
           Da favela para o mundo: poder feminino em ação
         </h3>

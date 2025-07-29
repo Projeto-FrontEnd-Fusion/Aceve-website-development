@@ -1,4 +1,4 @@
-import { getAccessToken } from "@/services/getAccessToken";
+import { getAccessToken } from "@/features/donations/services/getAccessToken";
 import axios, { isAxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -15,10 +15,10 @@ interface PayPalOrder {
   }>
 }
 
-export async function POST(request: NextRequest){
-  const {value} = await request.json()
+export async function POST(request: NextRequest) {
+  const { value } = await request.json()
 
-  if(!value) return NextResponse.json({message: 'Valor da doação ausente no corpo da requisição'}, {status: 500})
+  if (!value) return NextResponse.json({ message: 'Valor da doação ausente no corpo da requisição' }, { status: 500 })
 
   try {
     const order = await createOrder(value)
@@ -26,10 +26,10 @@ export async function POST(request: NextRequest){
 
   } catch (error) {
     const message = isAxiosError(error)
-    ? error.response?.data || error.message
-    : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+      ? error.response?.data || error.message
+      : error instanceof Error
+        ? error.message
+        : 'Unknown error';
 
     console.error('Erro ao tentar criar order:', message)
     return NextResponse.json(

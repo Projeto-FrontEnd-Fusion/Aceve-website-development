@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { ComponentProps, useEffect } from "react";
+import { GlobalLink } from "../GlobalLink/GlobalLink";
 
 interface NavigationProps extends ComponentProps<'nav'> {
   isMenuOpen: boolean;
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
 
-const LinkClass = "text-[20px] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-[#CBCBCB]";
+const LinkClass = "text-[1.25rem] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
 
 
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
@@ -32,34 +33,28 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         }`}
     >
 
-      <Link
-        onClick={() => setisMenuOpen(false)}
+      <GlobalLink
+        variant="text"
         href="/"
-        className={LinkClass}
-      >
+        className="text-[1.25rem] py-3 px-4">
         Início
-      </Link>
+      </GlobalLink>
 
-      <Link
-        onClick={() => setisMenuOpen(false)}
+      <GlobalLink
+        variant="text"
         href="https://wa.me/c/5511982935150"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={LinkClass}
-      >
+        className="text-[1.25rem] py-3 px-4">
         Loja
-      </Link>
+      </GlobalLink>
 
-
-      <Link
+      <GlobalLink
+        variant="primary"
         onClick={() => setisMenuOpen(false)}
         href="/quero-doar"
-        className="h-16 flex justify-center items-center px-5 py-4
-        bg-[#823dc7] text-white-normal text-lg active:bg-[#54277B]
-        rounded-lg hover:bg-[#663198] transition ease-in-out focus:outline-[#D6BDF5]"
+        className="px-5 py-4 "
       >
         QUERO DOAR
-      </Link>
-    </nav>
+      </GlobalLink>
+    </nav >
   );
 };
