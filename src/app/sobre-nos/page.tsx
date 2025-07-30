@@ -25,26 +25,29 @@ function SobreNos() {
             imageAlt: 'descrição da imagem...'
         }
     ]
-       const paragraph1 = "A Associação Cultural e Educacional Violeta Eliz nasceu da história de superação da sua fundadora, Elizangela Maria dos Santos, que, após escapar de um ciclo de violência doméstica, decidiu transformar sua dor em propósito. Desde 2014, a ONG atua no Morro da Mandioca, na zona sul de São Paulo, fortalecendo mulheres, crianças e jovens em situação de vulnerabilidade por meio de educação, acolhimento, cultura, tecnologia e empreendedorismo."
+    const paragraph1 = "A Associação Cultural e Educacional Violeta Eliz nasceu da história de superação da sua fundadora, Elizangela Maria dos Santos, que, após escapar de um ciclo de violência doméstica, decidiu transformar sua dor em propósito. Desde 2014, a ONG atua no Morro da Mandioca, na zona sul de São Paulo, fortalecendo mulheres, crianças e jovens em situação de vulnerabilidade por meio de educação, acolhimento, cultura, tecnologia e empreendedorismo."
 
     const paragraph2 = "Inspirada na coragem das guerreiras do cotidiano, a Violeta Eliz constrói redes de apoio e promove autonomia para que mais mulheres possam escrever novas histórias — livres da violência e cheias de possibilidades."
 
     return (
-        <main>
-            <section className="w-full min-h-[636px] my-[4.5rem] mx-[4.82rem]">
-                <div className="flex items-stretch justify-center max-h-96">
-                    <div className="max-w-[592px]">
-                        <h2 className="font-inter font-semibold text-lg text-[#A5A1A8] ">SOBRE NÓS</h2>
-                        <h3 className="font-inter font-bold text-[2.5rem] text-primary-600">De dor à transformação</h3>
+        <main className="flex flex-col">
+            <section className="w-full p-4 tablet:my-16 tablet:mx-8 desktop:my-[4.5rem] desktop:mx-[4.82rem]">
 
+                <div className="w-full flex flex-col tablet:items-start">
+                    <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8]">SOBRE NÓS</h2>
+                    <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600">De dor à transformação</h3>
+                </div>
+
+                <div className="flex flex-col-reverse tablet:flex-row tablet:items-start desktop:flex-row items-center desktop:justify-center h-full">
+                    <div className="max-w-[592px] tablet:w-full tablet:overflow-auto tablet:z-0 max-h-[486px]">
                         <div className="py-4 ">
-                            <p className="font-inter font-normal text-xl text-[#A5A1A8] pb-1">{paragraph1}</p>
-                            <p className="font-inter font-normal text-xl text-[#A5A1A8]">{paragraph2}</p>
+                            <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">{paragraph1}</p>
+                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-[#A5A1A8]">{paragraph2}</p>
                         </div>
                     </div>
-                    <div className="max-w-592px">
-                        <figure>
-                            <Image src={flowerBanner} alt="" className="max-h-[548px] max-w-[595px]" />
+                    <div className="py-6 tablet:py-0 z-50">
+                        <figure className=''>
+                            <Image src={flowerBanner} alt="" className="max-h-[17rem] max-w-[20.5rem]  tablet:max-h-[21.63rem] tablet:max-w-[23.5rem] desktop:max-h-[650px] desktop:max-w-[595px]" />
                             {/* <figcaption className="font-inter font-semibold text-sm text-primary-600">"O amor é um ato revolucionário." <span className="font-normal"> - Elizangela Maria dos Santos</span></figcaption> */}
                         </figure>
                     </div>
