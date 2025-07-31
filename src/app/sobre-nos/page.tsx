@@ -2,6 +2,7 @@ import ImpactfulStory1 from "@/assets/impactful-stories-1.png";
 import ImpactfulStory2 from "@/assets/impactful-stories-2.png";
 import ImpactfulStory3 from "@/assets/impactful-stories-3.png";
 import flowerBanner from "@/assets/sobre-nos-flores.png";
+import TheViolets from "@/assets/theViolets.png";
 import Image from "next/image";
 
 function SobreNos() {
@@ -34,6 +35,16 @@ function SobreNos() {
 
   const paragraph2 =
     "Inspirada na coragem das guerreiras do cotidiano, a Violeta Eliz constrói redes de apoio e promove autonomia para que mais mulheres possam escrever novas histórias — livres da violência e cheias de possibilidades.";
+
+  const whatWeDo = [
+    {
+      title: "As Violetas",
+      content:
+        "O Projeto As Violetas acolhe mulheres e adolescentes em situação de extrema vulnerabilidade, oferecendo apoio psicológico e social em um ambiente seguro. Por meio de rodas de conversa, workshops e dinâmicas, o projeto promove reflexões sobre violência doméstica e fortalece redes de apoio. Atua também em parceria com serviços públicos para garantir proteção e acesso a direitos.",
+      alt: "Foto que mostra o acolhimento de mulheres e adolescentes em situação de extrema vulnerabilidade",
+      image: TheViolets,
+    },
+  ];
 
   return (
     <main className="flex flex-col">
@@ -90,6 +101,29 @@ function SobreNos() {
             Cestas básicas entregues para famílias em vulnerabilidade
           </p>
         </div>
+      </section>
+      <section className="py-6 px-4 gap-4 flex flex-col max-w-[500px]">
+        <h3 className="font-semibold text-2xl tracking-[1%] text-[#A468E4]">
+          Um olhar sobre o que fazemos
+        </h3>
+        <nav></nav>
+        {whatWeDo.map(({ content, image, title, alt }, index) => (
+          <div className="flex flex-col gap-4">
+            <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5% md:hidden">
+              {title}
+            </h4>
+            <Image src={image} alt={alt} className="" />
+            <div className="flex flex-col gap-4">
+              <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5% max-md:hidden">
+                {title}
+              </h4>
+              <p className="text-[#2A272C] text-sm">{content}</p>
+              <button className="w-full text-[#663198] bg-transparent text-xs leading-5 font-semibold border-2 border-[#823DC7] rounded-lg py-2 hover:bg-[#663198] transition duration-300 hover:text-white-smooth">
+                Saiba mais
+              </button>
+            </div>
+          </div>
+        ))}
       </section>
       <section>
         <p>Histórias</p>
