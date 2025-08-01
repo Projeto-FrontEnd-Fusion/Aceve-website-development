@@ -3,6 +3,7 @@ import ImpactfulStory2 from "@/assets/impactful-stories-2.png";
 import ImpactfulStory3 from "@/assets/impactful-stories-3.png";
 import flowerBanner from "@/assets/sobre-nos-flores.png";
 import TheViolets from "@/assets/theViolets.png";
+import floralFrameImage from "@/assets/changemaker.png"
 import Image from "next/image";
 
 function SobreNos() {
@@ -48,9 +49,7 @@ function SobreNos() {
 
   return (
     <main className="flex flex-col">
-
       <section className="w-full m-auto p-4 tablet:my-16 tablet:px-8 desktop:my-[4.5rem] desktop:px-[4.82rem] desktop:max-w-[1280px]">
-        
         <div className="w-full flex flex-col tablet:items-start ">
           <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2">
             SOBRE NÓS
@@ -73,13 +72,17 @@ function SobreNos() {
           </div>
           <div className="py-6 tablet:py-0 z-50">
             <figure className="flex items-center flex-col">
-              <Image
-                src={flowerBanner}
-                alt=""
-                className="overflow"
-              />
+              <Image src={flowerBanner} alt="" className="overflow" />
               {/* max-h-[17rem] max-w-[20.5rem] teblet:min-h-[650px] tablet:min-w-[95px] */}
-              <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden"/>Elizangela Maria dos Santos</span></figcaption>
+              <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">
+                "O amor é um ato revolucionário."{" "}
+                <span className="font-normal">
+                  {" "}
+                  <span className="hidden tablet:inline">-</span>{" "}
+                  <br className="tablet:hidden" />
+                  Elizangela Maria dos Santos
+                </span>
+              </figcaption>
             </figure>
           </div>
         </div>
@@ -156,6 +159,61 @@ function SobreNos() {
             </span>
           </div>
         ))}
+      </section>
+      {/* Seção "Agente de Mudança" */}
+      <section className="w-full bg-[#F2EBFC] px-[1rem] py-[3rem] tablet:px-[2rem] desktop:px-[4rem] flex flex-col tablet:flex-row items-center justify-between gap-[2rem]">
+        <div className="flex flex-col items-center tablet:items-start w-full tablet:max-w-[50%] max-w-[35.0625rem] gap-[1.5625rem] text-center tablet:text-left">
+          <h2
+            className="font-inter font-bold text-[1.5rem] tablet:text-[2.5rem] leading-[1.875rem] tablet:leading-[2.875rem] tracking-[-0.015rem] tablet:tracking-[-0.05rem] text-center tablet:text-left"
+            style={{ fontStyle: "normal" }}
+          >
+            <span className="text-[#823DC7] block tablet:inline">
+              Seja um agente da{" "}
+            </span>
+            <span className="text-[#54287B] block tablet:inline">MUDANÇA</span>
+          </h2>
+
+          <p
+            className="font-inter text-[1rem] tablet:text-[1.25rem] leading-[1.5rem] tablet:leading-[1.75rem] font-normal text-[#5F5764] align-self-start text-left"
+            style={{ fontStyle: "normal" }}
+          >
+            Acreditamos no poder da comunidade. Cada doação garante um prato de
+            comida, um curso de tecnologia ou o suporte para uma mulher
+            recomeçar. Cada hora de voluntariado se transforma em conhecimento e
+            esperança. Sua ajuda, seja como for, é o que mantém nossa revolução
+            de amor em movimento.
+          </p>
+
+          <div className="flex flex-col tablet:flex-row items-start gap-[1rem] tablet:gap-[1.1875rem] w-full self-stretch">
+            <a
+              href="/quero-doar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center gap-[0.5rem] px-[1.25rem] py-[1rem] w-full tablet:flex-[1_0_0] 
+              rounded-[0.5rem] bg-[#823DC7] text-[#FFF] text-[1rem] leading-[1.5rem] font-semibold font-inter 
+              transition duration-300 hover:bg-[#6C2BB3]"
+            >
+              Quero doar
+            </a>
+
+            <button
+              disabled
+              className="flex justify-center items-center gap-[0.5rem] px-[1.25rem] py-[1rem] w-full tablet:flex-[1_0_0] 
+              rounded-[0.5rem] border-[0.125rem] border-[#823DC7] text-[#823DC7] bg-[#F4F2F4] 
+              text-[1rem] leading-[1.5rem] font-semibold font-inter cursor-default opacity-70"
+            >
+              Quero voluntariar
+            </button>
+          </div>
+        </div>
+
+        <div className="w-full tablet:max-w-[50%] mt-[2rem] tablet:mt-0">
+          <Image
+            src={floralFrameImage}
+            alt="Imagem institucional decorada com moldura floral"
+            className="object-cover w-full h-auto"
+          />
+        </div>
       </section>
     </main>
   );
