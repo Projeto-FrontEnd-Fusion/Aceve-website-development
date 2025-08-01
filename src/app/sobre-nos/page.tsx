@@ -48,19 +48,21 @@ function SobreNos() {
 
   return (
     <main className="flex flex-col">
-      <section className="w-full p-4 tablet:my-16 tablet:mx-8 desktop:my-[4.5rem] desktop:mx-[4.82rem]">
-        <div className="w-full flex flex-col tablet:items-start">
-          <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8]">
+
+      <section className="w-full m-auto p-4 tablet:my-16 tablet:px-8 desktop:my-[4.5rem] desktop:px-[4.82rem] desktop:max-w-[1280px]">
+        
+        <div className="w-full flex flex-col tablet:items-start ">
+          <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2">
             SOBRE NÓS
           </h2>
-          <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600">
+          <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600 ">
             De dor à transformação
           </h3>
         </div>
 
-        <div className="flex flex-col-reverse tablet:flex-row tablet:items-start desktop:flex-row items-center desktop:justify-center h-full">
+        <div className="flex flex-col-reverse items-center tablet:flex-row tablet:items-start desktop:flex-row desktop:justify-between  h-full">
           <div className="max-w-[592px] tablet:w-full tablet:overflow-auto tablet:z-0 max-h-[486px]">
-            <div className="py-4 ">
+            <div className="py-6 desktop:py-8 ">
               <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
                 {paragraph1}
               </p>
@@ -70,17 +72,19 @@ function SobreNos() {
             </div>
           </div>
           <div className="py-6 tablet:py-0 z-50">
-            <figure className="">
+            <figure className="flex items-center flex-col">
               <Image
                 src={flowerBanner}
                 alt=""
-                className="max-h-[17rem] max-w-[20.5rem]  tablet:max-h-[21.63rem] tablet:max-w-[23.5rem] desktop:max-h-[650px] desktop:max-w-[595px]"
+                className="overflow"
               />
-              {/* <figcaption className="font-inter font-semibold text-sm text-primary-600">"O amor é um ato revolucionário." <span className="font-normal"> - Elizangela Maria dos Santos</span></figcaption> */}
+              {/* max-h-[17rem] max-w-[20.5rem] teblet:min-h-[650px] tablet:min-w-[95px] */}
+              <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden"/>Elizangela Maria dos Santos</span></figcaption>
             </figure>
           </div>
         </div>
       </section>
+
       <section className="w- full bg-purple-700 py-12">
         <div className="max-w-6xl mx-auto px-4 text-center mb-8">
           <h2 className="text-[24px] leading-[30px] tracking-[-0.01em] text-purple-400 font-semibold">
