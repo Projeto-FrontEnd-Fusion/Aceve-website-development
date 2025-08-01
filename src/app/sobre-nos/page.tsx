@@ -187,8 +187,6 @@ function SobreNos() {
           <div className="flex flex-col tablet:flex-row items-start gap-[1rem] tablet:gap-[1.1875rem] w-full self-stretch">
             <a
               href="/quero-doar"
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex justify-center items-center gap-[0.5rem] px-[1.25rem] py-[1rem] w-full tablet:flex-[1_0_0] 
               rounded-[0.5rem] bg-[#823DC7] text-[#FFF] text-[1rem] leading-[1.5rem] font-semibold font-inter 
               transition duration-300 hover:bg-[#6C2BB3]"
