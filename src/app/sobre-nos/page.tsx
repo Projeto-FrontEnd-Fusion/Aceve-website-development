@@ -211,22 +211,27 @@ function SobreNos() {
         </Swiper>
       </section>
       <section>
-        <p>Histórias</p>
-        <h2>A prova do nosso trabalho</h2>
-        {impactfulStories.map((story, index) => (
-          <div
-            key={index}
-            className={`flex ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
-          >
-            <Image src={story.image} alt={story.imageAlt} />
-            <span className="flex flex-col">
-              <h3>{story.title}</h3>
-              <p>{story.content}</p>
+        <p className='text-grey-500 text-lg'>
+          Histórias
+        </p>
+        <h2 className='text-primary-800 text-[2.5rem] font-bold'>
+          A prova do nosso trabalho
+        </h2>
+        {impactfulStories.map((story, index) =>
+          <div key={index}
+            className={`flex gap-10 h-[368px] items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+            <Image src={story.image}
+              alt={story.imageAlt} />
+            <span className='flex flex-col gap-4'>
+              <h3 className='text-primary-600 text-2xl leading-[1.875rem] font-semibold'>
+                {story.title}
+              </h3>
+              <p className='text-grey-600'>
+                {story.content}
+              </p>
             </span>
           </div>
-        ))}
+        )}
       </section>
       {/* Seção "Agente de Mudança" */}
       <section className="w-full bg-[#F2EBFC] px-[1rem] py-[3rem] tablet:px-[2rem] desktop:px-[4rem] flex flex-col tablet:flex-row items-center justify-between gap-[2rem]">
