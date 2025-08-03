@@ -50,37 +50,45 @@ function SobreNos() {
     <main className="flex flex-col">
 
       <section className="w-full m-auto p-4 tablet:my-16 tablet:px-8 desktop:my-[4.5rem] desktop:px-[4.82rem] desktop:max-w-[1280px]">
-        
-        <div className="w-full flex flex-col tablet:items-start ">
-          <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2">
-            SOBRE NÓS
-          </h2>
-          <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600 ">
-            De dor à transformação
-          </h3>
-        </div>
 
-        <div className="flex flex-col-reverse items-center tablet:flex-row tablet:items-start desktop:flex-row desktop:justify-between  h-full">
-          <div className="max-w-[592px] tablet:w-full tablet:overflow-auto tablet:z-0 max-h-[486px]">
-            <div className="py-6 desktop:py-8 ">
-              <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
-                {paragraph1}
-              </p>
-              <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-[#A5A1A8]">
-                {paragraph2}
-              </p>
-            </div>
+        <div className="relative">
+
+          <div className="w-full flex flex-col tablet:items-start z-0">
+            <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2 ">
+              SOBRE NÓS
+            </h2>
+            <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600 ">
+              De dor à transformação
+            </h3>
           </div>
-          <div className="py-6 tablet:py-0 z-50">
-            <figure className="flex items-center flex-col">
-              <Image
-                src={flowerBanner}
-                alt=""
-                className="overflow"
-              />
-              {/* max-h-[17rem] max-w-[20.5rem] teblet:min-h-[650px] tablet:min-w-[95px] */}
-              <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden"/>Elizangela Maria dos Santos</span></figcaption>
-            </figure>
+
+          <div className="flex flex-col-reverse  items-center tablet:flex-row tablet:items-start laptop:flex-row laptop:justify-between h-full
+          desktop:flex-row desktop:justify-between">
+
+            <div className="tablet:w-[592px] z-40">
+              <div className="py-6 desktop:py-8 ">
+                <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
+                  {paragraph1}
+                </p>
+                <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-[#A5A1A8]">
+                  {paragraph2}
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6 tablet:py-0 tablet:h-full tablet:w-[590px]">
+              <figure className="tablet:absolute bottom-3 tablet:left-[24rem] laptop:absolute laptop:left-[32rem] z-30 h-full">
+                <Image
+                  src={flowerBanner}
+                  alt=""
+                  className="h-full tablet:max-h-[548px] laptop:max-h-[572px]"
+                  width={750}
+                  height={700}
+                />
+                <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden" />Elizangela Maria dos Santos</span></figcaption>
+              </figure>
+
+            </div>
           </div>
         </div>
       </section>
@@ -145,9 +153,8 @@ function SobreNos() {
         {impactfulStories.map((story, index) => (
           <div
             key={index}
-            className={`flex ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
+            className={`flex ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
           >
             <Image src={story.image} alt={story.imageAlt} />
             <span className="flex flex-col">
