@@ -40,15 +40,15 @@ export const ImpactfulStories = () => {
 
   return (
     <section className="h-fit flex flex-col px-4 py-10 gap-5 tablet:px-8 tablet:py-16 tablet:gap-12 desktop:px-[4.5rem] desktop:py-16">
-      <span className="flex flex-col w-full items-start">
+      <div className="flex flex-col w-full items-start">
         <p className='uppercase text-grey-500 text-lg font-semibold'>
           Histórias
         </p>
         <h2 className='text-primary-800 text-[2.5rem] font-bold'>
           A prova do nosso trabalho
         </h2>
-      </span>
-      <span className="flex flex-col w-full gap-5">
+      </div>
+      <div className="flex flex-col w-full gap-5">
         {impactfulStories.map((story, index) =>
           <div key={index}
             className={`flex flex-col gap-10 h-fit items-center ${index % 2 === 0 ? 'tablet:flex-row' : 'tablet:flex-row-reverse'}`}>
@@ -63,7 +63,7 @@ export const ImpactfulStories = () => {
             </span>
           </div>
         )}
-      </span>
+      </div>
     </section>
   )
 }
