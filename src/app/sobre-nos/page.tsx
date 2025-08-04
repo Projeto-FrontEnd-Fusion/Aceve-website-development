@@ -13,13 +13,13 @@ import "swiper/css/navigation";
 import { useState } from "react";
 import { ImpactfulStories } from "@/features/about-us/components/ImpactfulStories";
 import { AboutUs } from "@/features/about-us/components/sobre-nos";
+import OurImpact from "@/features/about-us/components/OurImpact";
 
 function SobreNos() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null
   );
 
-  
   const whatWeDo = [
     {
       title: "As Violetas",
@@ -53,39 +53,9 @@ function SobreNos() {
 
   return (
     <main className="flex flex-col">
-      <AboutUs/>
+      <AboutUs />
+      <OurImpact />
 
-      <section className="w- full bg-purple-700 py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center mb-8">
-          <h2 className="text-[24px] leading-[30px] tracking-[-0.01em] text-purple-400 font-semibold">
-            NOSSO IMPACTO
-          </h2>
-          <div>
-            <p className=" font-bold text-[90px] leading-[99px] tracking-[-0.02em] text-grey-100">
-              138
-            </p>
-            <p className="font-normal text-base leading-6 text-center text-grey-200">
-              Jovens capacitados em tecnologia pelo projeto Viotec
-            </p>
-          </div>
-          <div>
-            <p className="font-bold text-[90px] leading-[99px] tracking-[-0.02em] text-grey-100">
-              +538
-            </p>
-            <p className="font-normal text-base leading-6 text-center text-grey-200">
-              Mulheres diretamente beneficiadas pela ong
-            </p>
-          </div>
-          <div>
-            <p className=" font-bold text-[90px] leading-[99px] tracking-[-0.02em] text-grey-100">
-              800
-            </p>
-            <p className="font-normal text-base leading-6 text-center text-grey-200">
-              Cestas básicas entregues para famílias em vulnerabilidade
-            </p>
-          </div>
-        </div>
-      </section>
       <section className="py-6 px-4 gap-4 flex flex-col max-w-lg justify-center items-center min-[526px]:mx-auto">
         <h3 className="font-semibold text-2xl tracking-[1%] text-[#A468E4]">
           Um olhar sobre o que fazemos
@@ -129,7 +99,11 @@ function SobreNos() {
                   <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5%] md:hidden">
                     {title}
                   </h4>
-                  <Image src={image} alt={alt} className="w-full  aspect-[4/3]" />
+                  <Image
+                    src={image}
+                    alt={alt}
+                    className="w-full  aspect-[4/3]"
+                  />
                   <div className="flex flex-col gap-4">
                     <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5% max-md:hidden">
                       {title}
