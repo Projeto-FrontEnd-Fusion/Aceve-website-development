@@ -18,7 +18,7 @@ export const PaypalButton = () => {
             color: "silver",
             label: "paypal",
           }}
-          className="flex h-[56px] bg-[#EEEEEE] hover:bg-[#E2E2E2] rounded-md justify-start items-center"
+          className="flex z-10 h-[56px] bg-[#EEEEEE] hover:bg-[#E2E2E2] rounded-md justify-start items-center"
           createOrder={createOrder(donationValue)}
           onApprove={captureOrder} />
       }
