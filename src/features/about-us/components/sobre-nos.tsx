@@ -1,0 +1,58 @@
+import Image from "next/image";
+import flowerBanner from "@/assets/sobre-nos-flores.png";
+
+export const AboutUs = () => {
+
+    const paragraph1 =
+        "A Associação Cultural e Educacional Violeta Eliz nasceu da história de superação da sua fundadora, Elizangela Maria dos Santos, que, após escapar de um ciclo de violência doméstica, decidiu transformar sua dor em propósito. Desde 2014, a ONG atua no Morro da Mandioca, na zona sul de São Paulo, fortalecendo mulheres, crianças e jovens em situação de vulnerabilidade por meio de educação, acolhimento, cultura, tecnologia e empreendedorismo.";
+
+    const paragraph2 =
+        "Inspirada na coragem das guerreiras do cotidiano, a Violeta Eliz constrói redes de apoio e promove autonomia para que mais mulheres possam escrever novas histórias — livres da violência e cheias de possibilidades.";
+
+
+        return (
+        <section className="w-full m-auto p-4 tablet:my-16 tablet:px-8 desktop:my-[4.5rem] desktop:px-[4.82rem] desktop:max-w-[1280px]">
+
+            <div className="relative">
+
+                <div className="w-full flex flex-col tablet:items-start z-0">
+                    <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2 ">
+                        SOBRE NÓS
+                    </h2>
+                    <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600 ">
+                        De dor à transformação
+                    </h3>
+                </div>
+
+                <div className="flex flex-col-reverse  items-center tablet:flex-row tablet:items-start laptop:flex-row laptop:justify-between h-full
+          desktop:flex-row desktop:justify-between">
+
+                    <div className="tablet:w-[592px] z-40">
+                        <div className="py-6 desktop:py-8 ">
+                            <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
+                                {paragraph1}
+                            </p>
+                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-[#A5A1A8]">
+                                {paragraph2}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="py-6 tablet:py-0 tablet:h-full tablet:w-[590px]">
+                        <figure className="tablet:absolute bottom-3 tablet:left-[24rem] laptop:absolute laptop:left-[32rem] z-30 h-full">
+                            <Image
+                                src={flowerBanner}
+                                alt="Elizangela Maria dos Santos"
+                                className="h-full tablet:max-h-[548px] laptop:max-h-[572px]"
+                                width={750}
+                                height={700}
+                            />
+                            <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden" />Elizangela Maria dos Santos</span></figcaption>
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+};
