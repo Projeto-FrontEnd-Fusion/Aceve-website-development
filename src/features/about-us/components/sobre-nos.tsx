@@ -39,15 +39,16 @@ export const AboutUs = () => {
                     </div>
 
                     <div className="py-6 tablet:py-0 tablet:h-full tablet:w-[590px]">
-                        <figure className="tablet:absolute bottom-3 tablet:left-[24rem] laptop:absolute laptop:left-[32rem] z-30 h-full">
+                        <figure className="tablet:absolute laptop:bottom-[-2rem] tablet:left-[20rem] laptop:left-[26rem] z-30 w-full">
                             <Image
                                 src={flowerBanner}
                                 alt="Elizangela Maria dos Santos"
-                                className="h-full tablet:max-h-[548px] laptop:max-h-[572px]"
-                                width={750}
-                                height={700}
+                                className="tablet:max-w-[376px] laptop:max-w-[500px]"
+                                width={592}
+                                height={548}
                             />
-                            <figcaption className="font-inter font-semibold text-sm text-primary-600 text-center">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden tablet:inline">-</span> <br className="tablet:hidden" />Elizangela Maria dos Santos</span></figcaption>
+                            <figcaption className="font-inter text-center font-semibold text-sm text-primary-600 tablet:text-center tablet:w-1/2 laptop:w-1/2">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden laptop:inline">-</span> <br className="laptop:hidden" />Elizangela Maria dos Santos</span>
+                            </figcaption>
                         </figure>
 
                     </div>

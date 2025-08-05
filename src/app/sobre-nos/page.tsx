@@ -11,9 +11,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { useState } from "react";
 import { ImpactfulStories } from "@/features/about-us/components/ImpactfulStories";
-import { AboutUs } from "@/features/about-us/components/sobre-nos";
 import OurImpact from "@/features/about-us/components/OurImpact";
 import { Changemaker } from "@/features/about-us/components/Changemaker";
+import { AboutUs } from "@/features/about-us/components/Sobre-nos";
 
 function SobreNos() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
