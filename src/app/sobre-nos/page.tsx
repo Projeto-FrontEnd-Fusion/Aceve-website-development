@@ -13,7 +13,7 @@ import { useState } from "react";
 import { ImpactfulStories } from "@/features/about-us/components/ImpactfulStories";
 import OurImpact from "@/features/about-us/components/OurImpact";
 import { Changemaker } from "@/features/about-us/components/Changemaker";
-import { AboutUs } from "@/features/about-us/components/Sobre-nos";
+import { AboutUs } from "@/features/about-us/components/AboutUs";
 
 function SobreNos() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
