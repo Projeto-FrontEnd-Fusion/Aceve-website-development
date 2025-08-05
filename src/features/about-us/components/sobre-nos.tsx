@@ -32,7 +32,7 @@ export const AboutUs = () => {
                             <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
                                 {paragraph1}
                             </p>
-                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-[#A5A1A8]">
+                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-gray-600">
                                 {paragraph2}
                             </p>
                         </div>
@@ -47,7 +47,7 @@ export const AboutUs = () => {
                                 width={592}
                                 height={548}
                             />
-                            <figcaption className="font-inter text-center font-semibold text-sm text-primary-600 tablet:text-center tablet:w-1/2 laptop:w-1/2">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden laptop:inline">-</span> <br className="laptop:hidden" />Elizangela Maria dos Santos</span>
+                            <figcaption className="font-inter text-center font-semibold text-sm text-primary-800 tablet:text-center tablet:w-1/2 laptop:w-1/2">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden laptop:inline">-</span> <br className="laptop:hidden" />Elizangela Maria dos Santos</span>
                             </figcaption>
                         </figure>
 
