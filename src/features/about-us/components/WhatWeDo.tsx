@@ -69,24 +69,21 @@ export const WhatWeDo = () => {
             onClick={() => swiperInstance?.slideNext()}
             className="px-4 py-3 transition duration-300 hover:bg-[#cecece60] rounded-lg"
           >
-            <FaArrowRight
-              size={20}
-              className="cursor-pointer text-[#A5A1A8] "
-            />
+            <FaArrowRight size={20} className="cursor-pointer text-[#A5A1A8]" />
           </button>
         </div>
         <ul className="w-full flex gap-7 max-md:hidden">
           {whatWeDoArray.map(({ title }, index) => {
             return (
               <li
-                key={index}
+                key={title}
                 onClick={() => {
                   slideTo(index);
                   setActiveIndex(index);
                 }}
                 className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${
                   index === activeIndex
-                    ? "text-[#54287B]"
+                    ? "text-primary-800"
                     : "text-[#A5A1A8] hover:text-[#54287b81]"
                 } `}
               >
