@@ -16,10 +16,10 @@ export const AboutUs = () => {
             <div className="relative">
 
                 <div className="w-full flex flex-col tablet:items-start z-0">
-                    <h2 className="font-inter font-semibold text-sm desktop:text-lg text-[#A5A1A8] mb-2 ">
+                    <h2 className="font-inter font-semibold text-sm  tablet:text-lg text-grey-500 mb-2 ">
                         SOBRE NÓS
                     </h2>
-                    <h3 className="font-inter font-bold text-2xl desktop:text-[2.5rem] text-primary-600 ">
+                    <h3 className="font-inter font-bold text-2xl tablet:text-3xl desktop:text-[2.5rem] text-primary-600 ">
                         De dor à transformação
                     </h3>
                 </div>
@@ -29,25 +29,26 @@ export const AboutUs = () => {
 
                     <div className="tablet:w-[592px] z-40">
                         <div className="py-6 desktop:py-8 ">
-                            <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-[#A5A1A8] mb-4">
+                            <p className="font-inter font-normal text-sm tablet:text-base tablet:overflow-auto desktop:text-xl text-grey-600 mb-4">
                                 {paragraph1}
                             </p>
-                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-gray-600">
+                            <p className="font-inter font-normal text-sm tablet:text-base desktop:text-xl text-grey-600">
                                 {paragraph2}
                             </p>
                         </div>
                     </div>
 
-                    <div className="py-6 tablet:py-0 tablet:h-full tablet:w-[590px]">
-                        <figure className="tablet:absolute laptop:bottom-[-2rem] tablet:left-[20rem] laptop:left-[26rem] z-30 w-full">
+                    <div className="py-6 tablet:py-0 tablet:w-[590px]">
+                        <figure className="tablet:absolute laptop:bottom-[-2rem] tablet:left-[19rem] laptop:left-[28rem] desktop:left-[32rem] z-30 ">
                             <Image
                                 src={flowerBanner}
                                 alt="Elizangela Maria dos Santos"
-                                className="tablet:max-w-[376px] laptop:max-w-[500px]"
+                                className="max-w-[249.728px] tablet:max-w-[376px] laptop:max-w-[500px] screen:"
                                 width={592}
                                 height={548}
                             />
-                            <figcaption className="font-inter text-center font-semibold text-sm text-primary-800 tablet:text-center tablet:w-1/2 laptop:w-1/2">"O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden laptop:inline">-</span> <br className="laptop:hidden" />Elizangela Maria dos Santos</span>
+                            <figcaption className="font-inter text-center font-semibold text-sm text-primary-800 tablet:text-center">
+                            "O amor é um ato revolucionário." <span className="font-normal"> <span className="hidden laptop:inline">-</span> <br className="laptop:hidden" />Elizangela Maria dos Santos</span>
                             </figcaption>
                         </figure>
 
