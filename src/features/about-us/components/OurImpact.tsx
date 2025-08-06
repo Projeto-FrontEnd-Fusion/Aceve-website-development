@@ -3,7 +3,7 @@ import React from "react";
 const OurImpact = () => {
   return (
     <section className="w-full bg-primary-700 pt-8 pb-8 px-4 md:px-8 lg:px-[4.5rem] lg:pt-8 lg:pb-16 flex flex-col items-center gap-6">
-      <h2 className="font-semibold text-center text-purple-400 text-[0.875rem] leading-[1.25rem] sm:text-[1.125rem] sm:leading-[1.5rem] lg:text-[1.5rem] lg:leading-[1.875rem]">
+      <h2 className="font-semibold text-center text-primary-400 text-[0.875rem] leading-[1.25rem] sm:text-[1.125rem] sm:leading-[1.5rem] lg:text-[1.5rem] lg:leading-[1.875rem]">
         NOSSO IMPACTO
       </h2>
 
