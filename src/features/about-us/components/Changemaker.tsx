@@ -9,7 +9,9 @@ export const Changemaker = () => {
           className="font-inter font-bold text-[1.5rem] tablet:text-[2.5rem] leading-[1.875rem] tablet:leading-[2.875rem] tracking-[-0.015rem] tablet:tracking-[-0.05rem] text-center tablet:text-left"
           style={{ fontStyle: "normal" }}
         >
-          <span className="text-[#823DC7] block tablet:inline">Seja um agente da{" "}</span>
+          <span className="text-[#823DC7] block tablet:inline">
+            Seja um agente da{" "}
+          </span>
           <span className="text-[#54287B] block tablet:inline">MUDANÇA</span>
         </h2>
 
@@ -26,30 +28,20 @@ export const Changemaker = () => {
           style={{ fontStyle: "normal" }}
         >
           Acreditamos no poder da comunidade. Cada doação garante um prato de
-          comida, um curso de tecnologia ou o suporte para uma mulher
-          recomeçar. Cada hora de voluntariado se transforma em conhecimento e
-          esperança. Sua ajuda, seja como for, é o que mantém nossa revolução
-          de amor em movimento.
+          comida, um curso de tecnologia ou o suporte para uma mulher recomeçar.
+          Cada hora de voluntariado se transforma em conhecimento e esperança.
+          Sua ajuda, seja como for, é o que mantém nossa revolução de amor em
+          movimento.
         </p>
-
-        <div className="flex flex-col tablet:flex-row items-start gap-[1rem] tablet:gap-[1.1875rem] w-full self-stretch">
+        <div className="flex justify-center w-full">
           <a
             href="/quero-doar"
-            className="flex justify-center items-center gap-[0.5rem] px-[1.25rem] py-[1rem] tablet:flex-[1_0_0] 
-            rounded-[0.5rem] bg-[#823DC7] text-[#FFF] text-[1rem] leading-[1.5rem] font-semibold font-inter 
-            transition duration-300 hover:bg-[#6C2BB3]"
+            className="w-[17.5rem] h-[3.5rem] flex justify-center items-center gap-[0.5rem]
+    px-[1.25rem] py-[1rem] rounded-[0.5rem] bg-[#823DC7] text-[#FFF] text-[1rem]
+    leading-[1.5rem] font-semibold font-inter transition duration-300 hover:bg-[#6C2BB3]"
           >
             Quero doar
           </a>
-
-          <button
-            disabled
-            className="flex justify-center items-center gap-[0.5rem] px-[1.25rem] py-[1rem] tablet:flex-[1_0_0] 
-            rounded-[0.5rem] border-[0.125rem] border-[#823DC7] text-[#823DC7] bg-[#F4F2F4] 
-            text-[1rem] leading-[1.5rem] font-semibold font-inter opacity-0 pointer-events-none"
-          >
-            Quero voluntariar
-          </button>
         </div>
       </div>
 
