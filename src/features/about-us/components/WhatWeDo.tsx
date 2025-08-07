@@ -52,27 +52,27 @@ export const WhatWeDo = () => {
   };
 
   return (
-    <section className="py-6 px-4 gap-4 w-full flex flex-col max-md:max-w-lg justify-center items-center min-[526px]:mx-auto md:px-8 md:gap-6 desktop:px-[4.5rem]">
+    <section className="py-6 px-4 gap-4 w-full flex flex-col  justify-center items-center md:px-8 md:gap-6 desktop:px-[4.5rem] bg-primary-100">
       <h3 className="font-semibold text-2xl tracking-[1%] text-[#A468E4] flex md:self-start  md:text-[40px] md:leading-10 md:tracking-[-2%] md:font-bold">
         Um olhar sobre o que fazemos
       </h3>
-      <nav className="w-full  md:mb-6">
+      <nav className="w-full  md:mb-6 max-md:max-w-lg">
         <div className="flex justify-between md:hidden">
           <button
             onClick={() => swiperInstance?.slidePrev()}
-            className="px-4 py-3 transition duration-300 hover:bg-[#cecece60] rounded-lg"
+            className="px-4 py-3 transition duration-150 active:bg-[#cecece60] rounded-lg"
           >
-            <FaArrowLeft size={20} className="cursor-pointer text-[#A5A1A8] " />
+            <FaArrowLeft size={20} className="cursor-pointer text-grey-500" />
           </button>
 
           <button
             onClick={() => swiperInstance?.slideNext()}
-            className="px-4 py-3 transition duration-300 hover:bg-[#cecece60] rounded-lg"
+            className="px-4 py-3 transition duration-150 active:bg-[#cecece60] rounded-lg"
           >
-            <FaArrowRight size={20} className="cursor-pointer text-[#A5A1A8]" />
+            <FaArrowRight size={20} className="cursor-pointer text-grey-500" />
           </button>
         </div>
-        <ul className="w-full flex gap-7 max-md:hidden">
+        <ul className="w-full flex gap-7 max-md:hidden ">
           {whatWeDoArray.map(({ title }, index) => {
             return (
               <li
@@ -82,9 +82,7 @@ export const WhatWeDo = () => {
                   setActiveIndex(index);
                 }}
                 className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${
-                  index === activeIndex
-                    ? "text-primary-800"
-                    : "text-[#A5A1A8] hover:text-[#54287b81]"
+                  index === activeIndex ? "text-primary-800" : " text-grey-500"
                 } `}
               >
                 {title}
@@ -104,26 +102,26 @@ export const WhatWeDo = () => {
             simulateTouch: false,
           },
         }}
-        className="w-full"
+        className="w-full max-md:max-w-lg"
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         onSwiper={setSwiperInstance}
       >
         {whatWeDoArray.map(({ content, image, title, alt }) => (
           <SwiperSlide key={title}>
             <div className="flex flex-col gap-4 lg:flex-row lg:gap-10">
-              <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5%] md:hidden">
+              <h4 className="text-primary-600 font-semibold text-lg tracking-[-0.5%] md:hidden">
                 {title}
               </h4>
               <Image
                 src={image}
                 alt={alt}
-                className="w-full  md:max-w-2xl  aspect-[4/3] md:flex md:self-center lg:max-w-md "
+                className="w-full  md:max-w-2xl  aspect-[4/3] md:flex md:self-center lg:max-w-md lg:aspect-[4/4] lg:object-cover lg:rounded-[10px]"
               />
               <div className="flex flex-col gap-4 md:max-w-2xl md:self-center lg:self-end ">
-                <h4 className="text-[#823DC7]  font-semibold text-lg tracking-[-0.5%] max-md:hidden md:text-3xl md:tracking-[-1.5%]">
+                <h4 className=" text-primary-600 font-semibold text-lg tracking-[-0.5%] max-md:hidden md:text-3xl md:tracking-[-1.5%]">
                   {title}
                 </h4>
-                <p className={`text-[#2A272C] text-sm`}>{content}</p>
+                <p className={`text-grey-700 text-sm`}>{content}</p>
               </div>
             </div>
           </SwiperSlide>
