@@ -13,21 +13,8 @@ const OurImpact = () => {
             138
           </p>
           <p className="font-normal text-sm lg:text-base text-grey-200 mt-2 max-w-[22rem] whitespace-pre-line">
-            <span className="block lg:hidden md:hidden">
-              Jovens capacitados em tecnologia pelo projeto
-              <br />
-              Viotec
-            </span>
-            <span className="hidden md:block lg:hidden">
-              Jovens capacitados
-              <br />
-              em tecnologia pelo projeto Viotec
-            </span>
-            <span className="hidden lg:block">
-              Jovens capacitados em tecnologia
-              <br />
-              pelo projeto Viotec
-            </span>
+            Jovens capacitados em tecnologia
+            <br /> pelo projeto Viotec
           </p>
         </div>
 
@@ -36,17 +23,7 @@ const OurImpact = () => {
             +538
           </p>
           <p className="font-normal text-sm lg:text-base text-grey-200 mt-2 max-w-[22rem] whitespace-pre-line">
-            <span className="block lg:hidden md:hidden">
-              Mulheres diretamente beneficiadas pela ong
-            </span>
-            <span className="hidden md:block lg:hidden">
-              Mulheres diretamente
-              <br />
-              beneficiadas pela ong
-            </span>
-            <span className="hidden lg:block">
-              Mulheres diretamente beneficiadas pela ong
-            </span>
+            Mulheres diretamente beneficiadas pela ong
           </p>
         </div>
 
@@ -55,21 +32,8 @@ const OurImpact = () => {
             800
           </p>
           <p className="font-normal text-sm lg:text-base text-grey-200 mt-2 max-w-[22rem] whitespace-pre-line">
-            <span className="block lg:hidden md:hidden">
-              Cestas básicas entregues para famílias em
-              <br />
-              vulnerabilidade
-            </span>
-            <span className="hidden md:block lg:hidden">
-              Cestas básicas entregues para
-              <br />
-              famílias em vulnerabilidade
-            </span>
-            <span className="hidden lg:block">
-              Cestas básicas entregues para famílias
-              <br />
-              em vulnerabilidade
-            </span>
+            Cestas básicas entregues para <br />
+            famílias em vulnerabilidade
           </p>
         </div>
       </div>
