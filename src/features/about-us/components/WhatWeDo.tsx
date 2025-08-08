@@ -81,9 +81,8 @@ export const WhatWeDo = () => {
                   slideTo(index);
                   setActiveIndex(index);
                 }}
-                className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${
-                  index === activeIndex ? "text-primary-800" : " text-grey-500"
-                } `}
+                className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${index === activeIndex ? "text-primary-800" : " text-grey-500"
+                  } `}
               >
                 {title}
               </li>
@@ -118,7 +117,7 @@ export const WhatWeDo = () => {
                 className="w-full  md:max-w-2xl  aspect-[4/3] md:flex md:self-center lg:max-w-md lg:aspect-[4/4] lg:object-cover lg:rounded-[10px]"
               />
               <div className="flex flex-col gap-4 md:max-w-2xl md:self-center lg:self-end ">
-                <h4 className=" text-primary-600 font-semibold text-lg tracking-[-0.5%] max-md:hidden md:text-3xl md:tracking-[-1.5%]">
+                <h4 className=" text-primary-600 font-semibold lg:font-bold text-lg tracking-[-0.5%] max-md:hidden md:text-3xl md:tracking-[-1.5%]">
                   {title}
                 </h4>
                 <p className={`text-grey-700 text-sm`}>{content}</p>
