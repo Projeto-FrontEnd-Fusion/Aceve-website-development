@@ -39,7 +39,7 @@ export const AboutUs = () => {
           </div>
 
           <div className="py-6 tablet:py-0 relative tablet:w-[50%]">
-            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-[-6rem] z-30 laptop:w-[530px]">
+            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-[-8rem] z-30 laptop:w-[530px]">
               <Image
                 src={flowerBanner}
                 alt="Elizangela Maria dos Santos"
