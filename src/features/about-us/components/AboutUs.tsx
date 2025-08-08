@@ -39,11 +39,11 @@ export const AboutUs = () => {
           </div>
 
           <div className="py-6 tablet:py-0 relative tablet:w-[50%]">
-            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-0 z-30 laptop:w-[595px]">
+            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-[-6rem] z-30 laptop:w-[530px]">
               <Image
                 src={flowerBanner}
                 alt="Elizangela Maria dos Santos"
-                className="max-w-[249.728px] tablet:max-w-[376px] laptop:max-w-[595px] h-auto"
+                className="max-w-[249.728px] tablet:max-w-[376px] laptop:max-w-[530px] h-auto"
                 width={595}
                 height={548}
               />
