@@ -19,7 +19,7 @@ export const AboutUs = () => {
           <h2 className="font-inter font-semibold text-sm  tablet:text-lg text-grey-500 mb-2 ">
             SOBRE NÓS
           </h2>
-          <h3 className="font-inter font-bold text-2xl tablet:text-3xl desktop:text-[2.5rem] text-primary-600 ">
+          <h3 className="font-inter font-semibold laptop:font-bold text-2xl tablet:text-3xl desktop:text-[2.5rem] text-primary-600 ">
             De dor à transformação
           </h3>
         </div>
