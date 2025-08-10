@@ -11,7 +11,7 @@ export const AboutUs = () => {
 
 
   return (
-    <section className="w-full m-auto p-4 tablet:my-16 tablet:px-8 desktop:my-[4.5rem] laptop:px-[4.82rem] desktop:max-w-[1280px]">
+    <section className="w-full min-h-[38.90rem] px-4 py-8 tablet:px-8 laptop:px-[4.5rem]">
 
       <div className="relative">
 
@@ -39,11 +39,11 @@ export const AboutUs = () => {
           </div>
 
           <div className="py-6 tablet:py-0 relative tablet:w-[50%]">
-            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-[-8rem] z-30 laptop:w-[530px]">
+            <figure className="tablet:absolute tablet:left-[-2rem] laptop:top-[-5rem] z-30 laptop:w-[530px]">
               <Image
                 src={flowerBanner}
                 alt="Elizangela Maria dos Santos"
-                className="max-w-[249.728px] tablet:max-w-[376px] laptop:max-w-[530px] h-auto"
+                className="max-w-[249.728px] tablet:max-w-[376px] laptop:max-w-[595px] h-auto"
                 width={595}
                 height={548}
               />
