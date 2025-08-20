@@ -11,4 +11,8 @@ export const navigationLinks = [
     label: 'Loja',
     href: "https://wa.me/c/5511982935150"
   },
+  {
+    label: 'O que fazemos',
+    href: "/o-que-fazemos"
+  },
 ]

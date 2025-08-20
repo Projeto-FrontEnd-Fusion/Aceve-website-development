@@ -42,6 +42,13 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
 
       <GlobalLink
         variant="text"
+        href="/o-que-fazemos"
+        className="text-[1.25rem] py-3 px-4">
+        O que fazemos
+      </GlobalLink>
+      
+      <GlobalLink
+        variant="text"
         href="https://wa.me/c/5511982935150"
         className="text-[1.25rem] py-3 px-4">
         Loja
