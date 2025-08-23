@@ -18,7 +18,7 @@ export default function JoinUsSection() {
           flex flex-col gap-4 
           bg-neutral-100/60 dark:bg-neutral-900/70
           rounded-[1rem]   rounded-2xl
-          w-[21.5rem] h-[15.375rem] px-[0.5rem] py-[1.25rem] left-1/2 -translate-x-1/2 bottom-4
+          w-[21.5rem] h-auto px-[0.5rem] py-[1.25rem] left-1/2 -translate-x-1/2 bottom-4
           sm:w-[43rem] sm:h-[12rem] sm:px-[1.25rem] sm:py-[1.25rem] sm:left-1/2 sm:-tranlate-x-1/2 sm:bottom-8
           lg:w-[29.375rem] lg:h-[12rem] lg:px-[1.25rem] lg:py-[1.25rem] lg:right-10 lg:bottom-10 lg:translate-x-0 lg:left-auto
         "
