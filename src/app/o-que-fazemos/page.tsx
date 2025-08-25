@@ -1,3 +1,4 @@
+import BannerSection from "@/features/what-we-do/components/BannerSection";
 import JoinUsSection from "@/features/what-we-do/components/JoinUsSection";
 import { ProjectsDisplay } from "../../features/what-we-do/components/ProjectDisplay";
 import { ServicesWeOffer } from "@/features/what-we-do/components/ServicesWeOffer";
@@ -5,6 +6,7 @@ import { ServicesWeOffer } from "@/features/what-we-do/components/ServicesWeOffe
 function WhatWeDo() {
   return (
     <main>
+      <BannerSection />
       <ServicesWeOffer />
       <ProjectsDisplay />
       <JoinUsSection />
