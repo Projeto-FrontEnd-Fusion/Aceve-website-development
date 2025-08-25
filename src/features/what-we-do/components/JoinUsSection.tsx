@@ -4,7 +4,7 @@ import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 
 export default function JoinUsSection() {
   return (
-    <section className="relative w-full  h-[40.8125rem] mx-auto overflow-hidden">
+    <section className="relative w-full  h-[40.8125rem] mx-auto overflow-hidden flex flex-col justify-end px-4 sm:px-10">
       <Image
         src={joinussectionIMG}
         alt="Foto do grupo de voluntários "
@@ -14,14 +14,12 @@ export default function JoinUsSection() {
       />
 
       <div
-        className="absolute bottom-10 right-10
-          flex flex-col gap-4 
-          bg-neutral-100/60 dark:bg-neutral-900/70
-          rounded-[1rem]   rounded-2xl
-          w-[21.5rem] h-auto px-[0.5rem] py-[1.25rem] left-1/2 -translate-x-1/2 bottom-4
-          sm:w-[43rem] sm:h-[12rem] sm:px-[1.25rem] sm:py-[1.25rem] sm:left-1/2 sm:-tranlate-x-1/2 sm:bottom-8
-          lg:w-[29.375rem] lg:h-[12rem] lg:px-[1.25rem] lg:py-[1.25rem] lg:right-10 lg:bottom-10 lg:translate-x-0 lg:left-auto
-        "
+        className="relative z-10 flex flex-col gap-4 
+    bg-neutral-100/60 dark:bg-neutral-900/70 
+    rounded-2xl
+    w-full h-auto p-5 my-[2.69rem]
+    sm:p-6 sm:my-[2.69rem]
+    lg:absolute lg:w-[29.375rem] lg:h-[12rem] lg:right-10 lg:bottom-10"
       >
         <h2 className="font-inter font-semibold text-[1.875rem] leading-[2.25rem] tracking-[-0.015em] text-primary-800">
           Gostou?
