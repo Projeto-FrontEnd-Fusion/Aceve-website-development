@@ -39,6 +39,14 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
 
       <GlobalLink
         variant="text"
+        onClick={() => setisMenuOpen((false))}
+        href="https://wa.me/c/5511982935150"
+        className="text-[1.25rem] py-3 px-4">
+        Loja
+      </GlobalLink>
+
+      <GlobalLink
+        variant="text"
         href="/sobre-nos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
@@ -51,14 +59,6 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         O que fazemos
-      </GlobalLink>
-
-      <GlobalLink
-        variant="text"
-        onClick={() => setisMenuOpen((false))}
-        href="https://wa.me/c/5511982935150"
-        className="text-[1.25rem] py-3 px-4">
-        Loja
       </GlobalLink>
 
       <GlobalLink
