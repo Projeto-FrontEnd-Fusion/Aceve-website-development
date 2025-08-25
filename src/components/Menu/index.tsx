@@ -12,10 +12,6 @@ export const navigationLinks = [
     href: "/sobre-nos"
   },
   {
-    label: "O que fazemos",
-    href: "/o-que-fazemos"
-  },
-  {
     label: 'Loja',
     href: "https://wa.me/c/5511982935150"
   },

@@ -28,11 +28,6 @@ export const Header = () => {
                 Sobre Nós
               </GlobalLink>
             </li>
-            <li>
-              <GlobalLink variant="text" href="/o-que-fazemos" className="text-[1.25rem] py-3 px-4">
-                O que fazemos
-              </GlobalLink>
-            </li>
 
             <li>
               <GlobalLink
