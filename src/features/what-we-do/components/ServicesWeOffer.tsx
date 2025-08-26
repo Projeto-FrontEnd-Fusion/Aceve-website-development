@@ -1,7 +1,7 @@
-import AtividadesCulturais from "../../../assets/AtividadeCulturais.png";
-import AtendimentoPsicologico from "../../../assets/AtendimentoPsicologico.png";
-import CapacitacaoProfissional from "../../../assets/CapacitaçãoProfissional.png";
-import AcoesEmergenciais from "../../../assets/AçõesEmergenciais.png";
+import AtividadesCulturais from "../../../assets/AtividadeCulturais.svg";
+import AtendimentoPsicologico from "../../../assets/AtendimentoPsicologico.svg";
+import CapacitacaoProfissional from "../../../assets/CapacitaçãoProfissional.svg";
+import AcoesEmergenciais from "../../../assets/AçõesEmergenciais.svg";
 import Image, { StaticImageData } from "next/image";
 
 export const ServicesWeOffer = () => {
@@ -18,7 +18,7 @@ export const ServicesWeOffer = () => {
     },
     {
       Icon: AtendimentoPsicologico,
-      about: "Atendimento psicológico para crianças, jovens e mulheres.",
+      about: "Atendimento psicológico para crianças, jovens e mulheres",
       alt: "Imagem sobre atendimento psicológico para crianças, jovens e mulheres",
     },
     {
@@ -28,19 +28,19 @@ export const ServicesWeOffer = () => {
     },
     {
       Icon: AcoesEmergenciais,
-      about: "Ações emergenciais: cestas, gás e itens essenciais.",
+      about: "Ações emergenciais: cestas, gás e itens essenciais",
       alt: "Imagem sobre as ações emergenciais sendo elas cestas, gás e itens essenciais",
     },
   ];
 
   return (
-    <section className="bg-primary-100 px-4 py-8 md:px-8 lg:px-[72px] lg:py-16">
+    <section className="bg-primary-100 px-4 py-8 md:px-8 lg:px-[4.5rem] lg:py-16">
       <div className=" flex flex-col gap-4 w-fit mx-auto">
         <h2 className="text-grey-500 text-sm font-semibold font-inter lg:text-lg lg:tracking-[-0.5%]">
           SERVIÇOS QUE OFERTAMOS
         </h2>
 
-        <ul className="flex flex-col items-center justify-center gap-10 lg:gap-[58px] md:w-fit md:flex-row ">
+        <ul className="flex flex-col items-center justify-center gap-10 lg:gap-[3.625rem] md:w-fit md:flex-row ">
           {Infos.map(({ Icon, about, alt }) => (
             <li
               className="flex flex-col items-center text-center md:max-w-40 gap-1 lg:max-w-56"
