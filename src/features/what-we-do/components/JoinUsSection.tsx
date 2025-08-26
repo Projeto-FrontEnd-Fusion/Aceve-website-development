@@ -15,7 +15,7 @@ export default function JoinUsSection() {
 
       <div
         className="relative z-10 flex flex-col gap-4 bg-white-normal/50 backdrop-blur-[2px]   rounded-2xl
-    w-full h-auto p-5 my-[2.69rem]
+    w-full h-auto p-2 py-5 my-[2.69rem]
     sm:p-6 sm:my-[2.69rem]
     lg:absolute lg:w-[29.375rem] lg:h-[12rem] lg:right-10 lg:bottom-10"
       >
