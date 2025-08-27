@@ -4,7 +4,7 @@ import bannerImage from "@/assets/banner-what-we-do.png";
 export default function BannerSection() {
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative flex flex-col items-start gap-1 h-[37.125rem] px-[2.5rem] py-[2.6875rem] z-20">
+      <div className="relative flex flex-col items-start gap-1 h-[37.125rem] px-4 tablet:px-8 desktop:px-10 py-[2.6875rem] z-20">
         <div className="absolute inset-0 -z-10">
           <Image
             src={bannerImage}
