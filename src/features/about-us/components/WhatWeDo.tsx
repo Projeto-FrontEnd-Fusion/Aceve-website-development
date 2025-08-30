@@ -1,7 +1,7 @@
-import TheViolets from "@/assets/theViolets.png";
+import TheViolets from "@/assets/violetas.png";
 import VivaLeite from "@/assets/Vivaleite.png";
 import Viotec from "@/assets/Viotec.png";
-import Kime from "@/assets/Kime.png";
+import Kime from "@/assets/projetokime.png";
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
@@ -81,8 +81,9 @@ export const WhatWeDo = () => {
                   slideTo(index);
                   setActiveIndex(index);
                 }}
-                className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${index === activeIndex ? "text-primary-800" : " text-grey-500"
-                  } `}
+                className={`font-semibold text-lg tracking-[-0.5%]  cursor-pointer transition-colors duration-300  ${
+                  index === activeIndex ? "text-primary-800" : " text-grey-500"
+                } `}
               >
                 {title}
               </li>
