@@ -99,8 +99,8 @@ export const ProjectsDisplay = () => {
     };
 
     return (
-        <section className="m-auto gap-5 w-full md:rounded-2xl  md:bg-white-normal ">
-            <div className="flex flex-col flex-wrap relative">
+        <section className="m-auto w-full md:rounded-2xl  md:bg-white-normal ">
+            <div className="flex flex-col relative">
                 <Swiper
                     modules={[Navigation]}
                     slidesPerView={1}
@@ -111,33 +111,38 @@ export const ProjectsDisplay = () => {
                             simulateTouch: false,
                         },
                     }}
-                    className="w-full max-md:max-w-lg"
+                    className="w-full max-sm:max-w-lg"
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                     onSwiper={setSwiperInstance}
                 >
                     {projectData.map(({ title, description, image, data }) => {
                         return (
                             <SwiperSlide key={title}>
-                                <div className="flex justify-between m-auto w-full">
-                                    <div className="max-w-[460px] flex flex-col justify-between ml-[3.8rem]">
-                                        <div className="pt-16">
-                                            <h2 className="font-inter font-semibold text-[1.125rem] text-grey-500">PROJETOS</h2>
-                                            <h3 className="text-[2.5rem] font-bold font-inter text-primary-800 leading-[3rem]">{title}</h3>
+                                <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
+                                    <div className="laptop:max-w-[450px] flex flex-col justify-between laptop:ml-[3.8rem] px-4 sm:px-16 laptop:px-4">
+                                        <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16">
+                                            <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500">PROJETOS</h2>
+                                            <h3 className="font-inter font-bold text-2xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">{title}</h3>
                                         </div>
-                                        <div className="w-full ">
-                                            <p className="text-base gap-2  text-grey-600 ">
+                                        <div className="w-full h-[501px] sm:hidden ">
+                                            <figure className="h-full">
+                                                <Image src={image} alt={title} className="laptop:w-[731px] h-full object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%]" />
+                                            </figure>
+                                        </div>
+                                        <div className="w-full py-4">
+                                            <p className="laptop:text-base text-sm gap-2 text-grey-600 ">
                                                 {description}
                                             </p>
                                             {data ? <ul className="list-disc text-grey-600 pl-4 pt-6">
-                                                <li className="text-base text-grey-600 "><span className="font-bold">Público Alvo</span>: {data?.days}</li>
-                                                <li className="text-base text-grey-600 "><span className="font-bold">Atendimento</span>: {data?.public}</li>
+                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Público Alvo</span>: {data?.days}</li>
+                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Atendimento</span>: {data?.public}</li>
                                             </ul> : null}
 
                                         </div>
                                     </div>
-                                    <div>
-                                        <figure>
-                                            <Image src={image} alt={title} className="w-[731px]" />
+                                    <div className="max-sm:hidden">
+                                        <figure className="w-full">
+                                            <Image src={image} alt={title} className="sm:w-[768px] laptop:w-[731px]" />
                                         </figure>
                                     </div>
                                 </div>
@@ -146,23 +151,23 @@ export const ProjectsDisplay = () => {
                     })}
                 </Swiper>
 
-                <nav className="w-full md:py-6 max-md:max-w-lg">
+                <nav className="w-full md:py-6 max-md:max-w-lg flex items-center ">
                     <div className="flex justify-between ">
                         <button
                             onClick={() => swiperInstance?.slidePrev()}
-                            className="px-4 py-3 transition duration-150 absolute top-[43%] left-[0,5%] z-10 rounded-lg"
+                            className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg "
                         >
-                            <FaAngleLeft size={25} className="cursor-pointer text-primary-500" />
+                            <FaAngleLeft size={25} className={`cursor-pointer ${window.innerWidth < 767 ? "text-white-smooth" : "text-grey-500"} `} />
                         </button>
 
                         <button
                             onClick={() => swiperInstance?.slideNext()}
-                            className="px-4 py-3 transition duration-150 active:text-grey-500 rounded-lg"
+                            className="px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
                         >
-                            <FaAngleRight size={25} className="cursor-pointer absolute top-[43%] right-[1%] z-20 text-white-smooth" />
+                            <FaAngleRight size={25} className={`cursor-pointer ${window.innerWidth < 768 ? "text-white-smooth" : "text-grey-500"}`} />
                         </button>
                     </div>
-                    <ul className="w-full flex justify-center items-center gap-2 max-md:hidden ">
+                    <ul className="w-full flex justify-center items-center gap-2 max-sm:pb-4 ">
                         {projectData.map(({ title }, index) => {
                             return (
                                 <li
