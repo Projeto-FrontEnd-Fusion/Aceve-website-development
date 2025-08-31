@@ -111,8 +111,8 @@ export const ProjectsDisplay = () => {
                     {projectData.map(({ title, description, image, data }) => {
                         return (
                             <SwiperSlide key={title}>
-                                <div className="flex justify-center m-auto gap-4 w-full">
-                                    <div className="max-w-[450px] flex flex-col justify-between pl-[3.8rem] pr-10">
+                                <div className="flex justify-between m-auto gap-4 w-full">
+                                    <div className="max-w-[460px] flex flex-col justify-between pl-[3.8rem] pr-8">
                                         <div className="pt-16">
                                             <h2 className="font-inter font-semibold text-[1.125rem] text-grey-500">PROJETOS</h2>
                                             <h3 className="text-[2.5rem] font-bold font-inter text-primary-800 leading-[3rem]">{title}</h3>
@@ -130,7 +130,7 @@ export const ProjectsDisplay = () => {
                                     </div>
                                     <div>
                                         <figure>
-                                            <Image src={image} alt={title} />
+                                            <Image src={image} alt={title} className="w-[731px]"/>
                                         </figure>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@ export const ProjectsDisplay = () => {
                     <div className="flex justify-between ">
                         <button
                             onClick={() => swiperInstance?.slidePrev()}
-                            className="px-4 py-3 transition duration-150 absolute top-[50%] left-[2%] z-10 rounded-lg"
+                            className="px-4 py-3 transition duration-150 absolute top-[43%] left-[0,5%] z-10 rounded-lg"
                         >
                             <FaAngleLeft size={25} className="cursor-pointer text-primary-500" />
                         </button>
@@ -152,7 +152,7 @@ export const ProjectsDisplay = () => {
                             onClick={() => swiperInstance?.slideNext()}
                             className="px-4 py-3 transition duration-150 active:text-grey-500 rounded-lg"
                         >
-                            <FaAngleRight size={25} className="cursor-pointer absolute top-[50%] right-[4%] z-20 text-white-smooth" />
+                            <FaAngleRight size={25} className="cursor-pointer absolute top-[43%] right-[1%] z-20 text-white-smooth" />
                         </button>
                     </div>
                     <ul className="w-full flex justify-center items-center gap-2 max-md:hidden ">
