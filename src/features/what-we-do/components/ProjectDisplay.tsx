@@ -111,8 +111,8 @@ export const ProjectsDisplay = () => {
                     {projectData.map(({ title, description, image, data }) => {
                         return (
                             <SwiperSlide key={title}>
-                                <div className="flex justify-between m-auto gap-4 w-full">
-                                    <div className="max-w-[460px] flex flex-col justify-between pl-[3.8rem] pr-8">
+                                <div className="flex justify-between m-auto w-full">
+                                    <div className="max-w-[460px] flex flex-col justify-between ml-[3.8rem]">
                                         <div className="pt-16">
                                             <h2 className="font-inter font-semibold text-[1.125rem] text-grey-500">PROJETOS</h2>
                                             <h3 className="text-[2.5rem] font-bold font-inter text-primary-800 leading-[3rem]">{title}</h3>
