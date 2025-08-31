@@ -1,10 +1,20 @@
-import Image, {StaticImageData } from "next/image";
+'use client'
+import Image, { StaticImageData } from "next/image";
 import Violetas from "../../../assets/as-violetas.png";
 import Brecholeta from "../../../assets/brecholeta.png";
 import Justiceiras from "../../../assets/justiveiras.png";
 import Kime from "../../../assets/kime.png";
 import Viotec from "../../../assets/viotec.png";
 import Vivaleite from "../../../assets/vivaleite.png";
+
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { useState } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
 
 
 
@@ -19,6 +29,7 @@ export const ProjectsDisplay = () => {
             days: string,
         }
     }
+
 
     const projectData: IProjectData[] = [
         {
@@ -61,42 +72,107 @@ export const ProjectsDisplay = () => {
             title: "Brecholeta",
             description: "O Brecholeta é um negócio social criado pela Violeta Eliz em parceria com o Instituto C&A, que une sustentabilidade e impacto social. O projeto recebe doações de roupas e acessórios com pequenas avarias, que são cuidadosamente selecionados e revendidos a preços acessíveis. Todo o lucro das vendas é revertido para financiar as atividades da ONG, cobrindo despesas essenciais como água, luz, aluguel e parte da equipe. Além de contribuir para a manutenção dos projetos sociais, o Brecholeta também gera oportunidade de trabalho e renda — hoje emprega uma mãe solo venezuelana, que encontrou no projeto a chance de recomeçar sua vida no Brasil.",
             image: Brecholeta,
-            
+
         },
         {
             title: "As justiceiras",
             description: "O Projeto Justiceiras atua de forma online para oferecer apoio multidisciplinar a mulheres em situação de violência, conectando-as a uma rede de acolhimento composta por profissionais de diversas áreas. A iniciativa conta com atendimento jurídico, psicológico, socioassistencial e médico, garantindo orientação e suporte de maneira integrada e humanizada. Por meio dessa articulação, o projeto busca não apenas amparar as vítimas em momentos de crise, mas também fortalecer sua autonomia e segurança para que possam reconstruir suas vidas com dignidade.",
             image: Justiceiras,
-            
-        },
+        }
     ]
 
-    return (
-        <section className="m-auto ">
-            <div className="flex flex-col">
-                <div>
-                    <div>
-                        <h3>PROJETOS</h3>
-                        <h2>As Violetas</h2>
-                    </div>
-                    <div>
-                        <p>
-                            Acolhe mulheres com medidas protetivas e em extrema vulnerabilidade social. Oferece atendimento com assistente social e psicólogas, workshops, palestras, dinâmicas, apresentações e rodas de conversa (coletivas e individuais) sobre violência doméstica. Atua em rede com serviços como  União Brasileira dos Estudantes Secundaristas (UBES), Delegacia de Defesa da Mulher (DDM) e Guarda Civil Metropolitana (GCM).
+    const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
+        null
+    );
 
-                            Público-alvo: mulheres e adolescentes (15 a 65+ anos).
-                            Atendimento: Terças, quintas e domingos.
-                        </p>
-                        <ul>
-                            <li><span className="font-bold">Público-alvo: </span>mulheres e adolescentes (15 a 65+ anos)</li>
-                            <li><span className="font-bold">Atendimento: </span>Terças, quintas e domingos</li>
-                        </ul>
+    const [activeIndex, setActiveIndex] = useState<number>(0);
+
+    const slideTo = (index: number) => {
+        swiperInstance?.slideTo(index, 300);
+    };
+
+    return (
+        <section className="m-auto gap-5 w-full md:rounded-2xl  md:bg-white-normal ">
+            <div className="flex flex-col flex-wrap relative">
+                <Swiper
+                    modules={[Navigation]}
+                    slidesPerView={1}
+                    speed={300}
+                    spaceBetween={20}
+                    breakpoints={{
+                        1024: {
+                            simulateTouch: false,
+                        },
+                    }}
+                    className="w-full max-md:max-w-lg"
+                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                    onSwiper={setSwiperInstance}
+                >
+                    {projectData.map(({ title, description, image, data }) => {
+                        return (
+                            <SwiperSlide key={title}>
+                                <div className="flex justify-center m-auto gap-4 w-full">
+                                    <div className="max-w-[450px] flex flex-col justify-between pl-[3.8rem] pr-10">
+                                        <div className="pt-16">
+                                            <h2 className="font-inter font-semibold text-[1.125rem] text-grey-500">PROJETOS</h2>
+                                            <h3 className="text-[2.5rem] font-bold font-inter text-primary-800 leading-[3rem]">{title}</h3>
+                                        </div>
+                                        <div className="w-full ">
+                                            <p className="text-base gap-2  text-grey-600 ">
+                                                {description}
+                                            </p>
+                                            {data ? <ul className="list-disc text-grey-600 pl-4 pt-6">
+                                                <li className="text-base text-grey-600 "><span className="font-bold">Público Alvo</span>: {data?.days}</li>
+                                                <li className="text-base text-grey-600 "><span className="font-bold">Atendimento</span>: {data?.public}</li>
+                                            </ul> : null}
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <figure>
+                                            <Image src={image} alt={title} />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
+
+                <nav className="w-full md:py-6 max-md:max-w-lg">
+                    <div className="flex justify-between ">
+                        <button
+                            onClick={() => swiperInstance?.slidePrev()}
+                            className="px-4 py-3 transition duration-150 absolute top-[50%] left-[2%] z-10 rounded-lg"
+                        >
+                            <FaAngleLeft size={25} className="cursor-pointer text-primary-500" />
+                        </button>
+
+                        <button
+                            onClick={() => swiperInstance?.slideNext()}
+                            className="px-4 py-3 transition duration-150 active:text-grey-500 rounded-lg"
+                        >
+                            <FaAngleRight size={25} className="cursor-pointer absolute top-[50%] right-[4%] z-20 text-white-smooth" />
+                        </button>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <Image src={Violetas} alt="Projeto Violeta Eliz" />
-                    </div>
-                </div>
+                    <ul className="w-full flex justify-center items-center gap-2 max-md:hidden ">
+                        {projectData.map(({ title }, index) => {
+                            return (
+                                <li
+                                    key={title}
+                                    onClick={() => {
+                                        slideTo(index);
+                                        setActiveIndex(index);
+                                    }}
+                                    className={`flex justify-center items-center cursor-pointer transition-colors duration-300'
+                                         `}
+                                >
+                                    <button className={`w-2 h-2 active:bg-primary-500 bg-grey-500 rounded-full ${index === activeIndex ? "text-primary-500" : " text-grey-500"}`}></button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </nav>
             </div>
         </section>
     )
