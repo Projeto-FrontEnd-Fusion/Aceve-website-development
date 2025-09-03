@@ -117,8 +117,10 @@ export const ProjectsDisplay = () => {
                 >
                     {projectData.map(({ title, description, image, data }) => {
                         return (
-                            <SwiperSlide key={title} className="!h-[930px] mobileMini:!h-[890px]
-                            sm:!h-full">
+                            <SwiperSlide key={title} className="
+                            !h-[930px] mobileMini:!h-[890px]
+                            sm:!h-full laptop:!h-[470px] desktop:!h-auto
+                            ">
                                 <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
                                     <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
                                         <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16 px-4">
@@ -141,9 +143,9 @@ export const ProjectsDisplay = () => {
 
                                         </div>
                                     </div>
-                                    <div className="max-sm:hidden">
+                                    <div className="max-sm:hidden flex">
                                         <figure className="w-full">
-                                            <Image src={image} alt={title} className="sm:w-full laptop:w-[731px]" />
+                                            <Image src={image} alt={title} className="sm:w-full laptop:w-[731px] w-fill object-cover h-full" />
                                         </figure>
                                     </div>
                                 </div>
