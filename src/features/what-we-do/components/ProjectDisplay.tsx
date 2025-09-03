@@ -8,10 +8,11 @@ import Viotec from "../../../assets/viotec.png";
 import Vivaleite from "../../../assets/vivaleite.png";
 
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, EffectFade} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
@@ -102,7 +103,7 @@ export const ProjectsDisplay = () => {
         <section className="m-auto w-full md:rounded-2xl  md:bg-white-normal ">
             <div className="flex flex-col relative">
                 <Swiper
-                    modules={[Navigation]}
+                    modules={[Navigation, EffectFade]}
                     slidesPerView={1}
                     speed={300}
                     spaceBetween={20}
@@ -112,14 +113,16 @@ export const ProjectsDisplay = () => {
                         },
                     }}
                     className="!w-full max-sm:max-w-lg"
+                    effect="fade"
+                    fadeEffect={{ crossFade: true }}
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                     onSwiper={setSwiperInstance}
                 >
                     {projectData.map(({ title, description, image, data }) => {
                         return (
                             <SwiperSlide key={title} className="
-                            !h-[930px] mobileMini:!h-[890px]
-                            sm:!h-full laptop:!h-[470px] desktop:!h-auto
+                            !h-[1030px] mobileMicro:!h-[980px] mobileMini:!h-[960px]
+                            sm:!h-full laptop:!h-auto desktop:!h-auto
                             ">
                                 <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
                                     <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
@@ -160,14 +163,14 @@ export const ProjectsDisplay = () => {
                             onClick={() => swiperInstance?.slidePrev()}
                             className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg "
                         >
-                            <FaAngleLeft size={25} className={`cursor-pointer max-sm:text-white-smooth text-grey-500`} />
+                            <FaAngleLeft size={25} className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500`} />
                         </button>
 
                         <button
                             onClick={() => swiperInstance?.slideNext()}
                             className="px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
                         >
-                            <FaAngleRight size={25} className={`cursor-pointer max-sm:text-white-smooth text-grey-500`} />
+                            <FaAngleRight size={25} className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500`} />
                         </button>
                     </div>
                     <ul className="w-full flex justify-center items-center gap-2 max-sm:pb-4 ">
