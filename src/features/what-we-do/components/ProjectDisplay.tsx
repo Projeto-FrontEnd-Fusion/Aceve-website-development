@@ -111,38 +111,39 @@ export const ProjectsDisplay = () => {
                             simulateTouch: false,
                         },
                     }}
-                    className="w-full max-sm:max-w-lg"
+                    className="!w-full max-sm:max-w-lg"
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                     onSwiper={setSwiperInstance}
                 >
                     {projectData.map(({ title, description, image, data }) => {
                         return (
-                            <SwiperSlide key={title}>
+                            <SwiperSlide key={title} className="!h-[930px] mobileMini:!h-[890px]
+                            sm:!h-full">
                                 <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
-                                    <div className="laptop:max-w-[450px] flex flex-col justify-between laptop:ml-[3.8rem] px-4 sm:px-16 laptop:px-4">
-                                        <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16">
+                                    <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
+                                        <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16 px-4">
                                             <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500">PROJETOS</h2>
-                                            <h3 className="font-inter font-bold text-2xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">{title}</h3>
+                                            <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">{title}</h3>
                                         </div>
                                         <div className="w-full h-[501px] sm:hidden ">
-                                            <figure className="h-full">
-                                                <Image src={image} alt={title} className="laptop:w-[731px] h-full object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%]" />
+                                            <figure className="h-full object-cover">
+                                                <Image src={image} alt={title} className="laptop:w-full h-full object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%]" />
                                             </figure>
                                         </div>
-                                        <div className="w-full py-4">
+                                        <div className="w-full p-4">
                                             <p className="laptop:text-base text-sm gap-2 text-grey-600 ">
                                                 {description}
                                             </p>
                                             {data ? <ul className="list-disc text-grey-600 pl-4 pt-6">
-                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Público Alvo</span>: {data?.days}</li>
-                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Atendimento</span>: {data?.public}</li>
+                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Público Alvo</span>: {data?.public}</li>
+                                                <li className="laptop:text-base text-grey-600 "><span className="font-bold text-base">Atendimento</span>: {data?.days}</li>
                                             </ul> : null}
 
                                         </div>
                                     </div>
                                     <div className="max-sm:hidden">
                                         <figure className="w-full">
-                                            <Image src={image} alt={title} className="sm:w-[768px] laptop:w-[731px]" />
+                                            <Image src={image} alt={title} className="sm:w-full laptop:w-[731px]" />
                                         </figure>
                                     </div>
                                 </div>
@@ -157,14 +158,14 @@ export const ProjectsDisplay = () => {
                             onClick={() => swiperInstance?.slidePrev()}
                             className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg "
                         >
-                            <FaAngleLeft size={25} className={`cursor-pointer ${window.innerWidth < 767 ? "text-white-smooth" : "text-grey-500"} `} />
+                            <FaAngleLeft size={25} className={`cursor-pointer max-sm:text-white-smooth text-grey-500`} />
                         </button>
 
                         <button
                             onClick={() => swiperInstance?.slideNext()}
                             className="px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
                         >
-                            <FaAngleRight size={25} className={`cursor-pointer ${window.innerWidth < 768 ? "text-white-smooth" : "text-grey-500"}`} />
+                            <FaAngleRight size={25} className={`cursor-pointer max-sm:text-white-smooth text-grey-500`} />
                         </button>
                     </div>
                     <ul className="w-full flex justify-center items-center gap-2 max-sm:pb-4 ">
@@ -179,7 +180,7 @@ export const ProjectsDisplay = () => {
                                     className={`flex justify-center items-center cursor-pointer transition-colors duration-300'
                                          `}
                                 >
-                                    <button className={`w-2 h-2 ${activeIndex === index ? " bg-primary-500" : "bg-grey-500"} focus:bg-primary-500 active:bg-primary-500 bg-grey-500 rounded-full ${index === activeIndex ? "text-primary-500" : " text-grey-500"}`}></button>
+                                    <button className={`w-3 h-3 ${activeIndex === index ? " bg-primary-500" : "bg-grey-500"} focus:bg-primary-500 active:bg-primary-500 bg-grey-500 rounded-full ${index === activeIndex ? "text-primary-500" : " text-grey-500"}`}></button>
                                 </li>
                             );
                         })}
