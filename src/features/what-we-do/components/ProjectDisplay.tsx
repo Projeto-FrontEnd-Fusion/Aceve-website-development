@@ -185,7 +185,7 @@ export const ProjectsDisplay = () => {
           })}
         </Swiper>
 
-        <nav className="w-full md:py-6 max-md:max-w-lg flex items-center ">
+        <nav className="w-full sm:py-6 max-sm:max-w-lg flex items-center ">
           <div className="flex justify-between ">
             <button
               onClick={() => swiperInstance?.slidePrev()}
