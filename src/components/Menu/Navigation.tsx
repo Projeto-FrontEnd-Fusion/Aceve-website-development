@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ComponentProps, useEffect } from "react";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
 
@@ -6,9 +5,6 @@ interface NavigationProps extends ComponentProps<'nav'> {
   isMenuOpen: boolean;
   setisMenuOpen: (isMenuOpen: boolean) => void;
 }
-
-const LinkClass = "text-[1.25rem] text-gray-400 py-3 px-4 transition hover:bg-gray-100 rounded-lg active:bg-gray-300 focus:outline-grey-400";
-
 
 export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
   useEffect(() => {
@@ -36,15 +32,25 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       <GlobalLink
         variant="text"
         href="/"
+        onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Início
       </GlobalLink>
 
       <GlobalLink
         variant="text"
+        onClick={() => setisMenuOpen((false))}
         href="https://wa.me/c/5511982935150"
         className="text-[1.25rem] py-3 px-4">
         Loja
+      </GlobalLink>
+
+      <GlobalLink
+        variant="text"
+        href="/sobre-nos"
+        onClick={() => setisMenuOpen(false)}
+        className="text-[1.25rem] py-3 px-4">
+        Sobre Nós
       </GlobalLink>
 
       <GlobalLink

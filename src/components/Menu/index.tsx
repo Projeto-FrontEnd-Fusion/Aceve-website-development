@@ -8,6 +8,10 @@ export const navigationLinks = [
     href: "/"
   },
   {
+    label: "Sobre Nós",
+    href: "/sobre-nos"
+  },
+  {
     label: 'Loja',
     href: "https://wa.me/c/5511982935150"
   },

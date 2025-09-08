@@ -1,24 +1,11 @@
 "use client";
 import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
-import Link from "next/link";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
 
-const LinkClass = "";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
-
-  const links = [
-    {
-      label: "Início",
-      href: "/"
-    },
-    {
-      label: 'Loja',
-      href: "https://wa.me/c/5511982935150"
-    },
-  ]
 
   return (
     <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
@@ -34,6 +21,11 @@ export const Header = () => {
                 href="/"
                 className="text-[1.25rem] py-3 px-4">
                 Início
+              </GlobalLink>
+            </li>
+            <li>
+              <GlobalLink variant="text" href="/sobre-nos" className="text-[1.25rem] py-3 px-4">
+                Sobre Nós
               </GlobalLink>
             </li>
 
