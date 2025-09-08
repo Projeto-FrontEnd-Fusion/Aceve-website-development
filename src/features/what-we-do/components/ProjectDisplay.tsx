@@ -14,7 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 export const ProjectsDisplay = () => {
   interface IProjectData {
@@ -191,9 +191,9 @@ export const ProjectsDisplay = () => {
               onClick={() => swiperInstance?.slidePrev()}
               className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg "
             >
-              <FaAngleLeft
-                size={25}
-                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500`}
+              <FaCircleChevronLeft
+                size={30}
+                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-300 hover:cursor-pointer laptop:h-12 `}
               />
             </button>
 
@@ -201,9 +201,9 @@ export const ProjectsDisplay = () => {
               onClick={() => swiperInstance?.slideNext()}
               className="px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
             >
-              <FaAngleRight
-                size={25}
-                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500`}
+              <FaCircleChevronRight
+                size={30}
+                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:cursor-pointer laptop:h-12 `}
               />
             </button>
           </div>
