@@ -4,13 +4,22 @@
  */
 
 import type { Config } from 'jest';
+import nextJest from 'next/jest.js'
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
+
 
 const config: Config = {
   clearMocks: true,
+  coverageProvider: 'v8',
+  preset: 'ts-jest',
 
-  // The test environment that will be used for testing
   testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: ['\\node_modules\\'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>src'],
@@ -19,6 +28,9 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
 };
 
-export default config;
+export default createJestConfig(config)

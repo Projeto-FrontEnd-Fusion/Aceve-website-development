@@ -14,42 +14,49 @@ export async function POST(request: Request) {
     )
   }
 
-  const volunteer = await request.json()
-    .catch(_error => {
-      throw new Error("Request Body cannot be empty");
-    }
-    ) as IVolunteer;
 
-  if (!volunteer.fullName || !volunteer.email || !volunteer.phone) {
-    return NextResponse.json(
-      { error: "Missing required fields" },
-      { status: 400 })
-  }
-
-
-
-  // volunteer information validation
-  const validation = new VolunteerValidation();
-  if (!validation.validateEmail(volunteer.email)) {
-    return NextResponse.json(
-      { error: "Email with invalid format" },
-      { status: 400 }
-    )
-  }
-  if (!validation.validatePhone(volunteer.phone)) {
-    return NextResponse.json(
-      { error: "Phone with invalid format" },
-      { status: 400 }
-    )
-  }
-
-  // first tries to send email to ONG, if successful send coonfirmation email to the volunteer
   try {
+    const bodyText = await request.text();
+    // empty body request
+    if (!bodyText || bodyText.trim() === '') {
+      return NextResponse.json(
+        { error: "Request Body cannot be empty" },
+        { status: 400 })
+    }
+
+    const body = JSON.parse(bodyText);
+    // check body request fields
+    const volunteer = body.volunteer as IVolunteer
+    if (!volunteer || !volunteer.fullName || !volunteer.email || !volunteer.phone) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 })
+    }
+
+
+    // volunteer information validation
+    const validation = new VolunteerValidation();
+    if (!validation.validateEmail(volunteer.email)) {
+      return NextResponse.json(
+        { error: "Email with invalid format" },
+        { status: 400 }
+      )
+    }
+    if (!validation.validatePhone(volunteer.phone)) {
+      return NextResponse.json(
+        { error: "Phone with invalid format" },
+        { status: 400 }
+      )
+    }
+
+
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: { user, pass }
     })
 
+    // first tries to send email to ONG, if successful send coonfirmation email to the volunteer
     const sendToOng = await transporter.sendMail({
       from: user,
       to: user,

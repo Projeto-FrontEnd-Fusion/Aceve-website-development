@@ -2,6 +2,7 @@ import { VolunteerValidation } from "../classes/VolunteerValidation"
 
 const validator = new VolunteerValidation();
 
+// npm test -- -t "Volunteer phone validation" --verbose
 describe("Volunteer email validation", () => {
   const emailTestFalseValues = [
     "  ", // blank
