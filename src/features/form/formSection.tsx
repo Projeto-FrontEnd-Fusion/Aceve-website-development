@@ -21,7 +21,7 @@ export default function FormSection() {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="w-full max-w-md rounded-2xl shadow-lg p-6">
+          <div className="w-full max-w-md rounded-2xl shadow-lg gap-7">
             <RegisterVolunteerForm/>
           </div>
         </div>

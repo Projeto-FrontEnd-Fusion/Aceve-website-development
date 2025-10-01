@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form"
 import { Inputs } from "../Inputs/Inputs";
 import { registerVolunteerFormSchema } from "@/features/form/RegisterVolunteerFormSchema";
-import {zodResolver} from "@hookform/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 type FormData = {
     name: string;
     phoneNumber: string;
@@ -12,7 +12,7 @@ type FormData = {
 
 
 export const RegisterVolunteerForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(registerVolunteerFormSchema)});
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(registerVolunteerFormSchema) });
 
 
     const onSubmit = (data: FormData) => {
@@ -20,7 +20,7 @@ export const RegisterVolunteerForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full m-auto py-6 px-10 bg-white-normal rounded-2xl border-primary-500 border-2" onSubmit={handleSubmit(onSubmit)}>
             <Inputs
                 {...register("name")}
                 type="string"
@@ -28,7 +28,7 @@ export const RegisterVolunteerForm = () => {
                 id="name"
                 error={errors.name}
             />
-            
+
             <Inputs
                 {...register("phoneNumber")}
                 type="tel"
@@ -36,7 +36,7 @@ export const RegisterVolunteerForm = () => {
                 id="phoneNumber"
                 error={errors.phoneNumber}
             />
-            
+
             <Inputs
                 {...register("email")}
                 type="email"
@@ -44,15 +44,18 @@ export const RegisterVolunteerForm = () => {
                 id="email"
                 error={errors.email}
             />
-             
+
             <Inputs
                 {...register("description")}
                 type="text"
                 placeholder="Como pode contribuir com a ONG"
                 id="description"
                 error={errors.description}
+                height={100}
             />
-            <button type="submit">Enviar Formulário</button>
+            <button className="w-full border-2 rounded-lg p-4 bg-primary-600 text-xl font-semibold text-grey-100" type="submit">
+                Enviar Formulário
+            </button>
         </form>
     )
 };
