@@ -1,5 +1,6 @@
 import Image from "next/image";
 import voluntarioimg from "@/assets/voluntarioimg.png";
+import { RegisterVolunteerForm } from "@/components/Forms/RegisterVolunteerForm";
 export default function FormSection() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-primary-100 px-4 text-center font-inter">
@@ -15,7 +16,7 @@ export default function FormSection() {
         alt="Imagem institucional decorada com moldura floral"
         className="object-cover self-center justify-self-center w-[65%] desktop:w-auto desktop:h-[680px] desktop:py-14 h-auto max-w-full transition-all duration-500 row-start-2 desktop:row-start-1 desktop:col-start-2 desktop:row-span-3"
       />
-      <form>formulário aqui</form>
+      <RegisterVolunteerForm />
     </main>
   );
 }
