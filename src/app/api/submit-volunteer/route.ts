@@ -85,7 +85,7 @@ export async function POST(request: Request) {
     })
     if (sendConfirmToVolunteer.rejected.length > 0) {
       return NextResponse.json(
-        { error: "Error trying to send email" },
+        { error: "Error trying to send confirm email to volunteer" },
         { status: 502 }
       )
     }
