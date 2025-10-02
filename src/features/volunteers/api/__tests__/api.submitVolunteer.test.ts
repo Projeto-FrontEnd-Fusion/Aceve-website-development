@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { POST } from '../../../app/api/submit-volunteer/route'
+import { POST } from '@/app/api/submit-volunteer/route'
 import nodemailer from 'nodemailer'
 
 const requestForTest = <T>(bodyContent?: T) => new Request("http://localhost:3000/api/submit-volunteer", {
