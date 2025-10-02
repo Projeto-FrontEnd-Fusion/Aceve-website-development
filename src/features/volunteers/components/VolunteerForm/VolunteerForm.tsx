@@ -20,7 +20,8 @@ export const VolunteerForm = () => {
     };
 
     return (
-        <form className="w-full m-auto py-6 px-10 bg-white-normal rounded-2xl border-primary-500 border-2" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full h-full m-auto py-6 px-6 min-md:px-10 bg-white-normal rounded-2xl border-primary-500 border-2" 
+        onSubmit={handleSubmit(onSubmit)}>
             <Inputs
                 {...register("name")}
                 type="string"
@@ -47,11 +48,11 @@ export const VolunteerForm = () => {
 
             <Inputs
                 {...register("description")}
-                type="text"
+                type="textarea"
                 placeholder="Como pode contribuir com a ONG"
                 id="description"
                 error={errors.description}
-                height={100}
+                height={240}
             />
             <button className="w-full border-2 rounded-lg p-4 bg-primary-600 text-xl font-semibold text-grey-100" type="submit">
                 Enviar Formulário
