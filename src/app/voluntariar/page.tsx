@@ -1,7 +1,8 @@
 import Image from "next/image";
 import voluntarioimg from "@/assets/voluntarioimg.png";
-import { RegisterVolunteerForm } from "@/components/Forms/RegisterVolunteerForm";
-export default function FormSection() {
+import { VolunteerForm } from "@/features/volunteers/components/VolunteerForm/VolunteerForm";
+
+export default function Voluntariar() {
   return (
     <section className="min-h-screen bg-primary-100 py-12 px-6 font-inter">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -22,7 +23,7 @@ export default function FormSection() {
 
         <div className="flex justify-center lg:justify-end">
           <div className="w-full max-w-md rounded-2xl shadow-lg gap-7">
-            <RegisterVolunteerForm/>
+            <VolunteerForm />
           </div>
         </div>
       </div>

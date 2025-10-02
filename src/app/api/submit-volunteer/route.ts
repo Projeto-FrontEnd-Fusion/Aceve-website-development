@@ -1,7 +1,7 @@
-import { IVolunteer } from "@/features/volunteers/types/IVolunteer";
+import { IVolunteer } from "@/features/volunteers/api/types/IVolunteer";
 import * as nodemailer from 'nodemailer';
 import { NextResponse } from "next/server";
-import { VolunteerValidation } from "@/features/volunteers/classes/VolunteerValidation";
+import { VolunteerValidation } from "@/features/volunteers/api/classes/VolunteerValidation";
 
 export async function POST(request: Request) {
   // check env variables and request body

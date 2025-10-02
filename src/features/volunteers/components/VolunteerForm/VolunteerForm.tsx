@@ -1,8 +1,8 @@
 "use client";
 import { useForm } from "react-hook-form"
-import { Inputs } from "../Inputs/Inputs";
-import { registerVolunteerFormSchema } from "@/features/form/RegisterVolunteerFormSchema";
+import { Inputs } from "@/components/Inputs/Inputs";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { volunteerFormValidator } from "@/features/volunteers/utils/volunteerFormValidator";
 type FormData = {
     name: string;
     phoneNumber: string;
@@ -11,8 +11,8 @@ type FormData = {
 }
 
 
-export const RegisterVolunteerForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(registerVolunteerFormSchema) });
+export const VolunteerForm = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(volunteerFormValidator) });
 
 
     const onSubmit = (data: FormData) => {

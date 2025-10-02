@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const registerVolunteerFormSchema = z.object({
+export const volunteerFormValidator = z.object({
   name: z
     .string()
     .min(2, { message: "O nome deve ter pelo menos 2 caracteres" }),
