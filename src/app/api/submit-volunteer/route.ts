@@ -1,7 +1,8 @@
 import { IVolunteer } from "@/features/volunteers/api/types/IVolunteer";
 import * as nodemailer from 'nodemailer';
 import { NextResponse } from "next/server";
-import { VolunteerValidation } from "@/features/volunteers/api/classes/VolunteerValidation";
+import { volunteerFormValidator } from "@/features/volunteers/utils/volunteerFormValidator";
+import { ZodError } from 'zod';
 
 export async function POST(request: Request) {
   // check env variables and request body
@@ -27,7 +28,7 @@ export async function POST(request: Request) {
     const body = JSON.parse(bodyText);
     // check body request fields
     const volunteer = body.volunteer as IVolunteer
-    if (!volunteer || !volunteer.fullName || !volunteer.email || !volunteer.phone) {
+    if (!volunteer || !volunteer.name || !volunteer.email || !volunteer.phoneNumber) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 })
@@ -35,21 +36,7 @@ export async function POST(request: Request) {
 
 
     // volunteer information validation
-    const validation = new VolunteerValidation();
-    if (!validation.validateEmail(volunteer.email)) {
-      return NextResponse.json(
-        { error: "Email with invalid format" },
-        { status: 400 }
-      )
-    }
-    if (!validation.validatePhone(volunteer.phone)) {
-      return NextResponse.json(
-        { error: "Phone with invalid format" },
-        { status: 400 }
-      )
-    }
-
-
+    volunteerFormValidator.parse(volunteer)
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -64,9 +51,9 @@ export async function POST(request: Request) {
       text: `
     Novo voluntário:
     
-    Nome: ${volunteer.fullName}
-    Tel: ${volunteer.phone}
-    Mensagem: ${volunteer.message}
+    Nome: ${volunteer.name}
+    Tel: ${volunteer.phoneNumber}
+    Mensagem: ${volunteer.description}
     `
     })
     // check if the email was rejected then return error
@@ -81,7 +68,7 @@ export async function POST(request: Request) {
       from: user,
       to: volunteer.email,
       subject: "Serviço Voluntário | Confirmação",
-      text: volunteer.message
+      text: volunteer.description
     })
     if (sendConfirmToVolunteer.rejected.length > 0) {
       return NextResponse.json(
@@ -92,6 +79,12 @@ export async function POST(request: Request) {
 
 
   } catch (error) {
+    if (error instanceof ZodError) {
+      return NextResponse.json(
+        { error: "Fields with invalid values" },
+        { status: 400 }
+      )
+    }
     return NextResponse.json(
       { error },
       { status: 500 }

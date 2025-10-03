@@ -73,9 +73,9 @@ describe("submit volunteer route api", () => {
 
 
   const requestMissingFields = [
-    { email: "maria@email.com", phone: "11999999999" }, // missing full name
-    { fullName: "Maria Silva", phone: "11999999999" }, // missing email
-    { fullName: "Maria Silva", email: "maria@email.com" }, // missing phone
+    { email: "maria@email.com", phoneNumber: "11912344432", description: "Quero me voluntariar" }, // missing name
+    { name: "Maria Silva", phoneNumber: "11912344432", description: "Quero me voluntariar" }, // missing email
+    { name: "Maria Silva", email: "maria@email.com", description: "Quero me voluntariar" }, // missing phone
     {}, // missing all fields
   ];
   test.each(requestMissingFields)(
@@ -94,32 +94,34 @@ describe("submit volunteer route api", () => {
   test("should return status 400 and message 'Email with invalid format' on invalid email", async () => {
     const request = requestForTest({
       volunteer: {
-        fullName: "João Silva",
+        name: "João Silva",
         email: "@mail.com",
-        phone: "11999999999"
+        phoneNumber: "11999999999",
+        description: "Quero me voluntariar"
       }
     });
     const response = await POST(request);
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.error).toBe("Email with invalid format");
+    expect(data.error).toBe("Fields with invalid values");
   });
 
 
-  test("should return status 400 and message 'Phone with invalid format' on invalid phone", async () => {
+  test("should return status 400 and message 'Fields with invalid values' on invalid phone", async () => {
     const request = requestForTest({
       volunteer: {
-        fullName: "João Silva",
+        name: "João Silva",
         email: "joao@email.com",
-        phone: "123"
+        phoneNumber: "123",
+        description: "Quero me voluntariar"
       }
     });
     const response = await POST(request);
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.error).toBe("Phone with invalid format");
+    expect(data.error).toBe("Fields with invalid values");
   });
 
 
@@ -131,10 +133,10 @@ describe("submit volunteer route api", () => {
 
     const request = requestForTest({
       volunteer: {
-        fullName: "João Silva",
+        name: "João Silva",
         email: "joao@gmail.com",
-        phone: "+55 (11) 9 1234-4432",
-        message: "Quero ser voluntário"
+        phoneNumber: "11912344432",
+        description: "Quero ser voluntário"
       }
     });
     const response = await POST(request);
@@ -158,10 +160,10 @@ describe("submit volunteer route api", () => {
 
     const request = requestForTest({
       volunteer: {
-        fullName: "João Silva",
+        name: "João Silva",
         email: "joao@email.com",
-        phone: "+55 (11) 9 1234-4432",
-        message: "Quero ser voluntário"
+        phoneNumber: "11912344432",
+        description: "Quero ser voluntário"
       }
     });
     const response = await POST(request);

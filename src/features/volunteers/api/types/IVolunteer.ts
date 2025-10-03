@@ -1,6 +1,6 @@
 export type IVolunteer = {
-  fullName: string;
+  name: string;
+  phoneNumber: string;
   email: string;
-  phone: string;
-  message: string;
+  description: string;
 }
