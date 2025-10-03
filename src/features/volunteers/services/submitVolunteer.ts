@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IVolunteer } from "../api/types/IVolunteer";
+import { IVolunteer } from "../types/IVolunteer";
 
 export async function submitVolunteer(volunteer: IVolunteer, onComplete: (succeeded: boolean) => void) {
   try {
