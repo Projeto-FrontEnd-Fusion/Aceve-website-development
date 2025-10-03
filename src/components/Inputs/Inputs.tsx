@@ -14,7 +14,7 @@ export const Inputs = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputPr
             {type === "textarea" ? (
                 <textarea
                     ref={ref as React.Ref<HTMLTextAreaElement>}
-                    className={`w-full border-primary-500 border-2 rounded-lg py-2 px-4 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 resize-none ${error ? "border-red-500" : ""
+                    className={`w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 resize-none ${error ? "border-red-500" : ""
                         }`}
                     style={{ height: height ? `${height}px` : "128px" }}
                     {...rest}
@@ -23,7 +23,7 @@ export const Inputs = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputPr
                 <input
                     type={type}
                     ref={ref as React.Ref<HTMLInputElement>}
-                    className={`w-full border-primary-500 border-2 rounded-lg py-2 px-4 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? "border-red-500" : ""
+                    className={`w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? "border-red-500" : ""
                         }`}
                     {...rest}
                 />

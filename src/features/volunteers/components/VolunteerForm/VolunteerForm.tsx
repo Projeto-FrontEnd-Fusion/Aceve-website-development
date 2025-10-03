@@ -20,7 +20,8 @@ export const VolunteerForm = () => {
     };
 
     return (
-        <form className="w-full h-full m-auto py-6 px-6 min-md:px-10 bg-white-normal rounded-2xl border-primary-500 border-2" 
+        <form className="w-full h-full m-auto py-10 px-6 min-md:px-10 bg-white-normal rounded-2xl border-primary-500 border-2 
+        flex flex-col justify-between" 
         onSubmit={handleSubmit(onSubmit)}>
             <Inputs
                 {...register("name")}
