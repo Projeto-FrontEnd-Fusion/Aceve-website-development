@@ -1,8 +1,8 @@
 import * as nodemailer from 'nodemailer';
 import { NextResponse } from "next/server";
-import { volunteerFormValidator } from "@/features/volunteers/utils/volunteerFormValidator";
 import { ZodError } from 'zod';
 import { IVolunteer } from '@/features/volunteers/types/IVolunteer';
+import { volunteerValidator } from '@/features/volunteers/utils/volunteerValidator';
 
 export async function POST(request: Request) {
   // check env variables and request body
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 
 
     // volunteer information validation
-    volunteerFormValidator.parse(volunteer)
+    volunteerValidator.parse(volunteer)
 
     const transporter = nodemailer.createTransport({
       service: "gmail",

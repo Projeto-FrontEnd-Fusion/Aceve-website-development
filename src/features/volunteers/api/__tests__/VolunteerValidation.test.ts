@@ -1,4 +1,4 @@
-import { volunteerFormValidator } from "../../utils/volunteerFormValidator";
+import { volunteerValidator } from "../../utils/volunteerValidator"
 
 // npm test -- -t "Volunteer email validation" --verbose
 describe("Volunteer email validation", () => {
@@ -15,7 +15,7 @@ describe("Volunteer email validation", () => {
   ]
 
   test.each(emailTestFalseValues)("should return false for incorrect format email", (email) => {
-    const validation = volunteerFormValidator.safeParse({
+    const validation = volunteerValidator.safeParse({
       name: "Ana Santos",
       phoneNumber: "91900000000",
       email,
@@ -26,7 +26,7 @@ describe("Volunteer email validation", () => {
   })
 
   test.each(emailTestTrueValues)("should return true for correct format email", (email) => {
-    const validation = volunteerFormValidator.safeParse({
+    const validation = volunteerValidator.safeParse({
       name: "Ana Santos",
       phoneNumber: "91900000000",
       email,
@@ -53,7 +53,7 @@ describe("Volunteer phone validation", () => {
   ]
 
   test.each(phoneTestFalseValues)("should return false for incorrect format phone", (phoneNumber) => {
-    const validation = volunteerFormValidator.safeParse({
+    const validation = volunteerValidator.safeParse({
       name: "Ana Santos",
       phoneNumber,
       email: "user@gmail.com",
@@ -64,7 +64,7 @@ describe("Volunteer phone validation", () => {
     expect(validation.error).toBeTruthy();
   })
   test.each(phoneTestTrueValues)("should return true for correct format phone", (phoneNumber) => {
-    const validation = volunteerFormValidator.safeParse({
+    const validation = volunteerValidator.safeParse({
       name: "Ana Santos",
       phoneNumber,
       email: "user@gmail.com",
