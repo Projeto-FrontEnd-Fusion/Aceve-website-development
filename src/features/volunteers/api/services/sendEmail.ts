@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import * as nodemailer from 'nodemailer';
 import { IVolunteer } from "../../types/IVolunteer";
 
