@@ -49,9 +49,10 @@ describe("submit volunteer route api", () => {
 
     const request = requestForTest({
       volunteer: {
-        fullName: "João Silva",
+        name: "João Silva",
         email: "joao@email.com",
-        phone: "11999999999"
+        phoneNumber: "11912344432",
+        description: "Quero ser voluntário"
       }
     });
     const response = await POST(request);
@@ -125,7 +126,7 @@ describe("submit volunteer route api", () => {
   });
 
 
-  test("should return status 502 and message 'Error trying to send email' when email to ONG is rejected", async () => {
+  test("should return status 500 and message 'Error trying to send email' when email to ONG is rejected", async () => {
     mockSendMail.mockResolvedValueOnce({
       rejected: ['recipient@email.com'], // oNG email rejected
       messageId: 'message-1'
@@ -142,12 +143,12 @@ describe("submit volunteer route api", () => {
     const response = await POST(request);
     const data = await response.json();
 
-    expect(response.status).toBe(502);
+    expect(response.status).toBe(500);
     expect(data.error).toBe("Error trying to send email");
   });
 
 
-  test("should return status 502 and message 'Error trying to send confirm email to volunteer' when confirmation email to volunteer is rejected", async () => {
+  test("should return status 500 and message 'Error trying to send confirm email to volunteer' when confirmation email to volunteer is rejected", async () => {
     mockSendMail
       .mockResolvedValueOnce({
         rejected: [], // ONG email accepcted 
@@ -169,7 +170,7 @@ describe("submit volunteer route api", () => {
     const response = await POST(request);
     const data = await response.json();
 
-    expect(response.status).toBe(502);
+    expect(response.status).toBe(500);
     expect(data.error).toBe("Error trying to send confirm email to volunteer");
   });
 
