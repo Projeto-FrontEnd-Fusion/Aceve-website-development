@@ -1,11 +1,10 @@
+import { useMaskedInput } from '@/hooks/useMaskedInput'
 import {
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
   TextareaHTMLAttributes,
-  useEffect,
-  useState
 } from 'react'
-import { FieldError, useFormContext } from 'react-hook-form'
+import { FieldError } from 'react-hook-form'
 
 interface Props {
   name: string
@@ -32,37 +31,9 @@ interface TextAreaFieldProps
 type InputProps = InputFieldProps | TextAreaFieldProps
 
 export const Inputs = (props: InputProps) => {
-  const { setValue, watch } = useFormContext()
-
   const { name, error, mask, ...rest } = props
 
-  const rawValue = watch(name) ?? ''
-
-  const [maskedValue, setMaskedValue] = useState(() => mask ? mask(rawValue) : rawValue)
-
-  useEffect(() => {
-    setMaskedValue(mask ? mask(rawValue) : rawValue)
-  }, [rawValue, mask])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const inputValue = e.target.value
-
-    if (mask) {
-      const masked  = mask(inputValue)
-      setMaskedValue(masked)
-
-      setValue(name, maskedValue, {
-        shouldDirty: true,
-        shouldValidate: true,
-      })
-    } else {
-      setMaskedValue(inputValue)
-      setValue(name, inputValue, {
-        shouldDirty: true,
-        shouldValidate: true,
-    })
-    }
-  }
+  const { maskedValue, handleChange } = useMaskedInput(name, mask)
 
   const inputElement = props.as === 'textarea' ? (
     <textarea
