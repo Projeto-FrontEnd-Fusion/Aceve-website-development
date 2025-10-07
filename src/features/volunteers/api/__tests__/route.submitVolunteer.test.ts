@@ -80,5 +80,21 @@ describe("submit volunteer route api", () => {
   });
 
 
+  test("should return status 200 on a properly made request", async () => {
+    const request = requestForTest({
+      volunteer: {
+        name: "João Silva",
+        email: "joao@gmail.com",
+        phoneNumber: "11912344432",
+        description: "Quero ser voluntário"
+      }
+    });
+    const response = await POST(request);
+
+    expect(response.status).toBe(200);
+
+
+  })
+
 
 })
