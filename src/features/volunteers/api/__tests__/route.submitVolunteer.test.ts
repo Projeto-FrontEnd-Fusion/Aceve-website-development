@@ -2,7 +2,15 @@
  * @jest-environment node
  */
 import { POST } from '@/app/api/submit-volunteer/route'
-import { requestForTest } from '../utils/requestForTest';
+
+const requestForTest = <T>(bodyContent?: T) => new Request("http://localhost:3000/api/submit-volunteer", {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: bodyContent ? JSON.stringify(bodyContent) : null
+})
+
 
 
 //  npm test -- -t "submit volunteer route api" --verbose
