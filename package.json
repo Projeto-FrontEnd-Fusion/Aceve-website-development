@@ -10,9 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.10.0",
+    "@hookform/resolvers": "^5.2.2",
     "@paypal/react-paypal-js": "^8.8.3",
-    "@react-input/mask": "^1.2.11",
+    "@react-input/mask": "^1.2.15",
     "@types/nodemailer": "^7.0.1",
     "aceve-website-development": "file:",
     "autoprefixer": "^10.4.20",
