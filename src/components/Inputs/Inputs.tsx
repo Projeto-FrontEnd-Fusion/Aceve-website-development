@@ -32,6 +32,7 @@ type InputProps = InputFieldProps | TextAreaFieldProps
 export const Inputs = (props: InputProps) => {
   const { register } = useFormContext()
 
+  const { name, error } = props
 
   const inputElement = props.as === 'textarea' ? (
     <textarea
