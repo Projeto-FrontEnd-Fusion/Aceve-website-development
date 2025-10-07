@@ -6,8 +6,8 @@ export const volunteerValidator = z.object({
     .min(2, { message: "O nome deve ter pelo menos 2 caracteres" }),
   phoneNumber: z
     .string()
-    .min(11, { message: "O telefone deve ter 11 caracteres" })
-    .max(11, { message: "O telefone deve ter 11 caracteres" }),
+    .min(15, { message: "O telefone deve ter 11 digitos" })
+    .max(15, { message: "O telefone deve ter 11 digitos" }),
   email: z
     .email("Fornaça um e-mail válido")
     .min(1, { message: "O email é obrigatório" }),

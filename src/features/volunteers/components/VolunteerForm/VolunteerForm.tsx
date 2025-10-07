@@ -3,6 +3,7 @@ import { FormProvider, useForm } from "react-hook-form"
 import { Inputs } from "@/components/Inputs/Inputs";
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js'
 import { volunteerValidator } from "../../utils/volunteerValidator";
+import { phoneMask } from "../../utils/phoneMask";
 
 type FormData = {
   name: string;
@@ -13,8 +14,10 @@ type FormData = {
 
 
 export const VolunteerForm = () => {
+
     const methods = useForm<FormData>({ resolver: zodResolver(volunteerValidator) })
     const { formState: { errors } } = methods
+    console.log(methods.watch('phoneNumber'))
 
     const onSubmit = async (data: FormData) => {
       console.log("Form data:", data);
@@ -36,6 +39,7 @@ export const VolunteerForm = () => {
               <Inputs
                   name="phoneNumber"
                   type="tel"
+                  mask={phoneMask}
                   placeholder="Telefone"
                   id="phoneNumber"
                   error={errors.phoneNumber}
