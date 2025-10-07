@@ -17,7 +17,6 @@ export const VolunteerForm = () => {
 
     const methods = useForm<FormData>({ resolver: zodResolver(volunteerValidator) })
     const { formState: { errors } } = methods
-    console.log(methods.watch('phoneNumber'))
 
     const onSubmit = async (data: FormData) => {
       console.log("Form data:", data);
