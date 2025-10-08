@@ -28,7 +28,7 @@ interface TextAreaFieldProps
   type?: never
 }
 
-type InputProps = InputFieldProps | TextAreaFieldProps
+export type InputProps = InputFieldProps | TextAreaFieldProps
 
 export const Inputs = (props: InputProps) => {
   const { name, as = 'input', error, mask, ...rest } = props
