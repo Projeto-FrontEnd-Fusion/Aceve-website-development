@@ -40,7 +40,7 @@ export const Changemaker = () => {
             </GlobalLink>
 
             <GlobalLink
-              href="/voluntariar"
+              href="/faca-parte"
               variant="outlined-primary-700"
               className="w-full tablet:w-72 h-14 gap-2 px-5 py-4 text-base font-inter font-semibold"
             >
