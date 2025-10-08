@@ -6,6 +6,7 @@ import { GlobalLink } from "../GlobalLink/GlobalLink";
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
+  const linkClasses = "text-[1.25rem] py-3 px-4 text-center"
 
   return (
     <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
@@ -14,18 +15,36 @@ export const Header = () => {
       </div>
       <div className="flex mx-auto">
         <nav className="hidden mobileXLarger:flex">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-6 md:mr-1">
             <li>
               <GlobalLink
                 variant="text"
                 href="/"
-                className="text-[1.25rem] py-3 px-4">
+                className={linkClasses}>
                 Início
               </GlobalLink>
             </li>
             <li>
-              <GlobalLink variant="text" href="/sobre-nos" className="text-[1.25rem] py-3 px-4">
+              <GlobalLink variant="text" href="/sobre-nos" className="text-[1.25rem] py-3 px-4 text-center">
                 Sobre Nós
+              </GlobalLink>
+            </li>
+
+            <li>
+              <GlobalLink
+                variant="text"
+                href="/o-que-fazemos"
+                className={linkClasses}>
+                O que fazemos
+              </GlobalLink>
+            </li>
+
+            <li>
+              <GlobalLink
+                variant="text"
+                href="/faca-parte"
+                className={linkClasses}>
+                Faça parte
               </GlobalLink>
             </li>
 
@@ -37,6 +56,7 @@ export const Header = () => {
                 Loja
               </GlobalLink>
             </li>
+
           </ul>
         </nav>
       </div>
