@@ -31,13 +31,15 @@ interface TextAreaFieldProps
 type InputProps = InputFieldProps | TextAreaFieldProps
 
 export const Inputs = (props: InputProps) => {
-  const { name, error, mask, ...rest } = props
+  const { name, as = 'input', error, mask, ...rest } = props
 
   const { maskedValue, handleChange } = useMaskedInput(name, mask)
 
+  const baseClass = `w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? 'border-red-500' : ''}`
+
   const inputElement = props.as === 'textarea' ? (
     <textarea
-      className={`w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 resize-none ${error ? 'border-red-500' : ''}`}
+      className={`${baseClass} resize-none`}
       style={{ height: props.height ? `${props.height}px` : '128px' }}
       value={maskedValue}
       onChange={handleChange}
@@ -45,7 +47,7 @@ export const Inputs = (props: InputProps) => {
     />
   ) : (
     <input
-      className={`w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? 'border-red-500' : ''}`}
+      className={baseClass}
       value={maskedValue}
       onChange={handleChange}
       {...(rest as InputFieldProps)}
