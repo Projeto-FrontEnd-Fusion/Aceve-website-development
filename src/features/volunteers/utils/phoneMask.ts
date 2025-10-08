@@ -5,6 +5,8 @@ export const phoneMask = (value: string) => {
   const part2 = digits.slice(2, 7);
   const part3 = digits.slice(7, 11);
 
+  if (digits.length === 0) return '';
+
   if (digits.length <= 2) {
     return `(${part1}`;
   }
