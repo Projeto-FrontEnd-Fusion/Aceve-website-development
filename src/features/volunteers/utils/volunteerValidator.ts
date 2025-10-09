@@ -11,5 +11,6 @@ export const volunteerValidator = z.object({
   email: z
     .email("Fornaça um e-mail válido")
     .min(1, { message: "O email é obrigatório" }),
-  description: z.string().min(5, { message: "A mensagem é muito curta" })
+  description:
+    z.string().min(5, { message: "A mensagem é muito curta" })
 });
