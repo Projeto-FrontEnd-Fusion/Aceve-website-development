@@ -25,7 +25,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       mobileXLarger:top-16 gap-2
       desktop:hidden ${isMenuOpen
           ? "left-1/2 -translate-x-1/2"
-          : "left-1/2 translate-x-1/2 bg-purple-200 text-purple-700"
+          : "left-full bg-purple-200 text-purple-700"
         }`}
     >
 
@@ -39,18 +39,33 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
 
       <GlobalLink
         variant="text"
-        onClick={() => setisMenuOpen((false))}
-        href="https://wa.me/c/5511982935150"
-        className="text-[1.25rem] py-3 px-4">
-        Loja
-      </GlobalLink>
-
-      <GlobalLink
-        variant="text"
         href="/sobre-nos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Sobre Nós
+      </GlobalLink>
+
+      <GlobalLink
+        variant="text"
+        href="/o-que-fazemos"
+        className="text-[1.25rem] py-3 px-4">
+        O que fazemos
+      </GlobalLink>
+
+      <GlobalLink
+        variant="text"
+        href="/faca-parte"
+        className="text-[1.25rem] py-3 px-4">
+        Faça parte
+      </GlobalLink>
+
+
+      <GlobalLink
+        variant="text"
+        onClick={() => setisMenuOpen((false))}
+        href="https://wa.me/c/5511982935150"
+        className="text-[1.25rem] py-3 px-4">
+        Loja
       </GlobalLink>
 
       <GlobalLink
