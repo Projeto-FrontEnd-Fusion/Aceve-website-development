@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
 import { useFormContext } from "react-hook-form"
+import { useEffect, useState } from "react"
 
 export function useMaskedInput(name: string, mask?: (val: string) => string) {
   const { setValue, watch } = useFormContext()
