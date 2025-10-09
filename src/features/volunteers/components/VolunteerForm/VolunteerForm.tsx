@@ -12,20 +12,29 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const VolunteerForm = () => {
   const [Isloading, setIsLoading] = useState<boolean>(false);
+  const [message, setMessage] = useState<false | string>(false);
 
   const methods = useForm<IVolunteer>({
     resolver: zodResolver(volunteerValidator),
   });
   const {
+    reset,
     formState: { errors },
   } = methods;
 
   const onSubmit = (data: IVolunteer) => {
     setIsLoading(true);
     submitVolunteer(data, (succeeded) =>
-      succeeded ? setIsLoading(false) : alert("Falha ao enviar o formulário")
+      succeeded ? completeSubmit() : setMessage("Falha ao enviar o formulário")
     );
   };
+
+  const completeSubmit = () => {
+    setIsLoading(false);
+    reset()
+    setMessage("Formulário enviado com sucesso")
+    setTimeout(() => setMessage(false), 4000)
+  }
 
   const fields: readonly InputProps[] = [
     { name: "name", type: "text", placeholder: "Nome completo" },
@@ -44,6 +53,8 @@ export const VolunteerForm = () => {
     },
   ];
 
+  const messageTextClasses = 'text-center ' + message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"
+
   return (
     <FormProvider {...methods}>
       <form
@@ -51,6 +62,8 @@ export const VolunteerForm = () => {
           flex flex-col justify-between"
         onSubmit={methods.handleSubmit(onSubmit)}
       >
+        {message && <p className={messageTextClasses}>{message}</p>}
+
         {fields.map((field) => (
           <Inputs
             key={field.name}
