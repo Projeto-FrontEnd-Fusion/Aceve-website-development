@@ -25,7 +25,7 @@ export const VolunteerForm = () => {
   const onSubmit = (data: IVolunteer) => {
     setIsLoading(true);
     submitVolunteer(data, (succeeded) =>
-      succeeded ? completeSubmit() : setMessage("Falha ao enviar o formulário")
+      succeeded ? completeSubmit() : failedSubmit()
     );
   };
 
@@ -34,6 +34,12 @@ export const VolunteerForm = () => {
     reset()
     setMessage("Formulário enviado com sucesso")
     setTimeout(() => setMessage(false), 4000)
+  }
+
+  const failedSubmit = () => {
+    setMessage("Falha ao enviar o formulário")
+    setTimeout(() => setMessage(false), 4000)
+
   }
 
   const fields: readonly InputProps[] = [
@@ -53,8 +59,6 @@ export const VolunteerForm = () => {
     },
   ];
 
-  const messageTextClasses = 'text-center ' + message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"
-
   return (
     <FormProvider {...methods}>
       <form
@@ -62,7 +66,9 @@ export const VolunteerForm = () => {
           flex flex-col justify-between"
         onSubmit={methods.handleSubmit(onSubmit)}
       >
-        {message && <p className={messageTextClasses}>{message}</p>}
+        {message &&
+          <p className={`text-left ${message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"}`}>{message}</p>
+        }
 
         {fields.map((field) => (
           <Inputs
