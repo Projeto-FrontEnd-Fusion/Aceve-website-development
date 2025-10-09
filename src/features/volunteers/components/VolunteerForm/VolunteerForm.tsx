@@ -24,21 +24,29 @@ export const VolunteerForm = () => {
 
   const onSubmit = (data: IVolunteer) => {
     setIsLoading(true);
-    submitVolunteer(data, (succeeded) =>
-      succeeded ? completeSubmit() : failedSubmit()
-    );
-  };
+    try {
+      submitVolunteer(data, (succeeded) => {
+        if (succeeded) {
+          completeSubmit()
+        } else {
+          failedSubmit()
+        }
+      })
+    } catch(error) {
+      failedSubmit()
+    }
+  }
 
   const completeSubmit = () => {
     setIsLoading(false);
     reset()
     setMessage("Formulário enviado com sucesso")
-    setTimeout(() => setMessage(false), 4000)
+    setTimeout(() => setMessage(false), 100000)
   }
 
   const failedSubmit = () => {
     setMessage("Falha ao enviar o formulário")
-    setTimeout(() => setMessage(false), 4000)
+    setIsLoading(false);
 
   }
 
