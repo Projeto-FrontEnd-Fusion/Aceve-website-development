@@ -20,12 +20,13 @@ export async function sendEmail(volunteer: IVolunteer) {
   const sendToOng = await transporter.sendMail({
     from: user,
     to: user,
-    subject: "Serviço Voluntário",
+    subject: "Serviço Voluntário 💜 | Novo voluntário",
     text: `
-    Novo voluntário:
+    Informações do voluntário:
     
     Nome: ${volunteer.name}
     Tel: ${volunteer.phoneNumber}
+    Email: ${volunteer.email}
     Mensagem: ${volunteer.description}
     `
   })
@@ -37,8 +38,17 @@ export async function sendEmail(volunteer: IVolunteer) {
   const sendConfirmToVolunteer = await transporter.sendMail({
     from: user,
     to: volunteer.email,
-    subject: "Serviço Voluntário | Confirmação",
-    text: volunteer.description
+    subject: "Serviço Voluntário Violeta Eliz 🌸 | Confirmação",
+    text: `Olá ${volunteer.name} 💜,
+Nós da Violeta Eliz ficamos felizes pelo seu interesse a se juntar a nossa causa e transformar vidas.
+Recebemos as seguintes informações:
+
+    Telefone: ${volunteer.phoneNumber}
+    Email: ${volunteer.email}
+    Mensagem: "${volunteer.description}" 
+
+Em breve entraremos em contato 😊. 
+`
   })
   if (sendConfirmToVolunteer.rejected.length > 0) {
     throw new Error("Error trying to send confirm email to volunteer")
