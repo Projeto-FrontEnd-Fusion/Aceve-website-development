@@ -17,6 +17,7 @@ export const VolunteerForm = () => {
   const methods = useForm<IVolunteer>({
     resolver: zodResolver(volunteerValidator),
   });
+
   const {
     reset,
     formState: { errors },
@@ -74,16 +75,13 @@ export const VolunteerForm = () => {
           flex flex-col justify-between"
         onSubmit={methods.handleSubmit(onSubmit)}
       >
-        {message &&
-          <p className={`text-left ${message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"}`}>{message}</p>
-        }
-
         {fields.map((field) => (
           <Inputs
             key={field.name}
             {...field}
             id={field.name}
             error={errors[field.name as keyof IVolunteer]}
+            required={true}
           />
         ))}
         <GlobalButton
@@ -101,6 +99,10 @@ export const VolunteerForm = () => {
             "Enviar Formulário"
           )}
         </GlobalButton>
+        {message &&
+          <p className={`text-center pt-2 ${message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"}`}>{message}</p>
+        }
+
       </form>
     </FormProvider>
   );
