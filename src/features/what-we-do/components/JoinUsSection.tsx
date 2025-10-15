@@ -35,7 +35,7 @@ export default function JoinUsSection() {
           </GlobalLink>
 
           <GlobalLink
-            href="/voluntariar"
+            href="/faca-parte"
             variant="outlined-primary-700"
             className="w-full md:flex-1 h-14 gap-2 px-5 py-4 text-base font-inter font-semibold text-center"
           >
