@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import Violetas from "../../../assets/as-violetas.png";
+import Violetas from "../../../assets/projeto-as-violetas.jpeg";
 import Brecholeta from "../../../assets/brecholeta.png";
 import Justiceiras from "../../../assets/justiveiras.png";
 import Kime from "../../../assets/kime.png";
@@ -14,7 +14,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
-import { FaAngleLeft, FaAngleRight, FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaCircleChevronLeft,
+  FaCircleChevronRight,
+} from "react-icons/fa6";
 
 export const ProjectsDisplay = () => {
   interface IProjectData {
