@@ -10,7 +10,7 @@ const contactList = [
     id: 1,
     content:
       "Rua Ricardo Julio Ferraz, 357/367\nSão Paulo, SP 04814-120 \nBrasil",
-    href: "https://www.google.com/maps/place/R.+Ricardo+Júlio+Ferraz+-+Jardim+Maria+Rita,+São+Paulo+-+SP,+04814-120/@-23.7179721,-46.678417,3a,75y,85.62h,91.31t/data=!3m7!1e1!3m5!1sE5zfshillMLsY2BlBMtVzg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.3067196734278355%26panoid%3DE5zfshillMLsY2BlBMtVzg%26yaw%3D85.61906494275085!7i16384!8i8192!4m15!1m8!3m7!1s0x94ce4f784a8a4c29:0x3ff135405fa4d9f0!2sR.+Ricardo+Júlio+Ferraz+-+Jardim+Maria+Rita,+São+Paulo+-+SP,+04814-120!3b1!8m2!3d-23.7179756!4d-46.678417!16s%2Fg%2F1tjz4hch!3m5!1s0x94ce4f784a8a4c29:0x3ff135405fa4d9f0!8m2!3d-23.7179756!4d-46.678417!16s%2Fg%2F1tjz4hch?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D",
+    href: "https://maps.app.goo.gl/U8jX5RuY7HN41tkF7",
   },
   {
     id: 2,
