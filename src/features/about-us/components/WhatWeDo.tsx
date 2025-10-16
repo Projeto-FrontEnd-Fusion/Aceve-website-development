@@ -20,7 +20,7 @@ export const WhatWeDo = () => {
       image: TheViolets,
     },
     {
-      title: "VIVALEITE",
+      title: "Vivaleite",
       content:
         "O Projeto VIVALEITE, da Associação Violeta Eliz, promove semanalmente a entrega de leite a crianças e idosos em situação de vulnerabilidade. Beneficiando 50 moradores, a iniciativa garante segurança alimentar, acolhimento e dignidade à comunidade.",
       alt: "Foto que mostra o funcionamento do projeto VIVALEITE",
