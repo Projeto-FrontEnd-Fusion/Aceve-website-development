@@ -35,7 +35,7 @@ export const WhoWeAre = () => {
         />
       </div>
       <div
-        className="flex flex-col items-start justify-center
+        className="flex flex-col items-start justify-center gap-4
       md:w-[45%]"
       >
         <h2
@@ -50,24 +50,23 @@ export const WhoWeAre = () => {
         >
           Da favela para o mundo: poder feminino em ação
         </h3>
-        <p className={`text-lg ${textClass}`}>
+        <p className={`text-lg  text-justify ${textClass}`}>
           Somos uma ONG que apoia mulheres em situação de vulnerabilidade,
           promovendo autonomia econômica, habilidades socioemocionais e
           empreendedorismo. Acreditamos que fortalecer essas trajetórias é
           transformar famílias, comunidades e construir um mundo mais justo e
           acolhedor.
         </p>
-          <div className="w-full flex justify-center tablet:justify-start max-w-full">
-        <GlobalLink
-          href="/sobre-nos"
-          variant="outlined-primary-700"
-          className="w-80 tablet:w-72 h-14 gap-2 px-5 py-4 text-base font-inter"
-        >
-          CONHEÇA OS PROJETOS
-        </GlobalLink>
+        <div className="w-full flex justify-center tablet:justify-start max-w-full ">
+          <GlobalLink
+            href="/sobre-nos"
+            variant="outlined-primary-700"
+            className="w-80 tablet:w-72 h-14 gap-2 px-5 py-4 text-base font-inter"
+          >
+            CONHEÇA OS PROJETOS
+          </GlobalLink>
+        </div>
       </div>
-      </div>
-    
     </section>
   );
 };

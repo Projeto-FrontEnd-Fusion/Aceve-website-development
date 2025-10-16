@@ -5,12 +5,11 @@ import BannerImg from "@/assets/BannerImg.png";
 import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 
 const BannerHero = () => {
-
   return (
     <section
       className={clsx(
-        "w-full  flex flex-col relative gap-4 px-4 py-4 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[4.5rem]",
-        "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse",
+        "w-full  flex flex-col relative gap-4 px-4 pt-4 pb-0 mobileXLarger:pt-0 mobileXLarger:pr-0 tablet:pl-8 laptop:pl-[4.5rem]",
+        "mobileXLarger:overflow-y-hidden mobileXLarger:flex-row-reverse"
       )}
     >
       <figure
@@ -74,7 +73,8 @@ const BannerHero = () => {
           className="
           w-full font-semibold mobileXLarger:w-fit py-4 mobileXLarger:px-5
           flex-grow mobileXLarger:flex-grow-0"
-          href={"/quero-doar"}>
+          href={"/quero-doar"}
+        >
           AJUDE AGORA
         </GlobalLink>
       </article>
