@@ -18,7 +18,9 @@ export const Header = () => {
         <nav className="hidden mobileXLarger:flex">
           <ul className="flex items-center gap-3 max-sm:gap-6 md:mr-1">
             <li>
-              <NavigationLink href="/" className={linkClasses} />
+              <NavigationLink href="/" className={linkClasses}>
+                Início
+              </NavigationLink>
             </li>
             <li>
               <NavigationLink href="/sobre-nos" className={linkClasses}>
