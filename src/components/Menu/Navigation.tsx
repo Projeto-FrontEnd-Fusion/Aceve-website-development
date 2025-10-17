@@ -1,5 +1,6 @@
 import { ComponentProps, useEffect } from "react";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
+import { NavigationLink } from "./NavigationLink";
 
 interface NavigationProps extends ComponentProps<'nav'> {
   isMenuOpen: boolean;
@@ -29,44 +30,39 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
         }`}
     >
 
-      <GlobalLink
-        variant="text"
+      <NavigationLink
         href="/"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Início
-      </GlobalLink>
+      </NavigationLink>
 
-      <GlobalLink
-        variant="text"
+      <NavigationLink
         href="/sobre-nos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Sobre Nós
-      </GlobalLink>
+      </NavigationLink>
 
-      <GlobalLink
-        variant="text"
+      <NavigationLink
         href="/o-que-fazemos"
         className="text-[1.25rem] py-3 px-4">
         O que fazemos
-      </GlobalLink>
+      </NavigationLink>
 
-      <GlobalLink
-        variant="text"
+      <NavigationLink
         href="/faca-parte"
         className="text-[1.25rem] py-3 px-4">
         Faça parte
-      </GlobalLink>
+      </NavigationLink>
 
 
-      <GlobalLink
-        variant="text"
+      <NavigationLink
         onClick={() => setisMenuOpen((false))}
         href="https://wa.me/c/5511982935150"
         className="text-[1.25rem] py-3 px-4">
         Loja
-      </GlobalLink>
+      </NavigationLink>
 
       <GlobalLink
         variant="primary"
