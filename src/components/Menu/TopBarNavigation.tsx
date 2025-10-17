@@ -9,13 +9,13 @@ export const Header = () => {
   const linkClasses = "text-[1.25rem] py-3 px-4 text-center"
 
   return (
-    <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
+    <header className="flex items-center justify-between py-4 px-4 sm:px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
       <div className="flex-shrink-0">
         <HeaderLogo />
       </div>
       <div className="flex mx-auto">
         <nav className="hidden mobileXLarger:flex">
-          <ul className="flex items-center gap-6 md:mr-1">
+          <ul className="flex items-center max-sm:gap-6 md:mr-1">
             <li>
               <GlobalLink
                 variant="text"
