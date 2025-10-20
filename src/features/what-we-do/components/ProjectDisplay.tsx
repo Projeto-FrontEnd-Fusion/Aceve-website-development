@@ -144,15 +144,7 @@ export const ProjectsDisplay = () => {
                         {title}
                       </h3>
                     </div>
-                    <div className="w-full h-[501px] sm:hidden ">
-                      <figure className="h-full object-cover">
-                        <Image
-                          src={image}
-                          alt={title}
-                          className="laptop:w-full h-full object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%]"
-                        />
-                      </figure>
-                    </div>
+
                     <div className="w-full p-4">
                       <p className="laptop:text-base text-sm gap-2 text-grey-600 ">
                         {description}
@@ -175,12 +167,14 @@ export const ProjectsDisplay = () => {
                       ) : null}
                     </div>
                   </div>
-                  <div className="max-sm:hidden flex">
-                    <figure className="w-full">
+                  <div className="w-full flex justify-center laptop:justify-end mt-6 laptop:mt-0">
+                    <figure className="relative w-full laptop:w-[731px] h-[300px] sm:h-[400px] laptop:h-[500px] overflow-hidden">
                       <Image
                         src={image}
                         alt={title}
-                        className="sm:w-full laptop:w-[731px] w-fill object-cover h-full"
+                        fill
+                        className="object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%] transition duration-300 ease-in-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 731px"
                       />
                     </figure>
                   </div>
