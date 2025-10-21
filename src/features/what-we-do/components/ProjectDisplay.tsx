@@ -14,12 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaCircleChevronLeft,
-  FaCircleChevronRight,
-} from "react-icons/fa6";
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 export const ProjectsDisplay = () => {
   interface IProjectData {
@@ -97,7 +92,6 @@ export const ProjectsDisplay = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
     null
   );
-
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const slideTo = (index: number) => {
@@ -105,14 +99,14 @@ export const ProjectsDisplay = () => {
   };
 
   return (
-    <section className="m-auto w-full md:rounded-2xl  md:bg-white-normal ">
+    <section className="m-auto w-full md:rounded-2xl md:bg-white-normal">
       <div className="flex flex-col relative">
         <Swiper
           modules={[Navigation, EffectFade]}
           slidesPerView={1}
           speed={300}
           spaceBetween={20}
-          autoHeight={true} // aqui ajusta automaticamente dentro do swiper
+          autoHeight={true}
           breakpoints={{
             1024: {
               simulateTouch: false,
@@ -124,71 +118,64 @@ export const ProjectsDisplay = () => {
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           onSwiper={setSwiperInstance}
         >
-          {projectData.map(({ title, description, image, data }) => {
-            return (
-              <SwiperSlide
-                key={title}
-                className="h-auto" 
-              >
-                <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
-                  <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
-                    <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16 px-4">
-                      <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500">
-                        PROJETOS
-                      </h2>
-                      <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">
-                        {title}
-                      </h3>
-                    </div>
-
-                    <div className="w-full p-4">
-                      <p className="laptop:text-base text-sm gap-2 text-grey-600 ">
-                        {description}
-                      </p>
-                      {data ? (
-                        <ul className="list-disc text-grey-600 pl-4 pt-6">
-                          <li className="laptop:text-base text-grey-600 ">
-                            <span className="font-bold text-base">
-                              Público Alvo
-                            </span>
-                            : {data?.public}
-                          </li>
-                          <li className="laptop:text-base text-grey-600 ">
-                            <span className="font-bold text-base">
-                              Atendimento
-                            </span>
-                            : {data?.days}
-                          </li>
-                        </ul>
-                      ) : null}
-                    </div>
+          {projectData.map(({ title, description, image, data }) => (
+            <SwiperSlide key={title} className="h-auto">
+              <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
+                <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
+                  <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16 px-4">
+                    <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500">
+                      PROJETOS
+                    </h2>
+                    <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">
+                      {title}
+                    </h3>
                   </div>
-                  <div className="w-full flex justify-center laptop:justify-end mt-6 laptop:mt-0">
-                    <figure className="relative w-full laptop:w-[731px] h-[300px] sm:h-[400px] laptop:h-[500px] overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%] transition duration-300 ease-in-out"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 731px"
-                      />
-                    </figure>
+
+                  <div className="w-full p-4">
+                    <p className="laptop:text-base text-sm gap-2 text-grey-600 text-justify">
+                      {description}
+                    </p>
+                    {data && (
+                      <ul className="list-disc text-grey-600 pl-4 pt-6">
+                        <li className="laptop:text-base">
+                          <span className="font-bold text-base">
+                            Público Alvo
+                          </span>
+                          : {data.public}
+                        </li>
+                        <li className="laptop:text-base">
+                          <span className="font-bold text-base">
+                            Atendimento
+                          </span>
+                          : {data.days}
+                        </li>
+                      </ul>
+                    )}
                   </div>
                 </div>
-              </SwiperSlide>
-            );
-          })}
+                <figure className="relative w-full laptop:w-[731px] h-[300px] sm:h-[400px] laptop:h-[500px] overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover object-[center_40%] tablet:object-[center_30%] desktop:object-[center_50%] transition duration-300 ease-in-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 731px"
+                  />
+                </figure>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
-        <nav className="w-full sm:py-6 min-sm:max-w-lg flex items-center ">
-          <div className="flex justify-between ">
+        <nav className="w-full sm:py-6 min-sm:max-w-lg flex items-center">
+          <div className="flex justify-between">
             <button
               onClick={() => swiperInstance?.slidePrev()}
-              className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg "
+              className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg"
             >
               <FaCircleChevronLeft
                 size={30}
-                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-300 hover:cursor-pointer laptop:h-12 `}
+                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-300 hover:cursor-pointer laptop:h-12"
               />
             </button>
 
@@ -198,34 +185,28 @@ export const ProjectsDisplay = () => {
             >
               <FaCircleChevronRight
                 size={30}
-                className={`cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:cursor-pointer laptop:h-12 `}
+                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:cursor-pointer laptop:h-12"
               />
             </button>
           </div>
-          <ul className="w-full flex justify-center items-center gap-2 max-sm:py-4 ">
-            {projectData.map(({ title }, index) => {
-              return (
-                <li
-                  key={title}
-                  onClick={() => {
-                    slideTo(index);
-                    setActiveIndex(index);
-                  }}
-                  className={`flex justify-center items-center cursor-pointer transition-colors duration-300'
-                                         `}
-                >
-                  <button
-                    className={`w-3 h-3 ${
-                      activeIndex === index ? " bg-primary-500" : "bg-grey-500"
-                    } focus:bg-primary-500 active:bg-primary-500 bg-grey-500 rounded-full ${
-                      index === activeIndex
-                        ? "text-primary-500"
-                        : " text-grey-500"
-                    }`}
-                  ></button>
-                </li>
-              );
-            })}
+
+          <ul className="w-full flex justify-center items-center gap-2 max-sm:py-4">
+            {projectData.map(({ title }, index) => (
+              <li
+                key={title}
+                onClick={() => {
+                  slideTo(index);
+                  setActiveIndex(index);
+                }}
+                className="flex justify-center items-center cursor-pointer transition-colors duration-300"
+              >
+                <button
+                  className={`w-3 h-3 ${
+                    activeIndex === index ? "bg-primary-500" : "bg-grey-500"
+                  } rounded-full`}
+                ></button>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
