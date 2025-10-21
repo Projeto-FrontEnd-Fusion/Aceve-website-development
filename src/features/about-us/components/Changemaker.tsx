@@ -30,7 +30,7 @@ export const Changemaker = () => {
             de amor em movimento.
           </p>
 
-          <div className="desktop:row-start-3 desktop:row-span-2 desktop:self-start w-full flex flex-col tablet:flex-col desktop:flex-row justify-center tablet:justify-center desktop:justify-start gap-4 max-w-full">
+          <div className="desktop:row-start-3 desktop:row-span-2 desktop:self-start w-full flex flex-col tablet:flex-row desktop:flex-row justify-center tablet:justify-center desktop:justify-start gap-4 max-w-full">
             <GlobalLink
               href="/quero-doar"
               variant="primary"
