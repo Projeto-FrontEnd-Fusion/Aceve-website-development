@@ -128,11 +128,7 @@ export const ProjectsDisplay = () => {
             return (
               <SwiperSlide
                 key={title}
-                className="h-auto" //aqui substitui as medidas fixas
-                /*"
-                            !h-[1030px] mobileMicro:!h-[980px] mobileMini:!h-[960px]
-                            sm:!h-full laptop:!h-auto desktop:!h-auto
-                            "*/
+                className="h-auto" 
               >
                 <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
                   <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
@@ -184,7 +180,7 @@ export const ProjectsDisplay = () => {
           })}
         </Swiper>
 
-        <nav className="w-full sm:py-6 max-sm:max-w-lg flex items-center ">
+        <nav className="w-full sm:py-6 min-sm:max-w-lg flex items-center ">
           <div className="flex justify-between ">
             <button
               onClick={() => swiperInstance?.slidePrev()}
@@ -206,7 +202,7 @@ export const ProjectsDisplay = () => {
               />
             </button>
           </div>
-          <ul className="w-full flex justify-center items-center gap-2 max-sm:pb-4 ">
+          <ul className="w-full flex justify-center items-center gap-2 max-sm:py-4 ">
             {projectData.map(({ title }, index) => {
               return (
                 <li
