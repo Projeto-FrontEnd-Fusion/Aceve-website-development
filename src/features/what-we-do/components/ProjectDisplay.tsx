@@ -107,6 +107,7 @@ export const ProjectsDisplay = () => {
           speed={300}
           spaceBetween={20}
           autoHeight={true}
+          loop={true}
           breakpoints={{
             1024: {
               simulateTouch: false,
@@ -115,7 +116,7 @@ export const ProjectsDisplay = () => {
           className="!w-full max-sm:max-w-lg"
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           onSwiper={setSwiperInstance}
         >
           {projectData.map(({ title, description, image, data }) => (
@@ -201,9 +202,8 @@ export const ProjectsDisplay = () => {
                 className="flex justify-center items-center cursor-pointer transition-colors duration-300"
               >
                 <button
-                  className={`w-3 h-3 ${
-                    activeIndex === index ? "bg-primary-500" : "bg-grey-500"
-                  } rounded-full`}
+                  className={`w-3 h-3 ${activeIndex === index ? "bg-primary-500" : "bg-grey-500"
+                    } rounded-full`}
                 ></button>
               </li>
             ))}
