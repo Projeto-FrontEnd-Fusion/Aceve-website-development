@@ -172,21 +172,21 @@ export const ProjectsDisplay = () => {
           <div className="flex justify-between">
             <button
               onClick={() => swiperInstance?.slidePrev()}
-              className="px-4 py-3 transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg"
+              className="px-4 py-3 group transition duration-150 absolute top-[33%] sm:top-[13%] laptop:top-[43%] laptop:left-[0,5%] z-10 rounded-lg"
             >
               <FaCircleChevronLeft
                 size={30}
-                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-300 hover:cursor-pointer laptop:h-12"
+                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:text-grey-600 group-focus:text-grey-600 hover:cursor-pointer laptop:h-12"
               />
             </button>
 
             <button
               onClick={() => swiperInstance?.slideNext()}
-              className="px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
+              className="group px-4 py-3 transition duration-150 absolute top-[34%] right-[5%] sm:top-[13%] sm:right-[1%] laptop:top-[43%] laptop:right-[1%] z-20 rounded-lg"
             >
               <FaCircleChevronRight
                 size={30}
-                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:cursor-pointer laptop:h-12"
+                className="cursor-pointer max-mobileLarger:text-white-smooth text-grey-500 hover:text-grey-600 focus:text-grey-600 group-focus:text-grey-600 hover:cursor-pointer laptop:h-12"
               />
             </button>
           </div>
