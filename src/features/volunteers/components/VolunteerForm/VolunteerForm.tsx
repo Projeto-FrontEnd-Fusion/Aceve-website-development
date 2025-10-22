@@ -28,28 +28,29 @@ export const VolunteerForm = () => {
     try {
       submitVolunteer(data, (succeeded) => {
         if (succeeded) {
-          completeSubmit()
+          completeSubmit();
         } else {
-          failedSubmit()
+          failedSubmit();
         }
-      })
-    } catch(error) {
-      failedSubmit()
+      });
+    } catch (error) {
+      failedSubmit();
     }
-  }
+  };
 
   const completeSubmit = () => {
     setIsLoading(false);
-    reset()
-    setMessage("Formulário enviado com sucesso")
-    setTimeout(() => setMessage(false), 100000)
-  }
+    reset();
+    setMessage(
+      "Formulário enviado com sucesso! Entraremos em contato em breve!"
+    );
+    setTimeout(() => setMessage(false), 100000);
+  };
 
   const failedSubmit = () => {
-    setMessage("Falha ao enviar o formulário")
+    setMessage("Falha ao enviar o formulário");
     setIsLoading(false);
-
-  }
+  };
 
   const fields: readonly InputProps[] = [
     { name: "name", type: "text", placeholder: "Nome completo" },
@@ -99,10 +100,17 @@ export const VolunteerForm = () => {
             "Enviar Formulário"
           )}
         </GlobalButton>
-        {message &&
-          <p className={`text-center pt-2 ${message === "Falha ao enviar o formulário" ? "text-red-600" : "text-green-600"}`}>{message}</p>
-        }
-
+        {message && (
+          <p
+            className={`text-center pt-2 ${
+              message === "Falha ao enviar o formulário"
+                ? "text-red-600"
+                : "text-primary-700"
+            }`}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </FormProvider>
   );
