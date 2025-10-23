@@ -121,24 +121,34 @@ export const ProjectsDisplay = () => {
         >
           {projectData.map(({ title, description, image, data }) => (
             <SwiperSlide key={title} className="h-auto">
-              <div className="flex flex-col laptop:flex-row laptop:justify-between m-auto w-full">
-                <div className="flex flex-col justify-between laptop:ml-[3.8rem] laptop:max-w-[450px] sm:px-16 laptop:px-4">
-                  <div className="pt-4 pb-6 sm:pt-8 sm:pb-0 laptop:pt-16 px-4">
-                    <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500">
+              <div
+                className="flex flex-col sm:flex-col laptop:flex-row laptop:justify-between m-auto w-full
+                  items-center sm:items-start laptop:items-start"
+              >
+                {/* Texto */}
+                <div
+                  className="flex flex-col justify-start laptop:max-w-[480px]
+                    px-6 sm:px-12 laptop:pr-[4rem]
+                    gap-4 sm:gap-6 laptop:gap-6 pt-6 sm:pt-10 laptop:pt-0
+                    order-2 sm:order-1 laptop:order-1"
+                >
+                  <div>
+                    <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500 mb-1 sm:mb-2">
                       PROJETOS
                     </h2>
-                    <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem]">
+                    <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem] mb-2 sm:mb-3">
                       {title}
                     </h3>
                   </div>
 
-                  <div className="w-full p-4">
-                    <p className="laptop:text-base text-sm gap-2 text-grey-600 text-justify">
+                  <div className="w-full p-0 sm:p-0 laptop:p-0">
+                    <p className="laptop:text-base text-sm text-grey-600 text-justify mb-4 sm:mb-6">
                       {description}
                     </p>
+
                     {data && (
-                      <ul className="list-disc text-grey-600 pl-4 pt-6">
-                        <li className="laptop:text-base">
+                      <ul className="list-disc text-grey-600 pl-4 pt-0 sm:pt-2 mb-4 sm:mb-6">
+                        <li className="laptop:text-base mb-1">
                           <span className="font-bold text-base">
                             Público Alvo
                           </span>
@@ -154,7 +164,12 @@ export const ProjectsDisplay = () => {
                     )}
                   </div>
                 </div>
-                <figure className="relative w-full laptop:w-[731px] h-[300px] sm:h-[400px] laptop:h-[500px] overflow-hidden">
+
+                {/* Imagem */}
+                <figure
+                  className="relative w-full sm:h-[400px] h-[350px] laptop:w-[731px] laptop:h-[500px] overflow-hidden
+                       order-1 sm:order-2 laptop:order-2 mt-4 sm:mt-6 laptop:mt-0"
+                >
                   <Image
                     src={image}
                     alt={title}
@@ -202,8 +217,9 @@ export const ProjectsDisplay = () => {
                 className="flex justify-center items-center cursor-pointer transition-colors duration-300"
               >
                 <button
-                  className={`w-3 h-3 ${activeIndex === index ? "bg-primary-500" : "bg-grey-500"
-                    } rounded-full`}
+                  className={`w-3 h-3 ${
+                    activeIndex === index ? "bg-primary-500" : "bg-grey-500"
+                  } rounded-full`}
                 ></button>
               </li>
             ))}
