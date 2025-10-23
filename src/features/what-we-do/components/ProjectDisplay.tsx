@@ -125,18 +125,12 @@ export const ProjectsDisplay = () => {
                 className="flex flex-col sm:flex-col laptop:flex-row laptop:justify-between m-auto w-full
                   items-center sm:items-start laptop:items-start"
               >
-                {/* Texto */}
-                <div
-                  className="flex flex-col justify-start laptop:max-w-[480px]
-                    px-6 sm:px-12 laptop:pr-[4rem]
-                    gap-4 sm:gap-6 laptop:gap-6 pt-6 sm:pt-10 laptop:pt-0
-                    order-2 sm:order-1 laptop:order-1"
-                >
+                <div className="flex flex-col justify-start laptop:max-w-[480px] px-6 sm:px-12 laptop:pr-[4rem] gap-4 sm:gap-6 laptop:gap-6 pt-6 sm:pt-10 laptop:pt-0 order-2 sm:order-1 md:order-2 laptop:order-1">
                   <div>
-                    <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500 mb-1 sm:mb-2">
+                    <h2 className="font-inter font-semibold text-sm laptop:text-[1.125rem] text-grey-500 mb-1 sm:mb-2 laptop:mb-4 laptop:mt-5">
                       PROJETOS
                     </h2>
-                    <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem] mb-2 sm:mb-3">
+                    <h3 className="font-inter font-bold text-2xl sm:text-3xl laptop:text-[2.5rem] text-primary-800 leading-[3rem] mb-2 sm:mb-3 laptop:mb-5">
                       {title}
                     </h3>
                   </div>
@@ -165,10 +159,9 @@ export const ProjectsDisplay = () => {
                   </div>
                 </div>
 
-                {/* Imagem */}
                 <figure
                   className="relative w-full sm:h-[400px] h-[350px] laptop:w-[731px] laptop:h-[500px] overflow-hidden
-                       order-1 sm:order-2 laptop:order-2 mt-4 sm:mt-6 laptop:mt-0"
+                       order-1 sm:order-2 md:order-1 laptop:order-2 mt-4 sm:mt-6 laptop:mt-0"
                 >
                   <Image
                     src={image}
