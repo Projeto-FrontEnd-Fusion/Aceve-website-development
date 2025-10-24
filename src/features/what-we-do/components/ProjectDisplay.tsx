@@ -122,7 +122,7 @@ export const ProjectsDisplay = () => {
           {projectData.map(({ title, description, image, data }) => (
             <SwiperSlide key={title} className="h-auto">
               <div
-                className="flex flex-col sm:flex-col laptop:flex-row laptop:justify-between m-auto w-full
+                className="flex flex-col sm:flex-col laptop:flex-row laptop:justify-center m-auto w-full
                   items-center sm:items-start laptop:items-start"
               >
                 <div className="flex flex-col justify-start laptop:max-w-[480px] px-6 sm:px-12 laptop:pr-[4rem] gap-4 sm:gap-6 laptop:gap-6 pt-6 sm:pt-10 laptop:pt-0 order-2 sm:order-1 md:order-2 laptop:order-1">
@@ -136,12 +136,12 @@ export const ProjectsDisplay = () => {
                   </div>
 
                   <div className="w-full p-0 sm:p-0 laptop:p-0">
-                    <p className="laptop:text-base text-sm text-grey-600 text-justify mb-4 sm:mb-6">
+                    <p className="laptop:text-base text-sm text-grey-600 text-justify ">
                       {description}
                     </p>
 
                     {data && (
-                      <ul className="list-disc text-grey-600 pl-4 pt-0 sm:pt-2 mb-4 sm:mb-6">
+                      <ul className="list-disc text-grey-600 pl-4 pt-0 sm:pt-2 mt-2 sm:mb-2">
                         <li className="laptop:text-base mb-1">
                           <span className="font-bold text-base">
                             Público Alvo
