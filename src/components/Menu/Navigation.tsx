@@ -31,6 +31,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
     >
 
       <NavigationLink
+        variant="text"
         href="/"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
@@ -38,6 +39,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       </NavigationLink>
 
       <NavigationLink
+        variant="text"
         href="/sobre-nos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
@@ -45,6 +47,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       </NavigationLink>
 
       <NavigationLink
+        variant="text"
         href="/o-que-fazemos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
@@ -52,6 +55,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       </NavigationLink>
 
       <NavigationLink
+        variant="text"
         href="/faca-parte"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
@@ -60,6 +64,7 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
 
 
       <NavigationLink
+        variant="text"
         onClick={() => setisMenuOpen((false))}
         href="https://wa.me/c/5511982935150"
         className="text-[1.25rem] py-3 px-4">
