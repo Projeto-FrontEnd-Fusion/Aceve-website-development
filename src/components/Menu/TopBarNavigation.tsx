@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
+import { NavigationLink } from "./NavigationLink";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
 
 
@@ -17,44 +18,44 @@ export const Header = () => {
         <nav className="hidden mobileXLarger:flex">
           <ul className="flex items-center gap-3 max-sm:gap-6 md:mr-1">
             <li>
-              <GlobalLink
+              <NavigationLink
                 variant="text"
                 href="/"
                 className={linkClasses}>
                 Início
-              </GlobalLink>
+              </NavigationLink>
             </li>
             <li>
-              <GlobalLink variant="text" href="/sobre-nos" className={linkClasses}>
+              <NavigationLink variant="text" href="/sobre-nos" className={linkClasses}>
                 Sobre Nós
-              </GlobalLink>
+              </NavigationLink>
             </li>
 
             <li>
-              <GlobalLink
+              <NavigationLink
                 variant="text"
                 href="/o-que-fazemos"
                 className={linkClasses}>
                 O que fazemos
-              </GlobalLink>
+              </NavigationLink>
             </li>
 
             <li>
-              <GlobalLink
+              <NavigationLink
                 variant="text"
                 href="/faca-parte"
                 className={linkClasses}>
                 Faça parte
-              </GlobalLink>
+              </NavigationLink>
             </li>
 
             <li>
-              <GlobalLink
+              <NavigationLink
                 variant="text"
                 href="https://wa.me/c/5511982935150"
                 className={linkClasses}>
                 Loja
-              </GlobalLink>
+              </NavigationLink>
             </li>
 
           </ul>

@@ -36,7 +36,7 @@ export const ServicesWeOffer = () => {
   return (
     <section className="bg-primary-100 px-4 py-8 md:px-8 lg:px-[4.5rem] lg:py-16">
       <div className=" flex flex-col gap-4 w-fit mx-auto">
-        <h2 className="text-grey-500 text-sm font-semibold font-inter lg:text-lg lg:tracking-[-0.5%]">
+        <h2 className="text-grey-500 text-sm text-center font-semibold font-inter lg:text-left lg:text-lg lg:tracking-[-0.5%]">
           SERVIÇOS QUE OFERTAMOS
         </h2>
 

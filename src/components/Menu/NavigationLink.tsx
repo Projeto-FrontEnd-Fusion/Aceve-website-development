@@ -1,23 +1,20 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import { GlobalLink } from '../GlobalLink/GlobalLink'
-import { ComponentProps } from 'react';
+import { GlobalLink, GlobalLinkProps } from '../GlobalLink/GlobalLink'
 
-interface navigationLinkProps extends ComponentProps<'a'> {
-  href: string;
-  className?: string;
+interface NavigationLinkProps extends GlobalLinkProps {
+
 }
-export const NavigationLink = ({ href, className, children, ...props }: navigationLinkProps) => {
+
+export const NavigationLink = ({variant, children, href, className}: NavigationLinkProps) => {
   const pathname = usePathname()
 
   return (
     <GlobalLink
       variant={href === pathname ? 'active-route' : 'text'}
       href={href}
-      className={className}
-      {...props}>
+      className={className}>
       {children}
     </GlobalLink>
-
   )
 }
