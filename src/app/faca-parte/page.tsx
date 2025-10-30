@@ -10,7 +10,7 @@ export default function Voluntariar() {
           <h1 className="text-[24px] tablet:text-[32px] desktop:text-[40px] text-primary-800 font-inter font-semibold leading-normal">
             Seja a Mudança que o Mundo Precisa
           </h1>
-          <p className="text-grey-600 font-normal text-sm tablet:text-base desktop:text-xl max-w-lg">
+          <p className="text-grey-600 font-normal text-sm tablet:text-base desktop:text-xl max-w-lg text-justify">
             Seja voluntário(a) e ajude a transformar vidas com a gente.
             Inscreva-se e comece hoje mesmo a mudar o mundo ao seu redor!
           </p>

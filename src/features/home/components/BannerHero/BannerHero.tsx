@@ -61,7 +61,7 @@ const BannerHero = () => {
         <p
           className="w-full text-gray-600 text-[0.875rem]
           leading-5 
-          md:text-[1.125rem] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7"
+          md:text-[1.125rem] laptop:leading-7 laptop:text-[1.25rem] md:w-full md:leading-7 text-justify"
         >
           Capacitamos mulheres em situação de vulnerabilidade para que
           conquistem autonomia, rompam ciclos de violência e transformem suas

@@ -121,7 +121,9 @@ export const WhatWeDo = () => {
                 <h4 className=" text-primary-600 font-semibold lg:font-bold text-lg tracking-[-0.5%] max-md:hidden md:text-3xl md:tracking-[-1.5%]">
                   {title}
                 </h4>
-                <p className={`text-grey-700 text-sm`}>{content}</p>
+                <p className={`text-grey-700 text-sm text-justify`}>
+                  {content}
+                </p>
               </div>
             </div>
           </SwiperSlide>

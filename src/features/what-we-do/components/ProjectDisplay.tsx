@@ -136,7 +136,7 @@ export const ProjectsDisplay = () => {
                   </div>
 
                   <div className="w-full p-0 sm:p-0 laptop:p-0">
-                    <p className="laptop:text-base text-sm text-grey-600 text-justify ">
+                    <p className="laptop:text-base text-sm text-grey-600 text-justify">
                       {description}
                     </p>
 

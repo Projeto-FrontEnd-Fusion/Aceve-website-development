@@ -22,7 +22,7 @@ export const Changemaker = () => {
             className="object-cover self-center justify-self-center w-[65%] desktop:w-auto desktop:h-[680px] desktop:py-14 h-auto max-w-full transition-all duration-500 row-start-2 desktop:row-start-1 desktop:col-start-2 desktop:row-span-3"
           />
 
-          <p className="row-start-3 desktop:row-start-2 desktop:col-start-1 desktop:self-center desktop:justify-self-start desktop:max-w-[34rem] font-inter text-base tablet:text-xl desktop:text-xl leading-relaxed text-grey-600 text-left max-w-full">
+          <p className="row-start-3 desktop:row-start-2 desktop:col-start-1 desktop:self-center desktop:justify-self-start desktop:max-w-[34rem] font-inter text-base tablet:text-xl desktop:text-xl leading-relaxed text-grey-600 text-left max-w-full text-justify">
             Acreditamos no poder da comunidade. Cada doação garante um prato de
             comida, um curso de tecnologia ou o suporte para uma mulher
             recomeçar. Cada hora de voluntariado se transforma em conhecimento e
