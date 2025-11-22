@@ -12,7 +12,7 @@ export const ToggleMenu = ({isMenuOpen, setisMenuOpen, ...props} : ToggleMenuPro
 
       const handlerKeyDow = (event : React.KeyboardEvent<HTMLInputElement>) =>{
         if(event.key == 'Escape'){
-            console.log(event.ctrlKey)
+            // console.log(event.ctrlKey)
             setisMenuOpen(false)
         }
     

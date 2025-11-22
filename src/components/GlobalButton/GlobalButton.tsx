@@ -4,7 +4,7 @@ import React, { ComponentProps } from "react"
 interface GlobalButtonProps extends ComponentProps<'button'> {
   variant: ButtonVariants
   children: React.ReactNode
-  onClick: () => void
+  onClick?: () => void
   className?: string
 }
 

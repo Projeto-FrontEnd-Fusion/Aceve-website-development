@@ -1,42 +1,63 @@
 "use client";
 import { useState } from "react";
 import { ToggleMenu, HeaderLogo, Navigation } from "./index";
+import { NavigationLink } from "./NavigationLink";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
 
 
 export const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
+  const linkClasses = "sm:text-sm laptop:text-xl py-3 px-2 tablet:px-4 text-center"
 
   return (
-    <header className="flex items-center justify-between py-4 px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative">
+    <header className="flex items-center justify-between py-4 px-4 sm:px-4 tablet:px-8 laptop:px-[4.5rem] m-auto border-b-2 border-b-primary relative text-">
       <div className="flex-shrink-0">
         <HeaderLogo />
       </div>
       <div className="flex mx-auto">
         <nav className="hidden mobileXLarger:flex">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-3 max-sm:gap-6 md:mr-1">
             <li>
-              <GlobalLink
+              <NavigationLink
                 variant="text"
                 href="/"
-                className="text-[1.25rem] py-3 px-4">
+                className={linkClasses}>
                 Início
-              </GlobalLink>
+              </NavigationLink>
             </li>
             <li>
-              <GlobalLink variant="text" href="/sobre-nos" className="text-[1.25rem] py-3 px-4">
+              <NavigationLink variant="text" href="/sobre-nos" className={linkClasses}>
                 Sobre Nós
-              </GlobalLink>
+              </NavigationLink>
             </li>
 
             <li>
-              <GlobalLink
+              <NavigationLink
+                variant="text"
+                href="/o-que-fazemos"
+                className={linkClasses}>
+                O que fazemos
+              </NavigationLink>
+            </li>
+
+            <li>
+              <NavigationLink
+                variant="text"
+                href="/faca-parte"
+                className={linkClasses}>
+                Faça parte
+              </NavigationLink>
+            </li>
+
+            <li>
+              <NavigationLink
                 variant="text"
                 href="https://wa.me/c/5511982935150"
-                className="text-[1.25rem] py-3 px-4">
+                className={linkClasses}>
                 Loja
-              </GlobalLink>
+              </NavigationLink>
             </li>
+
           </ul>
         </nav>
       </div>
@@ -46,7 +67,7 @@ export const Header = () => {
           <GlobalLink
             variant="primary"
             href="/quero-doar"
-            className="px-5 py-4 text-lg"
+            className={linkClasses}
           >
             QUERO DOAR
           </GlobalLink>

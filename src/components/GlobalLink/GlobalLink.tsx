@@ -2,7 +2,7 @@ import { buttonVariants, ButtonVariants } from "@/types/button-variants"
 import Link from "next/link"
 import React, { ComponentProps } from "react"
 
-interface GlobalLinkProps extends ComponentProps<'a'> {
+export interface GlobalLinkProps extends ComponentProps<'a'> {
   variant: ButtonVariants
   children: React.ReactNode
   href: string

@@ -22,7 +22,7 @@ export const Changemaker = () => {
             className="object-cover self-center justify-self-center w-[65%] desktop:w-auto desktop:h-[680px] desktop:py-14 h-auto max-w-full transition-all duration-500 row-start-2 desktop:row-start-1 desktop:col-start-2 desktop:row-span-3"
           />
 
-          <p className="row-start-3 desktop:row-start-2 desktop:col-start-1 desktop:self-center desktop:justify-self-start desktop:max-w-[34rem] font-inter text-base tablet:text-xl desktop:text-xl leading-relaxed text-grey-600 text-left max-w-full">
+          <p className="row-start-3 desktop:row-start-2 desktop:col-start-1 desktop:self-center desktop:justify-self-start desktop:max-w-[34rem] font-inter text-base tablet:text-xl desktop:text-xl leading-relaxed text-grey-600 max-w-full text-justify">
             Acreditamos no poder da comunidade. Cada doação garante um prato de
             comida, um curso de tecnologia ou o suporte para uma mulher
             recomeçar. Cada hora de voluntariado se transforma em conhecimento e
@@ -30,13 +30,21 @@ export const Changemaker = () => {
             de amor em movimento.
           </p>
 
-          <div className="desktop:row-start-3 desktop:row-span-2 desktop:self-start w-full flex justify-center tablet:justify-center desktop:justify-start max-w-full">
+          <div className="desktop:row-start-3 desktop:row-span-2 desktop:self-start w-full flex flex-col tablet:flex-row desktop:flex-row justify-center tablet:justify-center desktop:justify-start gap-4 max-w-full">
             <GlobalLink
               href="/quero-doar"
               variant="primary"
               className="w-full tablet:w-72 h-14 gap-2 px-5 py-4 text-base font-inter font-semibold"
             >
               Quero doar
+            </GlobalLink>
+
+            <GlobalLink
+              href="/faca-parte"
+              variant="outlined-primary-700"
+              className="w-full tablet:w-72 h-14 gap-2 px-5 py-4 text-base font-inter font-semibold"
+            >
+              Quero Voluntariar
             </GlobalLink>
           </div>
         </div>

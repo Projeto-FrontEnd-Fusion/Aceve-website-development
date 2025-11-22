@@ -1,5 +1,6 @@
 import { ComponentProps, useEffect } from "react";
 import { GlobalLink } from "../GlobalLink/GlobalLink";
+import { NavigationLink } from "./NavigationLink";
 
 interface NavigationProps extends ComponentProps<'nav'> {
   isMenuOpen: boolean;
@@ -25,33 +26,50 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
       mobileXLarger:top-16 gap-2
       desktop:hidden ${isMenuOpen
           ? "left-1/2 -translate-x-1/2"
-          : "left-1/2 translate-x-1/2 bg-purple-200 text-purple-700"
+          : "left-full bg-purple-200 text-purple-700"
         }`}
     >
 
-      <GlobalLink
+      <NavigationLink
         variant="text"
         href="/"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Início
-      </GlobalLink>
+      </NavigationLink>
 
-      <GlobalLink
-        variant="text"
-        onClick={() => setisMenuOpen((false))}
-        href="https://wa.me/c/5511982935150"
-        className="text-[1.25rem] py-3 px-4">
-        Loja
-      </GlobalLink>
-
-      <GlobalLink
+      <NavigationLink
         variant="text"
         href="/sobre-nos"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
         Sobre Nós
-      </GlobalLink>
+      </NavigationLink>
+
+      <NavigationLink
+        variant="text"
+        href="/o-que-fazemos"
+        onClick={() => setisMenuOpen(false)}
+        className="text-[1.25rem] py-3 px-4">
+        O que fazemos
+      </NavigationLink>
+
+      <NavigationLink
+        variant="text"
+        href="/faca-parte"
+        onClick={() => setisMenuOpen(false)}
+        className="text-[1.25rem] py-3 px-4">
+        Faça parte
+      </NavigationLink>
+
+
+      <NavigationLink
+        variant="text"
+        onClick={() => setisMenuOpen((false))}
+        href="https://wa.me/c/5511982935150"
+        className="text-[1.25rem] py-3 px-4">
+        Loja
+      </NavigationLink>
 
       <GlobalLink
         variant="primary"
