@@ -1,0 +1,31 @@
+services:
+  nextjs:
+    build:
+      context: .
+      target: prod
+    ports:
+      - "3000:3000"
+    env_file: ".env"
+    networks:
+        - nextjs_network
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:17
+    volumes:
+      - ${PWD}/db-data/:/var/lib/postgresql/data/
+    env_file: ".env"
+    networks:
+      - nextjs_network
+    ports:
+      - "5432:5432"
+
+          
+networks:
+  nextjs_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local 
+
