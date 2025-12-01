@@ -1,78 +1,77 @@
-# Associação Cultural e Educacional Violeta Eliz - Site Institucional
+# 🌸 Site Institucional — Associação Violeta Eliz
 
-Bem-vindo ao repositório do site institucional da **Associação Cultural e Educacional Violeta Eliz**. Desenvolvida pelo Equipe TDD do projeto ONGs na web by @gruposimios
+Repositório do site institucional da **Associação Cultural e Educacional Violeta Eliz**
 
-Este projeto tem como objetivo fornecer uma presença online para a associação, destacando suas iniciativas e oferecendo um canal de comunicação com o público. A Associação Violeta Eliz atua na favela Morro da Mandioca, promovendo a inclusão social e capacitação profissional de jovens e adultos em situação de vulnerabilidade.
-
-## Sobre a Associação
-
-**Fundada:** 2014  
-**Localização:** Favela Morro da Mandioca, São Paulo  
-**Missão:** Desenvolver projetos de inclusão social para jovens e famílias em situação de vulnerabilidade, focando em capacitação para o trabalho e geração de renda.
-
-A associação promove atividades nas áreas de educação, cultura, geração de renda, meio ambiente e qualidade de vida, sempre atuando junto às famílias da comunidade.
-
-## Visão Geral do Projeto
-
-Este site institucional foi desenvolvido para ser:
-
-- **Informativo:** Fornece detalhes sobre a história, missão, visão e valores da associação.
-- **Responsivo:** Acessível em dispositivos móveis, tablets e desktops.
-- **Acessível:** Segue boas práticas de acessibilidade para garantir que todos possam acessar o conteúdo.
-- **Leve e rápido:** Otimizado para desempenho e carregamento rápido.
-
-### Principais Seções:
-
-- **Sobre nós:** Informações sobre a associação e sua missão.
-- **Projetos:** Detalhes dos projetos desenvolvidos pela associação nas áreas de educação, cultura e geração de renda.
-- **Contato:** Formulário para contato, doações e voluntariado.
-- **Brechó:** matérias a venda para arrecadação de recursos para a ONG.
-
-## Tecnologias Utilizadas
-
-Este projeto foi desenvolvido utilizando uma combinação de tecnologias modernas para garantir performance, escalabilidade e manutenibilidade.
-
-- **Next.js**: Framework React para renderização no lado do servidor (SSR), geração de sites estáticos (SSG) e API Routes, permitindo um desenvolvimento rápido e eficiente para aplicações escaláveis.
-
-- **TypeScript**: Superset de JavaScript que adiciona tipagem estática, fornecendo melhores ferramentas de desenvolvimento e ajudando a detectar erros durante a escrita do código, além de melhorar a manutenibilidade.
-
-- **Tailwind CSS**: Framework utilitário de CSS que facilita a criação de interfaces responsivas e estilização rápida, com uma abordagem baseada em classes, tornando o desenvolvimento frontend mais ágil e modular.
-
-- **Axios**: Cliente HTTP utilizado para realizar requisições assíncronas à API, facilitando a integração de dados externos e a manipulação de respostas no frontend.
-
-- **Zustand**: Biblioteca leve de gerenciamento de estado para React, utilizada para manter e compartilhar estados entre diferentes componentes da aplicação, com uma interface simples e eficiente.
-
-- **React Hook Form**: Biblioteca para manipulação de formulários que permite a criação de formulários eficientes e reativos, minimizando a re-renderização e tornando a manipulação de dados mais fácil.
-
-- **Yup**: Ferramenta de validação de dados utilizada em conjunto com o React Hook Form para garantir que os inputs dos usuários sigam os formatos esperados, oferecendo uma solução robusta para validação de formulários.
-
-- **SWR**: Biblioteca de gerenciamento de dados que facilita o fetch de dados com caching automático, atualizações em tempo real e revalidação, melhorando a performance da aplicação em operações de leitura de dados.
-
-- **React Toastify**: Biblioteca utilizada para exibir notificações e feedbacks visuais ao usuário de forma simples e eficaz, melhorando a experiência do usuário ao interagir com a aplicação.
-
-- **React Icons**: Biblioteca de ícones leves e reutilizáveis, permitindo a adição de ícones SVG de alta qualidade em qualquer parte da interface com facilidade.
-
-- **PostCSS e Autoprefixer**: Ferramentas utilizadas para processar o CSS, garantindo compatibilidade com diferentes navegadores e otimizando o estilo da aplicação para um melhor desempenho.
-
-- **React Calendar**: Biblioteca para renderização de calendários interativos, facilitando a criação de funcionalidades como agendamento ou exibição de eventos.
-
-### Outras Ferramentas
-
-- **ESLint**: Ferramenta de linting para manter a consistência no estilo de código e evitar erros comuns.
-
-- **Prettier**: Ferramenta de formatação automática de código, garantindo que o código esteja sempre bem estruturado e fácil de ler.
-
-## Como Acessar
-
-O site está disponível online e pode ser acessado [Deploy](https://aceve-website-development.vercel.app/)
-ainda em desenvolvimento - deploy não oficial
+A **Associação Cultural e Educacional Violeta Eliz** atua desde 2014 na Favela Morro da Mandioca (SP), promovendo inclusão social, educação, cultura e geração de renda para jovens e adultos em situação de vulnerabilidade.
 
 ---
 
-## Contato
+# 🚀 Tecnologias Principais
 
-**Associação Cultural e Educacional Violeta Eliz**  
-E-mail: contato@violetaeliz.org  
-Telefone: (11) 98293-5150
+* **Next.js**
+* **TypeScript**
+* **TailwindCSS**
+* **Zustand**
+* **React Hook Form + Zod**
+* **Axios**
+* **Docker + Docker Compose**
+* **PostgreSQL**
 
 ---
+
+# 📦 Requisitos
+
+* **Node.js 22**
+* **Docker** e **Docker Compose**
+* **npm**
+
+---
+
+# 🔧 Desenvolvimento
+
+### ▶️ Rodando localmente com Docker (recomendado)
+
+```sh
+docker compose -f compose-dev.yaml up --build
+```
+
+A aplicação será iniciada com Next.js no ambiente de desenvolvimento e com todos os serviços necessários (incluindo PostgreSQL, se as variáveis de ambiente estiverem definidas ).
+
+---
+
+# ⚙️ Variáveis de Ambiente
+
+As variáveis de ambiente estão no arquivo [.env.example](./.env.example). Alguns serviços dependem dessas variáveis.
+
+
+### Observações importantes
+
+* O projeto funciona sem as variáveis definidas, mas parte das funcionalidades (formulários, logins, envios de e-mail) **não funcionará sem** as variáveis corretas.
+* Para desenvolvimento, configure um `.env` com valores de teste (ex.: sandbox do PayPal, e-mail app password, PostgreSQL do Docker etc.).
+
+
+# 🏗️ Arquitetura do Projeto
+
+O projeto segue o padrão [Bulletproof React](https://github.com/alan2207/bulletproof-react), organizado em features e camadas independentes.
+
+### Estrutura resumida
+
+```
+src/
+ ├─ app/               # Rotas (Next.js App Router)
+ │   ├─ api/           # API Routes
+ │   ├─ *pages*        # Páginas públicas
+ │   └─ globals.css
+ │
+ ├─ assets/            # Imagens, SVGs, mídias
+ ├─ components/        # Componentes globais reutilizáveis
+ ├─ features/          # Módulos completos (tela + lógica + serviços)
+ ├─ hooks/             # Hooks compartilhados
+ ├─ types/             # Tipos globais
+ └─ zustand-store/     # Store global
+```
+
+# 🚢 Deploy
+
+O website esta hospedado na seguinte URL: https://violetaeliz.org.br/
+
