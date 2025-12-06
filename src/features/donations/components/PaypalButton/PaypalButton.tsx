@@ -6,7 +6,7 @@ import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 export const PaypalButton = () => {
   const donationValue = useDonationStore((state) => state.donationValue)
-  const { options, createOrder, captureOrder } = usePaypal()
+  const { options, requestCreateOrder, requestOrderCapture } = usePaypal()
 
   return (
     <PayPalScriptProvider options={options} >
@@ -19,8 +19,8 @@ export const PaypalButton = () => {
             label: "paypal",
           }}
           className="flex z-10 h-[56px] bg-[#EEEEEE] hover:bg-[#E2E2E2] rounded-md justify-start items-center"
-          createOrder={createOrder(donationValue)}
-          onApprove={captureOrder} />
+          createOrder={requestCreateOrder(donationValue)}
+          onApprove={requestOrderCapture} />
       }
     </PayPalScriptProvider>
   )

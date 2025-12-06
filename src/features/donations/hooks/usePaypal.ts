@@ -6,7 +6,7 @@ const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENTID
 const APPURL = process.env.NEXT_PUBLIC_APPURL
 
 export const usePaypal = () => {
-  const createOrder = (value: number) => {
+  const requestCreateOrder = (value: number) => {
     return async () => {
       try {
         const req = await axios.post(`${APPURL}/api/paypal/create-order`, { value })
@@ -29,7 +29,7 @@ export const usePaypal = () => {
 
   }
 
-  const captureOrder: PayPalButtonsComponentProps["onApprove"] = async (data) => {
+  const requestOrderCapture: PayPalButtonsComponentProps["onApprove"] = async (data) => {
     const req = await axios.post(`${APPURL}/api/paypal/capture-order`, { orderId: data.orderID, })
     const details = req.data
 
@@ -44,6 +44,6 @@ export const usePaypal = () => {
 
   return {
     options,
-    createOrder, captureOrder
+    requestCreateOrder, requestOrderCapture
   }
 }

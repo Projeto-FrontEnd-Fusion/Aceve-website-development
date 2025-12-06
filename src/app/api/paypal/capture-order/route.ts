@@ -1,11 +1,11 @@
-import { getAccessToken } from "@/features/donations/services/getAccessToken";
-import axios, { isAxiosError } from "axios";
+import { apiPaypal } from "@/features/api/paypal";
+import { isAxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
-const PAYPAL_API = process.env.PAYPAL_API || 'https://api.sandbox.paypal.com'
 
 export async function POST(request: NextRequest) {
   const { orderId } = await request.json()
+  const { captureOrder } = apiPaypal()
 
   try {
     const capture = await captureOrder(orderId)
@@ -23,24 +23,5 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  async function captureOrder(orderId: string): Promise<any> {
-    const accessToken = await getAccessToken();
-    try {
-      const response = await axios({
-        method: 'post',
-        url: `${PAYPAL_API}/v2/checkout/orders/${orderId}/capture`,
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json'
-        }
-      });
-
-      return response.data;
-    } catch (error) {
-      console.error('Error capturing order:', error);
-      throw error;
-    }
-
-  }
 
 }
