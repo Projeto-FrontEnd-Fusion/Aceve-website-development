@@ -47,7 +47,7 @@ export default function Page() {
             <p className="ml-2 text-[0.625rem] leading-4 tablet:leading-5">
               Você será redirecionado para o PayPal para finalizar a doação
             </p>
-            {paypalError && <p className="ml-2 text-[0.8rem] text-red-600">Erro ao tentar realizar transação</p>}
+            {paypalError && <p className="ml-2 text-[0.8rem] text-red-600">Erro ao realizar a requisição. Tente novamente mais tarde</p>}
           </div>
 
           <GlobalLink
