@@ -1,0 +1,38 @@
+# --- Node / Next.js ---
+node_modules
+.next
+.swp
+.swc
+
+# --- Environment files ---
+.env
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- OS / Editor junk ---
+.DS_Store
+.vscode
+*.swp
+
+# --- Git ---
+.git
+.gitignore
+
+# --- Build artifacts / caches ---
+dist
+out
+.next/cache
+
+
+# --- Database local folder ---
+db-data
+
+# Never copy local Postgres data into containers; dangerous & huge.
+
+# --- Other project-specific ignores ---
+*.tsbuildinfo
+
