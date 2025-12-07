@@ -1,4 +1,4 @@
-import { apiPaypal } from "@/features/api/paypal";
+import { apiPaypal } from "@/features/donations/api/paypal";
 import { isAxiosError } from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
