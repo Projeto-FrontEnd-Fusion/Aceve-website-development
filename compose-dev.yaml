@@ -15,7 +15,7 @@ services:
   postgres:
     image: postgres:17
     volumes:
-      - ${PWD}/db-data/:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data/
     env_file: ".env"
     networks:
       - nextjs_network
