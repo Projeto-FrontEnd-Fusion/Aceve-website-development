@@ -13,3 +13,27 @@ datasource db {
   provider = "postgresql"
 }
 
+model Users {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
+
+model Events {
+  id              Int      @id @default(autoincrement())
+  name            String
+  description     String
+  totalFunding    Decimal @db.Decimal(10, 2)
+  peopleBenefited Int
+  date            DateTime @default(now()) @db.Date
+  photos          Photos[]
+}
+
+model Photos {
+  id          Int    @id @default(autoincrement())
+  photoUrl    String
+  description String?
+  eventId     Int
+  event       Events  @relation(fields: [eventId], references: [id])
+}
+
