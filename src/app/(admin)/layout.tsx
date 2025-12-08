@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Footer } from "@/components/Footer/Footer";
-import { Header } from "../components/Menu/TopBarNavigation";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "ONG Violeta Eliz",
@@ -25,10 +23,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Protest+Strike&display=swap" rel="stylesheet"/>
 
       </head>
-      <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
-        <Header />
+      <body>
         {children}
-        <Footer />
       </body>
     </html>
   );
