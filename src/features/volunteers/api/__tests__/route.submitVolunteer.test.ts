@@ -11,6 +11,11 @@ const requestForTest = <T>(bodyContent?: T) => new Request("http://localhost:300
   body: bodyContent ? JSON.stringify(bodyContent) : null
 })
 
+jest.mock('@/features/volunteers/api/services/sendEmail', () => ({
+  sendEmail: jest.fn().mockResolvedValue(true)
+}));
+
+
 
 
 //  npm test -- -t "submit volunteer route api" --verbose
@@ -93,7 +98,7 @@ describe("submit volunteer route api", () => {
       volunteer: {
         name: "João Silva",
         email: "joao@gmail.com",
-        phoneNumber: "11912344432",
+        phoneNumber: "(11) 91234-4432",
         description: "Quero ser voluntário"
       }
     });
