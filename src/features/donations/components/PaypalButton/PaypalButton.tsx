@@ -1,12 +1,14 @@
-'use client'
-
 import { usePaypal } from '@/features/donations/hooks/usePaypal'
 import { useDonationStore } from '@/features/donations/stores/donationvalue.store'
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
-export const PaypalButton = () => {
+interface PaypalButtonProps {
+  onErrorChange: (hasError: boolean) => void,
+  cleanPaypalError: () => void;
+}
+export const PaypalButton = ({ onErrorChange, cleanPaypalError }: PaypalButtonProps) => {
   const donationValue = useDonationStore((state) => state.donationValue)
-  const { options, createOrder, captureOrder } = usePaypal()
+  const { options, requestCreateOrder, requestOrderCapture } = usePaypal()
 
   return (
     <PayPalScriptProvider options={options} >
@@ -19,9 +21,12 @@ export const PaypalButton = () => {
             label: "paypal",
           }}
           className="flex z-10 h-[56px] bg-[#EEEEEE] hover:bg-[#E2E2E2] rounded-md justify-start items-center"
-          createOrder={createOrder(donationValue)}
-          onApprove={captureOrder} />
+          createOrder={requestCreateOrder(donationValue)}
+          onClick={cleanPaypalError}
+          onError={() => onErrorChange(true)}
+          onApprove={requestOrderCapture} />
       }
+
     </PayPalScriptProvider>
   )
 }
