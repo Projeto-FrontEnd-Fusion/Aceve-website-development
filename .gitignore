@@ -40,3 +40,5 @@ next-env.d.ts
 .env
 
 yarn.lock
+
+/src/generated/prisma
