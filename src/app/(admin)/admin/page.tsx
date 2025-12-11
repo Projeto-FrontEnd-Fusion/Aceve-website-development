@@ -18,7 +18,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-primary-100 flex items-center justify-center min-h-screen">
+    <div className="bg-primary-100 flex items-center justify-center min-h-screen px-6">
       <div className="w-full max-w-md">
         <img
           src="logo-header.png"
@@ -26,9 +26,11 @@ export default function LoginPage() {
           className="w-25 h-25 mb-6 mx-auto"
         />
 
-        <h2 className="text-primary-800 font-bold text-center">Login</h2>
+        <h2 className="text-primary-600 font-bold text-center text-[30px] leading-[30px] tracking-[0%] mb-6">
+          Login
+        </h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="email" className="font-bold text-primary-600">
               E-mail
             </label>
@@ -38,7 +40,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
-              className="bg-primary-600/20 p-2 rounded-lg shadow-md w-full"
+              className="bg-primary-600/20 p-2 rounded-lg shadow-md w-full text-grey-700 placeholder:text-grey-700 outline-none focus:bg-primary-600/20"
             />
           </div>
           <div>
@@ -51,7 +53,7 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Senha"
-              className="bg-primary-600/20 p-2 rounded-lg shadow-md w-full"
+              className="bg-primary-600/20 p-2 rounded-lg shadow-md w-full placeholder:text-grey-700 outline-none"
             />
           </div>
           <GlobalButton
