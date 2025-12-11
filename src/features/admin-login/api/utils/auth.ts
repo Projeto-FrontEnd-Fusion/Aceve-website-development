@@ -1,6 +1,6 @@
+import { prisma } from "@/utils/prisma";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { prisma } from "./prisma";
 
 export default betterAuth({
     database: prismaAdapter(prisma, {
