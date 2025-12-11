@@ -1,4 +1,5 @@
-import { AuthController } from "@/features/api/auth/auth.controller";
+
+import { AuthController } from "@/features/admin-login/api/auth/auth.controller";
 import { NextRequest } from "next/server";
 
 const authController = await AuthController();
