@@ -42,3 +42,5 @@ next-env.d.ts
 yarn.lock
 
 /src/generated/prisma
+
+.devcontainer/
