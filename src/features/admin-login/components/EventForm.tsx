@@ -1,4 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
+import { FormInput } from "./FormInput";
 
 export type EventFormData = {
   name: string;
@@ -29,7 +30,7 @@ export default function EventForm() {
   return (
     <FormProvider {...methods}>
       <section className="w-full h-full bg-primary-100 rounded-lg p-8">
-        <header mb-8>
+        <header>
           <a href="" className="text-sm text-grey-500 mb-4">
             Voltar
           </a>
@@ -41,10 +42,13 @@ export default function EventForm() {
           </p>
         </header>
 
-        <form
-          onSubmit={methods.handleSubmit(onSubmit)}
-          className="space-y-6"
-        ></form>
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-6">
+          <FormInput
+            name="name"
+            label="Nome do Evento"
+            rules={{ required: "Nome do evento é obrigatório" }}
+          />
+        </form>
       </section>
     </FormProvider>
   );
