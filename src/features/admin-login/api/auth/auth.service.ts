@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import auth from "../utils/auth";
 import { LoginRequest, LoginSchema } from "./dtos/login.dto";
 import { CreateLogin, CreateLoginSchema } from "./dtos/create.dto";
@@ -32,6 +32,14 @@ export const AuthService = async () => {
 
         return NextResponse.json(await response.json(), {status: 201});
     }
+
+    const GetSession = async (request: NextRequest): Promise<NextResponse> => {
+        const response = await auth.api.getSession({ headers: request.headers, asResponse: true });
+        if (!response.ok) {
+            return NextResponse.json({ error: "Não autenticado!" }, { status: 401 });
+        }
+        return NextResponse.json(await response.json(), {status: 200});
+    }
     
-    return { Login, Create } as const;
+    return { Login, Create, GetSession } as const;
 }
