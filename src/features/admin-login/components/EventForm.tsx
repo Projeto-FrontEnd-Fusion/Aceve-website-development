@@ -1,5 +1,6 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { FormInput } from "./FormInput";
+import { FormTextarea } from "./FormTextarea";
 
 export type EventFormData = {
   name: string;
@@ -47,6 +48,11 @@ export default function EventForm() {
             name="name"
             label="Nome do Evento"
             rules={{ required: "Nome do evento é obrigatório" }}
+          />
+          <FormTextarea
+            name="description"
+            label="Descrição do evento (opcional)"
+            maxLength={500}
           />
         </form>
       </section>
