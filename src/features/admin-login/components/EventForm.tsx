@@ -1,6 +1,9 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { FormInput } from "./FormInput";
 import { FormTextarea } from "./FormTextarea";
+import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
+import { EventDate } from "./EventDate";
+import { register } from "module";
 
 export type EventFormData = {
   name: string;
@@ -54,6 +57,27 @@ export default function EventForm() {
             label="Descrição do evento (opcional)"
             maxLength={500}
           />
+          <div>
+            <FormInput name="total" label="Total arrecadado" />
+            <FormInput
+              name="beneficiaries"
+              label="Pessoas beneficiadas"
+              type="number"
+              rules={{
+                required: "Informe o número de pessoas",
+                valueAsNumber: true,
+              }}
+            />
+          </div>
+          <EventDate />
+
+          <GlobalButton
+            variant="primary"
+            type="submit"
+            className="w-[286px] h-[60px] rounded-[5px] py-2 px-6 gap-2 mx-auto mt-4"
+          >
+            Salvar Registro
+          </GlobalButton>
         </form>
       </section>
     </FormProvider>
