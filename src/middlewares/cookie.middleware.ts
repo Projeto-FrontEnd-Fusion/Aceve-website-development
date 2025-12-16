@@ -20,7 +20,7 @@ export function cookieAuth(next: CustomMiddleware): CustomMiddleware {
 
       if (!hasSessionCookie) {
         return NextResponse.json(
-          { error: "Unauthorized" },
+          { error: "Não autorizado!" },
           { status: 401 }
         );
       }
