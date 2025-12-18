@@ -13,7 +13,7 @@ const PRIVATE_FRONT_ROUTES = [
 export function cookieAuth(next: CustomMiddleware): CustomMiddleware {
   return async (req, event, response) => {
     const { pathname } = req.nextUrl;
-    const hasSessionCookie = req.cookies.has("better-auth.session_token") && req.cookies.has("better-auth.session_data");
+    const hasSessionCookie = req.cookies.has("better-auth.session_token");
 
     const isApiRoute = pathname.startsWith("/api");
     const isPublicApi = PUBLIC_API_ROUTES.some(path =>
