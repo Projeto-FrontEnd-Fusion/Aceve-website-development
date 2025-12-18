@@ -11,7 +11,6 @@ type LoginFormInputs = {
     password: string;
 }
 
-// const { formState: { isValid } } = useFormContext<LoginFormInputs>()
 
 export function LoginForm() {
     const router = useRouter()
@@ -28,10 +27,12 @@ export function LoginForm() {
         setApiError("")
 
         const result = await loginRequest(data)
-        if (result.error) {
-            return setApiError(result.error)
+
+        if (result.token) {
+          router.push("/dashboard")
+        } else {
+          setApiError(result.error)
         }
-        router.push("/admin/ ") // Alterar
     }
 
     return (
