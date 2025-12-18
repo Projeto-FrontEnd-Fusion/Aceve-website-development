@@ -31,7 +31,7 @@ export function LoginForm() {
         if (result.error) {
             return setApiError(result.error)
         }
-        router.push("/admin/ ") // Alterar
+        router.push("/dashboard")
     }
 
     return (
