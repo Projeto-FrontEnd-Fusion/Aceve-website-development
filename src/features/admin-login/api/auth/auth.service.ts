@@ -12,9 +12,11 @@ export const AuthService = async () => {
         }
 
         const response = await auth.api.signInEmail({ body: {...loginDto.data}, headers: headers(), asResponse: true });
-        const cookies = response.headers.get("set-cookie");
+        if (!response.ok) {
+            return NextResponse.json({ error: "E-mail ou senha inválidos." }, {status: 400});
+        }
         
-        return NextResponse.json(await response.json(), {status: 200, headers:{"Set-Cookie": cookies!}});
+        return NextResponse.json(await response.json(), {status: 200});
     }
 
     const GetSession = async (request: NextRequest): Promise<NextResponse> => {

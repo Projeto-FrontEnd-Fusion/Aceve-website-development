@@ -1,6 +1,7 @@
 import { prisma } from "@/utils/prisma";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
+import { nextCookies } from "better-auth/next-js";
 
 export default betterAuth({
     database: prismaAdapter(prisma, {
@@ -17,5 +18,6 @@ export default betterAuth({
             enabled: true,
             maxAge: 5 * 60,
         }
-    }
+    },
+    plugins: [nextCookies()],
 });
