@@ -1,30 +1,56 @@
-import auth from "@/features/admin-login/api/utils/auth";
-import { prisma } from "@/utils/prisma";
+import { PrismaClient } from '@/generated/prisma';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { hashPassword } from 'better-auth/crypto'
 import * as dotenv from "dotenv";
 dotenv.config();
 
-// npx prisma migrate dev
 // npx prisma generate
 // npx prisma db seed
+
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL!,
+});
+const prisma = new PrismaClient({ adapter });
+
 async function seed() {
   const email = process.env.ADMIN_EMAIL;
   const password = process.env.ADMIN_PASSWORD;
-  const name = process.env.ADMIN_NAME;
-  if (!email || !password || !name) {
-    throw new Error("ADMIN_EMAIL, ADMIN_PASSWORD e ADMIN_NAME precisam estar no .env");
+  if (!email || !password) {
+    throw new Error("ADMIN_EMAIL, ADMIN_PASSWORD precisam estar no .env");
   }
 
-  const result = await auth.api.signUpEmail({
-    body: {
-      name,
-      email,
-      password,
+  const hashedPassword = await hashPassword(password);
+
+  const user = await prisma.user.upsert({
+    where: { email },
+    update: {},
+    create: {
+      id: crypto.randomUUID(),
+      name: "Admin",
+      email: email,
+      emailVerified: true,
+      image: null,
     },
   });
-  if (!result?.user) {
-    throw new Error("Falha ao criar usuário admin");
-  }
 
+  await prisma.account.upsert({
+    where: {
+     accountId_providerId: {
+        accountId: email,
+        providerId: "credential",
+      },
+    },
+    update: { password: hashedPassword },
+    create: {
+      id: crypto.randomUUID(),
+      accountId: email,
+      providerId: "credential",
+      userId: user.id,
+      password: hashedPassword,
+    },
+  });
+
+  console.log("✅ Admin user seeded");
   console.log('Database seeded!');
   await prisma.$disconnect();
 }
@@ -34,4 +60,3 @@ seed().catch((err) => {
   prisma.$disconnect();
   process.exit(1);
 });
-
