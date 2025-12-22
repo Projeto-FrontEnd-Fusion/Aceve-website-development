@@ -4,6 +4,7 @@ import { FormTextarea } from "./FormTextarea";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { EventDate } from "./EventDate";
 import { register } from "module";
+import { PhotUploadCard } from "./PhotoUploadCard";
 
 export type EventFormData = {
   name: string;
@@ -75,6 +76,13 @@ export default function EventForm() {
             </div>
             <div className="flex items-end gap-6">
               <EventDate />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+              <PhotUploadCard />
+              <PhotUploadCard />
+              <PhotUploadCard />
+              <PhotUploadCard />
+              <PhotUploadCard />
             </div>
 
             <GlobalButton
