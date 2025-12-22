@@ -21,10 +21,22 @@ export function FormInput({
   } = useFormContext<EventFormData>();
 
   return (
-    <div>
-      <label>{label}</label>
-      <input type={type} {...register(name, rules)} className="" />
-      {errors[name] && <span>{String(errors[name]?.message)}</span>}
+    <div className="flex flex-col gap-1">
+      <label
+        htmlFor="{name}"
+        className="text-sm font-medium text-grey-700 font-medium"
+      >
+        {label}
+      </label>
+      <input
+        id={name}
+        type={type}
+        {...register(name, rules)}
+        className="h-11 px-3 rounded-md border border-primary-800 text-sm bg-primary-100 font-medium"
+      />
+      {errors[name] && (
+        <span className="text-xs">{String(errors[name]?.message)}</span>
+      )}
     </div>
   );
 }

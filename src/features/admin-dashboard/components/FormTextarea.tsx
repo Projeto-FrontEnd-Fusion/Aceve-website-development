@@ -12,9 +12,16 @@ interface FormTextareaProps {
 export function FormTextarea({ name, label, maxLength }: FormTextareaProps) {
   const { register } = useFormContext();
   return (
-    <div>
-      <label>{label}</label>
-      <textarea {...register(name)} maxLength={maxLength} className="" />
+    <div className="flex flex-col gap-1">
+      <label htmlFor={name} className="text-sm font-medium text-grey-700">
+        {label}
+      </label>
+      <textarea
+        id={name}
+        {...register(name)}
+        maxLength={maxLength}
+        className="min-h-[120px] px-3 py-2 rounded-md border border-primary-800 text-sm bg-primary-100"
+      />
     </div>
   );
 }
