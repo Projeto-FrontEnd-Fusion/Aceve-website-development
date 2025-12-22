@@ -6,9 +6,9 @@ export default async function AdminEventsLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  //const { GetSession } = await AuthService();
-  // const session = await GetSession();
-  // if (!session) { redirect('/'); }
+  const { GetSession } = await AuthService();
+  const session = await GetSession();
+  if (!session) { redirect('/'); }
 
   return <>{children}</>;
 }
