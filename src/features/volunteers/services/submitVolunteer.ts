@@ -1,9 +1,9 @@
-import axios from "axios";
 import { IVolunteer } from "../types/IVolunteer";
+import { http } from "@/services/http";
 
 export async function submitVolunteer(volunteer: IVolunteer, onComplete: (succeeded: boolean) => void) {
   try {
-    await axios.post("/api/submit-volunteer", {
+    await http.post("/api/submit-volunteer", {
       volunteer
     })
     onComplete(true);
