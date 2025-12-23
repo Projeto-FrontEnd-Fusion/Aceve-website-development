@@ -10,9 +10,7 @@ export type EventFormData = {
   description?: string;
   total: string;
   beneficiaries: string;
-  day: string;
-  month: string;
-  year: string;
+  date: string;
 };
 
 export default function EventForm() {
@@ -22,9 +20,7 @@ export default function EventForm() {
       description: "",
       total: "R$ 0,00",
       beneficiaries: "",
-      day: "",
-      month: "",
-      year: "",
+      date: "",
     },
   });
 
