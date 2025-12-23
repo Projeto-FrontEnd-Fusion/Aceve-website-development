@@ -2,7 +2,7 @@
 import { Dispatch, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { useDonationStore } from "@/features/donations/stores/donationvalue.store"
-import { parseAndFormatCurrency, formatInitialValue } from "@/features/donations/utils/parseAndFormatCurrency";
+import { parseAndFormatCurrency, formatInitialValue } from "@/utils/parseAndFormatCurrency";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 
 interface IDonationState {

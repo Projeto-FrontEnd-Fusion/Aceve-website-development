@@ -3,6 +3,7 @@ import { Inputs } from "@/components/Inputs/Inputs";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { EventDate } from "./EventDate";
 import { PhotUploadCard } from "./PhotoUploadCard";
+import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 
 export type EventFormData = {
   name: string;
@@ -19,7 +20,7 @@ export default function EventForm() {
     defaultValues: {
       name: "",
       description: "",
-      total: "",
+      total: "R$ 0,00",
       beneficiaries: 0,
       day: "",
       month: "",
@@ -74,12 +75,14 @@ export default function EventForm() {
 
             {/* Total / Beneficiários */}
             <div className="grid grid-cols-2 gap-6">
-              <Inputs
-                name="total"
-                type="text"
-                placeholder="Total arrecadado"
-                error={errors.total}
-              />
+            <Inputs
+              name="total"
+              type="text"
+              placeholder="0,00"
+              error={errors.total}
+              inputMode="numeric"
+              mask={(value) => parseAndFormatCurrency(value).formatted}
+            />
 
               <Inputs
                 name="beneficiaries"
