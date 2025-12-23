@@ -64,9 +64,9 @@ export default function EventForm() {
             as="textarea"
             name="description"
             placeholder="Descreva brevemente sobre as ações, resultados e impacto do evento"
-            height={120}
             error={errors.description}
             maxLength={500}
+            height={170}
             className="bg-primary-100"
           />
         </div>
