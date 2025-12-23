@@ -9,7 +9,7 @@ export type EventFormData = {
   name: string;
   description?: string;
   total: string;
-  beneficiaries: number;
+  beneficiaries: string;
   day: string;
   month: string;
   year: string;
@@ -21,7 +21,7 @@ export default function EventForm() {
       name: "",
       description: "",
       total: "R$ 0,00",
-      beneficiaries: 0,
+      beneficiaries: "",
       day: "",
       month: "",
       year: "",
@@ -70,9 +70,12 @@ export default function EventForm() {
 
           <Inputs
             name="beneficiaries"
-            type="number"
+            type="text"
+            inputMode="numeric"
             placeholder="Pessoas beneficiadas"
             error={errors.beneficiaries}
+            pattern="[0-9]*"
+            mask={(value) => String(value).replace(/\D/g, "")}
           />
         </div>
 
