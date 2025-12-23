@@ -36,47 +36,79 @@ export default function EventForm() {
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-6">
         {/* Nome do evento */}
-        <Inputs
-          name="name"
-          type="text"
-          placeholder="Nome do Evento"
-          error={errors.name}
-          className="bg-primary-100"
-        />
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-md text-grey-800 font-bold mb-2"
+          >
+            Nome do evento
+          </label>
+          <Inputs
+            name="name"
+            type="text"
+            placeholder="Digite o nome do evento"
+            error={errors.name}
+            className="bg-primary-100"
+          />
+        </div>
 
         {/* Descrição */}
-        <Inputs
-          as="textarea"
-          name="description"
-          placeholder="Descrição do evento (opcional)"
-          height={120}
-          error={errors.description}
-          maxLength={500}
-          className="bg-primary-100"
-        />
+        <div>
+          <label
+            htmlFor="description"
+            className="block text-md text-grey-800 font-bold mb-2"
+          >
+            Descrição do evento (opcional)
+          </label>
+          <Inputs
+            as="textarea"
+            name="description"
+            placeholder="Descreva brevemente sobre as ações, resultados e impacto do evento"
+            height={120}
+            error={errors.description}
+            maxLength={500}
+            className="bg-primary-100"
+          />
+        </div>
 
         {/* Total / Beneficiários */}
         <div className="grid grid-cols-2 gap-6">
-          <Inputs
-            name="total"
-            type="text"
-            placeholder="0,00"
-            error={errors.total}
-            inputMode="numeric"
-            mask={(value) => parseAndFormatCurrency(value).formatted}
-            className="bg-primary-100"
-          />
+          <div>
+            <label
+              htmlFor="total"
+              className="block text-md text-grey-800 font-bold mb-2"
+            >
+              Total arrecadado
+            </label>
+            <Inputs
+              name="total"
+              type="text"
+              placeholder="R$ 0,00"
+              error={errors.total}
+              inputMode="numeric"
+              mask={(value) => parseAndFormatCurrency(value).formatted}
+              className="bg-primary-100"
+            />
+          </div>
 
-          <Inputs
-            name="beneficiaries"
-            type="text"
-            inputMode="numeric"
-            placeholder="Pessoas beneficiadas"
-            error={errors.beneficiaries}
-            pattern="[0-9]*"
-            mask={(value) => String(value).replace(/\D/g, "")}
-            className="bg-primary-100"
-          />
+          <div>
+            <label
+              htmlFor="beneficiaries"
+              className="block text-md text-grey-800 font-bold mb-2"
+            >
+              Pessoas beneficiadas
+            </label>
+            <Inputs
+              name="beneficiaries"
+              type="text"
+              inputMode="numeric"
+              placeholder="0"
+              error={errors.beneficiaries}
+              pattern="[0-9]*"
+              mask={(value) => String(value).replace(/\D/g, "")}
+              className="bg-primary-100"
+            />
+          </div>
         </div>
 
         {/* Data */}
