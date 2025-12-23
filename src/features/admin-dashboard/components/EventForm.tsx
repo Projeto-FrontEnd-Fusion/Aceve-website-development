@@ -31,6 +31,7 @@ export default function EventForm() {
   const {
     formState: { errors },
   } = methods;
+  const descriptionValue = methods.watch("description") ?? "";
 
   return (
     <FormProvider {...methods}>
@@ -60,15 +61,20 @@ export default function EventForm() {
           >
             Descrição do evento (opcional)
           </label>
-          <Inputs
-            as="textarea"
-            name="description"
-            placeholder="Descreva brevemente sobre as ações, resultados e impacto do evento"
-            error={errors.description}
-            maxLength={500}
-            height={170}
-            className="bg-primary-100"
-          />
+          <div className="relative">
+            <Inputs
+              as="textarea"
+              name="description"
+              placeholder="Descreva brevemente sobre as ações, resultados e impacto do evento"
+              error={errors.description}
+              maxLength={500}
+              height={171}
+              className="bg-primary-100 h-[10.5rem] pb-8"
+            />
+            <span className="pointer-events-none absolute bottom-3 right-4 text-base text-grey-500">
+              {descriptionValue.length}/500
+            </span>
+          </div>
         </div>
 
         {/* Total / Beneficiários */}
