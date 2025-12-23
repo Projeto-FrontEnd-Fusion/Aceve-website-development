@@ -1,6 +1,6 @@
-import { PrismaClient } from '@/generated/prisma';
-import { PrismaPg } from '@prisma/adapter-pg';
-import { hashPassword } from 'better-auth/crypto'
+import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { hashPassword } from "better-auth/crypto";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -35,7 +35,7 @@ async function seed() {
 
   await prisma.account.upsert({
     where: {
-     accountId_providerId: {
+      accountId_providerId: {
         accountId: email,
         providerId: "credential",
       },
@@ -51,7 +51,7 @@ async function seed() {
   });
 
   console.log("✅ Admin user seeded");
-  console.log('Database seeded!');
+  console.log("Database seeded!");
   await prisma.$disconnect();
 }
 
