@@ -45,6 +45,7 @@ export default function EventForm() {
           type="text"
           placeholder="Nome do Evento"
           error={errors.name}
+          className="bg-primary-100"
         />
 
         {/* Descrição */}
@@ -55,6 +56,7 @@ export default function EventForm() {
           height={120}
           error={errors.description}
           maxLength={500}
+          className="bg-primary-100"
         />
 
         {/* Total / Beneficiários */}
@@ -66,6 +68,7 @@ export default function EventForm() {
             error={errors.total}
             inputMode="numeric"
             mask={(value) => parseAndFormatCurrency(value).formatted}
+            className="bg-primary-100"
           />
 
           <Inputs
@@ -76,6 +79,7 @@ export default function EventForm() {
             error={errors.beneficiaries}
             pattern="[0-9]*"
             mask={(value) => String(value).replace(/\D/g, "")}
+            className="bg-primary-100"
           />
         </div>
 
