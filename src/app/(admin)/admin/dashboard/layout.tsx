@@ -10,5 +10,5 @@ export default async function AdminEventsLayout({
   const session = await GetSession();
   if (!session) { redirect('/'); }
 
-  return <>{children}</>;
+      return <>{children}</>;
 }
