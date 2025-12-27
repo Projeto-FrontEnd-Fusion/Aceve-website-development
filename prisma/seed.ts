@@ -1,4 +1,4 @@
-import { PrismaClient } from '@/generated/prisma';
+import { PrismaClient } from '@/generated/prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { hashPassword } from 'better-auth/crypto'
 import * as dotenv from "dotenv";
