@@ -1,4 +1,4 @@
-import axios from "axios";
+import { http } from "@/services/http";
 
 const APPURL = process.env.NEXT_PUBLIC_APPURL;
 const PAYPAL_API = process.env.PAYPAL_API || 'https://api.sandbox.paypal.com';
@@ -18,7 +18,7 @@ interface PayPalOrder {
 export const apiPaypal = () => {
   const request = async (method: 'post' | 'get', url: string, data?: any) => {
     const token = await getAccessToken();
-    return axios({
+    return http({
       method,
       url: `${PAYPAL_API}${url}`,
       headers: {
@@ -31,7 +31,7 @@ export const apiPaypal = () => {
 
   const getAccessToken = async (): Promise<string> => {
     const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`).toString('base64');
-    const res = await axios.post(`${PAYPAL_API}/v1/oauth2/token`, 'grant_type=client_credentials', {
+    const res = await http.post(`${PAYPAL_API}/v1/oauth2/token`, 'grant_type=client_credentials', {
       headers: {
         'Authorization': `Basic ${auth}`,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -56,4 +56,3 @@ export const apiPaypal = () => {
 
   return { createOrder, captureOrder };
 };
-

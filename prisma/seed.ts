@@ -35,7 +35,7 @@ async function seed() {
 
   await prisma.account.upsert({
     where: {
-     accountId_providerId: {
+      accountId_providerId: {
         accountId: email,
         providerId: "credential",
       },
@@ -51,7 +51,7 @@ async function seed() {
   });
 
   console.log("✅ Admin user seeded");
-  console.log('Database seeded!');
+  console.log("Database seeded!");
   await prisma.$disconnect();
 }
 

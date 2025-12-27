@@ -9,10 +9,8 @@ export type EventFormData = {
   name: string;
   description?: string;
   total: string;
-  beneficiaries: number;
-  day: string;
-  month: string;
-  year: string;
+  beneficiaries: string;
+  date: string;
 };
 
 export default function EventForm() {
@@ -21,10 +19,8 @@ export default function EventForm() {
       name: "",
       description: "",
       total: "R$ 0,00",
-      beneficiaries: 0,
-      day: "",
-      month: "",
-      year: "",
+      beneficiaries: "",
+      date: "",
     },
   });
 
@@ -35,45 +31,90 @@ export default function EventForm() {
   const {
     formState: { errors },
   } = methods;
+  const descriptionValue = methods.watch("description") ?? "";
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-6">
         {/* Nome do evento */}
-        <Inputs
-          name="name"
-          type="text"
-          placeholder="Nome do Evento"
-          error={errors.name}
-        />
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-md text-grey-800 font-bold mb-2"
+          >
+            Nome do evento
+          </label>
+          <Inputs
+            name="name"
+            type="text"
+            placeholder="Digite o nome do evento"
+            error={errors.name}
+            className="bg-primary-100"
+          />
+        </div>
 
         {/* Descrição */}
-        <Inputs
-          as="textarea"
-          name="description"
-          placeholder="Descrição do evento (opcional)"
-          height={120}
-          error={errors.description}
-          maxLength={500}
-        />
+        <div>
+          <label
+            htmlFor="description"
+            className="block text-md text-grey-800 font-bold mb-2"
+          >
+            Descrição do evento (opcional)
+          </label>
+          <div className="relative">
+            <Inputs
+              as="textarea"
+              name="description"
+              placeholder="Descreva brevemente sobre as ações, resultados e impacto do evento"
+              error={errors.description}
+              maxLength={500}
+              height={171}
+              className="bg-primary-100 h-[10.5rem] pb-8"
+            />
+            <span className="pointer-events-none absolute bottom-3 right-4 text-base text-grey-500">
+              {descriptionValue.length}/500
+            </span>
+          </div>
+        </div>
 
         {/* Total / Beneficiários */}
         <div className="grid grid-cols-2 gap-6">
-          <Inputs
-            name="total"
-            type="text"
-            placeholder="0,00"
-            error={errors.total}
-            inputMode="numeric"
-            mask={(value) => parseAndFormatCurrency(value).formatted}
-          />
+          <div>
+            <label
+              htmlFor="total"
+              className="block text-md text-grey-800 font-bold mb-2"
+            >
+              Total arrecadado
+            </label>
+            <Inputs
+              name="total"
+              type="text"
+              placeholder="R$ 0,00"
+              error={errors.total}
+              inputMode="numeric"
+              mask={(value) => parseAndFormatCurrency(value).formatted}
+              className="bg-primary-100"
+            />
+          </div>
 
-          <Inputs
-            name="beneficiaries"
-            type="number"
-            placeholder="Pessoas beneficiadas"
-            error={errors.beneficiaries}
-          />
+          <div>
+            <label
+              htmlFor="beneficiaries"
+              className="block text-md text-grey-800 font-bold mb-2"
+            >
+              Pessoas beneficiadas
+            </label>
+            <Inputs
+              name="beneficiaries"
+              type="text"
+              inputMode="numeric"
+              placeholder="0"
+              error={errors.beneficiaries}
+              pattern="[0-9]*"
+              mask={(value) => String(value).replace(/\D/g, "")}
+              className="bg-primary-100"
+            />
+          </div>
         </div>
 
         {/* Data */}

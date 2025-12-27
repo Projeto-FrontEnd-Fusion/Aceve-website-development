@@ -31,11 +31,10 @@ interface TextAreaFieldProps
 export type InputProps = InputFieldProps | TextAreaFieldProps
 
 export const Inputs = (props: InputProps) => {
-  const { name, as = 'input', error, mask, ...rest } = props
-
+  const { name, as = 'input', error, mask, className, ...rest } = props
   const { maskedValue, handleChange } = useMaskedInput(name, mask)
 
-  const baseClass = `w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? 'border-red-500' : ''}`
+  const baseClass = `w-full border-primary-500 border-2 rounded-lg py-4 px-2 min-md:p-4 text-grey-500 text-base placeholder:text-grey-400 ${error ? 'border-red-500' : ''} ${className ?? ''}`
 
   const inputElement = props.as === 'textarea' ? (
     <textarea
@@ -65,4 +64,3 @@ export const Inputs = (props: InputProps) => {
     </div>
   )
 }
-
