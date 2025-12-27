@@ -5,18 +5,15 @@ export const CreateEventSchema = z.object({
   description: z.string().min(1, "A descrição do evento é obrigatória."),
   totalFunding: z.string().min(1, "O valor total arrecadado é obrigatório."),
   peopleBenefited: z
-    .number({ error: "O número de pessoas beneficiadas é obrigatório." })
+    .string({ error: "O número de pessoas beneficiadas é obrigatório." })
     .min(1, "O número de pessoas beneficiadas deve ser maior que zero."),
   date: z.date().optional(),
-  photos: z
-    .array(
-      z.object({
-        photoUrl: z.string().min(1, "A URL da foto é obrigatória."),
-        description: z.string().optional(),
-      })
-    )
-    .min(1, "É necessário pelo menos uma foto."),
-});
-
+  photos: z.array(
+    z.object({
+      file: z.instanceof(Buffer),
+      description: z.string().optional(),
+    })).min(1, "É necessário pelo menos uma foto."),
+  }
+);
 
 export type CreateEvent = z.infer<typeof CreateEventSchema>;
