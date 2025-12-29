@@ -19,12 +19,6 @@ export function EventDate() {
           className="w-[220px] h-[50px] rounded-md border border-primary-800 bg-primary-100 px-3 text-grey-800"
           aria-label="Data do evento"
         />
-        <GlobalButton
-          variant="primary"
-          className="w-[286px] h-[48px] rounded-[5px] flex items-center gap-2 px-6"
-        >
-          Selecionar Foto
-        </GlobalButton>
       </div>
     </div>
   );

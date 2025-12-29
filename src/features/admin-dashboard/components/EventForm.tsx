@@ -2,8 +2,11 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Inputs } from "@/components/Inputs/Inputs";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { EventDate } from "./EventDate";
-import { PhotUploadCard } from "./PhotoUploadCard";
+import { PhotoUploadCard } from "./PhotoUploadCard";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
+import { useRef, useState } from "react";
+import { EventPhoto } from "../types/event-photo";
+import { useEventPhotos } from "../hooks/useEventPhotos";
 
 export type EventFormData = {
   name: string;
@@ -24,14 +27,24 @@ export default function EventForm() {
     },
   });
 
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  function handleSelectPhoto() {
+    fileInputRef.current?.click();
+  }
+
   function onSubmit(data: EventFormData) {
-    console.log("dados do formulário", data);
+    console.log("dados do formulário", {data, photos});
   }
 
   const {
     formState: { errors },
   } = methods;
+
   const descriptionValue = methods.watch("description") ?? "";
+
+  const { photos, addPhoto, removePhoto, updateCaption } = useEventPhotos();
 
   return (
     <FormProvider {...methods}>
@@ -118,17 +131,41 @@ export default function EventForm() {
         </div>
 
         {/* Data */}
-        <div className="flex items-end gap-6">
+        <div className="flex justify-around">
           <EventDate />
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            hidden
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) addPhoto(file);
+            }}
+          />
+
+          <GlobalButton
+            variant="primary"
+            className="w-[286px] self-end h-[48px] rounded-[5px] flex items-center gap-2 px-6"
+            type="button"
+            onClick={handleSelectPhoto}
+          >
+            Selecionar Foto
+          </GlobalButton>
         </div>
+
 
         {/* Upload de fotos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-          <PhotUploadCard />
-          <PhotUploadCard />
-          <PhotUploadCard />
-          <PhotUploadCard />
-          <PhotUploadCard />
+          {Array.from({ length: 5 }).map((_, index) => (
+            <PhotoUploadCard
+              key={index}
+              photo={photos[index]}
+              onRemove={() => {removePhoto(index)}}
+              onCaptionChange={(value) => updateCaption(index, value)}
+            />
+          ))}
         </div>
 
         <GlobalButton
