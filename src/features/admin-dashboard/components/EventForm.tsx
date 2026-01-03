@@ -8,6 +8,8 @@ import { useRef, useState } from "react";
 import { EventPhoto } from "../types/event-photo";
 import { useEventPhotos } from "../hooks/useEventPhotos";
 import { http } from "@/services/http";
+import axios from "axios";
+import { httpAdmin } from "@/services/http.admin";
 
 export type EventFormData = {
   name: string;
@@ -54,7 +56,7 @@ export default function EventForm() {
           formData.append(`photoDescription${index}`, photo.caption);
         }
       });
-      await http.post("/api/events", formData);
+      await httpAdmin.post("/api/events", formData);
       setIsSuccessModalOpen(true);
       methods.reset();
     } catch (error: any) {
