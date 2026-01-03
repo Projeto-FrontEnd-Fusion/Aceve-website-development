@@ -7,6 +7,7 @@ import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 import { useRef, useState } from "react";
 import { EventPhoto } from "../types/event-photo";
 import { useEventPhotos } from "../hooks/useEventPhotos";
+import { http } from "@/services/http";
 
 export type EventFormData = {
   name: string;
@@ -27,24 +28,54 @@ export default function EventForm() {
     },
   });
 
-
+  const { photos, addPhoto, removePhoto, updateCaption } = useEventPhotos();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+
+  const descriptionValue = methods.watch("description") ?? "";
 
   function handleSelectPhoto() {
     fileInputRef.current?.click();
   }
 
-  function onSubmit(data: EventFormData) {
-    console.log("dados do formulário", {data, photos});
+  async function onSubmit(data: EventFormData) {
+    try {
+      const formData = new FormData();
+
+      formData.append("name", data.name);
+      formData.append("description", data.description ?? "");
+      formData.append("totalFunding", data.total.replace(/[^\d]/g, ""));
+      formData.append("peopleBenefited", data.beneficiaries);
+      formData.append("date", data.date);
+
+      photos.forEach((photo, index) => {
+        formData.append(`photos${index}`, photo.file);
+        if (photo.caption) {
+          formData.append(`photoDescription${index}`, photo.caption);
+        }
+      });
+      await http.post("/api/events", formData);
+      setIsSuccessModalOpen(true);
+      methods.reset();
+    } catch (error: any) {
+      if (error.response) {
+        console.error("Erro do backend:", error.response.data);
+        alert(`Erro ao salvar evento: ${JSON.stringify(error.response.data)}`);
+      } else if (error.request) {
+        console.error("Erro de rede:", error.request);
+        alert(
+          "Erro de rede:não foi possível conectar ao servidor. Verifique a URL e se o backend está rodando."
+        );
+      } else {
+        console.error("Erro inesperado:", error.message);
+        alert(`Erro ineperado:${error.message}`);
+      }
+    }
   }
 
   const {
     formState: { errors },
   } = methods;
-
-  const descriptionValue = methods.watch("description") ?? "";
-
-  const { photos, addPhoto, removePhoto, updateCaption } = useEventPhotos();
 
   return (
     <FormProvider {...methods}>
@@ -155,14 +186,15 @@ export default function EventForm() {
           </GlobalButton>
         </div>
 
-
         {/* Upload de fotos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
           {Array.from({ length: 5 }).map((_, index) => (
             <PhotoUploadCard
               key={index}
               photo={photos[index]}
-              onRemove={() => {removePhoto(index)}}
+              onRemove={() => {
+                removePhoto(index);
+              }}
               onCaptionChange={(value) => updateCaption(index, value)}
             />
           ))}
@@ -176,6 +208,22 @@ export default function EventForm() {
           Salvar Registro
         </GlobalButton>
       </form>
+
+      {isSuccessModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg text-center max-w-sm">
+            <h2 className="text-lg font-bold mb-4">
+              Evento criado com sucesso!
+            </h2>
+            <GlobalButton
+              variant="primary"
+              onClick={() => setIsSuccessModalOpen(false)}
+            >
+              Fechar
+            </GlobalButton>
+          </div>
+        </div>
+      )}
     </FormProvider>
   );
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 
 export const http = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_APPURL ?? "",
+  baseURL: process.env.NEXT_PUBLIC_APPURL,
+  timeout: 10000,
 });
