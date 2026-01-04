@@ -10,6 +10,8 @@ import { useEventPhotos } from "../hooks/useEventPhotos";
 import { http } from "@/services/http";
 import axios from "axios";
 import { httpAdmin } from "@/services/http.admin";
+import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
+import { FaCheck } from "react-icons/fa";
 
 export type EventFormData = {
   name: string;
@@ -212,17 +214,45 @@ export default function EventForm() {
       </form>
 
       {isSuccessModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg text-center max-w-sm">
-            <h2 className="text-lg font-bold mb-4">
-              Evento criado com sucesso!
-            </h2>
-            <GlobalButton
-              variant="primary"
-              onClick={() => setIsSuccessModalOpen(false)}
-            >
-              Fechar
-            </GlobalButton>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div
+            className="relative w-full max-w-[520px] bg-primary-100 rounded-lg px-6 py-6 sm:px-8 sm:py-8
+        flex flex-col gap-6 justify-between items-center"
+          >
+            <div className="w-[40px] h-[40px] rounded-full border-4 border-primary-800 flex items-center justify-center">
+              <FaCheck className="text-primary-800 w-[20px] h-[20px]" />
+            </div>
+            <div className="flex flex-col gap-2.5 text-center sm:text-left">
+              <h2 className="font-inter text-center font-semibold text-xl sm:text-2xl text-grey-800">
+                Dados salvos com sucesso!
+              </h2>
+
+              <p className="font-inter text-grey-700 text-sm sm:text-base text-center">
+                As informações foram registradas com sucesso. Você pode voltar
+                ao início ou adicionar um novo registro.
+              </p>
+            </div>
+
+            <div className="flex flex-row gap-4 justify-center">
+              <GlobalLink
+                variant="outlined-primary-700"
+                href=""
+                className="w-[150px] sm:w-[173px] h-[52px]
+            sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter font-semibold
+            text-sm sm:text-base"
+              >
+                Ir para eventos
+              </GlobalLink>
+
+              <GlobalLink
+                variant="primary"
+                href=""
+                className="w-[150px] sm:w-[173px] h-[52px] sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter
+            font-semibold text-sm sm:text-base"
+              >
+                Novo registro
+              </GlobalLink>
+            </div>
           </div>
         </div>
       )}
