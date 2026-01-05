@@ -7,7 +7,7 @@ export const eventFormSchema = z.object({
   beneficiaries: z
     .string({ error: "O número de pessoas beneficiadas é obrigatório." })
     .min(1, "O número de pessoas beneficiadas deve ser maior que zero."),
-  date: z.string().optional(),
+  date: z.string().min(1, "A data do evento é obrigatória."),
   photos: z
     .array(z.instanceof(File))
     .min(1, "É necessário pelo menos uma foto."),
