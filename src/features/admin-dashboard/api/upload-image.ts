@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { uploadImage } from "../services/cloudinary.server";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@/utils/prisma";
 
 export async function POST(request: Request) {
     try {
