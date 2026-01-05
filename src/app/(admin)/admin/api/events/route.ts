@@ -1,4 +1,4 @@
-import { EventController } from "@/features/admin-dashboard/api/event/event.controller";
+import { EventController } from "@/features/admin-dashboard/api/controllers/event.controller";
 import { NextRequest } from "next/server";
 
 const controller = await EventController();
