@@ -31,6 +31,7 @@ export default function EventForm() {
   const { photos, addPhoto, removePhoto, updateCaption } = useEventPhotos();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const descriptionValue = methods.watch("description") ?? "";
 
@@ -40,6 +41,7 @@ export default function EventForm() {
 
   async function onSubmit(data: EventFormData) {
     try {
+      setSubmitError(null);
       const formData = new FormData();
 
       formData.append("name", data.name);
@@ -60,15 +62,19 @@ export default function EventForm() {
     } catch (error: any) {
       if (error.response) {
         console.error("Erro do backend:", error.response.data);
-        alert(`Erro ao salvar evento: ${JSON.stringify(error.response.data)}`);
+        setSubmitError(
+          "Nao foi possivel salvar o evento. Tente novamente ou revise os dados enviados."
+        );
       } else if (error.request) {
         console.error("Erro de rede:", error.request);
-        alert(
-          "Erro de rede:não foi possível conectar ao servidor. Verifique a URL e se o backend está rodando."
+        setSubmitError(
+          "Nao foi possivel conectar ao servidor. Verifique sua conexao e tente novamente."
         );
       } else {
         console.error("Erro inesperado:", error.message);
-        alert(`Erro ineperado:${error.message}`);
+        setSubmitError(
+          "Ocorreu um erro inesperado ao salvar o evento. Tente novamente."
+        );
       }
     }
   }
@@ -209,6 +215,9 @@ export default function EventForm() {
         </div>
         {errors.photos?.message && (
           <p className="text-sm text-red-600">{errors.photos.message}</p>
+        )}
+        {submitError && (
+          <p className="text-sm text-red-600">{submitError}</p>
         )}
 
         <GlobalButton
