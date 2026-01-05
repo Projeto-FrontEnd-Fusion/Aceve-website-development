@@ -36,6 +36,16 @@ export function useEventPhotos() {
     )
   }
 
+  function resetPhotos() {
+    setPhotos((prev) => {
+      prev.forEach((photo) => {
+        URL.revokeObjectURL(photo.previewUrl);
+      });
+
+      return [];
+    });
+  }
+
   useEffect(() => {
     return () => {
       photos.forEach((p) => {
@@ -49,6 +59,7 @@ export function useEventPhotos() {
     addPhoto,
     removePhoto,
     updateCaption,
+    resetPhotos,
     canAddMore: photos.length < MAX_PHOTOS,
   }
 }

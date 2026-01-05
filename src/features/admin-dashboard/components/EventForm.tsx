@@ -28,7 +28,8 @@ export default function EventForm() {
     },
   });
 
-  const { photos, addPhoto, removePhoto, updateCaption } = useEventPhotos();
+  const { photos, addPhoto, removePhoto, updateCaption, resetPhotos } =
+    useEventPhotos();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -59,6 +60,7 @@ export default function EventForm() {
       await httpAdmin.post("/api/events", formData);
       setIsSuccessModalOpen(true);
       methods.reset();
+      resetPhotos();
     } catch (error: any) {
       if (error.response) {
         console.error("Erro do backend:", error.response.data);

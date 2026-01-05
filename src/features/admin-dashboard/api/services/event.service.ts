@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { CreateEventSchema } from "../schemas/event.schema";
 import { EventRepository } from "../repositories/event.repository";
-import { CloudinaryService } from "../lib/cloudinary.service";
-import formDataEventToObject from "../lib/formDataEventToObject";
+import { CloudinaryService } from "./cloudinary.service";
+import formDataEventToObject from "../utils/formDataEventToObject";
 
 export const EventService = async () => {
     const eventRepository = await EventRepository();

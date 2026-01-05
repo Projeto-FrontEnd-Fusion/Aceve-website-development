@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
 import type { UploadApiResponse } from "cloudinary";
-import { configureCloudinary } from "./cloudinary.config";
+import { configureCloudinary } from "../lib/cloudinary.config";
 
 configureCloudinary();
 
