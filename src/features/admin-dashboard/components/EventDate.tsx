@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
-import type { EventFormData } from "./EventForm";
+import type { EventFormData } from "../schemas/event-form.schema";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 
 export function EventDate() {

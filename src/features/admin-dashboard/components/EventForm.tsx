@@ -4,31 +4,27 @@ import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { EventDate } from "./EventDate";
 import { PhotoUploadCard } from "./PhotoUploadCard";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
-import { useRef, useState } from "react";
-import { EventPhoto } from "../types/event-photo";
+import { useEffect, useRef, useState } from "react";
 import { useEventPhotos } from "../hooks/useEventPhotos";
-import { http } from "@/services/http";
-import axios from "axios";
 import { httpAdmin } from "@/services/http.admin";
 import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 import { FaCheck } from "react-icons/fa";
-
-export type EventFormData = {
-  name: string;
-  description?: string;
-  total: string;
-  beneficiaries: string;
-  date: string;
-};
+import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
+import {
+  eventFormSchema,
+  type EventFormData,
+} from "../schemas/event-form.schema";
 
 export default function EventForm() {
   const methods = useForm<EventFormData>({
+    resolver: zodResolver(eventFormSchema),
     defaultValues: {
       name: "",
       description: "",
       total: "R$ 0,00",
       beneficiaries: "",
       date: "",
+      photos: [],
     },
   });
 
@@ -44,11 +40,6 @@ export default function EventForm() {
 
   async function onSubmit(data: EventFormData) {
     try {
-      if (photos.length === 0) {
-        alert("Adicione pelo menos uma foto para salvar o evento.");
-        return;
-      }
-
       const formData = new FormData();
 
       formData.append("name", data.name);
@@ -85,6 +76,14 @@ export default function EventForm() {
   const {
     formState: { errors },
   } = methods;
+
+  useEffect(() => {
+    methods.setValue(
+      "photos",
+      photos.map((photo) => photo.file),
+      { shouldValidate: true }
+    );
+  }, [methods, photos]);
 
   return (
     <FormProvider {...methods}>
@@ -208,6 +207,9 @@ export default function EventForm() {
             />
           ))}
         </div>
+        {errors.photos?.message && (
+          <p className="text-sm text-red-600">{errors.photos.message}</p>
+        )}
 
         <GlobalButton
           variant="primary"
