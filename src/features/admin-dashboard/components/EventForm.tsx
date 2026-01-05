@@ -44,6 +44,11 @@ export default function EventForm() {
 
   async function onSubmit(data: EventFormData) {
     try {
+      if (photos.length === 0) {
+        alert("Adicione pelo menos uma foto para salvar o evento.");
+        return;
+      }
+
       const formData = new FormData();
 
       formData.append("name", data.name);
@@ -236,7 +241,7 @@ export default function EventForm() {
             <div className="flex flex-row gap-4 justify-center">
               <GlobalLink
                 variant="outlined-primary-700"
-                href=""
+                href="https://violetaeliz.org.br"
                 className="w-[150px] sm:w-[173px] h-[52px]
             sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter font-semibold
             text-sm sm:text-base"
@@ -244,14 +249,14 @@ export default function EventForm() {
                 Ir para eventos
               </GlobalLink>
 
-              <GlobalLink
+              <GlobalButton
                 variant="primary"
-                href=""
+                onClick={() => setIsSuccessModalOpen(false)}
                 className="w-[150px] sm:w-[173px] h-[52px] sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter
             font-semibold text-sm sm:text-base"
               >
                 Novo registro
-              </GlobalLink>
+              </GlobalButton>
             </div>
           </div>
         </div>
