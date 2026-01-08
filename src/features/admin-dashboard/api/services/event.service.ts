@@ -24,7 +24,7 @@ export const EventService = async () => {
             });
         }
         
-        const event = await eventRepository.Create({...eventDto.data,peopleBenefited: Number(eventDto.data.peopleBenefited), photos: photosResult}).catch((error) => {
+        const event = await eventRepository.Create({...eventDto.data, peopleBenefited: Number(eventDto.data.peopleBenefited), photos: photosResult}).catch((error) => {
             console.error("Error creating event:", error);
             return NextResponse.json({ message: "Erro ao criar o evento." }, { status: 500 });
         });
