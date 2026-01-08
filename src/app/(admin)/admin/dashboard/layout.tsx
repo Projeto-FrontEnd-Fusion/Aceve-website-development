@@ -1,4 +1,4 @@
-import { AuthService } from "@/features/admin-login/api/auth/auth.service";
+import { AuthService } from "@/features/admin-login/api/services/auth.service";
 import { redirect } from "next/navigation";
 
 export default async function AdminEventsLayout({
