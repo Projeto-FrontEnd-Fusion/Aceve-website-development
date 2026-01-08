@@ -1,10 +1,9 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import auth from "../utils/auth";
-import { LoginRequest, LoginSchema } from "./dtos/login.dto";
+import auth from "../libs/auth.config";
+import { LoginRequest, LoginSchema } from "../schemas/login.schema";
 
 export const AuthService = async () => {
-
     const Login = async (data: LoginRequest): Promise<NextResponse> => {
         const loginDto = await LoginSchema.safeParseAsync(data);
         if (!loginDto.success) {
