@@ -1,15 +1,10 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-let isConfigured = false;
-
-export const configureCloudinary = () => {
-  if (isConfigured) return;
-  
+export const configureCloudinary = () => {  
   const config = {
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
-    api_key: process.env.CLOUDINARY_API_KEY!,
-    api_secret: process.env.CLOUDINARY_API_SECRET!,
-    secure: true
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
   };
 
   const missing = Object.entries(config)
@@ -23,10 +18,7 @@ export const configureCloudinary = () => {
     );
   }
 
-  cloudinary.config(config);
-  isConfigured = true;
-  
+  cloudinary.config({...config, secure: true });
+
   console.log('✅ Cloudinary configured successfully');
 };
-
-export { cloudinary };
