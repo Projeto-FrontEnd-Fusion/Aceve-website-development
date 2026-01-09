@@ -56,6 +56,14 @@ export const Navigation = ({ isMenuOpen, setisMenuOpen }: NavigationProps) => {
 
       <NavigationLink
         variant="text"
+        href="/eventos"
+        onClick={() => setisMenuOpen(false)}
+        className="text-[1.25rem] py-3 px-4">
+        Eventos
+      </NavigationLink>
+
+      <NavigationLink
+        variant="text"
         href="/faca-parte"
         onClick={() => setisMenuOpen(false)}
         className="text-[1.25rem] py-3 px-4">
