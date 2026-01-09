@@ -3,6 +3,7 @@ import { CreateEventSchema } from "../schemas/event.schema";
 import { EventRepository } from "../repositories/event.repository";
 import { CloudinaryService } from "./cloudinary.service";
 import formDataEventToObject from "../utils/formDataEventToObject";
+import { FindLatestEventParams } from "../types/find-latest-event";
 
 export const EventService = async () => {
     const eventRepository = await EventRepository();
@@ -32,5 +33,9 @@ export const EventService = async () => {
         return NextResponse.json(event, { status: 201 });
     }
 
-    return { Create } as const;
+    const FindLatest = async ({take, orderBy}: FindLatestEventParams) => {
+        return NextResponse.json(await eventRepository.FindLatest(take, orderBy), { status: 200 });
+    }
+
+    return { Create, FindLatest } as const;
 }
