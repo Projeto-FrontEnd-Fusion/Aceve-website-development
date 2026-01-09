@@ -43,6 +43,15 @@ export const Header = () => {
             <li>
               <NavigationLink
                 variant="text"
+                href="/eventos"
+                className={linkClasses}>
+                Eventos
+              </NavigationLink>
+            </li>
+
+            <li>
+              <NavigationLink
+                variant="text"
                 href="/faca-parte"
                 className={linkClasses}>
                 Faça parte
