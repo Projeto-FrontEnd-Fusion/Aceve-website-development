@@ -16,6 +16,7 @@ import {
   type EventFormData,
 } from "../schemas/event-form.schema";
 import { ModalBase } from "./ModalBase";
+import { SuccessModal } from "./SuccessModal";
 
 export default function EventForm() {
   const methods = useForm<EventFormData>({
@@ -230,50 +231,10 @@ export default function EventForm() {
           Salvar Registro
         </GlobalButton>
       </form>
-      {isSuccessModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-          <div
-            className="relative w-full max-w-[520px] bg-primary-100 rounded-lg px-6 py-6 sm:px-8 sm:py-8
-        flex flex-col gap-6 justify-between items-center"
-          >
-            <div className="w-[40px] h-[40px] rounded-full border-4 border-primary-800 flex items-center justify-center">
-              <FaCheck className="text-primary-800 w-[20px] h-[20px]" />
-            </div>
-            <div className="flex flex-col gap-2.5 text-center sm:text-left">
-              <h2 className="font-inter text-center font-semibold text-xl sm:text-2xl text-grey-800">
-                Dados salvos com sucesso!
-              </h2>
-
-              <p className="font-inter text-grey-700 text-sm sm:text-base text-center">
-                As informações foram registradas com sucesso. Você pode voltar
-                ao início ou adicionar um novo registro.
-              </p>
-            </div>
-
-            <div className="flex flex-row gap-4 justify-center">
-              <GlobalLink
-                variant="outlined-primary-700"
-                href="https://violetaeliz.org.br"
-                className="w-[150px] sm:w-[173px] h-[52px]
-            sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter font-semibold
-            text-sm sm:text-base"
-              >
-                Ir para eventos
-              </GlobalLink>
-
-              <GlobalButton
-                variant="primary"
-                onClick={() => setIsSuccessModalOpen(false)}
-                className="w-[150px] sm:w-[173px] h-[52px] sm:h-[60px] px-4 py-3 rounded-lg flex items-center justify-center font-inter
-            font-semibold text-sm sm:text-base"
-              >
-                Novo registro
-              </GlobalButton>
-            </div>
-          </div>
-        </div>
-      )}
-      *
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </FormProvider>
   );
 }
