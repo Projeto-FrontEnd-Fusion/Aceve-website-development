@@ -10,10 +10,12 @@ import { httpAdmin } from "@/services/http.admin";
 import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 import { FaCheck } from "react-icons/fa";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
+
 import {
   eventFormSchema,
   type EventFormData,
 } from "../schemas/event-form.schema";
+import { ModalBase } from "./ModalBase";
 
 export default function EventForm() {
   const methods = useForm<EventFormData>({
@@ -218,9 +220,7 @@ export default function EventForm() {
         {errors.photos?.message && (
           <p className="text-sm text-red-600">{errors.photos.message}</p>
         )}
-        {submitError && (
-          <p className="text-sm text-red-600">{submitError}</p>
-        )}
+        {submitError && <p className="text-sm text-red-600">{submitError}</p>}
 
         <GlobalButton
           variant="primary"
@@ -230,7 +230,6 @@ export default function EventForm() {
           Salvar Registro
         </GlobalButton>
       </form>
-
       {isSuccessModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
           <div
@@ -274,6 +273,7 @@ export default function EventForm() {
           </div>
         </div>
       )}
+      *
     </FormProvider>
   );
 }
