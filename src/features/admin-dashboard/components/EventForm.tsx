@@ -15,7 +15,7 @@ import {
   eventFormSchema,
   type EventFormData,
 } from "../schemas/event-form.schema";
-import { ModalBase } from "./ModalBase";
+import { ModalBase } from "../../../components/ModalBase/ModalBase";
 import { SuccessModal } from "./SuccessModal";
 
 export default function EventForm() {

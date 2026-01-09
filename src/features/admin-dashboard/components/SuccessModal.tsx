@@ -1,5 +1,5 @@
 import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
-import { ModalBase } from "./ModalBase";
+import { ModalBase } from "../../../components/ModalBase/ModalBase";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { FaCheck } from "react-icons/fa";
 
