@@ -1,5 +1,6 @@
 import { prisma } from "@/utils/prisma";
 import { CreateEventPersist } from "../types/event-persist";
+import { OrderBy } from "../types/find-latest-event";
 
 export const EventRepository = async ()=> {
 
@@ -15,5 +16,12 @@ export const EventRepository = async ()=> {
         });
     }
 
-    return { Create } as const;
+    const FindLatest = async (take: number, orderBy: OrderBy) => {
+        return prisma.events.findMany({ orderBy, take,
+            include: { photos: true },
+        });
+    }
+
+    return { Create, FindLatest } as const;
 }
+ 
