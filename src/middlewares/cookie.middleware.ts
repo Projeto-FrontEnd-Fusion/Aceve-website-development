@@ -4,6 +4,7 @@ import { CustomMiddleware } from './chain.middleware';
 
 const PUBLIC_API_ROUTES = [
    "/api/auth/login",
+   "/api/events"
 ];
 
 const PRIVATE_FRONT_ROUTES = [
