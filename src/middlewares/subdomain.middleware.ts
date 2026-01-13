@@ -26,6 +26,11 @@ export function subdomain(next: CustomMiddleware): CustomMiddleware {
         const host = req.headers.get("host") || "";
         const hostname = host.split(":")[0];
         const subdomain = getDomain(hostname);
+        const { pathname } = req.nextUrl;
+
+        if (pathname.startsWith("/admin") && subdomain !== "admin") {
+            return NextResponse.rewrite(new URL("/404", req.url));
+        }
 
         // Production domain
         if (subdomain === "admin") {
