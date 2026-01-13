@@ -7,7 +7,7 @@ interface ModalBaseProps {
 export function ModalBase({ isOpen, onClose, children }: ModalBaseProps) {
   if (!isOpen) return null;
   return (
-    <dialog
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
       onClick={onClose}
     >
@@ -17,6 +17,6 @@ export function ModalBase({ isOpen, onClose, children }: ModalBaseProps) {
       >
         {children}
       </div>
-    </dialog>
+    </div>
   );
 }
