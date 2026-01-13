@@ -1,100 +1,35 @@
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider } from "react-hook-form";
 import { Inputs } from "@/components/Inputs/Inputs";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { EventDate } from "./EventDate";
 import { PhotoUploadCard } from "./PhotoUploadCard";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
-import { useEffect, useRef, useState } from "react";
-import { useEventPhotos } from "../hooks/useEventPhotos";
-import { httpAdmin } from "@/services/http.admin";
-import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
-import { FaCheck } from "react-icons/fa";
-import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
-
-import {
-  eventFormSchema,
-  type EventFormData,
-} from "../schemas/event-form.schema";
-import { ModalBase } from "../../../components/ModalBase/ModalBase";
 import { SuccessModal } from "./SuccessModal";
+import { useEventForm } from "../hooks/useEventForm";
 
 export default function EventForm() {
-  const methods = useForm<EventFormData>({
-    resolver: zodResolver(eventFormSchema),
-    defaultValues: {
-      name: "",
-      description: "",
-      total: "R$ 0,00",
-      beneficiaries: "",
-      date: "",
-      photos: [],
-    },
-  });
+  const {
+    methods,
+    onSubmit,
 
-  const { photos, addPhoto, removePhoto, updateCaption, resetPhotos } =
-    useEventPhotos();
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+    photos,
+    addPhoto,
+    removePhoto,
+    updateCaption,
 
-  const descriptionValue = methods.watch("description") ?? "";
+    fileInputRef,
+    handleSelectPhoto,
 
-  function handleSelectPhoto() {
-    fileInputRef.current?.click();
-  }
+    descriptionValue,
+    submitError,
 
-  async function onSubmit(data: EventFormData) {
-    try {
-      setSubmitError(null);
-      const formData = new FormData();
-
-      formData.append("name", data.name);
-      formData.append("description", data.description ?? "");
-      formData.append("totalFunding", data.total.replace(/[^\d]/g, ""));
-      formData.append("peopleBenefited", data.beneficiaries);
-      formData.append("date", data.date);
-
-      photos.forEach((photo, index) => {
-        formData.append(`photos${index}`, photo.file);
-        if (photo.caption) {
-          formData.append(`photoDescription${index}`, photo.caption);
-        }
-      });
-      await httpAdmin.post("/api/events", formData);
-      setIsSuccessModalOpen(true);
-      methods.reset();
-      resetPhotos();
-    } catch (error: any) {
-      if (error.response) {
-        console.error("Erro do backend:", error.response.data);
-        setSubmitError(
-          "Nao foi possivel salvar o evento. Tente novamente ou revise os dados enviados."
-        );
-      } else if (error.request) {
-        console.error("Erro de rede:", error.request);
-        setSubmitError(
-          "Nao foi possivel conectar ao servidor. Verifique sua conexao e tente novamente."
-        );
-      } else {
-        console.error("Erro inesperado:", error.message);
-        setSubmitError(
-          "Ocorreu um erro inesperado ao salvar o evento. Tente novamente."
-        );
-      }
-    }
-  }
+    isSuccessModalOpen,
+    closeSuccessModal,
+  } = useEventForm();
 
   const {
     formState: { errors },
   } = methods;
-
-  useEffect(() => {
-    methods.setValue(
-      "photos",
-      photos.map((photo) => photo.file),
-      { shouldValidate: true }
-    );
-  }, [methods, photos]);
 
   return (
     <FormProvider {...methods}>
@@ -231,10 +166,7 @@ export default function EventForm() {
           Salvar Registro
         </GlobalButton>
       </form>
-      <SuccessModal
-        isOpen={isSuccessModalOpen}
-        onClose={() => setIsSuccessModalOpen(false)}
-      />
+      <SuccessModal isOpen={isSuccessModalOpen} onClose={closeSuccessModal} />
     </FormProvider>
   );
 }
