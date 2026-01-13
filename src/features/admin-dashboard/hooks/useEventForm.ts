@@ -59,7 +59,7 @@ export function useEventForm() {
           }
         });
 
-        await httpAdmin.post("/api/hooks", formData);
+        await httpAdmin.post("/events", formData);
 
         setIsSuccessModalOpen(true);
         methods.reset();
