@@ -17,12 +17,20 @@ export const EventService = async () => {
         }
 
         const photosResult: { photoUrl: string; description?: string }[] = [];
-        for (const photo of eventDto.data.photos) {
-            const uploadResult = await cloudinaryService.UploadImage(photo.file);
-            photosResult.push({
-                photoUrl: uploadResult.secure_url, 
-                description: photo.description
-            });
+        try {
+            for (const photo of eventDto.data.photos) {
+                const uploadResult = await cloudinaryService.UploadImage(photo.file);
+                photosResult.push({
+                    photoUrl: uploadResult.secure_url, 
+                    description: photo.description
+                });
+            }
+        } catch (error) {
+            console.error("❌ Erro ao fazer upload da imagem:", error);
+            return NextResponse.json(
+                { error: "Erro no upload de imagem", message: error instanceof Error ? error.message : "Erro desconhecido" }, 
+                { status: 400 }
+            );
         }
         
         const event = await eventRepository.Create({...eventDto.data, peopleBenefited: Number(eventDto.data.peopleBenefited), photos: photosResult}).catch((error) => {

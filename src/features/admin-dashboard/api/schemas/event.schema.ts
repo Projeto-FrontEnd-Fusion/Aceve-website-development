@@ -2,7 +2,10 @@ import z from "zod";
 
 export const CreateEventSchema = z.object({
   name: z.string().min(1, "O nome do evento é obrigatório."),
-  description: z.string().optional(),
+  description: z.preprocess(
+    val => (val === null || val === undefined ? "" : val),
+    z.string().optional()
+  ),
   totalFunding: z.string().min(1, "O valor total arrecadado é obrigatório."),
   peopleBenefited: z
     .string({ error: "O número de pessoas beneficiadas é obrigatório." })
