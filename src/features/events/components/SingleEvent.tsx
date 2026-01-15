@@ -76,7 +76,7 @@ export function SingleEvent({ title }: SingleEventProps) {
           <GlobalButton
             variant={"text"}
             onClick={handleOpenPanelModal}
-            className="items-center justify-center rounded-md bg-violet-600 px-4 py-2 font-semibold text-white"
+            className="w-full tablet:w-72 h-14 gap-2 px-3 py-4 text-base font-inter font-semibold bg-primary-600 text-primary-100  hover:bg-primary-700"
           >
             Painel da Transparência
           </GlobalButton>

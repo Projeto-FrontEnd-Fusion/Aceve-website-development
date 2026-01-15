@@ -12,7 +12,7 @@ export function ModalBase({ isOpen, onClose, children }: ModalBaseProps) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[520px] bg-primary-100 rounded-lg px-6 py-6 sm:px-8 sm:py-8"
+        className="relative w-full max-w-[520px] bg-primary-100 rounded-sm px-6 py-6 sm:px-8 sm:py-8"
         onClick={(e) => e.stopPropagation()}
       >
         {children}
