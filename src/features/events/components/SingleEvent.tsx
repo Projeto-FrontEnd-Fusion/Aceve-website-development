@@ -96,7 +96,7 @@ export function SingleEvent({ title }: SingleEventProps) {
         onClose={() => setIsPanelModalOpen(false)}
         total={120}
         beneficiaries={10}
-        report="A ação teve como objetivo arrecadar fundos para..."
+        report="What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         title={""}
       />
     </>
