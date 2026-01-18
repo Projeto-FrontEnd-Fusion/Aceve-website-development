@@ -33,7 +33,7 @@ export function PhotoUploadCard({
   const allowCaptionEdit = Boolean(photo && onCaptionChange && !readOnly);
 
   return (
-    <div className="bg-white border border-neutral-200 rounded-sm p-4 flex flex-col gap-3 shadow-md">
+    <div className="bg-white border border-neutral-200 rounded-sm p-5 flex flex-col flex-1 max-w-80 gap-3 shadow-md">
       {showRemove && (
         <button
           type="button"
