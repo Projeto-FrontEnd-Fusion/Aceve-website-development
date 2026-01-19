@@ -7,6 +7,7 @@ import { Inputs } from "@/components/Inputs/Inputs";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { set } from "zod";
 import { VscLoading } from "react-icons/vsc";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 
 type LoginFormInputs = {
@@ -18,35 +19,44 @@ type LoginFormInputs = {
 export function LoginForm() {
     const router = useRouter()
     const [apiError, setApiError] = useState("")
-    const [isLoading, setIsLoading] = useState(false)
 
     const methods = useForm<LoginFormInputs>({
         mode: "onChange",
         defaultValues: { email: "", password: "" },
     })
 
+    const { isLoading, handleIsLoading: submitWithLoading } = useFormSubmit<LoginFormInputs>(async (data) => {
+        setApiError("")
+        const result = await loginRequest(data)
+
+        if (result.token) {
+            router.push("/dashboard")
+            // setTimeout(() => submitWithLoading(false), 3500)
+        } else {
+            setApiError(result.error)
+        }
+    })
+
+
     const { handleSubmit } = methods
 
-    const onSubmit = async (data: LoginFormInputs) => {
-        setApiError("")
+    // const onSubmit = async (data: LoginFormInputs) => {
+    //     setApiError("")
 
-        try {
-            setIsLoading(true)
-            const result = await loginRequest(data)
+    //     try {
+    //         const result = await loginRequest(data)
 
-            if (result.token) {
-                router.push("/dashboard")
-                setTimeout(() => setIsLoading(false), 3500)
-            } else {
-                setApiError(result.error)
-                setIsLoading(false)
-            }
-        } finally {
-            setTimeout(() => setApiError(""), 1500)
-            setIsLoading(false)
-        }
+    //         if (result.token) {
+    //             router.push("/dashboard")
+    //             setTimeout(() => setIsLoading(false), 3500)
+    //         } else {
+    //             setApiError(result.error)
+    //         }
+    //     } finally {
+    //         setTimeout(() => setApiError(""), 1500)
+    //     }
 
-    }
+    // }
 
     return (
         <div className="bg-primary-100 flex items-center justify-center min-h-screen">
@@ -63,7 +73,7 @@ export function LoginForm() {
                 </h2>
 
                 <FormProvider {...methods}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={methods.handleSubmit(submitWithLoading)}>
 
                         <div>
                             <label className="font-bold text-primary-600">E-mail</label>
@@ -93,7 +103,7 @@ export function LoginForm() {
                                 variant="primary"
                                 type="submit"
                                 className="w-[286px] h-[50px] rounded-[5px] py-2 px-4 gap-2 mx-auto mt-4"
-                            //disabled={!isValid}
+                                disabled={isLoading}
                             >
                                 {isLoading ?
                                     "Carregando"
