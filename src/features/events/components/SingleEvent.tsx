@@ -9,9 +9,18 @@ import { PhotoUploadCard } from "@/features/admin-dashboard/components/PhotoUplo
 
 interface SingleEventProps {
   title: string;
+  photos: {
+    photoUrl: string;
+    id: number;
+    eventId: number;
+    description?: string;
+  }[];
+  total: number;
+  beneficiaries: number;
+  report?: string;
 }
 
-export function SingleEvent({ title }: SingleEventProps) {
+export function SingleEvent({ title, photos }: SingleEventProps) {
   const [isPanelModalOpen, setIsPanelModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<{
@@ -41,25 +50,55 @@ export function SingleEvent({ title }: SingleEventProps) {
           className="mt-4 flex gap-4 flex-wrap justify-center"
           aria-label={`Fotos do evento ${title}`}
         >
-          <PhotoUploadCard
-            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
+          {photos.map((photo, index) => (
+            <PhotoUploadCard
+              key={index}
+              photo={{
+                url: photo.photoUrl,
+                caption: photo.description ?? "",
+              }}
+              readOnly={true}
+            />
+          ))}
+          {/*<PhotoUploadCard
+            photo={{
+              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
+              caption:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
+            }}
           />
 
           <PhotoUploadCard
-            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
+            photo={{
+              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
+              caption:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
+            }}
           />
 
           <PhotoUploadCard
-            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
+            photo={{
+              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
+              caption:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
+            }}
           />
 
           <PhotoUploadCard
-            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
+            photo={{
+              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
+              caption:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
+            }}
           />
 
           <PhotoUploadCard
-            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
-          />
+            photo={{
+              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
+              caption:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
+            }}
+          />*/}
         </div>
 
         <div className="mt-6 flex justify-center">
