@@ -31,32 +31,12 @@ export function LoginForm() {
 
         if (result.token) {
             router.push("/dashboard")
-            // setTimeout(() => submitWithLoading(false), 3500)
         } else {
             setApiError(result.error)
         }
     })
 
-
     const { handleSubmit } = methods
-
-    // const onSubmit = async (data: LoginFormInputs) => {
-    //     setApiError("")
-
-    //     try {
-    //         const result = await loginRequest(data)
-
-    //         if (result.token) {
-    //             router.push("/dashboard")
-    //             setTimeout(() => setIsLoading(false), 3500)
-    //         } else {
-    //             setApiError(result.error)
-    //         }
-    //     } finally {
-    //         setTimeout(() => setApiError(""), 1500)
-    //     }
-
-    // }
 
     return (
         <div className="bg-primary-100 flex items-center justify-center min-h-screen">
@@ -73,7 +53,7 @@ export function LoginForm() {
                 </h2>
 
                 <FormProvider {...methods}>
-                    <form onSubmit={methods.handleSubmit(submitWithLoading)}>
+                    <form onSubmit={handleSubmit(submitWithLoading)}>
 
                         <div>
                             <label className="font-bold text-primary-600">E-mail</label>
