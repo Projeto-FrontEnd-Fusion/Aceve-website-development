@@ -5,6 +5,7 @@ import { SingleCard } from "./SingleCard";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { useState } from "react";
 import { PanelModal } from "./PanelModal";
+import { PhotoUploadCard } from "@/features/admin-dashboard/components/PhotoUploadCard";
 
 interface SingleEventProps {
   title: string;
@@ -37,38 +38,27 @@ export function SingleEvent({ title }: SingleEventProps) {
         <h2 className="text-md font-semibold">{title}</h2>
 
         <div
-          className="mt-4 grid gap-4 grid-cols-5"
+          className="mt-4 flex gap-4 flex-wrap justify-center"
           aria-label={`Fotos do evento ${title}`}
         >
-          <SingleCard
-            imageSrc="/"
-            imageAlt="Foto do evento"
-            description="Descrição da foto."
-            onImageClick={handleOpenModal}
+          <PhotoUploadCard
+            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
           />
-          <SingleCard
-            imageSrc="/"
-            imageAlt="Foto do evento"
-            description="Descrição da foto."
-            onImageClick={handleOpenModal}
+
+          <PhotoUploadCard
+            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
           />
-          <SingleCard
-            imageSrc="/"
-            imageAlt="Foto do evento"
-            description="Descrição da foto."
-            onImageClick={handleOpenModal}
+
+          <PhotoUploadCard
+            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
           />
-          <SingleCard
-            imageSrc="/"
-            imageAlt="Foto do evento"
-            description="Descrição da foto."
-            onImageClick={handleOpenModal}
+
+          <PhotoUploadCard
+            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
           />
-          <SingleCard
-            imageSrc="/"
-            imageAlt="Foto do evento"
-            description="Descrição da foto."
-            onImageClick={handleOpenModal}
+
+          <PhotoUploadCard
+            photo={{url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169", caption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos."}}
           />
         </div>
 
@@ -96,7 +86,7 @@ export function SingleEvent({ title }: SingleEventProps) {
         onClose={() => setIsPanelModalOpen(false)}
         total={120}
         beneficiaries={10}
-        report="A ação teve como objetivo arrecadar fundos para..."
+        report="What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         title={""}
       />
     </>
