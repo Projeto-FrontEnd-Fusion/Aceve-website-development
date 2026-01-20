@@ -38,7 +38,7 @@ export function PhotoUploadCard({
         <button
           type="button"
           onClick={onRemove}
-          className="absolute self-end z-50 text-sm font-extrabold text-neutral-700"
+          className="absolute self-end text-sm font-extrabold text-neutral-700 -mr-3 -mt-5 hover:text-red-600"
         >
           X
         </button>
