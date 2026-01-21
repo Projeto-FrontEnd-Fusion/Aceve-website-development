@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 import { loginRequest } from "../api/login";
 import { Inputs } from "@/components/Inputs/Inputs";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
+import { set } from "zod";
+import { VscLoading } from "react-icons/vsc";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
+
 
 type LoginFormInputs = {
     email: string;
@@ -21,19 +25,18 @@ export function LoginForm() {
         defaultValues: { email: "", password: "" },
     })
 
-    const { handleSubmit } = methods
-
-    const onSubmit = async (data: LoginFormInputs) => {
+    const { isLoading, handleIsLoading: submitWithLoading } = useFormSubmit<LoginFormInputs>(async (data) => {
         setApiError("")
-
         const result = await loginRequest(data)
 
         if (result.token) {
-          router.push("/dashboard")
+            router.push("/dashboard")
         } else {
-          setApiError(result.error)
+            setApiError(result.error)
         }
-    }
+    })
+
+    const { handleSubmit } = methods
 
     return (
         <div className="bg-primary-100 flex items-center justify-center min-h-screen">
@@ -50,7 +53,7 @@ export function LoginForm() {
                 </h2>
 
                 <FormProvider {...methods}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(submitWithLoading)}>
 
                         <div>
                             <label className="font-bold text-primary-600">E-mail</label>
@@ -80,10 +83,14 @@ export function LoginForm() {
                                 variant="primary"
                                 type="submit"
                                 className="w-[286px] h-[50px] rounded-[5px] py-2 px-4 gap-2 mx-auto mt-4"
-                                //disabled={!isValid}
+                                disabled={isLoading}
                             >
-                                Entrar
+                                {isLoading ?
+                                    "Carregando"
+                                    : "Entrar"}
+                                {isLoading ? <VscLoading width={60} className="animate-spin" color="white" /> : ""}
                             </GlobalButton>
+
                         </div>
                     </form>
                 </FormProvider>

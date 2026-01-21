@@ -11,7 +11,7 @@ import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const VolunteerForm = () => {
-  const [Isloading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<false | string>(false);
 
   const methods = useForm<IVolunteer>({
@@ -87,11 +87,11 @@ export const VolunteerForm = () => {
         ))}
         <GlobalButton
           type="submit"
-          disabled={Isloading}
-          variant={Isloading ? "disabled" : "primary"}
+          disabled={isLoading}
+          variant={isLoading ? "disabled" : "primary"}
           className="p-4 text-xl font-semibold relative"
         >
-          {Isloading ? (
+          {isLoading ? (
             <>
               Enviando...
               <AiOutlineLoading3Quarters className="animate-spin  absolute right-6" />

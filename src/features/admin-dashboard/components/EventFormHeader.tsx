@@ -1,12 +1,18 @@
+import { NavigationLink } from "@/components/Menu/NavigationLink";
+
 export default function EventFormHeader() {
   return (
     <header className="mb-8">
-      <a
-        href=""
-        className="text-sm text-grey-500 mb-2 inline-flex items-center gap-2"
+
+      <NavigationLink
+        variant="text"
+        href="/"
+        className="inline-flex sm:text-sm laptop:text-xl bg-transparent
+        hover:bg-purple-200 text-purple-700 p-3 rounded-md"
       >
-        Voltar
-      </a>
+        ◀ Início
+      </NavigationLink>
+
       <h1 className="text-grey-800 font-semibold text-2xl">
         Registre seu evento
       </h1>
