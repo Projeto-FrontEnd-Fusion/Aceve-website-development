@@ -9,14 +9,27 @@ import { submitVolunteer } from "../../services/submitVolunteer";
 import { type IVolunteer } from "../../types/IVolunteer";
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 
 export const VolunteerForm = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<false | string>(false);
+
+  const { isLoading, handleIsLoading: submitWithLoading } = useFormSubmit<IVolunteer>(async (data) => {
+    await submitVolunteer(data, (succeeded) => {
+      if (succeeded) {
+        completeSubmit();
+      } else {
+        failedSubmit();
+      }
+    });
+  })
 
   const methods = useForm<IVolunteer>({
     resolver: zodResolver(volunteerValidator),
   });
+
+  const {handleSubmit} = methods
 
   const {
     reset,
@@ -24,7 +37,6 @@ export const VolunteerForm = () => {
   } = methods;
 
   const onSubmit = (data: IVolunteer) => {
-    setIsLoading(true);
     try {
       submitVolunteer(data, (succeeded) => {
         if (succeeded) {
@@ -39,7 +51,6 @@ export const VolunteerForm = () => {
   };
 
   const completeSubmit = () => {
-    setIsLoading(false);
     reset();
     setMessage(
       "Formulário enviado com sucesso! Entraremos em contato em breve!"
@@ -49,7 +60,6 @@ export const VolunteerForm = () => {
 
   const failedSubmit = () => {
     setMessage("Falha ao enviar o formulário");
-    setIsLoading(false);
   };
 
   const fields: readonly InputProps[] = [
@@ -74,7 +84,7 @@ export const VolunteerForm = () => {
       <form
         className="w-full h-full m-auto py-10 px-6 min-md:px-10 bg-white-normal rounded-2xl border-primary-500 border-2 
           flex flex-col justify-between"
-        onSubmit={methods.handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(submitWithLoading)}
       >
         {fields.map((field) => (
           <Inputs
@@ -94,19 +104,21 @@ export const VolunteerForm = () => {
           {isLoading ? (
             <>
               Enviando...
-              <AiOutlineLoading3Quarters className="animate-spin  absolute right-6" />
+
             </>
           ) : (
             "Enviar Formulário"
           )}
+
+          {isLoading ? <AiOutlineLoading3Quarters className="animate-spin  absolute right-6" /> : null}
+
         </GlobalButton>
         {message && (
           <p
-            className={`text-center pt-2 ${
-              message === "Falha ao enviar o formulário"
+            className={`text-center pt-2 ${message === "Falha ao enviar o formulário"
                 ? "text-red-600"
                 : "text-primary-700"
-            }`}
+              }`}
           >
             {message}
           </p>
