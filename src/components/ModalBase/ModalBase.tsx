@@ -1,3 +1,5 @@
+import { FiX } from "react-icons/fi";
+
 interface ModalBaseProps {
   isOpen: boolean;
   onClose: () => void;
@@ -12,9 +14,19 @@ export function ModalBase({ isOpen, onClose, children }: ModalBaseProps) {
       onClick={onClose}
     >
       <div
-        className="relative max-w-[480px] bg-primary-100 rounded-sm px-4 py-4 sm:px-8 sm:py-2 flex flex-col h-fit"
+        className="relative w-[90%] sm:w-[570px] bg-primary-100 rounded-sm px-7 py-4 flex flex-col h-fit"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Fechar modal"
+            className="text-grey-700 transition-colors duration-300 hover:text-primary-700"
+          >
+            <FiX className="h-5 w-5" aria-hidden="true" />
+          </button>
+        </div>
         {children}
       </div>
     </div>

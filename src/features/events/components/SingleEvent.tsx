@@ -1,7 +1,6 @@
 "use client";
 
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
-import { SingleCard } from "./SingleCard";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { useState } from "react";
 import { PanelModal } from "./PanelModal";
@@ -58,6 +57,7 @@ export function SingleEvent({ title, photos }: SingleEventProps) {
                 caption: photo.description ?? "",
               }}
               readOnly={true}
+              onImageClick={handleOpenModal}
             />
           ))}
           {/*<PhotoUploadCard
@@ -116,7 +116,7 @@ export function SingleEvent({ title, photos }: SingleEventProps) {
           <img
             src={selectedImage.src}
             alt={selectedImage.alt}
-            className="w-full h-auto rounded-md flex flex-col gap-6 justify-between items-center"
+            className="h-auto max-w-full rounded-md"
           />
         )}
       </ModalBase>
