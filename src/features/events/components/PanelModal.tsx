@@ -12,7 +12,7 @@ interface PanelModalProps {
   title: string;
   total: number;
   beneficiaries: number;
-  report: string;
+  report?: string;
 }
 
 export function PanelModal({

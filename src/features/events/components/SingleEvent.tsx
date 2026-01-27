@@ -19,7 +19,13 @@ interface SingleEventProps {
   report?: string;
 }
 
-export function SingleEvent({ title, photos }: SingleEventProps) {
+export function SingleEvent({
+  title,
+  photos,
+  total,
+  beneficiaries,
+  report,
+}: SingleEventProps) {
   const [isPanelModalOpen, setIsPanelModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<{
@@ -123,10 +129,10 @@ export function SingleEvent({ title, photos }: SingleEventProps) {
       <PanelModal
         isOpen={isPanelModalOpen}
         onClose={() => setIsPanelModalOpen(false)}
-        total={120}
-        beneficiaries={10}
-        report="What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        title={""}
+        total={total}
+        beneficiaries={beneficiaries}
+        report={report}
+        title={title}
       />
     </>
   );
