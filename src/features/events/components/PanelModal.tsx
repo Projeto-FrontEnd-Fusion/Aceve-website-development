@@ -1,9 +1,6 @@
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
-import {
-  formatInitialValue,
-  parseAndFormatCurrency,
-} from "@/utils/parseAndFormatCurrency";
+import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 import { HiCurrencyDollar, HiUserGroup } from "react-icons/hi";
 
 interface PanelModalProps {
@@ -23,6 +20,8 @@ export function PanelModal({
   beneficiaries,
   report,
 }: PanelModalProps) {
+  const totalFormatted = parseAndFormatCurrency(String(total)).formatted;
+
   return (
     <ModalBase isOpen={isOpen} onClose={onClose}>
       <div className="w-full bg-white rounded-xl p-2 space-y-2">
@@ -46,7 +45,7 @@ export function PanelModal({
               </span>
             </div>
             <strong className="text-primary-600 text-lg">
-              {formatInitialValue(total)}
+              {totalFormatted}
             </strong>
           </div>
           <div className="flex justify-between items-center">
