@@ -3,6 +3,46 @@ import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 import { HiCurrencyDollar, HiUserGroup } from "react-icons/hi";
 
+function TransparencySummaryCard({
+  totalFormatted,
+  beneficiaries,
+}: {
+  totalFormatted: string;
+  beneficiaries: number;
+}) {
+  return (
+    <div className="bg-primary-200 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4">
+      <div className="flex justify-between items-center">
+        <div className="flex flex-end gap-1.5 text-grey-900">
+          <HiCurrencyDollar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+          <span className="font-semibold text-grey-900">
+            Total arrecadado:
+          </span>
+        </div>
+        <strong className="text-primary-600 text-lg">{totalFormatted}</strong>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="flex flex-end gap-1.5 text-grey-900">
+          <HiUserGroup className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+          <span className="font-semibold text-grey-900">
+            Pessoas beneficiadas:
+          </span>
+        </div>
+        <strong className="text-primary-600 text-lg">{beneficiaries}</strong>
+      </div>
+    </div>
+  );
+}
+
+function EventReportCard({ report }: { report?: string }) {
+  return (
+    <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2">
+      <h3 className="font-bold text-grey-800">Relato da ação</h3>
+      <p className="text-grey-700 leading-relaxed">{report}</p>
+    </div>
+  );
+}
+
 interface PanelModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -35,36 +75,12 @@ export function PanelModal({
           </p>
         </div>
 
-        {/* Card roxo */}
-        <div className="bg-primary-200 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4">
-          <div className="flex justify-between items-center">
-            <div className="flex flex-end gap-1.5 text-grey-900">
-              <HiCurrencyDollar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-              <span className="font-semibold text-grey-900">
-                Total arrecadado:
-              </span>
-            </div>
-            <strong className="text-primary-600 text-lg">
-              {totalFormatted}
-            </strong>
-          </div>
-          <div className="flex justify-between items-center">
-            <div className="flex flex-end gap-1.5 text-grey-900">
-              <HiUserGroup className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-
-              <span className="font-semibold text-grey-900">
-                Pessoas beneficiadas:
-              </span>
-            </div>
-            <strong className="text-primary-600 text-lg">
-              {beneficiaries}
-            </strong>
-          </div>
-        </div>
-        {/* Card roxo */}
-        <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2">
-          <h3 className="font-bold text-grey-800">Relato da ação</h3>
-          <p className="text-grey-700 leading-relaxed">{report}</p>
+        <div className="space-y-2">
+          <TransparencySummaryCard
+            totalFormatted={totalFormatted}
+            beneficiaries={beneficiaries}
+          />
+          <EventReportCard report={report} />
         </div>
         <div className="flex justify-center gap-4 pt-2">
           <GlobalButton
@@ -86,3 +102,4 @@ export function PanelModal({
     </ModalBase>
   );
 }
+
