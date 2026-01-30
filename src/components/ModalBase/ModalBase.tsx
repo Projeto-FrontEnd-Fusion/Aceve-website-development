@@ -22,7 +22,7 @@ export function ModalBase({ isOpen, onClose, children }: ModalBaseProps) {
             type="button"
             onClick={onClose}
             aria-label="Fechar modal"
-            className="text-grey-700 transition-colors duration-300 hover:text-primary-700"
+            className="text-grey-700 pb-2 transition-colors duration-300 hover:text-red-300"
           >
             <FiX className="h-5 w-5" aria-hidden="true" />
           </button>

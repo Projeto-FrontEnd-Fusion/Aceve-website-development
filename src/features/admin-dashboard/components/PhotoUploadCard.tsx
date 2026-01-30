@@ -35,6 +35,9 @@ export function PhotoUploadCard({
   const showRemove = Boolean(photo && onRemove && !readOnly);
   const allowCaptionEdit = Boolean(photo && onCaptionChange && !readOnly);
   const isClickable = Boolean(onImageClick && imageUrl);
+  const captionPlaceholder = allowCaptionEdit
+    ? "Digite uma legenda opcional..."
+    : undefined;
 
   return (
     <div className="bg-white border border-neutral-200 rounded-sm p-5 flex flex-col flex-1 max-w-80 gap-3 shadow-md">
@@ -79,11 +82,12 @@ export function PhotoUploadCard({
 
       <input
         type="text"
-        placeholder="Digite uma legenda opcional..."
+        placeholder={captionPlaceholder}
         value={photo?.caption ?? ""}
         onChange={(e) => onCaptionChange?.(e.target.value)}
         disabled={!allowCaptionEdit}
-        className="text-sm text-grey-600 border-none focus:outline-none bg-transparent disabled:opacity-50"
+        className={`text-sm border-none focus:outline-none bg-transparent 
+        ${photo?.caption ? "text-black" : "text-grey-600"}`}
       />
     </div>
   );

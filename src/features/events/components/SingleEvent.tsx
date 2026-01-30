@@ -31,10 +31,11 @@ export function SingleEvent({
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
+    caption?: string;
   } | null>(null);
 
-  function handleOpenModal(src: string, alt: string) {
-    setSelectedImage({ src, alt });
+  function handleOpenModal(src: string, alt: string, caption?: string) {
+    setSelectedImage({ src, alt, caption });
     setIsModalOpen(true);
   }
   function handleCloseModal() {
@@ -63,7 +64,9 @@ export function SingleEvent({
                 caption: photo.description ?? "",
               }}
               readOnly={true}
-              onImageClick={handleOpenModal}
+              onImageClick={(src, alt) =>
+                handleOpenModal(src, alt, photo.description)
+              }
             />
           ))}
           {/*<PhotoUploadCard
@@ -119,11 +122,18 @@ export function SingleEvent({
       </article>
       <ModalBase isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedImage && (
-          <img
-            src={selectedImage.src}
-            alt={selectedImage.alt}
-            className="h-auto max-w-full rounded-md"
-          />
+          <div className="flex flex-col gap-4">
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="h-auto max-w-full rounded-md"
+            />
+            {selectedImage.caption && (
+              <p className="text-sm text-neutral-700">
+                {selectedImage.caption}
+              </p>
+            )}
+          </div>
         )}
       </ModalBase>
       <PanelModal
