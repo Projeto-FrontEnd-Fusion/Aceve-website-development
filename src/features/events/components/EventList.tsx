@@ -17,11 +17,11 @@ export default function EventsList() {
       {events.map((event) => (
         <div key={event.id}>
           <h2 className="text-center text-xl font-semibold m-10">
-            {new Date(event.date).toLocaleDateString("pt-BR")}
+            {event.name}
           </h2>
           <div className="mt-5">
             <SingleEvent
-              title={event.name}
+              title={new Date(event.date).toLocaleDateString("pt-BR")}
               photos={event.photos}
               total={event.totalFunding}
               beneficiaries={event.peopleBenefited}
