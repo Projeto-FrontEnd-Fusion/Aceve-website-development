@@ -67,6 +67,7 @@ export function SingleEvent({
     return () => window.removeEventListener("resize", check)
   }, [])
 
+  const isSinglePhoto = photos.length === 1;
 
   return (
     <>
@@ -76,14 +77,14 @@ export function SingleEvent({
         {isMobile ? (
           <div className="mt-4" aria-label={`Fotos do evento ${title}`}>
             <Swiper
-              slidesPerView={1}
-              spaceBetween={16}
+              slidesPerView={isSinglePhoto ? 1 : 1.35}
+              spaceBetween={isSinglePhoto ? 0 : 16}
               className="w-full"
-              centeredSlides
+              centeredSlides={!isSinglePhoto}
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
               {photos.map((photo) => (
-                <SwiperSlide key={photo.id} className="!w-full">
+                <SwiperSlide key={photo.id}>
                   <div className="w-full flex justify-center">
                     <PhotoUploadCard
                       photo={{ url: photo.photoUrl, caption: photo.description ?? "" }}
