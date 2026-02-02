@@ -17,7 +17,7 @@ model Events {
   id              Int      @id @default(autoincrement())
   name            String
   description     String?
-  totalFunding    Decimal  @db.Decimal(10, 2)
+  totalFunding    Decimal  @db.Decimal(20, 2)
   peopleBenefited Int
   date            DateTime @default(now()) @db.Date
   photos          Photos[]

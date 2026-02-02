@@ -1,13 +1,11 @@
 "use client";
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
-import { SingleCard } from "./SingleCard";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { useEffect, useState } from "react";
 import { PanelModal } from "./PanelModal";
 import { PhotoUploadCard } from "@/features/admin-dashboard/components/PhotoUploadCard";
 
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -25,16 +23,23 @@ interface SingleEventProps {
   report?: string;
 }
 
-export function SingleEvent({ title, photos }: SingleEventProps) {
+export function SingleEvent({
+  title,
+  photos,
+  total,
+  beneficiaries,
+  report,
+}: SingleEventProps) {
   const [isPanelModalOpen, setIsPanelModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
+    caption?: string;
   } | null>(null);
 
-  function handleOpenModal(src: string, alt: string) {
-    setSelectedImage({ src, alt });
+  function handleOpenModal(src: string, alt: string, caption?: string) {
+    setSelectedImage({ src, alt, caption });
     setIsModalOpen(true);
   }
   function handleCloseModal() {
@@ -129,20 +134,27 @@ export function SingleEvent({ title, photos }: SingleEventProps) {
       </article>
       <ModalBase isOpen={isModalOpen} onClose={handleCloseModal}>
         {selectedImage && (
-          <img
-            src={selectedImage.src}
-            alt={selectedImage.alt}
-            className="w-full h-auto rounded-md flex flex-col gap-6 justify-between items-center"
-          />
+          <div className="flex flex-col gap-4">
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="h-auto max-w-full rounded-md"
+            />
+            {selectedImage.caption && (
+              <p className="text-sm text-neutral-700">
+                {selectedImage.caption}
+              </p>
+            )}
+          </div>
         )}
       </ModalBase>
       <PanelModal
         isOpen={isPanelModalOpen}
         onClose={() => setIsPanelModalOpen(false)}
-        total={120}
-        beneficiaries={10}
-        report="What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        title={""}
+        total={total}
+        beneficiaries={beneficiaries}
+        report={report}
+        title={title}
       />
     </>
   );

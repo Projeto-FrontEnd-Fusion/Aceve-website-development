@@ -1,10 +1,47 @@
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
-import {
-  formatInitialValue,
-  parseAndFormatCurrency,
-} from "@/utils/parseAndFormatCurrency";
+import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 import { HiCurrencyDollar, HiUserGroup } from "react-icons/hi";
+
+function TransparencySummaryCard({
+  totalFormatted,
+  beneficiaries,
+}: {
+  totalFormatted: string;
+  beneficiaries: number;
+}) {
+  return (
+    <div className="bg-[#823DC7]/20 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4 shadow-md text-base">
+      <div className="flex justify-between items-center">
+        <div className="flex flex-end gap-1.5 text-grey-900">
+          <HiCurrencyDollar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+          <span className="font-semibold text-lg text-grey-900">
+            Total arrecadado:
+          </span>
+        </div>
+        <strong className="text-primary-600 text-lg">{totalFormatted}</strong>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="flex flex-end gap-1.5 text-grey-900">
+          <HiUserGroup className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+          <span className="font-semibold text-lg text-grey-900">
+            Pessoas beneficiadas:
+          </span>
+        </div>
+        <strong className="text-primary-600 text-lg">{beneficiaries}</strong>
+      </div>
+    </div>
+  );
+}
+
+function EventReportCard({ report }: { report?: string }) {
+  return (
+    <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2 shadow-md">
+      <h3 className="text-lg font-bold text-grey-800">Relato da ação</h3>
+      <p className="text-base text-grey-700 leading-relaxed">{report}</p>
+    </div>
+  );
+}
 
 interface PanelModalProps {
   isOpen: boolean;
@@ -12,7 +49,7 @@ interface PanelModalProps {
   title: string;
   total: number;
   beneficiaries: number;
-  report: string;
+  report?: string;
 }
 
 export function PanelModal({
@@ -23,54 +60,32 @@ export function PanelModal({
   beneficiaries,
   report,
 }: PanelModalProps) {
+  const totalFormatted = parseAndFormatCurrency(String(total)).formatted;
+
   return (
     <ModalBase isOpen={isOpen} onClose={onClose}>
       <div className="w-full bg-white rounded-xl p-2 space-y-2">
         <div className="text-center space-y-2">
-          <h2 className="text-lg sm:text-2xl font-bold text-grey-900">
+          <h2 className="text-[20px] font-bold text-grey-900">
             Painel da transparância
           </h2>
-          <p className="text-sm sm:text-base text-grey-700">
+          <p className="text-base text-grey-700">
             Aqui você acompanha o que realizamos com o apoio e o amor de todos
             que transformam junto com o Violeta Eliz.
           </p>
         </div>
 
-        {/* Card roxo */}
-        <div className="bg-primary-200 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4">
-          <div className="flex justify-between items-center">
-            <div className="flex flex-end gap-1.5 text-grey-900">
-              <HiCurrencyDollar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-              <span className="font-semibold text-grey-900">
-                Total arrecadado:
-              </span>
-            </div>
-            <strong className="text-primary-600 text-lg">
-              {formatInitialValue(total)}
-            </strong>
-          </div>
-          <div className="flex justify-between items-center">
-            <div className="flex flex-end gap-1.5 text-grey-900">
-              <HiUserGroup className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
-
-              <span className="font-semibold text-grey-900">
-                Pessoas beneficiadas:
-              </span>
-            </div>
-            <strong className="text-primary-600 text-lg">
-              {beneficiaries}
-            </strong>
-          </div>
-        </div>
-        {/* Card roxo */}
-        <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2">
-          <h3 className="font-bold text-grey-800">Relato da ação</h3>
-          <p className="text-grey-700 leading-relaxed">{report}</p>
+        <div className="space-y-2">
+          <TransparencySummaryCard
+            totalFormatted={totalFormatted}
+            beneficiaries={beneficiaries}
+          />
+          <EventReportCard report={report} />
         </div>
         <div className="flex justify-center gap-4 pt-2">
           <GlobalButton
             variant="outlined-primary-700"
-            className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-sm font-semibold"
+            className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-base font-semibold"
           >
             Voltar
           </GlobalButton>
@@ -78,7 +93,7 @@ export function PanelModal({
           <GlobalButton
             variant="primary"
             type="button"
-            className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-sm font-semibold"
+            className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-base font-semibold"
           >
             Doar
           </GlobalButton>
