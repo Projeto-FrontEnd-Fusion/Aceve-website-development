@@ -1,11 +1,16 @@
 "use client";
-
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { SingleCard } from "./SingleCard";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PanelModal } from "./PanelModal";
 import { PhotoUploadCard } from "@/features/admin-dashboard/components/PhotoUploadCard";
+
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Navigation, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 interface SingleEventProps {
   title: string;
@@ -41,65 +46,76 @@ export function SingleEvent({ title, photos }: SingleEventProps) {
     setIsPanelModalOpen(true);
   }
 
+  const [activeIndex, setActiveIndex] = useState(0)
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [photos.length]);
+
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640)
+    check()
+    window.addEventListener("resize", check)
+
+    return () => window.removeEventListener("resize", check)
+  }, [])
+
+
   return (
     <>
       <article>
         <h2 className="text-md font-semibold">{title}</h2>
 
-        <div
-          className="mt-4 flex gap-4 flex-wrap justify-center"
-          aria-label={`Fotos do evento ${title}`}
-        >
-          {photos.map((photo, index) => (
-            <PhotoUploadCard
-              key={index}
-              photo={{
-                url: photo.photoUrl,
-                caption: photo.description ?? "",
-              }}
-              readOnly={true}
-            />
-          ))}
-          {/*<PhotoUploadCard
-            photo={{
-              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
-              caption:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
-            }}
-          />
+        {isMobile ? (
+          <div className="mt-4" aria-label={`Fotos do evento ${title}`}>
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={16}
+              className="w-full"
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            >
+              {photos.map((photo) => (
+                <SwiperSlide key={photo.id} className="!w-[75vw] max-w-[280px]">
+                  <PhotoUploadCard
+                    photo={{ url: photo.photoUrl, caption: photo.description ?? "" }}
+                    readOnly
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-          <PhotoUploadCard
-            photo={{
-              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
-              caption:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
-            }}
-          />
+            {photos.length > 1 && (
+              <div className="mt-2 flex justify-center gap-1" aria-hidden="true">
+                {photos.map((_, i) => (
+                  <span
+                    key={i}
+                    className={[
+                      "h-1.5 w-1.5 rounded-full transition-opacity",
+                      i === activeIndex ? "bg-neutral-800 opacity-100" : "bg-neutral-400 opacity-50",
+                    ].join(" ")}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div
+            className="mt-4 flex gap-4 flex-wrap justify-center"
+            aria-label={`Fotos do evento ${title}`}
+          >
+            {photos.map((photo) => (
+              <PhotoUploadCard
+                key={photo.id}
+                photo={{
+                  url: photo.photoUrl,
+                  caption: photo.description ?? "",
+                }}
+                readOnly={true}
+              />
+            ))}
+          </div>
+        )}
 
-          <PhotoUploadCard
-            photo={{
-              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
-              caption:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
-            }}
-          />
-
-          <PhotoUploadCard
-            photo={{
-              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
-              caption:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
-            }}
-          />
-
-          <PhotoUploadCard
-            photo={{
-              url: "https://independentaustralia.net/_lib/slir/w800-c660x434/i/article/img/article-19811-hero.jpg?t=1749265169",
-              caption:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quos.",
-            }}
-          />*/}
-        </div>
 
         <div className="mt-6 flex justify-center">
           <GlobalButton

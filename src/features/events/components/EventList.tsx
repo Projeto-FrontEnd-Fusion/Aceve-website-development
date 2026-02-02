@@ -13,7 +13,7 @@ export default function EventsList() {
     return <p className="text-center py-10">{error}</p>;
   }
   return (
-    <section className="px-[4.5rem] py-10 flex flex-col gap-10 mt-5">
+    <section className="py-10 flex flex-col gap-10 mt-5">
       {events.map((event) => (
         <div key={event.id}>
           <h2 className="text-center text-xl font-semibold m-10">
