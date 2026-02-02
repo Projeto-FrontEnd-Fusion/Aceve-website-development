@@ -86,6 +86,9 @@ export function SingleEvent({
                   <PhotoUploadCard
                     photo={{ url: photo.photoUrl, caption: photo.description ?? "" }}
                     readOnly
+                    onImageClick={(src, alt) =>
+                      handleOpenModal(src, alt, photo.description)
+                    }
                   />
                 </SwiperSlide>
               ))}
@@ -118,6 +121,9 @@ export function SingleEvent({
                   caption: photo.description ?? "",
                 }}
                 readOnly={true}
+                onImageClick={(src, alt) =>
+                  handleOpenModal(src, alt, photo.description)
+                }
               />
             ))}
           </div>
