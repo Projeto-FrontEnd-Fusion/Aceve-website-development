@@ -2,8 +2,10 @@
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { PanelModal } from "./PanelModal";
 import { PhotoUploadCard } from "@/features/admin-dashboard/components/PhotoUploadCard";
+import NotebookIcon from "../assets/notebook.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -128,6 +130,12 @@ export function SingleEvent({
             onClick={handleOpenPanelModal}
             className="w-full tablet:w-72 h-14 gap-2 px-3 py-4 text-base font-inter font-semibold bg-primary-600 text-primary-100  hover:bg-primary-700"
           >
+            <Image
+              src={NotebookIcon}
+              alt=""
+              aria-hidden="true"
+              className="h-[30px] w-[31px]"
+            />
             Painel da Transparência
           </GlobalButton>
         </div>
