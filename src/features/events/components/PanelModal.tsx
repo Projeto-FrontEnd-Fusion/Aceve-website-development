@@ -1,4 +1,5 @@
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
+import { GlobalLink } from "@/components/GlobalLink/GlobalLink";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
 import Image from "next/image";
@@ -85,7 +86,7 @@ export function PanelModal({
           </p>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           <TransparencySummaryCard
             totalFormatted={totalFormatted}
             beneficiaries={beneficiaries}
@@ -96,17 +97,18 @@ export function PanelModal({
           <GlobalButton
             variant="outlined-primary-700"
             className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-base font-semibold"
+            onClick={onClose}
           >
             Voltar
           </GlobalButton>
 
-          <GlobalButton
+          <GlobalLink
             variant="primary"
-            type="button"
+            href="/quero-doar"
             className="w-[140px] sm:w-[160px] h-[44px] sm:h-[52px] rounded-[8px] border-2 px-4 py-2 sm:py-3 text-base font-semibold"
           >
             Doar
-          </GlobalButton>
+          </GlobalLink>
         </div>
       </div>
     </ModalBase>
