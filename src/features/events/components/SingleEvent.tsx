@@ -76,20 +76,23 @@ export function SingleEvent({
         {isMobile ? (
           <div className="mt-4" aria-label={`Fotos do evento ${title}`}>
             <Swiper
-              slidesPerView="auto"
+              slidesPerView={1}
               spaceBetween={16}
               className="w-full"
+              centeredSlides
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
               {photos.map((photo) => (
-                <SwiperSlide key={photo.id} className="!w-[75vw] max-w-[280px]">
-                  <PhotoUploadCard
-                    photo={{ url: photo.photoUrl, caption: photo.description ?? "" }}
-                    readOnly
-                    onImageClick={(src, alt) =>
-                      handleOpenModal(src, alt, photo.description)
-                    }
-                  />
+                <SwiperSlide key={photo.id} className="!w-full">
+                  <div className="w-full flex justify-center">
+                    <PhotoUploadCard
+                      photo={{ url: photo.photoUrl, caption: photo.description ?? "" }}
+                      readOnly
+                      onImageClick={(src, alt) =>
+                        handleOpenModal(src, alt, photo.description)
+                      }
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
