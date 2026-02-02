@@ -1,7 +1,9 @@
 import { GlobalButton } from "@/components/GlobalButton/GlobalButton";
 import { ModalBase } from "@/components/ModalBase/ModalBase";
 import { parseAndFormatCurrency } from "@/utils/parseAndFormatCurrency";
-import { HiCurrencyDollar, HiUserGroup } from "react-icons/hi";
+import Image from "next/image";
+import CoinIcon from "../assets/coin.svg";
+import PeopleIcon from "../assets/people.svg";
 
 function TransparencySummaryCard({
   totalFormatted,
@@ -11,10 +13,14 @@ function TransparencySummaryCard({
   beneficiaries: number;
 }) {
   return (
-    <div className="bg-[#823DC7]/20 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4 shadow-md text-base">
+    <div className="bg-[#823DC7]/20 rounded-lg p-3 space-y-3 sm:p-4 sm:space-y-4 shadow-[0_2px_6px_rgba(0,0,0,0.25)] text-base">
       <div className="flex justify-between items-center">
-        <div className="flex flex-end gap-1.5 text-grey-900">
-          <HiCurrencyDollar className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+        <div className="flex items-center gap-1.5 text-grey-900">
+          <Image
+            src={CoinIcon}
+            alt="Ícone de moeda"
+            className="w-[35px] h-[35px]"
+          />
           <span className="font-semibold text-lg text-grey-900">
             Total arrecadado:
           </span>
@@ -22,8 +28,12 @@ function TransparencySummaryCard({
         <strong className="text-primary-600 text-lg">{totalFormatted}</strong>
       </div>
       <div className="flex justify-between items-center">
-        <div className="flex flex-end gap-1.5 text-grey-900">
-          <HiUserGroup className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
+        <div className="flex items-center gap-1.5 text-grey-900">
+          <Image
+            src={PeopleIcon}
+            alt="Ícone de pessoas"
+            className="w-[35px] h-[35px]"
+          />
           <span className="font-semibold text-lg text-grey-900">
             Pessoas beneficiadas:
           </span>
@@ -36,7 +46,7 @@ function TransparencySummaryCard({
 
 function EventReportCard({ report }: { report?: string }) {
   return (
-    <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2 shadow-md">
+    <div className="bg-grey-100/25 border rounded-lg p-4 sm:p-6 space-y-2 shadow-[0_2px_6px_rgba(0,0,0,0.25)]">
       <h3 className="text-lg font-bold text-grey-800">Relato da ação</h3>
       <p className="text-base text-grey-700 leading-relaxed">{report}</p>
     </div>
