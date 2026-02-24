@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Menu/TopBarNavigation";
+import { EventsPrefetch } from "@/features/events/components/EventsPrefetch";
 
 export const metadata: Metadata = {
   title: "ONG Violeta Eliz",
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className="w-full overflow-x-hidden desktopXLarge:w-[1444px] desktopXLarge:ml-auto mr-auto">
         <Header />
+          <EventsPrefetch/>
           {children}
         <Footer />
       </body>
