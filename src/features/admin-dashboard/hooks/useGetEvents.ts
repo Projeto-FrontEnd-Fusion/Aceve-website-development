@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { http } from "@/services/http";
 import { useEventsStore } from "@/zustand-store/EventStore";
 
 export interface IEvent {
@@ -20,25 +19,31 @@ export interface IEvent {
 
 export function useGetEvents() {
   const globalEvents = useEventsStore((s) => s.events);
-  const fetchEvents = useEventsStore((s) => s.fetchEvents);
-  
+  const storeFetchEvents = useEventsStore((s) => s.fetchEvents);
+
   const [events, setEvents] = useState<IEvent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchEvents = async () => {
+    const loadEvents = async () => {
       try {
-setIsLoading(true); if (globalEvents) { setEvents(globalEvents); }
-else { await fetchEvents(); setEvents(useEventsStore.getState().events || []); }
+        setIsLoading(true);
+        if (globalEvents) {
+          setEvents(globalEvents);
+        } else {
+          await storeFetchEvents();
+          setEvents(useEventsStore.getState().events || []);
+        }
       } catch {
         setError("Erro ao carregar evento");
       } finally {
         setIsLoading(false);
       }
     };
-    fetchEvents();
-  }, [globalEvents, fetchEvents]);
+    loadEvents();
+  }, [globalEvents, storeFetchEvents]);
+
   return {
     events,
     isLoading,
