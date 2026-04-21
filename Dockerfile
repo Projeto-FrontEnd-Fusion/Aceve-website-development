@@ -25,14 +25,14 @@ FROM node:22-alpine AS prod
 WORKDIR /app
 
 RUN addgroup -g 1001 -S comunidadeff && \
-    adduser -u 1001 -S comunidadeff -G comunidadeff
+    adduser -u 1001 -S usercomunidadeff  -G comunidadeff
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
-RUN chown -R comunidadeff:comunidadeff /app
-USER comunidadeff
+RUN chown -R usercomunidadeff:comunidadeff /app
+USER usercomunidadeff
 
 EXPOSE 3000
 ENV NODE_ENV=production
