@@ -1,6 +1,6 @@
 import TheViolets from "@/assets/violetas.png";
-import VivaLeite from "@/assets/Vivaleite.png";
-import Viotec from "@/assets/Viotec.png";
+import VivaLeite from "@/assets/vivaleite.png";
+import Viotec from "@/assets/viotec.png";
 import Kime from "@/assets/projetokime.png";
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
